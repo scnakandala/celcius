@@ -18,7 +18,7 @@ public class Approximate {
     }
 
     public double getApproximatedValue(double val) {
-        if (xVal.length > 4) {
+        if (xVal.length >= 4) {
             double[] temp = Arrays.copyOf(xVal, xVal.length);
             Arrays.sort(temp);
             double maxVal = temp[temp.length - 1];

@@ -2,16 +2,11 @@ package logic;
 
 import algorithms.Approximate;
 import dataaccess.DuvetsDataAccess;
-import algorithms.LinearRegression;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import viewmodels.DuvetsViewModel;
 
-/**
- *
- * @author naka
- */
 public class DuvetsLogic {
 
     public static String[] getDuvetTypes() {

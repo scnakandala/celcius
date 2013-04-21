@@ -2,16 +2,12 @@ package logic;
 
 import algorithms.Approximate;
 import dataaccess.DuvetCoversDataAccess;
-import algorithms.LinearRegression;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import viewmodels.DovetCoversViewModel;
 
-/**
- *
- * @author naka
- */
+
 public class DuvetCoversLogic {
 
     public static String[] getProductRanges() {

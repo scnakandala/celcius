@@ -7,10 +7,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import viewmodels.MettresProtectorViewModel;
 
-/**
- *
- * @author naka
- */
 public class MattresProtectorLogic {
 
     public static String[] getProductRanges() {

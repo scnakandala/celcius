@@ -7,10 +7,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import viewmodels.CotSheetViewModel;
 
-/**
- *
- * @author naka
- */
 public class CotSheetLogic {
 
     public static String[] getMaterialTypes() {
