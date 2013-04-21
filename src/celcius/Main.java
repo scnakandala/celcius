@@ -30,7 +30,7 @@ public class Main {
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
                     try {
-                        UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+                        UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
                     } catch (ClassNotFoundException ex) {
                         Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
                     } catch (InstantiationException ex) {
