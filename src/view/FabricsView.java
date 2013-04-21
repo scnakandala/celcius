@@ -416,7 +416,6 @@ public class FabricsView extends JPanel {
             entityManager.getTransaction().commit();
             entityManager.getTransaction().begin();
         } catch (RollbackException rex) {
-            rex.printStackTrace();
             entityManager.getTransaction().begin();
             List<entities.Fabrics> merged = new ArrayList<entities.Fabrics>(list.size());
             for (entities.Fabrics f : list) {

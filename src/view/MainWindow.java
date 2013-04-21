@@ -386,6 +386,47 @@ public class MainWindow extends javax.swing.JFrame {
         mettresProtectorToatalCost = new javax.swing.JLabel();
         cotSheetsPane = new javax.swing.JScrollPane();
         cotSheets = new javax.swing.JPanel();
+        cotSheetCPUPanel = new javax.swing.JPanel();
+        jPanel31 = new javax.swing.JPanel();
+        jLabel143 = new javax.swing.JLabel();
+        cotSheetLabourCost = new javax.swing.JLabel();
+        cotSheetPEBagCost = new javax.swing.JLabel();
+        jLabel139 = new javax.swing.JLabel();
+        cotSheetTotalMaterialCost = new javax.swing.JLabel();
+        jLabel137 = new javax.swing.JLabel();
+        cotSheetFabricCost = new javax.swing.JLabel();
+        cotSheetThreadCost = new javax.swing.JLabel();
+        cotSheetLableCost = new javax.swing.JLabel();
+        jLabel140 = new javax.swing.JLabel();
+        jLabel151 = new javax.swing.JLabel();
+        jLabel150 = new javax.swing.JLabel();
+        cotSheetPaddingCost = new javax.swing.JLabel();
+        jLabel141 = new javax.swing.JLabel();
+        cotSheetTaffataCost = new javax.swing.JLabel();
+        jLabel144 = new javax.swing.JLabel();
+        jLabel142 = new javax.swing.JLabel();
+        jLabel153 = new javax.swing.JLabel();
+        jLabel154 = new javax.swing.JLabel();
+        jLabel145 = new javax.swing.JLabel();
+        cotSheetToatalCost = new javax.swing.JLabel();
+        cotSheetElasticCost = new javax.swing.JLabel();
+        jLabel138 = new javax.swing.JLabel();
+        cotSheetTagCost = new javax.swing.JLabel();
+        cotSheetPOH = new javax.swing.JLabel();
+        jPanel32 = new javax.swing.JPanel();
+        cotSheetTafffataCutWidth = new javax.swing.JLabel();
+        cotSheetSMVValue = new javax.swing.JLabel();
+        jLabel148 = new javax.swing.JLabel();
+        jLabel146 = new javax.swing.JLabel();
+        jLabel156 = new javax.swing.JLabel();
+        cotSheetFabricPaddingCutWidth = new javax.swing.JLabel();
+        jLabel149 = new javax.swing.JLabel();
+        jLabel155 = new javax.swing.JLabel();
+        cotSheetTaffataCutHeight = new javax.swing.JLabel();
+        cotSheetFabricPaddingCutHeight = new javax.swing.JLabel();
+        jLabel147 = new javax.swing.JLabel();
+        jPanel29 = new javax.swing.JPanel();
+        jPanel30 = new javax.swing.JPanel();
         cotSheetCostingPanel = new javax.swing.JPanel();
         jLabel119 = new javax.swing.JLabel();
         jLabel121 = new javax.swing.JLabel();
@@ -395,7 +436,6 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel122 = new javax.swing.JLabel();
         jLabel123 = new javax.swing.JLabel();
         jLabel124 = new javax.swing.JLabel();
-        cotSheetUseCustom = new javax.swing.JRadioButton();
         cotSheetCustomPanel = new javax.swing.JPanel();
         jLabel125 = new javax.swing.JLabel();
         jLabel126 = new javax.swing.JLabel();
@@ -421,43 +461,8 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel136 = new javax.swing.JLabel();
         cotSheetTaffataTypeCombo = new javax.swing.JComboBox();
         cotSheetSubmitButton = new javax.swing.JButton();
-        cotSheetCPUPanel = new javax.swing.JPanel();
-        jLabel137 = new javax.swing.JLabel();
-        jLabel138 = new javax.swing.JLabel();
-        jLabel139 = new javax.swing.JLabel();
-        jLabel140 = new javax.swing.JLabel();
-        jLabel141 = new javax.swing.JLabel();
-        jLabel142 = new javax.swing.JLabel();
-        jLabel143 = new javax.swing.JLabel();
-        jLabel144 = new javax.swing.JLabel();
-        cotSheetFabricCost = new javax.swing.JLabel();
-        cotSheetThreadCost = new javax.swing.JLabel();
-        cotSheetLableCost = new javax.swing.JLabel();
-        cotSheetTagCost = new javax.swing.JLabel();
-        cotSheetPEBagCost = new javax.swing.JLabel();
-        cotSheetPOH = new javax.swing.JLabel();
-        cotSheetLabourCost = new javax.swing.JLabel();
-        cotSheetToatalCost = new javax.swing.JLabel();
-        jLabel145 = new javax.swing.JLabel();
-        jLabel146 = new javax.swing.JLabel();
-        jLabel147 = new javax.swing.JLabel();
-        cotSheetFabricPaddingCutWidth = new javax.swing.JLabel();
-        cotSheetFabricPaddingCutHeight = new javax.swing.JLabel();
-        jLabel148 = new javax.swing.JLabel();
-        cotSheetSMVValue = new javax.swing.JLabel();
-        jLabel149 = new javax.swing.JLabel();
-        jLabel150 = new javax.swing.JLabel();
-        cotSheetElasticCost = new javax.swing.JLabel();
-        jLabel151 = new javax.swing.JLabel();
-        cotSheetTotalMaterialCost = new javax.swing.JLabel();
-        jLabel153 = new javax.swing.JLabel();
-        jLabel154 = new javax.swing.JLabel();
-        cotSheetPaddingCost = new javax.swing.JLabel();
-        cotSheetTaffataCost = new javax.swing.JLabel();
-        jLabel155 = new javax.swing.JLabel();
-        jLabel156 = new javax.swing.JLabel();
-        cotSheetTafffataCutWidth = new javax.swing.JLabel();
-        cotSheetTaffataCutHeight = new javax.swing.JLabel();
+        cotSheetUseCustom = new javax.swing.JRadioButton();
+        cotSheetNewCosting = new javax.swing.JButton();
         duvetsScrollPane = new javax.swing.JScrollPane();
         duvets = new javax.swing.JPanel();
         cotSheetCostingPanel1 = new javax.swing.JPanel();
@@ -1019,7 +1024,8 @@ public class MainWindow extends javax.swing.JFrame {
         userTabbedPane.addTab("Home", homeScrollPane);
 
         bedSheetCostingPanel.setBackground(new java.awt.Color(204, 204, 204));
-        bedSheetCostingPanel.setPreferredSize(new java.awt.Dimension(500, 800));
+        bedSheetCostingPanel.setMinimumSize(new java.awt.Dimension(500, 500));
+        bedSheetCostingPanel.setPreferredSize(new java.awt.Dimension(500, 500));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 24));
         jLabel5.setText("Bed Sheets Costing");
@@ -1127,7 +1133,7 @@ public class MainWindow extends javax.swing.JFrame {
         bedSheetCostingPanelLayout.setHorizontalGroup(
             bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
-                .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
                         .addGap(145, 145, 145)
                         .addComponent(jLabel5))
@@ -1154,19 +1160,18 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
                         .addGap(47, 47, 47)
                         .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(bedSheetCustomPanel, javax.swing.GroupLayout.Alignment.LEADING, 0, 0, Short.MAX_VALUE)
+                            .addComponent(bedSheetCustomPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, bedSheetCostingPanelLayout.createSequentialGroup()
                                 .addComponent(bedSheetSizeLable)
                                 .addGap(132, 132, 132)
-                                .addComponent(bedSheetSizeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
-                        .addGap(180, 180, 180)
-                        .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(bedSheetCostingPanelNewCostingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(bedSheetSubmitButton))))
-                .addContainerGap(54, Short.MAX_VALUE))
+                                .addComponent(bedSheetSizeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(54, 54, 54))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bedSheetCostingPanelLayout.createSequentialGroup()
+                .addGap(181, 181, 181)
+                .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(bedSheetSubmitButton)
+                    .addComponent(bedSheetCostingPanelNewCostingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
         bedSheetCostingPanelLayout.setVerticalGroup(
             bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1204,11 +1209,11 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(bedSheetUseCustom)
                 .addGap(1, 1, 1)
                 .addComponent(bedSheetCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addGap(18, 18, 18)
                 .addComponent(bedSheetSubmitButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(bedSheetCostingPanelNewCostingButton)
-                .addContainerGap())
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -1224,7 +1229,7 @@ public class MainWindow extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(bedSheetCostingPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 566, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bedSheetCostingPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1510,8 +1515,9 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(11, 11, 11)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(36, Short.MAX_VALUE))
+                        .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(67, 67, 67)))
+                .addGap(36, 36, 36))
         );
 
         javax.swing.GroupLayout bedSheetsLayout = new javax.swing.GroupLayout(bedSheets);
@@ -1724,47 +1730,50 @@ public class MainWindow extends javax.swing.JFrame {
         pillowCaseCostingPanelLayout.setHorizontalGroup(
             pillowCaseCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
-                .addGap(140, 140, 140)
-                .addComponent(jLabel27))
-            .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel28)
-                .addGap(86, 86, 86)
-                .addComponent(pillowcaseProductRangeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel29)
-                .addGap(91, 91, 91)
-                .addComponent(pillowcaseMaterialTypeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel30)
-                .addGap(151, 151, 151)
-                .addComponent(pillowcaseSizeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel31)
-                .addGap(77, 77, 77)
-                .addComponent(pillowcaseTypeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel32)
-                .addGap(164, 164, 164)
-                .addComponent(pillowcaseWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel36))
-            .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(pillowcaseUseCustom))
-            .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(pillowcaseCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
-                .addGap(170, 170, 170)
-                .addComponent(pillowcaseSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
-                .addGap(190, 190, 190)
-                .addComponent(pillowCaseNewCostingButton))
+                .addGroup(pillowCaseCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pillowCaseCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
+                            .addGap(30, 30, 30)
+                            .addComponent(pillowcaseUseCustom))
+                        .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
+                            .addGap(30, 30, 30)
+                            .addComponent(jLabel32)
+                            .addGap(164, 164, 164)
+                            .addComponent(pillowcaseWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(12, 12, 12)
+                            .addComponent(jLabel36))
+                        .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
+                            .addGap(30, 30, 30)
+                            .addComponent(jLabel31)
+                            .addGap(77, 77, 77)
+                            .addComponent(pillowcaseTypeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
+                            .addGap(30, 30, 30)
+                            .addComponent(jLabel30)
+                            .addGap(151, 151, 151)
+                            .addComponent(pillowcaseSizeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
+                            .addGap(30, 30, 30)
+                            .addComponent(jLabel29)
+                            .addGap(91, 91, 91)
+                            .addComponent(pillowcaseMaterialTypeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
+                            .addGap(30, 30, 30)
+                            .addComponent(jLabel28)
+                            .addGap(86, 86, 86)
+                            .addComponent(pillowcaseProductRangeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
+                            .addGap(140, 140, 140)
+                            .addComponent(jLabel27))
+                        .addGroup(javax.swing.GroupLayout.Alignment.CENTER, pillowCaseCostingPanelLayout.createSequentialGroup()
+                            .addGap(30, 30, 30)
+                            .addComponent(pillowcaseCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
+                        .addGap(171, 171, 171)
+                        .addGroup(pillowCaseCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(pillowcaseSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pillowCaseNewCostingButton))))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
         pillowCaseCostingPanelLayout.setVerticalGroup(
             pillowCaseCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1798,19 +1807,20 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(pillowcaseUseCustom)
                 .addGap(3, 3, 3)
                 .addComponent(pillowcaseCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pillowcaseSubmitButton)
                 .addGap(13, 13, 13)
-                .addComponent(pillowCaseNewCostingButton))
+                .addComponent(pillowCaseNewCostingButton)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pillowCaseCostingPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pillowCaseCostingPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -1974,7 +1984,7 @@ public class MainWindow extends javax.swing.JFrame {
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -2016,7 +2026,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(137, 137, 137)
                         .addComponent(jLabel46)))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addGap(32, 32, 32))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2307,40 +2317,38 @@ public class MainWindow extends javax.swing.JFrame {
         bedSheetCostingPanel1Layout.setHorizontalGroup(
             bedSheetCostingPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bedSheetCostingPanel1Layout.createSequentialGroup()
-                .addGroup(bedSheetCostingPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(bedSheetCostingPanel1Layout.createSequentialGroup()
-                        .addGap(185, 185, 185)
-                        .addComponent(dovetCoversSubmitButton))
-                    .addGroup(bedSheetCostingPanel1Layout.createSequentialGroup()
-                        .addGap(204, 204, 204)
-                        .addComponent(dovetCoversNewCostingButton))
-                    .addGroup(bedSheetCostingPanel1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(bedSheetCostingPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGap(31, 31, 31)
+                .addGroup(bedSheetCostingPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, bedSheetCostingPanel1Layout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(jLabel37)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dovetCoversUseCustom, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, bedSheetCostingPanel1Layout.createSequentialGroup()
+                        .addGroup(bedSheetCostingPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel53)
+                            .addComponent(jLabel52)
+                            .addComponent(jLabel73)
+                            .addComponent(jLabel55)
+                            .addComponent(jLabel56))
+                        .addGap(76, 76, 76)
+                        .addGroup(bedSheetCostingPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(dovetCoversTypeCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, 208, Short.MAX_VALUE)
+                            .addComponent(dovetCoversMaterialTypeCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, 208, Short.MAX_VALUE)
+                            .addComponent(dovetCoversProductRangeCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, 208, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, bedSheetCostingPanel1Layout.createSequentialGroup()
-                                .addGap(105, 105, 105)
-                                .addComponent(jLabel37)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(dovetCoversUseCustom, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, bedSheetCostingPanel1Layout.createSequentialGroup()
-                                .addGroup(bedSheetCostingPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel53)
-                                    .addComponent(jLabel52)
-                                    .addComponent(jLabel73)
-                                    .addComponent(jLabel55)
-                                    .addComponent(jLabel56))
-                                .addGap(76, 76, 76)
-                                .addGroup(bedSheetCostingPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(dovetCoversTypeCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, 208, Short.MAX_VALUE)
-                                    .addComponent(dovetCoversMaterialTypeCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, 208, Short.MAX_VALUE)
-                                    .addComponent(dovetCoversProductRangeCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, 208, Short.MAX_VALUE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, bedSheetCostingPanel1Layout.createSequentialGroup()
-                                        .addComponent(dovetCoversWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel54))
-                                    .addComponent(dovetCoversSizeCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, 208, Short.MAX_VALUE)))
-                            .addComponent(dovetCoversCustomPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 441, Short.MAX_VALUE))))
-                .addContainerGap(28, Short.MAX_VALUE))
+                                .addComponent(dovetCoversWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel54))
+                            .addComponent(dovetCoversSizeCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, 208, Short.MAX_VALUE)))
+                    .addComponent(dovetCoversCustomPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 441, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bedSheetCostingPanel1Layout.createSequentialGroup()
+                .addGap(180, 180, 180)
+                .addGroup(bedSheetCostingPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(dovetCoversSubmitButton)
+                    .addComponent(dovetCoversNewCostingButton))
+                .addContainerGap(170, Short.MAX_VALUE))
         );
         bedSheetCostingPanel1Layout.setVerticalGroup(
             bedSheetCostingPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2371,12 +2379,12 @@ public class MainWindow extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(dovetCoversUseCustom)
                 .addGap(13, 13, 13)
-                .addComponent(dovetCoversCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dovetCoversCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(dovetCoversSubmitButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dovetCoversNewCostingButton)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         dovetCoversNewCostingButton.setVisible(false);
@@ -2387,7 +2395,7 @@ public class MainWindow extends javax.swing.JFrame {
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel27Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(bedSheetCostingPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bedSheetCostingPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel27Layout.setVerticalGroup(
@@ -2405,7 +2413,7 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(jPanel19Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2760,7 +2768,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         bedSheetCostingPanel2.setBackground(new java.awt.Color(204, 204, 204));
         bedSheetCostingPanel2.setMinimumSize(new java.awt.Dimension(500, 500));
-        bedSheetCostingPanel2.setPreferredSize(new java.awt.Dimension(549, 700));
+        bedSheetCostingPanel2.setPreferredSize(new java.awt.Dimension(497, 500));
 
         jLabel80.setFont(new java.awt.Font("Times New Roman", 0, 24));
         jLabel80.setText("Mattress Protectors Costing");
@@ -2857,9 +2865,9 @@ public class MainWindow extends javax.swing.JFrame {
                             .addComponent(mettresProtectorIncludeLable))
                         .addGap(112, 112, 112)
                         .addGroup(mettresProtectorCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(mettresProtectorCustomHeight, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-                            .addComponent(mettresProtectorCustomWidth, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE))))
-                .addContainerGap(116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(mettresProtectorCustomWidth, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mettresProtectorCustomHeight, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE))))
+                .addContainerGap(113, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         mettresProtectorCustomPanelLayout.setVerticalGroup(
             mettresProtectorCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2882,7 +2890,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(mettresProtectorIncludeNonWoven)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(mettresProtectorIncludePiping)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         jLabel103.setFont(new java.awt.Font("Times New Roman", 0, 16));
@@ -2970,67 +2978,66 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(bedSheetCostingPanel2Layout.createSequentialGroup()
                 .addGap(48, 48, 48)
                 .addGroup(bedSheetCostingPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(bedSheetCostingPanel2Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addComponent(jLabel80)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(bedSheetCostingPanel2Layout.createSequentialGroup()
-                        .addGroup(bedSheetCostingPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(mettresProtectorCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(mettresProtectorUseCustom))
-                        .addGap(6, 6, 6))
-                    .addGroup(bedSheetCostingPanel2Layout.createSequentialGroup()
-                        .addGroup(bedSheetCostingPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel104)
-                            .addComponent(jLabel103)
-                            .addComponent(jLabel82)
-                            .addComponent(jLabel81)
-                            .addComponent(jLabel107)
-                            .addComponent(jLabel85)
-                            .addComponent(jLabel84)
-                            .addComponent(jLabel118)
-                            .addComponent(jLabel114)
-                            .addComponent(jLabel115))
-                        .addGap(76, 76, 76)
-                        .addGroup(bedSheetCostingPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(bedSheetCostingPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(mettresProtectorSizeCombo, 0, 185, Short.MAX_VALUE)
-                                .addComponent(mettresProtectorMaterialTypeCombo, 0, 185, Short.MAX_VALUE)
-                                .addComponent(mettresProtectorProductRangeCombo, 0, 185, Short.MAX_VALUE)
-                                .addComponent(mettresProtectorPaddingTypeCombo, 0, 185, Short.MAX_VALUE)
-                                .addComponent(mettresProtectorTaffataTypeCombo, 0, 185, Short.MAX_VALUE))
-                            .addGroup(bedSheetCostingPanel2Layout.createSequentialGroup()
-                                .addGroup(bedSheetCostingPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(bedSheetCostingPanel2Layout.createSequentialGroup()
-                                        .addComponent(mettresProtectorTaffateWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel105))
-                                    .addGroup(bedSheetCostingPanel2Layout.createSequentialGroup()
-                                        .addComponent(mettresProtectorPaddingWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel106))
-                                    .addGroup(bedSheetCostingPanel2Layout.createSequentialGroup()
-                                        .addComponent(mettresProtectorWidthQuiltingShrinkage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel116))
-                                    .addGroup(bedSheetCostingPanel2Layout.createSequentialGroup()
-                                        .addComponent(mettresProtectorFabricWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel83))
-                                    .addGroup(bedSheetCostingPanel2Layout.createSequentialGroup()
-                                        .addComponent(mettresProtectorHeightQuiltiingShrinkage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel117)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(46, 46, 46))
-            .addGroup(bedSheetCostingPanel2Layout.createSequentialGroup()
-                .addGap(180, 180, 180)
+                    .addComponent(jLabel104)
+                    .addComponent(jLabel103)
+                    .addComponent(jLabel82)
+                    .addComponent(jLabel81)
+                    .addComponent(jLabel107)
+                    .addComponent(jLabel85)
+                    .addComponent(jLabel84)
+                    .addComponent(jLabel118)
+                    .addComponent(jLabel114)
+                    .addComponent(jLabel115))
+                .addGap(76, 76, 76)
                 .addGroup(bedSheetCostingPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bedSheetCostingPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(mettresProtectorSizeCombo, 0, 189, Short.MAX_VALUE)
+                        .addComponent(mettresProtectorMaterialTypeCombo, 0, 189, Short.MAX_VALUE)
+                        .addComponent(mettresProtectorProductRangeCombo, 0, 189, Short.MAX_VALUE)
+                        .addComponent(mettresProtectorPaddingTypeCombo, 0, 189, Short.MAX_VALUE)
+                        .addComponent(mettresProtectorTaffataTypeCombo, 0, 189, Short.MAX_VALUE))
                     .addGroup(bedSheetCostingPanel2Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(mattressProtectorNewCostingButton))
-                    .addComponent(mettresProtectorSubmitButton))
-                .addContainerGap(184, Short.MAX_VALUE))
+                        .addGroup(bedSheetCostingPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(bedSheetCostingPanel2Layout.createSequentialGroup()
+                                .addComponent(mettresProtectorTaffateWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel105))
+                            .addGroup(bedSheetCostingPanel2Layout.createSequentialGroup()
+                                .addComponent(mettresProtectorPaddingWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel106))
+                            .addGroup(bedSheetCostingPanel2Layout.createSequentialGroup()
+                                .addComponent(mettresProtectorWidthQuiltingShrinkage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel116))
+                            .addGroup(bedSheetCostingPanel2Layout.createSequentialGroup()
+                                .addComponent(mettresProtectorFabricWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel83))
+                            .addGroup(bedSheetCostingPanel2Layout.createSequentialGroup()
+                                .addComponent(mettresProtectorHeightQuiltiingShrinkage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel117)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(31, Short.MAX_VALUE))
+            .addGroup(bedSheetCostingPanel2Layout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(mettresProtectorUseCustom)
+                .addContainerGap(317, Short.MAX_VALUE))
+            .addGroup(bedSheetCostingPanel2Layout.createSequentialGroup()
+                .addGap(123, 123, 123)
+                .addComponent(jLabel80)
+                .addContainerGap(110, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.CENTER, bedSheetCostingPanel2Layout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(mettresProtectorCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35))
+            .addGroup(bedSheetCostingPanel2Layout.createSequentialGroup()
+                .addGap(175, 175, 175)
+                .addGroup(bedSheetCostingPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(mettresProtectorSubmitButton)
+                    .addComponent(mattressProtectorNewCostingButton))
+                .addContainerGap(178, Short.MAX_VALUE))
         );
         bedSheetCostingPanel2Layout.setVerticalGroup(
             bedSheetCostingPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3086,11 +3093,11 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(mettresProtectorUseCustom)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(mettresProtectorCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(15, 15, 15)
                 .addComponent(mettresProtectorSubmitButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(7, 7, 7)
                 .addComponent(mattressProtectorNewCostingButton)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         mattressProtectorNewCostingButton.setVisible(false);
@@ -3101,15 +3108,15 @@ public class MainWindow extends javax.swing.JFrame {
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel25Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(bedSheetCostingPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bedSheetCostingPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel25Layout.setVerticalGroup(
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel25Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(bedSheetCostingPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 735, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(bedSheetCostingPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
@@ -3125,8 +3132,8 @@ public class MainWindow extends javax.swing.JFrame {
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel20Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPanel23.setBackground(new java.awt.Color(204, 204, 204));
@@ -3486,14 +3493,309 @@ public class MainWindow extends javax.swing.JFrame {
 
         userTabbedPane.addTab("Mattress Protectors", mattressProtectorPane);
 
-        jLabel119.setFont(new java.awt.Font("Times New Roman", 0, 24));
+        jPanel31.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel143.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel143.setText("Labour Cost:");
+
+        cotSheetLabourCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        cotSheetLabourCost.setText("0.00");
+
+        cotSheetPEBagCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        cotSheetPEBagCost.setText("0.00");
+
+        jLabel139.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel139.setText("Lable Cost:");
+
+        cotSheetTotalMaterialCost.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        cotSheetTotalMaterialCost.setText("0.00");
+
+        jLabel137.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel137.setText("Fabric Cost:");
+
+        cotSheetFabricCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        cotSheetFabricCost.setText("0.00");
+
+        cotSheetThreadCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        cotSheetThreadCost.setText("0.00");
+
+        cotSheetLableCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        cotSheetLableCost.setText("0.00");
+
+        jLabel140.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel140.setText("Tag Cost:");
+
+        jLabel151.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel151.setText("Total Material Cost");
+
+        jLabel150.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel150.setText("Elastic Cost: ");
+
+        cotSheetPaddingCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        cotSheetPaddingCost.setText("0.00");
+
+        jLabel141.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel141.setText("PE Bag Cost:");
+
+        cotSheetTaffataCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        cotSheetTaffataCost.setText("0.00");
+
+        jLabel144.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel144.setText("Toatal Cost Per Unit:");
+
+        jLabel142.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel142.setText("POH:");
+
+        jLabel153.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel153.setText("Padding Cost:");
+
+        jLabel154.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel154.setText("Taffata Cost:");
+
+        jLabel145.setFont(new java.awt.Font("Times New Roman", 0, 24));
+        jLabel145.setText("Cost Per Unit");
+
+        cotSheetToatalCost.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        cotSheetToatalCost.setText("0.00");
+
+        cotSheetElasticCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        cotSheetElasticCost.setText("0.00");
+
+        jLabel138.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel138.setText("Thread Cost:");
+
+        cotSheetTagCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        cotSheetTagCost.setText("0.00");
+
+        cotSheetPOH.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        cotSheetPOH.setText("0.00");
+
+        javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
+        jPanel31.setLayout(jPanel31Layout);
+        jPanel31Layout.setHorizontalGroup(
+            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel31Layout.createSequentialGroup()
+                .addGap(163, 163, 163)
+                .addComponent(jLabel145)
+                .addContainerGap())
+            .addGroup(jPanel31Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel144)
+                    .addGroup(jPanel31Layout.createSequentialGroup()
+                        .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel154)
+                            .addComponent(jLabel140)
+                            .addComponent(jLabel153)
+                            .addComponent(jLabel139)
+                            .addComponent(jLabel151)
+                            .addComponent(jLabel150)
+                            .addComponent(jLabel141)
+                            .addComponent(jLabel138)
+                            .addComponent(jLabel137)
+                            .addComponent(jLabel143)
+                            .addComponent(jLabel142))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
+                        .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cotSheetTotalMaterialCost)
+                            .addComponent(cotSheetElasticCost)
+                            .addComponent(cotSheetTagCost)
+                            .addComponent(cotSheetLableCost)
+                            .addComponent(cotSheetThreadCost)
+                            .addComponent(cotSheetFabricCost)
+                            .addComponent(cotSheetTaffataCost)
+                            .addComponent(cotSheetPaddingCost)
+                            .addComponent(cotSheetPEBagCost)
+                            .addComponent(cotSheetToatalCost)
+                            .addComponent(cotSheetLabourCost)
+                            .addComponent(cotSheetPOH))
+                        .addGap(39, 39, 39))))
+        );
+        jPanel31Layout.setVerticalGroup(
+            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel31Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel145, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel31Layout.createSequentialGroup()
+                        .addComponent(cotSheetFabricCost)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cotSheetPaddingCost)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cotSheetTaffataCost)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cotSheetThreadCost)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cotSheetLableCost)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cotSheetTagCost)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cotSheetElasticCost)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cotSheetPEBagCost)
+                        .addGap(18, 18, 18)
+                        .addComponent(cotSheetTotalMaterialCost)
+                        .addGap(18, 18, 18)
+                        .addComponent(cotSheetPOH))
+                    .addGroup(jPanel31Layout.createSequentialGroup()
+                        .addComponent(jLabel137)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel153)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel154)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel138)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel139)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel140)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel150)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel141)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel151)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel142)))
+                .addGap(64, 64, 64))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel31Layout.createSequentialGroup()
+                .addContainerGap(327, Short.MAX_VALUE)
+                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel143)
+                    .addComponent(cotSheetLabourCost))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel144)
+                    .addComponent(cotSheetToatalCost))
+                .addContainerGap())
+        );
+
+        jPanel32.setBackground(new java.awt.Color(204, 204, 204));
+
+        cotSheetTafffataCutWidth.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        cotSheetTafffataCutWidth.setText("0.00");
+
+        cotSheetSMVValue.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        cotSheetSMVValue.setText("0.00");
+
+        jLabel148.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel148.setText("SMV Value:");
+
+        jLabel146.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel146.setText("Fabric/Padding Cutting Width:");
+
+        jLabel156.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel156.setText("Taffata Cutting Height:");
+
+        cotSheetFabricPaddingCutWidth.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        cotSheetFabricPaddingCutWidth.setText("0.00");
+
+        jLabel149.setFont(new java.awt.Font("Times New Roman", 0, 24));
+        jLabel149.setText("Production Parameters");
+
+        jLabel155.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel155.setText("Taffata Cutting Width:");
+
+        cotSheetTaffataCutHeight.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        cotSheetTaffataCutHeight.setText("0.00");
+
+        cotSheetFabricPaddingCutHeight.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        cotSheetFabricPaddingCutHeight.setText("0.00");
+
+        jLabel147.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel147.setText("Fabric/Padding Cutting Height:");
+
+        javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
+        jPanel32.setLayout(jPanel32Layout);
+        jPanel32Layout.setHorizontalGroup(
+            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel32Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel156)
+                    .addComponent(jLabel147)
+                    .addComponent(jLabel146)
+                    .addComponent(jLabel155)
+                    .addComponent(jLabel148))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
+                .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cotSheetTafffataCutWidth, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cotSheetTaffataCutHeight, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cotSheetSMVValue, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cotSheetFabricPaddingCutHeight, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cotSheetFabricPaddingCutWidth, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(42, 42, 42))
+            .addGroup(jPanel32Layout.createSequentialGroup()
+                .addGap(124, 124, 124)
+                .addComponent(jLabel149)
+                .addContainerGap(141, Short.MAX_VALUE))
+        );
+        jPanel32Layout.setVerticalGroup(
+            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel32Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel149, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel32Layout.createSequentialGroup()
+                        .addComponent(cotSheetFabricPaddingCutWidth)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cotSheetFabricPaddingCutHeight)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cotSheetTafffataCutWidth)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cotSheetTaffataCutHeight)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cotSheetSMVValue))
+                    .addGroup(jPanel32Layout.createSequentialGroup()
+                        .addComponent(jLabel146)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel147)
+                        .addGap(7, 7, 7)
+                        .addComponent(jLabel155)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel156)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel148)))
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout cotSheetCPUPanelLayout = new javax.swing.GroupLayout(cotSheetCPUPanel);
+        cotSheetCPUPanel.setLayout(cotSheetCPUPanelLayout);
+        cotSheetCPUPanelLayout.setHorizontalGroup(
+            cotSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cotSheetCPUPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(cotSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel32, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel31, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+        cotSheetCPUPanelLayout.setVerticalGroup(
+            cotSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cotSheetCPUPanelLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jPanel31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(28, Short.MAX_VALUE))
+        );
+
+        cotSheetCostingPanel.setBackground(new java.awt.Color(204, 204, 204));
+        cotSheetCostingPanel.setMinimumSize(new java.awt.Dimension(500, 600));
+        cotSheetCostingPanel.setPreferredSize(new java.awt.Dimension(500, 500));
+
+        jLabel119.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jLabel119.setText("Cot Sheets Costing");
 
-        jLabel121.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        jLabel121.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel121.setText("Select Fabric Type:");
 
+        cotSheetMaterialTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cotSheetMaterialTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(CotSheetLogic.getMaterialTypes()));
 
+        cotSheetSizeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cotSheetSizeCombo.setModel(new javax.swing.DefaultComboBoxModel(CotSheetLogic.getCotSheetizes()));
         cotSheetSizeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3501,6 +3803,7 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
+        cotSheetFabricWastage.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cotSheetFabricWastage.setText("3");
         cotSheetFabricWastage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3510,30 +3813,31 @@ public class MainWindow extends javax.swing.JFrame {
 
         jLabel122.setText("%");
 
-        jLabel123.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        jLabel123.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel123.setText("Select Size:");
 
-        jLabel124.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        jLabel124.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel124.setText("Fabric Wastage:");
-
-        cotSheetUseCustom.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        cotSheetUseCustom.setText("Use Custom Sizes");
-        cotSheetUseCustom.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cotSheetUseCustomActionPerformed(evt);
-            }
-        });
 
         mettresProtectorCustomPanel.setVisible(false);
 
+        jLabel125.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel125.setText("Width (inches) :");
 
+        jLabel126.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel126.setText("Height (inches):");
 
+        cotSheetCustomWidth.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+
+        cotSheetCustomHeight.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+
+        cotSheetIncludeLable.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cotSheetIncludeLable.setText("Include Lable");
 
+        cotSheetIncludeTag.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cotSheetIncludeTag.setText("Include Tag");
 
+        cotSheetIncludePEBag.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cotSheetIncludePEBag.setText("Include PE Bag");
 
         javax.swing.GroupLayout cotSheetCustomPanelLayout = new javax.swing.GroupLayout(cotSheetCustomPanel);
@@ -3547,43 +3851,44 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(cotSheetIncludePEBag)
                     .addGroup(cotSheetCustomPanelLayout.createSequentialGroup()
                         .addGroup(cotSheetCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel125)
                             .addComponent(jLabel126)
-                            .addComponent(cotSheetIncludeLable))
-                        .addGap(100, 100, 100)
+                            .addComponent(jLabel125))
+                        .addGap(122, 122, 122)
                         .addGroup(cotSheetCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cotSheetCustomHeight, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
-                            .addComponent(cotSheetCustomWidth, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE))))
-                .addContainerGap())
+                            .addGroup(cotSheetCustomPanelLayout.createSequentialGroup()
+                                .addComponent(cotSheetCustomWidth, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
+                                .addGap(11, 11, 11))
+                            .addComponent(cotSheetCustomHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(cotSheetIncludeLable))
+                .addGap(93, 93, 93))
         );
         cotSheetCustomPanelLayout.setVerticalGroup(
             cotSheetCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cotSheetCustomPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(cotSheetCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cotSheetCustomPanelLayout.createSequentialGroup()
-                        .addComponent(cotSheetCustomWidth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cotSheetCustomHeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(cotSheetCustomPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel125)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel126)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cotSheetIncludeLable)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cotSheetIncludeTag)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cotSheetIncludePEBag)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addGap(17, 17, 17)
+                .addGroup(cotSheetCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel125)
+                    .addComponent(cotSheetCustomWidth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(cotSheetCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel126)
+                    .addComponent(cotSheetCustomHeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cotSheetIncludeLable)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cotSheetIncludeTag)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cotSheetIncludePEBag)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        jLabel127.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        jLabel127.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel127.setText("Taffata Wastage:");
 
-        jLabel128.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        jLabel128.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel128.setText("Padding Wastage:");
 
+        cotSheetTaffateWastage.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cotSheetTaffateWastage.setText("3");
         cotSheetTaffateWastage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3591,6 +3896,7 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
+        cotSheetPaddingWastage.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cotSheetPaddingWastage.setText("3");
         cotSheetPaddingWastage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3602,17 +3908,19 @@ public class MainWindow extends javax.swing.JFrame {
 
         jLabel130.setText("%");
 
-        jLabel131.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        jLabel131.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel131.setText("Select Padding Type:");
 
+        cotSheetPaddingTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cotSheetPaddingTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(CotSheetLogic.getPaddingTypes()));
 
-        jLabel132.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        jLabel132.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel132.setText("Width Quilting Shrinkage:");
 
-        jLabel133.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        jLabel133.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel133.setText("Height Quilting Shrinkage:");
 
+        cotSheetWidthQuiltingShrinkage.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cotSheetWidthQuiltingShrinkage.setText("8");
         cotSheetWidthQuiltingShrinkage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3620,6 +3928,7 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
+        cotSheetHeightQuiltiingShrinkage.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cotSheetHeightQuiltiingShrinkage.setText("3");
         cotSheetHeightQuiltiingShrinkage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3631,15 +3940,34 @@ public class MainWindow extends javax.swing.JFrame {
 
         jLabel135.setText("%");
 
-        jLabel136.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        jLabel136.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel136.setText("Select Taffata Type:");
 
+        cotSheetTaffataTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cotSheetTaffataTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(CotSheetLogic.getTaffataTypes()));
 
+        cotSheetSubmitButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cotSheetSubmitButton.setText("Find Cost Per Unit");
         cotSheetSubmitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cotSheetSubmitButtonActionPerformed(evt);
+            }
+        });
+
+        cotSheetUseCustom.setBackground(new java.awt.Color(204, 204, 204));
+        cotSheetUseCustom.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        cotSheetUseCustom.setText("Use Custom Sizes");
+        cotSheetUseCustom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cotSheetUseCustomActionPerformed(evt);
+            }
+        });
+
+        cotSheetNewCosting.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        cotSheetNewCosting.setText("New Costing");
+        cotSheetNewCosting.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cotSheetNewCostingActionPerformed(evt);
             }
         });
 
@@ -3648,86 +3976,69 @@ public class MainWindow extends javax.swing.JFrame {
         cotSheetCostingPanelLayout.setHorizontalGroup(
             cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
-                .addGap(166, 166, 166)
-                .addComponent(jLabel119)
-                .addContainerGap(170, Short.MAX_VALUE))
-            .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
-                .addGap(60, 60, 60)
+                .addGap(23, 23, 23)
+                .addComponent(cotSheetCustomPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(47, 47, 47))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cotSheetCostingPanelLayout.createSequentialGroup()
+                .addContainerGap(23, Short.MAX_VALUE)
                 .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
-                        .addComponent(cotSheetCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
+                    .addComponent(jLabel128)
+                    .addComponent(jLabel127)
+                    .addComponent(jLabel124)
+                    .addComponent(jLabel133)
+                    .addComponent(jLabel132)
+                    .addComponent(jLabel136)
+                    .addComponent(jLabel131)
+                    .addComponent(jLabel123)
+                    .addComponent(jLabel121)
+                    .addComponent(cotSheetUseCustom))
+                .addGap(70, 70, 70)
+                .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cotSheetPaddingTypeCombo, 0, 201, Short.MAX_VALUE)
+                    .addComponent(cotSheetSizeCombo, 0, 201, Short.MAX_VALUE)
+                    .addComponent(cotSheetMaterialTypeCombo, 0, 201, Short.MAX_VALUE)
                     .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
                         .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel136)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
-                                    .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel124)
-                                        .addComponent(jLabel128)
-                                        .addComponent(jLabel127)
-                                        .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
-                                            .addGap(201, 201, 201)
-                                            .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
-                                                    .addComponent(cotSheetFabricWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jLabel122))
-                                                .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
-                                                    .addComponent(cotSheetTaffateWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jLabel129))
-                                                .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
-                                                    .addComponent(cotSheetPaddingWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jLabel130)))))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
-                                        .addComponent(cotSheetUseCustom)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
-                                            .addComponent(jLabel132)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
-                                                .addComponent(jLabel131)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
-                                                .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel123)
-                                                    .addComponent(jLabel121)
-                                                    .addComponent(jLabel133))
-                                                .addGap(54, 54, 54)
-                                                .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(cotSheetMaterialTypeCombo, 0, 201, Short.MAX_VALUE)
-                                                    .addComponent(cotSheetSizeCombo, 0, 201, Short.MAX_VALUE)
-                                                    .addComponent(cotSheetPaddingTypeCombo, 0, 201, Short.MAX_VALUE)
-                                                    .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
-                                                        .addComponent(cotSheetWidthQuiltingShrinkage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(jLabel134))
-                                                    .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
-                                                        .addComponent(cotSheetHeightQuiltiingShrinkage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(jLabel135))
-                                                    .addComponent(cotSheetTaffataTypeCombo, 0, 201, Short.MAX_VALUE))
-                                                .addGap(9, 9, 9)))))))
-                        .addGap(47, 47, 47))))
+                                .addComponent(cotSheetPaddingWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel130))
+                            .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
+                                .addComponent(cotSheetTaffateWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel129))
+                            .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
+                                .addComponent(cotSheetHeightQuiltiingShrinkage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel135))
+                            .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
+                                .addComponent(cotSheetWidthQuiltingShrinkage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel134))
+                            .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
+                                .addComponent(cotSheetFabricWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel122)))
+                        .addGap(158, 158, 158))
+                    .addComponent(cotSheetTaffataTypeCombo, 0, 201, Short.MAX_VALUE))
+                .addGap(47, 47, 47))
             .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
-                .addGap(197, 197, 197)
-                .addComponent(cotSheetSubmitButton)
-                .addContainerGap(202, Short.MAX_VALUE))
+                .addGap(161, 161, 161)
+                .addComponent(jLabel119)
+                .addContainerGap(154, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cotSheetCostingPanelLayout.createSequentialGroup()
+                .addGap(183, 183, 183)
+                .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(cotSheetSubmitButton)
+                    .addComponent(cotSheetNewCosting))
+                .addContainerGap(167, Short.MAX_VALUE))
         );
         cotSheetCostingPanelLayout.setVerticalGroup(
             cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel119)
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
                 .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cotSheetMaterialTypeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel121))
@@ -3737,321 +4048,83 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(jLabel123))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel131)
-                    .addComponent(cotSheetPaddingTypeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cotSheetPaddingTypeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel131))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel136)
-                    .addComponent(cotSheetTaffataTypeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel132)
+                    .addComponent(cotSheetTaffataTypeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel136))
+                .addGap(11, 11, 11)
+                .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel134)
                     .addComponent(cotSheetWidthQuiltingShrinkage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel134))
+                    .addComponent(jLabel132))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel133)
+                .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(cotSheetHeightQuiltiingShrinkage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel135))
+                    .addComponent(jLabel135)
+                    .addComponent(jLabel133))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel124)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel127)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel128))
-                    .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
-                        .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cotSheetFabricWastage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel122))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cotSheetTaffateWastage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel129))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cotSheetPaddingWastage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel130))))
+                .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel122)
+                    .addComponent(cotSheetFabricWastage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel124))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel129)
+                    .addComponent(cotSheetTaffateWastage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel127))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel128)
+                    .addComponent(cotSheetPaddingWastage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel130))
+                .addGap(23, 23, 23)
                 .addComponent(cotSheetUseCustom)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cotSheetCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(81, 81, 81)
+                .addGap(37, 37, 37)
                 .addComponent(cotSheetSubmitButton)
-                .addGap(448, 448, 448))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cotSheetNewCosting)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         cotSheetCustomPanel.setVisible(false);
+        cotSheetNewCosting.setVisible(false);
 
-        jLabel137.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        jLabel137.setText("Fabric Cost:");
-
-        jLabel138.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        jLabel138.setText("Thread Cost:");
-
-        jLabel139.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        jLabel139.setText("Lable Cost:");
-
-        jLabel140.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        jLabel140.setText("Tag Cost:");
-
-        jLabel141.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        jLabel141.setText("PE Bag Cost:");
-
-        jLabel142.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        jLabel142.setText("POH:");
-
-        jLabel143.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        jLabel143.setText("Labour Cost:");
-
-        jLabel144.setFont(new java.awt.Font("Times New Roman", 1, 18));
-        jLabel144.setText("Toatal Cost Per Unit:");
-
-        cotSheetFabricCost.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        cotSheetFabricCost.setText("0.00");
-
-        cotSheetThreadCost.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        cotSheetThreadCost.setText("0.00");
-
-        cotSheetLableCost.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        cotSheetLableCost.setText("0.00");
-
-        cotSheetTagCost.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        cotSheetTagCost.setText("0.00");
-
-        cotSheetPEBagCost.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        cotSheetPEBagCost.setText("0.00");
-
-        cotSheetPOH.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        cotSheetPOH.setText("0.00");
-
-        cotSheetLabourCost.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        cotSheetLabourCost.setText("0.00");
-
-        cotSheetToatalCost.setFont(new java.awt.Font("Times New Roman", 1, 18));
-        cotSheetToatalCost.setText("0.00");
-
-        jLabel145.setFont(new java.awt.Font("Times New Roman", 0, 24));
-        jLabel145.setText("Cost Per Unit");
-
-        jLabel146.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        jLabel146.setText("Fabric/Padding Cutting Width:");
-
-        jLabel147.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        jLabel147.setText("Fabric/Padding Cutting Height:");
-
-        cotSheetFabricPaddingCutWidth.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        cotSheetFabricPaddingCutWidth.setText("0.00");
-
-        cotSheetFabricPaddingCutHeight.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        cotSheetFabricPaddingCutHeight.setText("0.00");
-
-        jLabel148.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        jLabel148.setText("SMV Value:");
-
-        cotSheetSMVValue.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        cotSheetSMVValue.setText("0.00");
-
-        jLabel149.setFont(new java.awt.Font("Times New Roman", 0, 24));
-        jLabel149.setText("Production Parameters");
-
-        jLabel150.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        jLabel150.setText("Elastic Cost: ");
-
-        cotSheetElasticCost.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        cotSheetElasticCost.setText("0.00");
-
-        jLabel151.setFont(new java.awt.Font("Times New Roman", 1, 14));
-        jLabel151.setText("Total Material Cost");
-
-        cotSheetTotalMaterialCost.setFont(new java.awt.Font("Times New Roman", 1, 14));
-        cotSheetTotalMaterialCost.setText("0.00");
-
-        jLabel153.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        jLabel153.setText("Padding Cost:");
-
-        jLabel154.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        jLabel154.setText("Taffata Cost:");
-
-        cotSheetPaddingCost.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        cotSheetPaddingCost.setText("0.00");
-
-        cotSheetTaffataCost.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        cotSheetTaffataCost.setText("0.00");
-
-        jLabel155.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        jLabel155.setText("Taffata Cutting Width:");
-
-        jLabel156.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        jLabel156.setText("Taffata Cutting Height:");
-
-        cotSheetTafffataCutWidth.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        cotSheetTafffataCutWidth.setText("0.00");
-
-        cotSheetTaffataCutHeight.setFont(new java.awt.Font("Times New Roman", 0, 14));
-        cotSheetTaffataCutHeight.setText("0.00");
-
-        javax.swing.GroupLayout cotSheetCPUPanelLayout = new javax.swing.GroupLayout(cotSheetCPUPanel);
-        cotSheetCPUPanel.setLayout(cotSheetCPUPanelLayout);
-        cotSheetCPUPanelLayout.setHorizontalGroup(
-            cotSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cotSheetCPUPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
+        jPanel30.setLayout(jPanel30Layout);
+        jPanel30Layout.setHorizontalGroup(
+            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel30Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(cotSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cotSheetCPUPanelLayout.createSequentialGroup()
-                        .addGroup(cotSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel142)
-                            .addGroup(cotSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cotSheetCPUPanelLayout.createSequentialGroup()
-                                    .addComponent(jLabel144)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cotSheetToatalCost))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cotSheetCPUPanelLayout.createSequentialGroup()
-                                    .addComponent(jLabel143)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cotSheetLabourCost))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cotSheetCPUPanelLayout.createSequentialGroup()
-                                    .addGap(359, 359, 359)
-                                    .addComponent(cotSheetPOH))))
-                        .addContainerGap())
-                    .addGroup(cotSheetCPUPanelLayout.createSequentialGroup()
-                        .addGroup(cotSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel151, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cotSheetCPUPanelLayout.createSequentialGroup()
-                                .addGap(359, 359, 359)
-                                .addComponent(cotSheetTotalMaterialCost))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cotSheetCPUPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel141)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 297, Short.MAX_VALUE)
-                                .addComponent(cotSheetPEBagCost))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cotSheetCPUPanelLayout.createSequentialGroup()
-                                .addGap(76, 76, 76)
-                                .addComponent(jLabel149))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cotSheetCPUPanelLayout.createSequentialGroup()
-                                .addGap(136, 136, 136)
-                                .addComponent(jLabel145))
-                            .addGroup(cotSheetCPUPanelLayout.createSequentialGroup()
-                                .addGroup(cotSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel138)
-                                    .addComponent(jLabel139)
-                                    .addComponent(jLabel140)
-                                    .addComponent(jLabel137)
-                                    .addComponent(jLabel154)
-                                    .addComponent(jLabel153))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 293, Short.MAX_VALUE)
-                                .addGroup(cotSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(cotSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(cotSheetPaddingCost)
-                                        .addComponent(cotSheetFabricCost)
-                                        .addGroup(cotSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(cotSheetThreadCost)
-                                            .addComponent(cotSheetLableCost)
-                                            .addComponent(cotSheetTaffataCost)))
-                                    .addComponent(cotSheetTagCost)))
-                            .addGroup(cotSheetCPUPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel150)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 297, Short.MAX_VALUE)
-                                .addComponent(cotSheetElasticCost))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cotSheetCPUPanelLayout.createSequentialGroup()
-                                .addGroup(cotSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel156)
-                                    .addComponent(jLabel155)
-                                    .addComponent(jLabel146)
-                                    .addComponent(jLabel147)
-                                    .addComponent(jLabel148))
-                                .addGap(186, 186, 186)
-                                .addGroup(cotSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(cotSheetFabricPaddingCutHeight)
-                                    .addComponent(cotSheetTafffataCutWidth)
-                                    .addComponent(cotSheetTaffataCutHeight)
-                                    .addComponent(cotSheetSMVValue)
-                                    .addComponent(cotSheetFabricPaddingCutWidth))))
-                        .addContainerGap(22, Short.MAX_VALUE))))
+                .addComponent(cotSheetCostingPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        cotSheetCPUPanelLayout.setVerticalGroup(
-            cotSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cotSheetCPUPanelLayout.createSequentialGroup()
+        jPanel30Layout.setVerticalGroup(
+            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel30Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(cotSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(cotSheetCPUPanelLayout.createSequentialGroup()
-                        .addGroup(cotSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(cotSheetCPUPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel145, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(79, 79, 79))
-                            .addGroup(cotSheetCPUPanelLayout.createSequentialGroup()
-                                .addComponent(cotSheetFabricCost)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cotSheetPaddingCost)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cotSheetTaffataCost)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cotSheetThreadCost)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cotSheetLableCost)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cotSheetTagCost))
-                    .addGroup(cotSheetCPUPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel137)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel153)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel154)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel138)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel139)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel140)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cotSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cotSheetElasticCost)
-                    .addComponent(jLabel150))
-                .addGap(34, 34, 34)
-                .addGroup(cotSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel141)
-                    .addComponent(cotSheetPEBagCost))
-                .addGap(29, 29, 29)
-                .addGroup(cotSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel151)
-                    .addComponent(cotSheetTotalMaterialCost))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cotSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel142)
-                    .addComponent(cotSheetPOH))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cotSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel143)
-                    .addComponent(cotSheetLabourCost))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cotSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel144)
-                    .addComponent(cotSheetToatalCost))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel149, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(cotSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cotSheetCPUPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel146)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel147)
-                        .addGap(7, 7, 7)
-                        .addComponent(jLabel155)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel156)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel148))
-                    .addGroup(cotSheetCPUPanelLayout.createSequentialGroup()
-                        .addComponent(cotSheetFabricPaddingCutWidth)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cotSheetFabricPaddingCutHeight)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cotSheetTafffataCutWidth)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cotSheetTaffataCutHeight)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cotSheetSMVValue)))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addComponent(cotSheetCostingPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
+        jPanel29.setLayout(jPanel29Layout);
+        jPanel29Layout.setHorizontalGroup(
+            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel29Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel29Layout.setVerticalGroup(
+            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel29Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout cotSheetsLayout = new javax.swing.GroupLayout(cotSheets);
@@ -4059,18 +4132,18 @@ public class MainWindow extends javax.swing.JFrame {
         cotSheetsLayout.setHorizontalGroup(
             cotSheetsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cotSheetsLayout.createSequentialGroup()
-                .addComponent(cotSheetCostingPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
+                .addComponent(jPanel29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cotSheetCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         cotSheetsLayout.setVerticalGroup(
             cotSheetsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cotSheetsLayout.createSequentialGroup()
-                .addComponent(cotSheetCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(447, Short.MAX_VALUE))
-            .addComponent(cotSheetCostingPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(cotSheetCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
+
+        cotSheetCPUPanel.setVisible(false);
 
         cotSheetsPane.setViewportView(cotSheets);
 
@@ -5320,6 +5393,30 @@ public class MainWindow extends javax.swing.JFrame {
         cotSheetTafffataCutWidth.setText(format.format(cReturn.getTaffataCuttingWidth()) + "");
         cotSheetTaffataCutHeight.setText(format.format(cReturn.getTaffataCuttingWidth()) + "");
         cotSheetSMVValue.setText(format.format(cReturn.getSmvValue()) + "");
+
+        cotSheetCPUPanel.setVisible(true);
+        cotSheetSubmitButton.setVisible(false);
+        cotSheetNewCosting.setVisible(true);
+
+        //disabling input fields
+        cotSheetMaterialTypeCombo.setEnabled(false);
+        cotSheetSizeCombo.setEnabled(false);
+        cotSheetPaddingTypeCombo.setEnabled(false);
+        cotSheetTaffataTypeCombo.setEnabled(false);
+        cotSheetWidthQuiltingShrinkage.setEnabled(false);
+        cotSheetHeightQuiltiingShrinkage.setEnabled(false);
+        cotSheetFabricWastage.setEnabled(false);
+        cotSheetTaffateWastage.setEnabled(false);
+        cotSheetPaddingWastage.setEnabled(false);
+
+        cotSheetUseCustom.setEnabled(false);
+        cotSheetCustomHeight.setEnabled(false);
+        cotSheetCustomWidth.setEnabled(false);
+
+        cotSheetIncludeLable.setEnabled(false);
+        cotSheetIncludePEBag.setEnabled(false);
+        cotSheetIncludeTag.setEnabled(false);
+        
 }//GEN-LAST:event_cotSheetSubmitButtonActionPerformed
 
     private void cotSheetHeightQuiltiingShrinkageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cotSheetHeightQuiltiingShrinkageActionPerformed
@@ -6025,6 +6122,49 @@ public class MainWindow extends javax.swing.JFrame {
 
     }//GEN-LAST:event_mattressProtectorNewCostingButtonActionPerformed
 
+    private void cotSheetNewCostingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cotSheetNewCostingActionPerformed
+        cotSheetCPUPanel.setVisible(false);
+        cotSheetSubmitButton.setVisible(true);
+        cotSheetNewCosting.setVisible(false);
+
+        cotSheetMaterialTypeCombo.setSelectedIndex(0);
+        cotSheetSizeCombo.setSelectedIndex(0);
+        cotSheetPaddingTypeCombo.setSelectedIndex(0);
+        cotSheetTaffataTypeCombo.setSelectedIndex(0);
+        cotSheetWidthQuiltingShrinkage.setText("8");
+        cotSheetHeightQuiltiingShrinkage.setText("3");
+        cotSheetFabricWastage.setText("3");
+        cotSheetTaffateWastage.setText("3");
+        cotSheetPaddingWastage.setText("3");
+
+        cotSheetUseCustom.setSelected(false);
+        cotSheetCustomPanel.setVisible(false);
+        cotSheetCustomHeight.setText("");
+        cotSheetCustomWidth.setText("");
+
+        cotSheetIncludeLable.setSelected(false);
+        cotSheetIncludePEBag.setSelected(false);
+        cotSheetIncludeTag.setSelected(false);
+
+                cotSheetMaterialTypeCombo.setEnabled(true);
+        cotSheetSizeCombo.setEnabled(true);
+        cotSheetPaddingTypeCombo.setEnabled(true);
+        cotSheetTaffataTypeCombo.setEnabled(true);
+        cotSheetWidthQuiltingShrinkage.setEnabled(true);
+        cotSheetHeightQuiltiingShrinkage.setEnabled(true);
+        cotSheetFabricWastage.setEnabled(true);
+        cotSheetTaffateWastage.setEnabled(true);
+        cotSheetPaddingWastage.setEnabled(true);
+
+        cotSheetUseCustom.setEnabled(true);
+        cotSheetCustomHeight.setEnabled(true);
+        cotSheetCustomWidth.setEnabled(true);
+
+        cotSheetIncludeLable.setEnabled(true);
+        cotSheetIncludePEBag.setEnabled(true);
+        cotSheetIncludeTag.setEnabled(true);
+    }//GEN-LAST:event_cotSheetNewCostingActionPerformed
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
@@ -6092,6 +6232,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel cotSheetLableCost;
     private javax.swing.JLabel cotSheetLabourCost;
     private javax.swing.JComboBox cotSheetMaterialTypeCombo;
+    private javax.swing.JButton cotSheetNewCosting;
     private javax.swing.JLabel cotSheetPEBagCost;
     private javax.swing.JLabel cotSheetPOH;
     private javax.swing.JLabel cotSheetPaddingCost;
@@ -6435,7 +6576,11 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel27;
     private javax.swing.JPanel jPanel28;
+    private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel30;
+    private javax.swing.JPanel jPanel31;
+    private javax.swing.JPanel jPanel32;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
