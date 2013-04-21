@@ -1,6 +1,9 @@
 package algorithms;
 
 import java.util.Arrays;
+import org.apache.commons.math3.analysis.UnivariateFunction;
+import org.apache.commons.math3.analysis.interpolation.SplineInterpolator;
+import org.apache.commons.math3.analysis.interpolation.UnivariateInterpolator;
 import org.apache.commons.math3.linear.Array2DRowRealMatrix;
 import org.apache.commons.math3.linear.ArrayRealVector;
 import org.apache.commons.math3.linear.DecompositionSolver;
@@ -19,15 +22,19 @@ public class Approximate {
 
     public double getApproximatedValue(double val) {
         if (xVal.length >= 4) {
-            double[] temp = Arrays.copyOf(xVal, xVal.length);
-            Arrays.sort(temp);
-            double maxVal = temp[temp.length - 1];
+            double[] sorted_x = Arrays.copyOf(xVal, xVal.length);
+            double[] sorted_y = Arrays.copyOf(yVal, yVal.length);
+            Arrays.sort(sorted_x);
+            Arrays.sort(sorted_y);
+            double maxVal = sorted_x[sorted_x.length - 1];
             if (val <= maxVal && val >= 0) {//value can ge interpolated
-                Spline spline = new Spline(xVal, yVal);
-                return spline.spline_value(val);
+                UnivariateInterpolator interpolator = new SplineInterpolator();
+                UnivariateFunction function = interpolator.interpolate(sorted_x,sorted_y);
+                double d = function.value(val);
+                return d;
             } else {//value has to be extrapolated (we use max of quadratic extrapolation and
                 //linear regression for the last three points)
-                double max_x1 = temp[temp.length - 1], max_x2 = temp[temp.length - 2], max_x3 = temp[temp.length - 3];
+                double max_x1 = sorted_x[sorted_x.length - 1], max_x2 = sorted_x[sorted_x.length - 2], max_x3 = sorted_x[sorted_x.length - 3];
                 double max_y1 = 0.0, max_y2 = 0.0, max_y3 = 0.0;
                 for (int i = 0; i < yVal.length; i++) {
                     if (xVal[i] == max_x1) {
@@ -52,7 +59,6 @@ public class Approximate {
                 return Math.max(quadVal, regVal);
             }
         }else if(xVal.length==3){
-            //linear regression for the last three points)
                 RealMatrix coefficients =
                         new Array2DRowRealMatrix(new double[][]{{xVal[0] * xVal[0], xVal[0], 1}, {xVal[1] * xVal[1], xVal[1], 1}, {xVal[2] * xVal[2], xVal[2], 1}},
                         false);
