@@ -225,11 +225,11 @@ public class PillowsDataAccess {
     public String[] getFiberTypes(String range) throws SQLException {
         statement = (Statement) connect.createStatement();
         if (range.equalsIgnoreCase("Classic") || range.equalsIgnoreCase("Super")) {
-            resultSet = statement.executeQuery("select distinct name from celcius.fibers where " + range + "=true");
+            resultSet = statement.executeQuery("select distinct name from celcius.fibers where " + range.toLowerCase() + "=true");
         }else if(range.equalsIgnoreCase("Gel/Feather")){
-            resultSet = statement.executeQuery("select distinct name from celcius.fibers where Gel_Feather=true");
+            resultSet = statement.executeQuery("select distinct name from celcius.fibers where gelfeather=true");
         }else if(range.equalsIgnoreCase("Kapok/Organic")){
-           resultSet = statement.executeQuery("select distinct name from celcius.fibers where Kapok_Organic=true");
+           resultSet = statement.executeQuery("select distinct name from celcius.fibers where kapokorganic=true");
         } else {
             resultSet = statement.executeQuery("select distinct name from celcius.fibers");
         }
@@ -261,56 +261,56 @@ public class PillowsDataAccess {
         result[0][0] = 0.0;
         result[1][0] = 0.0;
         int count = 1;
-        double val = Double.parseDouble(resultSet.getString("8X12"));
+        double val = Double.parseDouble(resultSet.getString("8_12"));
         if (val > 0) {
             result[0][count] = 20.0;
             result[1][count] = val;
             count++;
         }
 
-        val = Double.parseDouble(resultSet.getString("10X14"));
+        val = Double.parseDouble(resultSet.getString("10_14"));
         if (val > 0) {
             result[0][count] = 24.0;
             result[1][count] = val;
             count++;
         }
 
-        val = Double.parseDouble(resultSet.getString("11X15"));
+        val = Double.parseDouble(resultSet.getString("11_15"));
         if (val > 0) {
             result[0][count] = 26.0;
             result[1][count] = val;
             count++;
         }
 
-        val = Double.parseDouble(resultSet.getString("12X18"));
+        val = Double.parseDouble(resultSet.getString("12_18"));
         if (val > 0) {
             result[0][count] = 30.0;
             result[1][count] = val;
             count++;
         }
 
-        val = Double.parseDouble(resultSet.getString("16X24"));
+        val = Double.parseDouble(resultSet.getString("16_24"));
         if (val > 0) {
             result[0][count] = 40.0;
             result[1][count] = val;
             count++;
         }
 
-        val = Double.parseDouble(resultSet.getString("18X27"));
+        val = Double.parseDouble(resultSet.getString("18_27"));
         if (val > 0) {
             result[0][count] = 45.0;
             result[1][count] = val;
             count++;
         }
 
-        val = Double.parseDouble(resultSet.getString("20X30"));
+        val = Double.parseDouble(resultSet.getString("20_30"));
         if (val > 0) {
             result[0][count] = 50.0;
             result[1][count] = val;
             count++;
         }
 
-        val = Double.parseDouble(resultSet.getString("20X40"));
+        val = Double.parseDouble(resultSet.getString("20_40"));
         if (val > 0) {
             result[0][count] = 60.0;
             result[1][count] = val;

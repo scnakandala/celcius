@@ -32,8 +32,8 @@ import javax.persistence.Transient;
     @NamedQuery(name = "Fibers.findByPrice", query = "SELECT f FROM Fibers f WHERE f.price = :price"),
     @NamedQuery(name = "Fibers.findByClassic", query = "SELECT f FROM Fibers f WHERE f.classic = :classic"),
     @NamedQuery(name = "Fibers.findBySuper1", query = "SELECT f FROM Fibers f WHERE f.super1 = :super1"),
-    @NamedQuery(name = "Fibers.findByGelFeather", query = "SELECT f FROM Fibers f WHERE f.gelFeather = :gelFeather"),
-    @NamedQuery(name = "Fibers.findByKapokOraganic", query = "SELECT f FROM Fibers f WHERE f.kapokOraganic = :kapokOraganic")})
+    @NamedQuery(name = "Fibers.findByGelfeather", query = "SELECT f FROM Fibers f WHERE f.gelfeather = :gelfeather"),
+    @NamedQuery(name = "Fibers.findByKapokorganic", query = "SELECT f FROM Fibers f WHERE f.kapokorganic = :kapokorganic")})
 public class Fibers implements Serializable {
     @Transient
     private PropertyChangeSupport changeSupport = new PropertyChangeSupport(this);
@@ -50,17 +50,17 @@ public class Fibers implements Serializable {
     @Column(name = "price")
     private double price;
     @Basic(optional = false)
-    @Column(name = "Classic")
+    @Column(name = "classic")
     private boolean classic;
     @Basic(optional = false)
-    @Column(name = "Super")
+    @Column(name = "super")
     private boolean super1;
     @Basic(optional = false)
-    @Column(name = "Gel_Feather")
-    private boolean gelFeather;
+    @Column(name = "gelfeather")
+    private boolean gelfeather;
     @Basic(optional = false)
-    @Column(name = "Kapok_Oraganic")
-    private boolean kapokOraganic;
+    @Column(name = "kapokorganic")
+    private boolean kapokorganic;
 
     public Fibers() {
     }
@@ -69,14 +69,14 @@ public class Fibers implements Serializable {
         this.id = id;
     }
 
-    public Fibers(Integer id, String name, double price, boolean classic, boolean super1, boolean gelFeather, boolean kapokOraganic) {
+    public Fibers(Integer id, String name, double price, boolean classic, boolean super1, boolean gelfeather, boolean kapokorganic) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.classic = classic;
         this.super1 = super1;
-        this.gelFeather = gelFeather;
-        this.kapokOraganic = kapokOraganic;
+        this.gelfeather = gelfeather;
+        this.kapokorganic = kapokorganic;
     }
 
     public Integer getId() {
@@ -129,24 +129,24 @@ public class Fibers implements Serializable {
         changeSupport.firePropertyChange("super1", oldSuper1, super1);
     }
 
-    public boolean getGelFeather() {
-        return gelFeather;
+    public boolean getGelfeather() {
+        return gelfeather;
     }
 
-    public void setGelFeather(boolean gelFeather) {
-        boolean oldGelFeather = this.gelFeather;
-        this.gelFeather = gelFeather;
-        changeSupport.firePropertyChange("gelFeather", oldGelFeather, gelFeather);
+    public void setGelfeather(boolean gelfeather) {
+        boolean oldGelfeather = this.gelfeather;
+        this.gelfeather = gelfeather;
+        changeSupport.firePropertyChange("gelfeather", oldGelfeather, gelfeather);
     }
 
-    public boolean getKapokOraganic() {
-        return kapokOraganic;
+    public boolean getKapokorganic() {
+        return kapokorganic;
     }
 
-    public void setKapokOraganic(boolean kapokOraganic) {
-        boolean oldKapokOraganic = this.kapokOraganic;
-        this.kapokOraganic = kapokOraganic;
-        changeSupport.firePropertyChange("kapokOraganic", oldKapokOraganic, kapokOraganic);
+    public void setKapokorganic(boolean kapokorganic) {
+        boolean oldKapokorganic = this.kapokorganic;
+        this.kapokorganic = kapokorganic;
+        changeSupport.firePropertyChange("kapokorganic", oldKapokorganic, kapokorganic);
     }
 
     @Override
