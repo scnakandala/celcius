@@ -5,7 +5,7 @@ import dataaccess.DuvetsDataAccess;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import viewmodels.DuvetsViewModel;
+import viewmodels.DovetsViewModel;
 
 public class DuvetsLogic {
 
@@ -63,7 +63,7 @@ public class DuvetsLogic {
         return null;
     }
 
-    public static DuvetsViewModel getCostPerUnit(DuvetsViewModel dCost) {
+    public static DovetsViewModel getCostPerUnit(DovetsViewModel dCost) {
         try {
             Double fabricPrice = DuvetsDataAccess.getInstance().getMaterialPrice(dCost.getMaterialType());
             Integer materialWidth = DuvetsDataAccess.getInstance().getMaterialWidth(dCost.getMaterialType());
