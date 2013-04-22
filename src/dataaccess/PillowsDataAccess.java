@@ -181,7 +181,7 @@ public class PillowsDataAccess {
 
     public double[][] getSMVXYPairs(String range, String type) throws SQLException {
         statement = (Statement) connect.createStatement();
-        String sql = "select size,smv from celcius.pillowcases where `range` ='" + range + ", and type ='" + type + "'";
+        String sql = "select size,smv from celcius.pillows where `range` ='" + range + "' and type ='" + type + "'";
         resultSet = statement.executeQuery(sql);
         ArrayList<String> sizes = new ArrayList<String>();
         ArrayList<Double> smvs = new ArrayList<Double>();
