@@ -29,6 +29,9 @@
   <persistence-unit name="celciusPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>entities.Fibers</class>
+    <class>entities.Pillows</class>
+    <class>entities.PillowAccessories</class>
+    <class>entities.PillowsFiberWeights</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/celcius"/>
       <property name="javax.persistence.jdbc.password" value=""/>

@@ -100,6 +100,13 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel207 = new javax.swing.JLabel();
         mattressprotectorView1 = new view.MattressprotectorView();
         mattressprotectorAccessoriesView1 = new view.MattressprotectorAccessoriesView();
+        pillowsPanel = new javax.swing.JPanel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jPanel40 = new javax.swing.JPanel();
+        jLabel219 = new javax.swing.JLabel();
+        jLabel223 = new javax.swing.JLabel();
+        pillowAccessories1 = new view.PillowAccessories();
+        jLabel238 = new javax.swing.JLabel();
         userTabbedPane = new javax.swing.JTabbedPane();
         homeScrollPane = new javax.swing.JScrollPane();
         home = new javax.swing.JPanel();
@@ -1063,6 +1070,63 @@ public class MainWindow extends javax.swing.JFrame {
 
         adminTabbedPane.addTab("Mattress Protectors", mattressprotectorPanel);
 
+        jLabel219.setFont(new java.awt.Font("Tahoma", 0, 18));
+        jLabel219.setText("Pillows Accessories");
+
+        jLabel223.setFont(new java.awt.Font("Tahoma", 0, 18));
+        jLabel223.setText("Pillow Sizes");
+
+        pillowAccessories1.setMinimumSize(new java.awt.Dimension(400, 400));
+        pillowAccessories1.setPreferredSize(new java.awt.Dimension(400, 400));
+
+        jLabel238.setFont(new java.awt.Font("Tahoma", 0, 18));
+        jLabel238.setText("Fiber Weights");
+
+        javax.swing.GroupLayout jPanel40Layout = new javax.swing.GroupLayout(jPanel40);
+        jPanel40.setLayout(jPanel40Layout);
+        jPanel40Layout.setHorizontalGroup(
+            jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel40Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel40Layout.createSequentialGroup()
+                        .addComponent(jLabel223)
+                        .addGap(341, 341, 341)
+                        .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel219)
+                            .addComponent(pillowAccessories1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel238))
+                .addContainerGap(179, Short.MAX_VALUE))
+        );
+        jPanel40Layout.setVerticalGroup(
+            jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel40Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel223)
+                    .addComponent(jLabel219))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pillowAccessories1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(jLabel238)
+                .addContainerGap(514, Short.MAX_VALUE))
+        );
+
+        jScrollPane9.setViewportView(jPanel40);
+
+        javax.swing.GroupLayout pillowsPanelLayout = new javax.swing.GroupLayout(pillowsPanel);
+        pillowsPanel.setLayout(pillowsPanelLayout);
+        pillowsPanelLayout.setHorizontalGroup(
+            pillowsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
+        );
+        pillowsPanelLayout.setVerticalGroup(
+            pillowsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE)
+        );
+
+        adminTabbedPane.addTab("Mattress Protectors", pillowsPanel);
+
         userTabbedPane.setPreferredSize(new java.awt.Dimension(800, 600));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/celcius_luxury_logo.png"))); // NOI18N
@@ -1098,7 +1162,7 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(homeLayout.createSequentialGroup()
                 .addGap(107, 107, 107)
                 .addComponent(jPanel39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         homeLayout.setVerticalGroup(
             homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4651,7 +4715,7 @@ public class MainWindow extends javax.swing.JFrame {
         duvetSizeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16));
         duvetSizeCombo.setModel(new javax.swing.DefaultComboBoxModel(DuvetsLogic.getDuvetsizes((String)duvetTypeCombo.getSelectedItem())));
 
-        duvetsSubmitButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        duvetsSubmitButton.setFont(new java.awt.Font("Times New Roman", 0, 16));
         duvetsSubmitButton.setText("Find Cost Per Unit");
         duvetsSubmitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -4842,7 +4906,7 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
-        duvetsNewCostingButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        duvetsNewCostingButton.setFont(new java.awt.Font("Times New Roman", 0, 16));
         duvetsNewCostingButton.setText("New Costing");
         duvetsNewCostingButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -4888,14 +4952,13 @@ public class MainWindow extends javax.swing.JFrame {
                         .addComponent(duvetsGelFeatherPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(cotSheetCostingPanel1Layout.createSequentialGroup()
                         .addGap(159, 159, 159)
-                        .addComponent(jLabel120)))
+                        .addComponent(jLabel120))
+                    .addGroup(cotSheetCostingPanel1Layout.createSequentialGroup()
+                        .addGap(176, 176, 176)
+                        .addGroup(cotSheetCostingPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(duvetsNewCostingButton)
+                            .addComponent(duvetsSubmitButton))))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cotSheetCostingPanel1Layout.createSequentialGroup()
-                .addGap(176, 176, 176)
-                .addGroup(cotSheetCostingPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(duvetsNewCostingButton)
-                    .addComponent(duvetsSubmitButton))
-                .addContainerGap(161, Short.MAX_VALUE))
         );
         cotSheetCostingPanel1Layout.setVerticalGroup(
             cotSheetCostingPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5367,7 +5430,7 @@ public class MainWindow extends javax.swing.JFrame {
         pillowSizeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16));
         pillowSizeCombo.setModel(new javax.swing.DefaultComboBoxModel(PillowLogic.getPillowSizes((String)pillowRangeCombo.getSelectedItem(),(String)pillowTypeCombo.getSelectedItem())));
 
-        pillowsSubmitButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        pillowsSubmitButton.setFont(new java.awt.Font("Times New Roman", 0, 16));
         pillowsSubmitButton.setText("Find Cost Per Unit");
         pillowsSubmitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -5384,7 +5447,7 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
-        pillowsNewCostingButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        pillowsNewCostingButton.setFont(new java.awt.Font("Times New Roman", 0, 16));
         pillowsNewCostingButton.setText("New Costing");
         pillowsNewCostingButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -5431,47 +5494,47 @@ public class MainWindow extends javax.swing.JFrame {
         cotSheetCostingPanel2Layout.setHorizontalGroup(
             cotSheetCostingPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cotSheetCostingPanel2Layout.createSequentialGroup()
-                .addGap(191, 191, 191)
-                .addGroup(cotSheetCostingPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(pillowsSubmitButton)
-                    .addComponent(pillowsNewCostingButton))
-                .addContainerGap(155, Short.MAX_VALUE))
-            .addGroup(cotSheetCostingPanel2Layout.createSequentialGroup()
-                .addGap(173, 173, 173)
-                .addComponent(jLabel228)
-                .addContainerGap(171, Short.MAX_VALUE))
-            .addGroup(cotSheetCostingPanel2Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
                 .addGroup(cotSheetCostingPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cotSheetCostingPanel2Layout.createSequentialGroup()
-                        .addGroup(cotSheetCostingPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel236)
-                            .addComponent(jLabel235)
-                            .addComponent(jLabel231)
-                            .addComponent(jLabel229)
-                            .addComponent(jLabel232)
-                            .addComponent(jLabel246)
-                            .addComponent(jLabel237)
-                            .addComponent(pillowsUseCustom))
-                        .addGap(72, 72, 72)
+                        .addGap(191, 191, 191)
+                        .addGroup(cotSheetCostingPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(pillowsSubmitButton)
+                            .addComponent(pillowsNewCostingButton)))
+                    .addGroup(cotSheetCostingPanel2Layout.createSequentialGroup()
+                        .addGap(173, 173, 173)
+                        .addComponent(jLabel228))
+                    .addGroup(cotSheetCostingPanel2Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
                         .addGroup(cotSheetCostingPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(cotSheetCostingPanel2Layout.createSequentialGroup()
-                                .addComponent(pillowFiberWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(4, 4, 4)
-                                .addComponent(jLabel247))
-                            .addGroup(cotSheetCostingPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(pillowFiberTypeCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(pillowTypeCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(pillowRangeCombo, 0, 209, Short.MAX_VALUE)
-                                .addComponent(pillowSizeCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(pillowFabricTypeCombo, 0, 203, Short.MAX_VALUE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cotSheetCostingPanel2Layout.createSequentialGroup()
-                                    .addComponent(pillowFabricWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel230))
-                                .addComponent(pillowCustomFiberButton))))
-                    .addComponent(pillowsCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28))
+                                .addGroup(cotSheetCostingPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel236)
+                                    .addComponent(jLabel235)
+                                    .addComponent(jLabel231)
+                                    .addComponent(jLabel229)
+                                    .addComponent(jLabel232)
+                                    .addComponent(jLabel246)
+                                    .addComponent(jLabel237)
+                                    .addComponent(pillowsUseCustom))
+                                .addGap(72, 72, 72)
+                                .addGroup(cotSheetCostingPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(cotSheetCostingPanel2Layout.createSequentialGroup()
+                                        .addComponent(pillowFiberWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(4, 4, 4)
+                                        .addComponent(jLabel247))
+                                    .addGroup(cotSheetCostingPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(pillowFiberTypeCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(pillowTypeCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(pillowRangeCombo, 0, 209, Short.MAX_VALUE)
+                                        .addComponent(pillowSizeCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(pillowFabricTypeCombo, 0, 203, Short.MAX_VALUE)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cotSheetCostingPanel2Layout.createSequentialGroup()
+                                            .addComponent(pillowFabricWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jLabel230))
+                                        .addComponent(pillowCustomFiberButton))))
+                            .addComponent(pillowsCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         cotSheetCostingPanel2Layout.setVerticalGroup(
             cotSheetCostingPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -7494,10 +7557,12 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel216;
     private javax.swing.JLabel jLabel217;
     private javax.swing.JLabel jLabel218;
+    private javax.swing.JLabel jLabel219;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel220;
     private javax.swing.JLabel jLabel221;
     private javax.swing.JLabel jLabel222;
+    private javax.swing.JLabel jLabel223;
     private javax.swing.JLabel jLabel224;
     private javax.swing.JLabel jLabel225;
     private javax.swing.JLabel jLabel226;
@@ -7513,6 +7578,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel235;
     private javax.swing.JLabel jLabel236;
     private javax.swing.JLabel jLabel237;
+    private javax.swing.JLabel jLabel238;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel246;
     private javax.swing.JLabel jLabel247;
@@ -7632,6 +7698,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel38;
     private javax.swing.JPanel jPanel39;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel40;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
@@ -7645,6 +7712,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel materialPanel;
     private javax.swing.JPanel mattressProtectorCPUPanel;
@@ -7696,6 +7764,7 @@ public class MainWindow extends javax.swing.JFrame {
     private view.Padding padding1;
     private javax.swing.JPanel parametersPanel;
     private view.ParametersView parametersView1;
+    private view.PillowAccessories pillowAccessories1;
     private javax.swing.JPanel pillowCaseCPUPanel;
     private javax.swing.JPanel pillowCaseCostingPanel;
     private javax.swing.JButton pillowCaseNewCostingButton;
@@ -7760,6 +7829,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JButton pillowsNewCostingButton;
     private javax.swing.JLabel pillowsPEBagCost;
     private javax.swing.JLabel pillowsPOH;
+    private javax.swing.JPanel pillowsPanel;
     private javax.swing.JLabel pillowsPipingCost;
     private javax.swing.JLabel pillowsSMVValue;
     private javax.swing.JScrollPane pillowsScrollPane;
