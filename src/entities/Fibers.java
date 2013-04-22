@@ -29,7 +29,11 @@ import javax.persistence.Transient;
     @NamedQuery(name = "Fibers.findAll", query = "SELECT f FROM Fibers f"),
     @NamedQuery(name = "Fibers.findById", query = "SELECT f FROM Fibers f WHERE f.id = :id"),
     @NamedQuery(name = "Fibers.findByName", query = "SELECT f FROM Fibers f WHERE f.name = :name"),
-    @NamedQuery(name = "Fibers.findByPrice", query = "SELECT f FROM Fibers f WHERE f.price = :price")})
+    @NamedQuery(name = "Fibers.findByPrice", query = "SELECT f FROM Fibers f WHERE f.price = :price"),
+    @NamedQuery(name = "Fibers.findByClassic", query = "SELECT f FROM Fibers f WHERE f.classic = :classic"),
+    @NamedQuery(name = "Fibers.findBySuper1", query = "SELECT f FROM Fibers f WHERE f.super1 = :super1"),
+    @NamedQuery(name = "Fibers.findByGelFeather", query = "SELECT f FROM Fibers f WHERE f.gelFeather = :gelFeather"),
+    @NamedQuery(name = "Fibers.findByKapokOraganic", query = "SELECT f FROM Fibers f WHERE f.kapokOraganic = :kapokOraganic")})
 public class Fibers implements Serializable {
     @Transient
     private PropertyChangeSupport changeSupport = new PropertyChangeSupport(this);
@@ -45,6 +49,18 @@ public class Fibers implements Serializable {
     @Basic(optional = false)
     @Column(name = "price")
     private double price;
+    @Basic(optional = false)
+    @Column(name = "Classic")
+    private boolean classic;
+    @Basic(optional = false)
+    @Column(name = "Super")
+    private boolean super1;
+    @Basic(optional = false)
+    @Column(name = "Gel_Feather")
+    private boolean gelFeather;
+    @Basic(optional = false)
+    @Column(name = "Kapok_Oraganic")
+    private boolean kapokOraganic;
 
     public Fibers() {
     }
@@ -53,10 +69,14 @@ public class Fibers implements Serializable {
         this.id = id;
     }
 
-    public Fibers(Integer id, String name, double price) {
+    public Fibers(Integer id, String name, double price, boolean classic, boolean super1, boolean gelFeather, boolean kapokOraganic) {
         this.id = id;
         this.name = name;
         this.price = price;
+        this.classic = classic;
+        this.super1 = super1;
+        this.gelFeather = gelFeather;
+        this.kapokOraganic = kapokOraganic;
     }
 
     public Integer getId() {
@@ -89,6 +109,46 @@ public class Fibers implements Serializable {
         changeSupport.firePropertyChange("price", oldPrice, price);
     }
 
+    public boolean getClassic() {
+        return classic;
+    }
+
+    public void setClassic(boolean classic) {
+        boolean oldClassic = this.classic;
+        this.classic = classic;
+        changeSupport.firePropertyChange("classic", oldClassic, classic);
+    }
+
+    public boolean getSuper1() {
+        return super1;
+    }
+
+    public void setSuper1(boolean super1) {
+        boolean oldSuper1 = this.super1;
+        this.super1 = super1;
+        changeSupport.firePropertyChange("super1", oldSuper1, super1);
+    }
+
+    public boolean getGelFeather() {
+        return gelFeather;
+    }
+
+    public void setGelFeather(boolean gelFeather) {
+        boolean oldGelFeather = this.gelFeather;
+        this.gelFeather = gelFeather;
+        changeSupport.firePropertyChange("gelFeather", oldGelFeather, gelFeather);
+    }
+
+    public boolean getKapokOraganic() {
+        return kapokOraganic;
+    }
+
+    public void setKapokOraganic(boolean kapokOraganic) {
+        boolean oldKapokOraganic = this.kapokOraganic;
+        this.kapokOraganic = kapokOraganic;
+        changeSupport.firePropertyChange("kapokOraganic", oldKapokOraganic, kapokOraganic);
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -111,7 +171,7 @@ public class Fibers implements Serializable {
 
     @Override
     public String toString() {
-        return "celciusadmin.Fibers[id=" + id + "]";
+        return "entities.Fibers[id=" + id + "]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

@@ -4,7 +4,7 @@
   <NonVisualComponents>
     <Component class="javax.persistence.EntityManager" name="entityManager">
       <Properties>
-        <Property name="persistenceUnit" type="java.lang.String" value="CelciusAdminPU"/>
+        <Property name="persistenceUnit" type="java.lang.String" value="celciusPU"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
@@ -57,8 +57,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="masterScrollPane" pref="552" max="32767" attributes="0"/>
+                  </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="newButton" linkSize="1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -68,21 +72,39 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="saveButton" linkSize="1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="nameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="priceLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="classicLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="super1Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="gelFeatherLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="kapokOraganicLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="nameField" alignment="0" pref="345" max="32767" attributes="0"/>
-                          <Component id="priceField" alignment="0" pref="345" max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="classicComboBox3" max="32767" attributes="1"/>
+                                  <Component id="classicComboBox2" alignment="0" max="32767" attributes="1"/>
+                                  <Component id="classicComboBox1" alignment="0" max="32767" attributes="1"/>
+                                  <Component id="classicComboBox" alignment="0" pref="58" max="32767" attributes="1"/>
+                              </Group>
+                              <EmptySpace pref="20" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="kapokOraganicField" alignment="0" max="32767" attributes="1"/>
+                                  <Component id="gelFeatherField" alignment="0" max="32767" attributes="1"/>
+                                  <Component id="super1Field" alignment="1" max="32767" attributes="1"/>
+                                  <Component id="classicField" alignment="1" pref="62" max="32767" attributes="1"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="329" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="priceField" alignment="0" max="32767" attributes="1"/>
+                              <Component id="nameField" alignment="0" pref="174" max="32767" attributes="1"/>
+                          </Group>
                       </Group>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="masterScrollPane" pref="380" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -91,10 +113,10 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Component id="masterScrollPane" pref="130" max="32767" attributes="0"/>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="masterScrollPane" min="-2" pref="173" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="nameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="nameField" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -103,6 +125,30 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="priceLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="priceField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="classicLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="classicField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="classicComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="super1Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="super1Field" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="classicComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="gelFeatherLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="gelFeatherField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="classicComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="kapokOraganicLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="kapokOraganicField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="classicComboBox3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="1"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -138,6 +184,26 @@
                   <Editor/>
                   <Renderer/>
                 </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
               </TableColumnModel>
             </Property>
             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
@@ -154,6 +220,24 @@
               <Subbinding sourcePath="${price}">
                 <BindingParameter name="NAME" value="Price"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Double.class"/>
+                <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
+              </Subbinding>
+              <Subbinding sourcePath="${classic}">
+                <BindingParameter name="NAME" value="Classic"/>
+                <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Boolean.class"/>
+              </Subbinding>
+              <Subbinding sourcePath="${super1}">
+                <BindingParameter name="NAME" value="Super"/>
+                <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Boolean.class"/>
+                <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
+              </Subbinding>
+              <Subbinding sourcePath="${gelFeather}">
+                <BindingParameter name="NAME" value="Gel Feather"/>
+                <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Boolean.class"/>
+              </Subbinding>
+              <Subbinding sourcePath="${kapokOraganic}">
+                <BindingParameter name="NAME" value="Kapok Oraganic"/>
+                <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Boolean.class"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
               </Subbinding>
             </BindingProperty>
@@ -175,6 +259,26 @@
         <Property name="text" type="java.lang.String" value="Price:"/>
       </Properties>
     </Component>
+    <Component class="javax.swing.JLabel" name="classicLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Classic:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="super1Label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Super:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="gelFeatherLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Gel Feather:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="kapokOraganicLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Kapok Oraganic:"/>
+      </Properties>
+    </Component>
     <Component class="javax.swing.JTextField" name="nameField">
       <BindingProperties>
         <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.name}" target="nameField" targetPath="text" updateStrategy="0" immediately="false">
@@ -190,6 +294,50 @@
         </BindingProperty>
         <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="priceField" targetPath="enabled" updateStrategy="1" immediately="false"/>
       </BindingProperties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="classicField">
+      <BindingProperties>
+        <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.classic}" target="classicField" targetPath="text" updateStrategy="0" immediately="false">
+          <Property name="incompletePathValue" type="java.lang.String" value="null"/>
+        </BindingProperty>
+        <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="classicField" targetPath="enabled" updateStrategy="1" immediately="false"/>
+      </BindingProperties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="classicField.setVisible(false);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="super1Field">
+      <BindingProperties>
+        <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.super1}" target="super1Field" targetPath="text" updateStrategy="0" immediately="false">
+          <Property name="incompletePathValue" type="java.lang.String" value="null"/>
+        </BindingProperty>
+        <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="super1Field" targetPath="enabled" updateStrategy="1" immediately="false"/>
+      </BindingProperties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="super1Field.setVisible(false);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="gelFeatherField">
+      <BindingProperties>
+        <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.gelFeather}" target="gelFeatherField" targetPath="text" updateStrategy="0" immediately="false">
+          <Property name="incompletePathValue" type="java.lang.String" value="null"/>
+        </BindingProperty>
+        <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="gelFeatherField" targetPath="enabled" updateStrategy="1" immediately="false"/>
+      </BindingProperties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="gelFeatherField.setVisible(false);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="kapokOraganicField">
+      <BindingProperties>
+        <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.kapokOraganic}" target="kapokOraganicField" targetPath="text" updateStrategy="0" immediately="false">
+          <Property name="incompletePathValue" type="java.lang.String" value="null"/>
+        </BindingProperty>
+        <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="kapokOraganicField" targetPath="enabled" updateStrategy="1" immediately="false"/>
+      </BindingProperties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="kapokOraganicField.setVisible(false);"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="saveButton">
       <Properties>
@@ -241,6 +389,62 @@
         <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
       </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="classicComboBox">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value=""/>
+            <StringItem index="1" value="true"/>
+            <StringItem index="2" value="false"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <BindingProperties>
+        <BindingProperty name="selectedItem" source="classicField" sourcePath="${text}" target="classicComboBox" targetPath="selectedItem" updateStrategy="0" immediately="false"/>
+      </BindingProperties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="classicComboBox1">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value=""/>
+            <StringItem index="1" value="true"/>
+            <StringItem index="2" value="false"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <BindingProperties>
+        <BindingProperty name="selectedItem" source="super1Field" sourcePath="${text}" target="classicComboBox1" targetPath="selectedItem" updateStrategy="0" immediately="false"/>
+      </BindingProperties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="classicComboBox2">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value=""/>
+            <StringItem index="1" value="true"/>
+            <StringItem index="2" value="false"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <BindingProperties>
+        <BindingProperty name="selectedItem" source="gelFeatherField" sourcePath="${text}" target="classicComboBox2" targetPath="selectedItem" updateStrategy="0" immediately="false"/>
+      </BindingProperties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="classicComboBox3">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value=""/>
+            <StringItem index="1" value="true"/>
+            <StringItem index="2" value="false"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <BindingProperties>
+        <BindingProperty name="selectedItem" source="kapokOraganicField" sourcePath="${text}" target="classicComboBox3" targetPath="selectedItem" updateStrategy="0" immediately="false"/>
+      </BindingProperties>
     </Component>
   </SubComponents>
 </Form>

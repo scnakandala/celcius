@@ -224,8 +224,12 @@ public class PillowsDataAccess {
 
     public String[] getFiberTypes(String range) throws SQLException {
         statement = (Statement) connect.createStatement();
-        if (!range.equalsIgnoreCase("Other")) {
+        if (range.equalsIgnoreCase("Classic") || range.equalsIgnoreCase("Super")) {
             resultSet = statement.executeQuery("select distinct name from celcius.fibers where " + range + "=true");
+        }else if(range.equalsIgnoreCase("Gel/Feather")){
+            resultSet = statement.executeQuery("select distinct name from celcius.fibers where Gel_Feather=true");
+        }else if(range.equalsIgnoreCase("Kapok/Organic")){
+           resultSet = statement.executeQuery("select distinct name from celcius.fibers where Kapok_Organic=true");
         } else {
             resultSet = statement.executeQuery("select distinct name from celcius.fibers");
         }
