@@ -32,6 +32,12 @@
     <class>entities.Pillows</class>
     <class>entities.PillowAccessories</class>
     <class>entities.PillowsFiberWeights</class>
+    <class>entities.Bolsters</class>
+    <class>entities.BolsterAccessories</class>
+    <class>entities.Cushions</class>
+    <class>entities.CushionAccessories</class>
+    <class>entities.BolsterFiberWeights</class>
+    <class>entities.CushionFiberWeights</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/celcius"/>
       <property name="javax.persistence.jdbc.password" value=""/>

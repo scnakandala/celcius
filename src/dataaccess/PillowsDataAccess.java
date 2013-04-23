@@ -68,7 +68,7 @@ public class PillowsDataAccess {
         return arr2;
     }
 
-    public String[] getPillowSizes(String range,String type) throws SQLException {
+    public String[] getPillowSizes(String range, String type) throws SQLException {
         statement = (Statement) connect.createStatement();
         String sql = "select size from celcius.pillows where `range` = '" + range + "' and type = '" + type + "'";
         resultSet = statement.executeQuery(sql);
@@ -116,6 +116,10 @@ public class PillowsDataAccess {
     }
 
     public Double getSMVValue(String size, String range, String type) throws SQLException {
+        if (range.equalsIgnoreCase("Other")) {
+            range = "Classic";
+        }
+
         statement = (Statement) connect.createStatement();
         String sql = "select smv from celcius.pillows where size ='" + size + "' and `range` ='" + range + "' and type ='" + type + "'";
         resultSet = statement.executeQuery(sql);
@@ -180,6 +184,9 @@ public class PillowsDataAccess {
     }
 
     public double[][] getSMVXYPairs(String range, String type) throws SQLException {
+        if (range.equalsIgnoreCase("Other")) {
+            range = "Classic";
+        }
         statement = (Statement) connect.createStatement();
         String sql = "select size,smv from celcius.pillows where `range` ='" + range + "' and type ='" + type + "'";
         resultSet = statement.executeQuery(sql);
@@ -194,7 +201,7 @@ public class PillowsDataAccess {
         //smv value should be zero at 0
         arr[0][0] = arr[1][0] = 0.0;
         for (int i = 0; i < sizes.size(); i++) {
-            arr[0][i + 1] = Double.parseDouble(sizes.get(i).split("X")[0]) + Double.parseDouble(sizes.get(i).split("X")[0]);
+            arr[0][i + 1] = Double.parseDouble(sizes.get(i).split("X")[0]) + Double.parseDouble(sizes.get(i).split("X")[1]);
             arr[1][i + 1] = smvs.get(i);
         }
         return arr;
@@ -226,10 +233,10 @@ public class PillowsDataAccess {
         statement = (Statement) connect.createStatement();
         if (range.equalsIgnoreCase("Classic") || range.equalsIgnoreCase("Super")) {
             resultSet = statement.executeQuery("select distinct name from celcius.fibers where " + range.toLowerCase() + "=true");
-        }else if(range.equalsIgnoreCase("Gel/Feather")){
+        } else if (range.equalsIgnoreCase("Gel/Feather")) {
             resultSet = statement.executeQuery("select distinct name from celcius.fibers where gelfeather=true");
-        }else if(range.equalsIgnoreCase("Kapok/Organic")){
-           resultSet = statement.executeQuery("select distinct name from celcius.fibers where kapokorganic=true");
+        } else if (range.equalsIgnoreCase("Kapok/Organic")) {
+            resultSet = statement.executeQuery("select distinct name from celcius.fibers where kapokorganic=true");
         } else {
             resultSet = statement.executeQuery("select distinct name from celcius.fibers");
         }

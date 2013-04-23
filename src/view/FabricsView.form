@@ -258,22 +258,22 @@
                 <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
               </Subbinding>
               <Subbinding sourcePath="${price}">
-                <BindingParameter name="NAME" value="Price"/>
+                <BindingParameter name="NAME" value="Price ( per yard )"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Double.class"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
               </Subbinding>
               <Subbinding sourcePath="${width}">
-                <BindingParameter name="NAME" value="Width"/>
+                <BindingParameter name="NAME" value="Width (inches)"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Integer.class"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
               </Subbinding>
               <Subbinding sourcePath="${widthShrinkage}">
-                <BindingParameter name="NAME" value="Width Shrinkage"/>
+                <BindingParameter name="NAME" value="Width Shrinkage %"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Integer.class"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
               </Subbinding>
               <Subbinding sourcePath="${heightShrinkage}">
-                <BindingParameter name="NAME" value="Height Shrinkage"/>
+                <BindingParameter name="NAME" value="Height Shrinkage %"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Integer.class"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
               </Subbinding>

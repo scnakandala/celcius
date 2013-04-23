@@ -73,6 +73,16 @@ public class PillowLogic {
                 double[][] arr = PillowsDataAccess.getInstance().getSMVXYPairs(pCost.getProductRange(), pCost.getPillowType());
                 Approximate cFitting = new Approximate(arr[0], arr[1]);
                 smv = cFitting.getApproximatedValue(((double) height + width));
+
+                if(!pCost.isIncludeLable()){
+                    peBagPrice = 0.0;
+                }
+                if(!pCost.isIncludeTag()){
+                    tagPrice=0.0;
+                }
+                if(!pCost.isIncludePEBag()){
+                    peBagPrice = 0.0;
+                }
             } else {
                 width = Integer.parseInt(pCost.getSize().split("X")[0]);
                 height = Integer.parseInt(pCost.getSize().split("X")[1]);

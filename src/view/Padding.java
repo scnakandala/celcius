@@ -68,7 +68,7 @@ public class Padding extends JPanel {
         columnBinding.setColumnClass(String.class);
         columnBinding.setEditable(false);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${price}"));
-        columnBinding.setColumnName("Price");
+        columnBinding.setColumnName("Price ( per yard )");
         columnBinding.setColumnClass(Double.class);
         columnBinding.setEditable(false);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${width}"));

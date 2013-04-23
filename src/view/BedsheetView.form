@@ -147,7 +147,7 @@
           <BindingProperties>
             <BindingProperty name="elements" source="list" target="masterTable" targetPath="elements" updateStrategy="0" immediately="true">
               <Subbinding sourcePath="${size}">
-                <BindingParameter name="NAME" value="Size"/>
+                <BindingParameter name="NAME" value="Size ( width X height )"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
               </Subbinding>

@@ -67,13 +67,13 @@ public class Taffata extends JPanel {
         columnBinding.setColumnName("Name");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${price}"));
-        columnBinding.setColumnName("Price");
+        columnBinding.setColumnName("Price ( per yard )");
         columnBinding.setColumnClass(Double.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${width}"));
         columnBinding.setColumnName("Width");
         columnBinding.setColumnClass(Double.class);
         bindingGroup.addBinding(jTableBinding);
-
+        jTableBinding.bind();
         masterScrollPane.setViewportView(masterTable);
 
         nameLabel.setText("Name:");

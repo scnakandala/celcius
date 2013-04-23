@@ -6,14 +6,18 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import logic.BedSheetLogic;
+import logic.BolsterLogic;
 import logic.CotSheetLogic;
+import logic.CushionLogic;
 import logic.DuvetsLogic;
 import logic.DuvetCoversLogic;
 import logic.MattresProtectorLogic;
 import logic.PillowLogic;
 import logic.PillowcaseLogic;
 import viewmodels.BedSheetViewModel;
+import viewmodels.BolstersViewModel;
 import viewmodels.CotSheetViewModel;
+import viewmodels.CushionsViewModel;
 import viewmodels.DovetCoversViewModel;
 import viewmodels.DovetsViewModel;
 import viewmodels.MettresProtectorViewModel;
@@ -109,6 +113,24 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel238 = new javax.swing.JLabel();
         pillowsView1 = new view.PillowsView();
         pillowsFiberWeightsView1 = new view.PillowsFiberWeightsView();
+        cushionPanel = new javax.swing.JPanel();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        jPanel47 = new javax.swing.JPanel();
+        jLabel239 = new javax.swing.JLabel();
+        jLabel264 = new javax.swing.JLabel();
+        jLabel293 = new javax.swing.JLabel();
+        cushionView1 = new view.CushionView();
+        cushionAccessoriesView1 = new view.CushionAccessoriesView();
+        cushionFiberWeightsView1 = new view.CushionFiberWeightsView();
+        bolsterPillowsPanel = new javax.swing.JPanel();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        jPanel48 = new javax.swing.JPanel();
+        jLabel294 = new javax.swing.JLabel();
+        jLabel295 = new javax.swing.JLabel();
+        jLabel296 = new javax.swing.JLabel();
+        bolsterView1 = new view.BolsterView();
+        bolsterAccessoriesView1 = new view.BolsterAccessoriesView();
+        bolsterFiberWeightView1 = new view.BolsterFiberWeightView();
         userTabbedPane = new javax.swing.JTabbedPane();
         homeScrollPane = new javax.swing.JScrollPane();
         home = new javax.swing.JPanel();
@@ -630,6 +652,126 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel246 = new javax.swing.JLabel();
         pillowFiberWastage = new javax.swing.JTextField();
         jLabel247 = new javax.swing.JLabel();
+        cushionsScrollPane = new javax.swing.JScrollPane();
+        cushions = new javax.swing.JPanel();
+        cushionsCPUPanel = new javax.swing.JPanel();
+        jPanel41 = new javax.swing.JPanel();
+        jLabel240 = new javax.swing.JLabel();
+        jLabel241 = new javax.swing.JLabel();
+        jLabel242 = new javax.swing.JLabel();
+        jLabel243 = new javax.swing.JLabel();
+        cushionsFiberWeight = new javax.swing.JLabel();
+        cushionsSMVValue = new javax.swing.JLabel();
+        cushionsFabricCutWidthHeight = new javax.swing.JLabel();
+        jPanel42 = new javax.swing.JPanel();
+        jLabel244 = new javax.swing.JLabel();
+        jLabel245 = new javax.swing.JLabel();
+        jLabel248 = new javax.swing.JLabel();
+        jLabel249 = new javax.swing.JLabel();
+        cushionsLabourCost = new javax.swing.JLabel();
+        cushionsFiberCost = new javax.swing.JLabel();
+        cushionsThreadCost = new javax.swing.JLabel();
+        cushionsTagCost = new javax.swing.JLabel();
+        cushionsLableCost = new javax.swing.JLabel();
+        jLabel251 = new javax.swing.JLabel();
+        jLabel252 = new javax.swing.JLabel();
+        jLabel253 = new javax.swing.JLabel();
+        jLabel254 = new javax.swing.JLabel();
+        cushionsPOH = new javax.swing.JLabel();
+        jLabel255 = new javax.swing.JLabel();
+        jLabel256 = new javax.swing.JLabel();
+        cushionsPEBagCost = new javax.swing.JLabel();
+        cushionsTotalMaterialCost = new javax.swing.JLabel();
+        cushionsFabricCost = new javax.swing.JLabel();
+        jLabel257 = new javax.swing.JLabel();
+        cushionsToatalCost = new javax.swing.JLabel();
+        jPanel43 = new javax.swing.JPanel();
+        cotSheetCostingPanel3 = new javax.swing.JPanel();
+        jLabel258 = new javax.swing.JLabel();
+        jLabel259 = new javax.swing.JLabel();
+        cushionsRangeCombo = new javax.swing.JComboBox();
+        cushionsFabricWastage = new javax.swing.JTextField();
+        jLabel260 = new javax.swing.JLabel();
+        jLabel262 = new javax.swing.JLabel();
+        cushionsCustomPanel = new javax.swing.JPanel();
+        jLabel263 = new javax.swing.JLabel();
+        cushionsCustomWidthHeight = new javax.swing.JTextField();
+        cushionsIncludeLable = new javax.swing.JRadioButton();
+        cushionsIncludeTag = new javax.swing.JRadioButton();
+        cushionsIncludePEBag = new javax.swing.JRadioButton();
+        jLabel265 = new javax.swing.JLabel();
+        cushionsFabricTypeCombo = new javax.swing.JComboBox();
+        jLabel266 = new javax.swing.JLabel();
+        cushionsSizeCombo = new javax.swing.JComboBox();
+        cushionsSubmitButton = new javax.swing.JButton();
+        cushionsUseCustom = new javax.swing.JRadioButton();
+        cushionsNewCostingButton = new javax.swing.JButton();
+        cushionsCustomFiberButton = new javax.swing.JRadioButton();
+        cushionsFiberTypeCombo = new javax.swing.JComboBox();
+        jLabel267 = new javax.swing.JLabel();
+        jLabel268 = new javax.swing.JLabel();
+        cushionsFiberWastage = new javax.swing.JTextField();
+        jLabel269 = new javax.swing.JLabel();
+        bolsterScrollPane = new javax.swing.JScrollPane();
+        bolsters = new javax.swing.JPanel();
+        bolsterCPUPanel = new javax.swing.JPanel();
+        jPanel44 = new javax.swing.JPanel();
+        jLabel250 = new javax.swing.JLabel();
+        jLabel261 = new javax.swing.JLabel();
+        jLabel270 = new javax.swing.JLabel();
+        bolsterFiberWeight = new javax.swing.JLabel();
+        bolsterSMVValue = new javax.swing.JLabel();
+        jPanel45 = new javax.swing.JPanel();
+        jLabel271 = new javax.swing.JLabel();
+        jLabel272 = new javax.swing.JLabel();
+        jLabel273 = new javax.swing.JLabel();
+        jLabel274 = new javax.swing.JLabel();
+        bolsterLabourCost = new javax.swing.JLabel();
+        bolsterFiberCost = new javax.swing.JLabel();
+        bolsterThreadCost = new javax.swing.JLabel();
+        bolsterTagCost = new javax.swing.JLabel();
+        bolsterLableCost = new javax.swing.JLabel();
+        jLabel275 = new javax.swing.JLabel();
+        jLabel276 = new javax.swing.JLabel();
+        jLabel277 = new javax.swing.JLabel();
+        jLabel278 = new javax.swing.JLabel();
+        bolsterPOH = new javax.swing.JLabel();
+        jLabel279 = new javax.swing.JLabel();
+        jLabel280 = new javax.swing.JLabel();
+        bolsterPEBagCost = new javax.swing.JLabel();
+        bolsterTotalMaterialCost = new javax.swing.JLabel();
+        bolsterFabricCost = new javax.swing.JLabel();
+        jLabel281 = new javax.swing.JLabel();
+        bolsterToatalCost = new javax.swing.JLabel();
+        jPanel46 = new javax.swing.JPanel();
+        cotSheetCostingPanel4 = new javax.swing.JPanel();
+        jLabel282 = new javax.swing.JLabel();
+        jLabel283 = new javax.swing.JLabel();
+        bolsterRangeCombo = new javax.swing.JComboBox();
+        bolsterFabricWastage = new javax.swing.JTextField();
+        jLabel284 = new javax.swing.JLabel();
+        jLabel285 = new javax.swing.JLabel();
+        bolsterCustomPanel = new javax.swing.JPanel();
+        jLabel286 = new javax.swing.JLabel();
+        bolsterCustomDiameter = new javax.swing.JTextField();
+        bolsterIncludeLable = new javax.swing.JRadioButton();
+        bolsterIncludeTag = new javax.swing.JRadioButton();
+        bolsterIncludePEBag = new javax.swing.JRadioButton();
+        jLabel292 = new javax.swing.JLabel();
+        bolsterCustomLength = new javax.swing.JTextField();
+        jLabel287 = new javax.swing.JLabel();
+        bolsterFabricTypeCombo = new javax.swing.JComboBox();
+        jLabel288 = new javax.swing.JLabel();
+        bolsterSizeCombo = new javax.swing.JComboBox();
+        bolsterSubmitButton = new javax.swing.JButton();
+        bolsterUseCustom = new javax.swing.JRadioButton();
+        bolsterNewCostingButton = new javax.swing.JButton();
+        bolsterCustomFiberButton = new javax.swing.JRadioButton();
+        bolsterFiberTypeCombo = new javax.swing.JComboBox();
+        jLabel289 = new javax.swing.JLabel();
+        jLabel290 = new javax.swing.JLabel();
+        bolsterFiberWastage = new javax.swing.JTextField();
+        jLabel291 = new javax.swing.JLabel();
         jMenuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         adminButton = new javax.swing.JMenuItem();
@@ -1083,7 +1225,7 @@ public class MainWindow extends javax.swing.JFrame {
         pillowAccessories1.setPreferredSize(new java.awt.Dimension(400, 400));
 
         jLabel238.setFont(new java.awt.Font("Tahoma", 0, 18));
-        jLabel238.setText("Fiber Weights");
+        jLabel238.setText("Fiber Weights (kg)");
 
         javax.swing.GroupLayout jPanel40Layout = new javax.swing.GroupLayout(jPanel40);
         jPanel40.setLayout(jPanel40Layout);
@@ -1136,6 +1278,131 @@ public class MainWindow extends javax.swing.JFrame {
         );
 
         adminTabbedPane.addTab("Pillows", pillowsPanel);
+
+        jLabel239.setFont(new java.awt.Font("Tahoma", 0, 18));
+        jLabel239.setText("Cushion Accessories");
+
+        jLabel264.setFont(new java.awt.Font("Tahoma", 0, 18));
+        jLabel264.setText("Cushion Sizes");
+
+        jLabel293.setFont(new java.awt.Font("Tahoma", 0, 18));
+        jLabel293.setText("Fiber Weights (kg)");
+
+        javax.swing.GroupLayout jPanel47Layout = new javax.swing.GroupLayout(jPanel47);
+        jPanel47.setLayout(jPanel47Layout);
+        jPanel47Layout.setHorizontalGroup(
+            jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel47Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel293)
+                    .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(cushionFiberWeightsView1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel47Layout.createSequentialGroup()
+                            .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel264)
+                                .addComponent(cushionView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(43, 43, 43)
+                            .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(cushionAccessoriesView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel239)))))
+                .addContainerGap(419, Short.MAX_VALUE))
+        );
+        jPanel47Layout.setVerticalGroup(
+            jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel47Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel264)
+                    .addComponent(jLabel239))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel47Layout.createSequentialGroup()
+                        .addComponent(cushionView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel293))
+                    .addComponent(cushionAccessoriesView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cushionFiberWeightsView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(193, Short.MAX_VALUE))
+        );
+
+        jScrollPane10.setViewportView(jPanel47);
+
+        javax.swing.GroupLayout cushionPanelLayout = new javax.swing.GroupLayout(cushionPanel);
+        cushionPanel.setLayout(cushionPanelLayout);
+        cushionPanelLayout.setHorizontalGroup(
+            cushionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
+        );
+        cushionPanelLayout.setVerticalGroup(
+            cushionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE)
+        );
+
+        adminTabbedPane.addTab("Cushions", cushionPanel);
+
+        jLabel294.setFont(new java.awt.Font("Tahoma", 0, 18));
+        jLabel294.setText("Bolster Pillow Accessories");
+
+        jLabel295.setFont(new java.awt.Font("Tahoma", 0, 18));
+        jLabel295.setText("Bolster Pillow Sizes");
+
+        jLabel296.setFont(new java.awt.Font("Tahoma", 0, 18));
+        jLabel296.setText("Fiber Weights (kg)");
+
+        javax.swing.GroupLayout jPanel48Layout = new javax.swing.GroupLayout(jPanel48);
+        jPanel48.setLayout(jPanel48Layout);
+        jPanel48Layout.setHorizontalGroup(
+            jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel48Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel296)
+                    .addGroup(jPanel48Layout.createSequentialGroup()
+                        .addGroup(jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bolsterView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel295))
+                        .addGap(44, 44, 44)
+                        .addGroup(jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel294)
+                            .addComponent(bolsterAccessoriesView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(bolsterFiberWeightView1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(166, Short.MAX_VALUE))
+        );
+        jPanel48Layout.setVerticalGroup(
+            jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel48Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel295)
+                    .addComponent(jLabel294))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel48Layout.createSequentialGroup()
+                        .addComponent(bolsterView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel296))
+                    .addComponent(bolsterAccessoriesView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bolsterFiberWeightView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(193, Short.MAX_VALUE))
+        );
+
+        jScrollPane11.setViewportView(jPanel48);
+
+        javax.swing.GroupLayout bolsterPillowsPanelLayout = new javax.swing.GroupLayout(bolsterPillowsPanel);
+        bolsterPillowsPanel.setLayout(bolsterPillowsPanelLayout);
+        bolsterPillowsPanelLayout.setHorizontalGroup(
+            bolsterPillowsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
+        );
+        bolsterPillowsPanelLayout.setVerticalGroup(
+            bolsterPillowsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE)
+        );
+
+        adminTabbedPane.addTab("Bolster Pillows", bolsterPillowsPanel);
 
         userTabbedPane.setPreferredSize(new java.awt.Dimension(800, 600));
 
@@ -2874,14 +3141,14 @@ public class MainWindow extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(duvetCversCPUPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jPanel21, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
-                    .addComponent(jPanel22, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE))
+                    .addComponent(jPanel22, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         duvetCversCPUPanel2Layout.setVerticalGroup(
             duvetCversCPUPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(duvetCversCPUPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -5360,8 +5627,6 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel232.setFont(new java.awt.Font("Times New Roman", 0, 16));
         jLabel232.setText("Fabric Wastage:");
 
-        mettresProtectorCustomPanel.setVisible(false);
-
         jLabel233.setFont(new java.awt.Font("Times New Roman", 0, 16));
         jLabel233.setText("Width (inches) :");
 
@@ -5641,6 +5906,1069 @@ public class MainWindow extends javax.swing.JFrame {
         pillowsScrollPane.setViewportView(pillows);
 
         userTabbedPane.addTab("Pillows", pillowsScrollPane);
+
+        jPanel41.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel240.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel240.setText("SMV Value:");
+
+        jLabel241.setFont(new java.awt.Font("Times New Roman", 0, 24));
+        jLabel241.setText("Production Parameters");
+
+        jLabel242.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel242.setText("Fabric Cutting Width & Height:");
+
+        jLabel243.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel243.setText("Fiber Weight");
+
+        cushionsFiberWeight.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        cushionsFiberWeight.setText("0.00");
+
+        cushionsSMVValue.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        cushionsSMVValue.setText("0.00");
+
+        cushionsFabricCutWidthHeight.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        cushionsFabricCutWidthHeight.setText("0.00");
+
+        javax.swing.GroupLayout jPanel41Layout = new javax.swing.GroupLayout(jPanel41);
+        jPanel41.setLayout(jPanel41Layout);
+        jPanel41Layout.setHorizontalGroup(
+            jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel41Layout.createSequentialGroup()
+                .addGap(124, 124, 124)
+                .addComponent(jLabel241)
+                .addContainerGap(118, Short.MAX_VALUE))
+            .addGroup(jPanel41Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel243)
+                    .addComponent(jLabel240)
+                    .addComponent(jLabel242))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 182, Short.MAX_VALUE)
+                .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cushionsFabricCutWidthHeight, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cushionsSMVValue, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cushionsFiberWeight, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(41, 41, 41))
+        );
+        jPanel41Layout.setVerticalGroup(
+            jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel41Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel241, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel41Layout.createSequentialGroup()
+                        .addComponent(cushionsFabricCutWidthHeight)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cushionsFiberWeight)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cushionsSMVValue))
+                    .addGroup(jPanel41Layout.createSequentialGroup()
+                        .addComponent(jLabel242)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel243)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel240)))
+                .addGap(37, 37, 37))
+        );
+
+        jPanel42.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel244.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel244.setText("PE Bag Cost:");
+
+        jLabel245.setFont(new java.awt.Font("Times New Roman", 0, 24));
+        jLabel245.setText("Cost Per Unit");
+
+        jLabel248.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel248.setText("Thread Cost:");
+
+        jLabel249.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel249.setText("Labour Cost:");
+
+        cushionsLabourCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        cushionsLabourCost.setText("0.00");
+
+        cushionsFiberCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        cushionsFiberCost.setText("0.00");
+
+        cushionsThreadCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        cushionsThreadCost.setText("0.00");
+
+        cushionsTagCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        cushionsTagCost.setText("0.00");
+
+        cushionsLableCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        cushionsLableCost.setText("0.00");
+
+        jLabel251.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel251.setText("POH:");
+
+        jLabel252.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        jLabel252.setText("Toatal Cost Per Unit:");
+
+        jLabel253.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel253.setText("Tag Cost:");
+
+        jLabel254.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        jLabel254.setText("Total Material Cost");
+
+        cushionsPOH.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        cushionsPOH.setText("0.00");
+
+        jLabel255.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel255.setText("Fiber Cost:");
+
+        jLabel256.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel256.setText("Lable Cost:");
+
+        cushionsPEBagCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        cushionsPEBagCost.setText("0.00");
+
+        cushionsTotalMaterialCost.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        cushionsTotalMaterialCost.setText("0.00");
+
+        cushionsFabricCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        cushionsFabricCost.setText("0.00");
+
+        jLabel257.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel257.setText("Fabric Cost:");
+
+        cushionsToatalCost.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        cushionsToatalCost.setText("0.00");
+
+        javax.swing.GroupLayout jPanel42Layout = new javax.swing.GroupLayout(jPanel42);
+        jPanel42.setLayout(jPanel42Layout);
+        jPanel42Layout.setHorizontalGroup(
+            jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel42Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel254)
+                    .addComponent(jLabel251)
+                    .addComponent(jLabel252)
+                    .addComponent(jLabel249)
+                    .addComponent(jLabel244)
+                    .addComponent(jLabel253)
+                    .addComponent(jLabel256)
+                    .addComponent(jLabel255)
+                    .addComponent(jLabel257)
+                    .addComponent(jLabel248))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 202, Short.MAX_VALUE)
+                .addGroup(jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cushionsToatalCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cushionsFabricCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cushionsTotalMaterialCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cushionsLableCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cushionsTagCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cushionsPOH, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cushionsFiberCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cushionsLabourCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cushionsPEBagCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cushionsThreadCost, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(37, 37, 37))
+            .addGroup(jPanel42Layout.createSequentialGroup()
+                .addGap(166, 166, 166)
+                .addComponent(jLabel245)
+                .addContainerGap(166, Short.MAX_VALUE))
+        );
+        jPanel42Layout.setVerticalGroup(
+            jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel42Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel42Layout.createSequentialGroup()
+                        .addComponent(cushionsFabricCost)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cushionsFiberCost)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cushionsThreadCost)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cushionsLableCost)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cushionsTagCost)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cushionsPEBagCost)
+                        .addGap(11, 11, 11)
+                        .addComponent(cushionsTotalMaterialCost)
+                        .addGap(19, 19, 19)
+                        .addComponent(cushionsPOH)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cushionsLabourCost)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cushionsToatalCost))
+                    .addGroup(jPanel42Layout.createSequentialGroup()
+                        .addComponent(jLabel245, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel257)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel255)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel248)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel256)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel253)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel244)
+                        .addGap(11, 11, 11)
+                        .addComponent(jLabel254)
+                        .addGap(19, 19, 19)
+                        .addComponent(jLabel251)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel249)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel252)))
+                .addGap(86, 86, 86))
+        );
+
+        javax.swing.GroupLayout cushionsCPUPanelLayout = new javax.swing.GroupLayout(cushionsCPUPanel);
+        cushionsCPUPanel.setLayout(cushionsCPUPanelLayout);
+        cushionsCPUPanelLayout.setHorizontalGroup(
+            cushionsCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cushionsCPUPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(cushionsCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel41, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel42, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
+        );
+        cushionsCPUPanelLayout.setVerticalGroup(
+            cushionsCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cushionsCPUPanelLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(31, 31, 31)
+                .addComponent(jPanel41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(19, 19, 19))
+        );
+
+        cotSheetCostingPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        cotSheetCostingPanel3.setPreferredSize(new java.awt.Dimension(556, 600));
+
+        jLabel258.setFont(new java.awt.Font("Times New Roman", 0, 24));
+        jLabel258.setText("Cushions Costing");
+
+        jLabel259.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel259.setText("Select Product Range:");
+
+        cushionsRangeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        cushionsRangeCombo.setModel(new javax.swing.DefaultComboBoxModel(CushionLogic.getProductRanges()));
+        cushionsRangeCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cushionsRangeComboActionPerformed(evt);
+            }
+        });
+
+        cushionsFabricWastage.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        cushionsFabricWastage.setText("3");
+        cushionsFabricWastage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cushionsFabricWastageActionPerformed(evt);
+            }
+        });
+
+        jLabel260.setText("%");
+
+        jLabel262.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel262.setText("Fabric Wastage:");
+
+        jLabel263.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel263.setText("Width & Height (inches) :");
+
+        cushionsCustomWidthHeight.setFont(new java.awt.Font("Times New Roman", 0, 16));
+
+        cushionsIncludeLable.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        cushionsIncludeLable.setText("Include Lable");
+
+        cushionsIncludeTag.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        cushionsIncludeTag.setText("Include Tag");
+
+        cushionsIncludePEBag.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        cushionsIncludePEBag.setText("Include PE Bag");
+
+        javax.swing.GroupLayout cushionsCustomPanelLayout = new javax.swing.GroupLayout(cushionsCustomPanel);
+        cushionsCustomPanel.setLayout(cushionsCustomPanelLayout);
+        cushionsCustomPanelLayout.setHorizontalGroup(
+            cushionsCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cushionsCustomPanelLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(cushionsCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cushionsIncludeTag)
+                    .addComponent(cushionsIncludePEBag)
+                    .addComponent(cushionsIncludeLable)
+                    .addGroup(cushionsCustomPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel263)
+                        .addGap(41, 41, 41)
+                        .addComponent(cushionsCustomWidthHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(93, Short.MAX_VALUE))
+        );
+        cushionsCustomPanelLayout.setVerticalGroup(
+            cushionsCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cushionsCustomPanelLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(cushionsCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel263)
+                    .addComponent(cushionsCustomWidthHeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
+                .addComponent(cushionsIncludeLable)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cushionsIncludeTag)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cushionsIncludePEBag)
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+
+        jLabel265.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel265.setText("Select Fabric Type:");
+
+        cushionsFabricTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        cushionsFabricTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(CushionLogic.getMaterialTypes((String)cushionsRangeCombo.getSelectedItem())));
+        cushionsFabricTypeCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cushionsFabricTypeComboActionPerformed(evt);
+            }
+        });
+
+        jLabel266.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel266.setText("Select Size:");
+
+        cushionsSizeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        cushionsSizeCombo.setModel(new javax.swing.DefaultComboBoxModel(CushionLogic.getCushionSizes((String)cushionsRangeCombo.getSelectedItem())));
+
+        cushionsSubmitButton.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        cushionsSubmitButton.setText("Find Cost Per Unit");
+        cushionsSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cushionsSubmitButtonActionPerformed(evt);
+            }
+        });
+
+        cushionsUseCustom.setBackground(new java.awt.Color(204, 204, 204));
+        cushionsUseCustom.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        cushionsUseCustom.setText("Use Custom Sizes");
+        cushionsUseCustom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cushionsUseCustomActionPerformed(evt);
+            }
+        });
+
+        cushionsNewCostingButton.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        cushionsNewCostingButton.setText("New Costing");
+        cushionsNewCostingButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cushionsNewCostingButtonActionPerformed(evt);
+            }
+        });
+
+        cushionsCustomFiberButton.setBackground(new java.awt.Color(204, 204, 204));
+        cushionsCustomFiberButton.setFont(new java.awt.Font("Times New Roman", 0, 11));
+        cushionsCustomFiberButton.setText("Custom Fiber Selection");
+        cushionsCustomFiberButton.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        cushionsCustomFiberButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cushionsCustomFiberButtonActionPerformed(evt);
+            }
+        });
+
+        cushionsFiberTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        cushionsFiberTypeCombo.setModel(new DefaultComboBoxModel(CushionLogic.getFiberTypes((String)cushionsRangeCombo.getSelectedItem())));
+        cushionsFiberTypeCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cushionsFiberTypeComboActionPerformed(evt);
+            }
+        });
+
+        jLabel267.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel267.setText("Select Fiber Type");
+
+        jLabel268.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel268.setText("Fiber Wastage:");
+
+        cushionsFiberWastage.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        cushionsFiberWastage.setText("3");
+        cushionsFiberWastage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cushionsFiberWastageActionPerformed(evt);
+            }
+        });
+
+        jLabel269.setText("%");
+
+        javax.swing.GroupLayout cotSheetCostingPanel3Layout = new javax.swing.GroupLayout(cotSheetCostingPanel3);
+        cotSheetCostingPanel3.setLayout(cotSheetCostingPanel3Layout);
+        cotSheetCostingPanel3Layout.setHorizontalGroup(
+            cotSheetCostingPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cotSheetCostingPanel3Layout.createSequentialGroup()
+                .addGroup(cotSheetCostingPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cotSheetCostingPanel3Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addGroup(cotSheetCostingPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel266)
+                            .addComponent(jLabel265)
+                            .addComponent(jLabel262)
+                            .addComponent(jLabel268)
+                            .addComponent(jLabel267)
+                            .addComponent(jLabel259))
+                        .addGap(65, 65, 65)
+                        .addGroup(cotSheetCostingPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(cotSheetCostingPanel3Layout.createSequentialGroup()
+                                .addComponent(cushionsFiberWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel269))
+                            .addComponent(cushionsSizeCombo, 0, 215, Short.MAX_VALUE)
+                            .addComponent(cushionsFabricTypeCombo, 0, 215, Short.MAX_VALUE)
+                            .addGroup(cotSheetCostingPanel3Layout.createSequentialGroup()
+                                .addComponent(cushionsFabricWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel260))
+                            .addComponent(cushionsRangeCombo, 0, 215, Short.MAX_VALUE)
+                            .addComponent(cushionsFiberTypeCombo, 0, 215, Short.MAX_VALUE)
+                            .addComponent(cushionsCustomFiberButton, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(15, 15, 15))
+                    .addGroup(cotSheetCostingPanel3Layout.createSequentialGroup()
+                        .addGap(184, 184, 184)
+                        .addComponent(cushionsNewCostingButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, Short.MAX_VALUE))
+                    .addGroup(cotSheetCostingPanel3Layout.createSequentialGroup()
+                        .addGap(163, 163, 163)
+                        .addComponent(cushionsSubmitButton))
+                    .addGroup(cotSheetCostingPanel3Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(cotSheetCostingPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cushionsUseCustom)
+                            .addComponent(cushionsCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cotSheetCostingPanel3Layout.createSequentialGroup()
+                .addContainerGap(150, Short.MAX_VALUE)
+                .addComponent(jLabel258)
+                .addGap(148, 148, 148))
+        );
+        cotSheetCostingPanel3Layout.setVerticalGroup(
+            cotSheetCostingPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cotSheetCostingPanel3Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel258)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cotSheetCostingPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel259)
+                    .addComponent(cushionsRangeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cotSheetCostingPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel265)
+                    .addComponent(cushionsFabricTypeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cotSheetCostingPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel266)
+                    .addComponent(cushionsSizeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(cotSheetCostingPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(cotSheetCostingPanel3Layout.createSequentialGroup()
+                        .addGroup(cotSheetCostingPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel262)
+                            .addComponent(cushionsFabricWastage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel260))
+                        .addGap(24, 24, 24))
+                    .addGroup(cotSheetCostingPanel3Layout.createSequentialGroup()
+                        .addComponent(cushionsCustomFiberButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGroup(cotSheetCostingPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cushionsFiberTypeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel267))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(cotSheetCostingPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel268)
+                    .addComponent(cushionsFiberWastage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel269))
+                .addGap(18, 18, 18)
+                .addComponent(cushionsUseCustom)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cushionsCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(cushionsSubmitButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cushionsNewCostingButton)
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+
+        cushionsCustomPanel.setVisible(false);
+        cushionsNewCostingButton.setVisible(false);
+
+        javax.swing.GroupLayout jPanel43Layout = new javax.swing.GroupLayout(jPanel43);
+        jPanel43.setLayout(jPanel43Layout);
+        jPanel43Layout.setHorizontalGroup(
+            jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel43Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(cotSheetCostingPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+        jPanel43Layout.setVerticalGroup(
+            jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel43Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(cotSheetCostingPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(28, 28, 28))
+        );
+
+        javax.swing.GroupLayout cushionsLayout = new javax.swing.GroupLayout(cushions);
+        cushions.setLayout(cushionsLayout);
+        cushionsLayout.setHorizontalGroup(
+            cushionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cushionsLayout.createSequentialGroup()
+                .addComponent(jPanel43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cushionsCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        cushionsLayout.setVerticalGroup(
+            cushionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cushionsLayout.createSequentialGroup()
+                .addGroup(cushionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cushionsCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        cushionsCPUPanel.setVisible(false);
+
+        cushionsScrollPane.setViewportView(cushions);
+
+        userTabbedPane.addTab("Cushions", cushionsScrollPane);
+
+        jPanel44.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel250.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel250.setText("SMV Value:");
+
+        jLabel261.setFont(new java.awt.Font("Times New Roman", 0, 24));
+        jLabel261.setText("Production Parameters");
+
+        jLabel270.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel270.setText("Fiber Weight");
+
+        bolsterFiberWeight.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bolsterFiberWeight.setText("0.00");
+
+        bolsterSMVValue.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bolsterSMVValue.setText("0.00");
+
+        javax.swing.GroupLayout jPanel44Layout = new javax.swing.GroupLayout(jPanel44);
+        jPanel44.setLayout(jPanel44Layout);
+        jPanel44Layout.setHorizontalGroup(
+            jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel44Layout.createSequentialGroup()
+                .addGap(124, 124, 124)
+                .addComponent(jLabel261)
+                .addContainerGap(118, Short.MAX_VALUE))
+            .addGroup(jPanel44Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel44Layout.createSequentialGroup()
+                        .addComponent(jLabel270)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 285, Short.MAX_VALUE)
+                        .addComponent(bolsterFiberWeight))
+                    .addGroup(jPanel44Layout.createSequentialGroup()
+                        .addComponent(jLabel250)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 288, Short.MAX_VALUE)
+                        .addComponent(bolsterSMVValue)))
+                .addGap(42, 42, 42))
+        );
+        jPanel44Layout.setVerticalGroup(
+            jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel44Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel261, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22)
+                .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel270)
+                    .addComponent(bolsterFiberWeight))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel250)
+                    .addComponent(bolsterSMVValue))
+                .addGap(27, 27, 27))
+        );
+
+        jPanel45.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel271.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel271.setText("PE Bag Cost:");
+
+        jLabel272.setFont(new java.awt.Font("Times New Roman", 0, 24));
+        jLabel272.setText("Cost Per Unit");
+
+        jLabel273.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel273.setText("Thread Cost:");
+
+        jLabel274.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel274.setText("Labour Cost:");
+
+        bolsterLabourCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bolsterLabourCost.setText("0.00");
+
+        bolsterFiberCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bolsterFiberCost.setText("0.00");
+
+        bolsterThreadCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bolsterThreadCost.setText("0.00");
+
+        bolsterTagCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bolsterTagCost.setText("0.00");
+
+        bolsterLableCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bolsterLableCost.setText("0.00");
+
+        jLabel275.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel275.setText("POH:");
+
+        jLabel276.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        jLabel276.setText("Toatal Cost Per Unit:");
+
+        jLabel277.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel277.setText("Tag Cost:");
+
+        jLabel278.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        jLabel278.setText("Total Material Cost");
+
+        bolsterPOH.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bolsterPOH.setText("0.00");
+
+        jLabel279.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel279.setText("Fiber Cost:");
+
+        jLabel280.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel280.setText("Lable Cost:");
+
+        bolsterPEBagCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bolsterPEBagCost.setText("0.00");
+
+        bolsterTotalMaterialCost.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        bolsterTotalMaterialCost.setText("0.00");
+
+        bolsterFabricCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bolsterFabricCost.setText("0.00");
+
+        jLabel281.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel281.setText("Fabric Cost:");
+
+        bolsterToatalCost.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        bolsterToatalCost.setText("0.00");
+
+        javax.swing.GroupLayout jPanel45Layout = new javax.swing.GroupLayout(jPanel45);
+        jPanel45.setLayout(jPanel45Layout);
+        jPanel45Layout.setHorizontalGroup(
+            jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel45Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel278)
+                    .addComponent(jLabel275)
+                    .addComponent(jLabel276)
+                    .addComponent(jLabel274)
+                    .addComponent(jLabel271)
+                    .addComponent(jLabel277)
+                    .addComponent(jLabel280)
+                    .addComponent(jLabel279)
+                    .addComponent(jLabel281)
+                    .addComponent(jLabel273))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 202, Short.MAX_VALUE)
+                .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bolsterToatalCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bolsterFabricCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bolsterTotalMaterialCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bolsterLableCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bolsterTagCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bolsterPOH, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bolsterFiberCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bolsterLabourCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bolsterPEBagCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bolsterThreadCost, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(37, 37, 37))
+            .addGroup(jPanel45Layout.createSequentialGroup()
+                .addGap(166, 166, 166)
+                .addComponent(jLabel272)
+                .addContainerGap(166, Short.MAX_VALUE))
+        );
+        jPanel45Layout.setVerticalGroup(
+            jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel45Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel45Layout.createSequentialGroup()
+                        .addComponent(bolsterFabricCost)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bolsterFiberCost)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bolsterThreadCost)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bolsterLableCost)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bolsterTagCost)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bolsterPEBagCost)
+                        .addGap(11, 11, 11)
+                        .addComponent(bolsterTotalMaterialCost)
+                        .addGap(19, 19, 19)
+                        .addComponent(bolsterPOH)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(bolsterLabourCost)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bolsterToatalCost))
+                    .addGroup(jPanel45Layout.createSequentialGroup()
+                        .addComponent(jLabel272, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel281)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel279)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel273)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel280)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel277)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel271)
+                        .addGap(11, 11, 11)
+                        .addComponent(jLabel278)
+                        .addGap(19, 19, 19)
+                        .addComponent(jLabel275)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel274)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel276)))
+                .addGap(86, 86, 86))
+        );
+
+        javax.swing.GroupLayout bolsterCPUPanelLayout = new javax.swing.GroupLayout(bolsterCPUPanel);
+        bolsterCPUPanel.setLayout(bolsterCPUPanelLayout);
+        bolsterCPUPanelLayout.setHorizontalGroup(
+            bolsterCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bolsterCPUPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(bolsterCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel44, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel45, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
+        );
+        bolsterCPUPanelLayout.setVerticalGroup(
+            bolsterCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bolsterCPUPanelLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jPanel45, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(31, 31, 31)
+                .addComponent(jPanel44, javax.swing.GroupLayout.PREFERRED_SIZE, 156, Short.MAX_VALUE)
+                .addGap(19, 19, 19))
+        );
+
+        cotSheetCostingPanel4.setBackground(new java.awt.Color(204, 204, 204));
+        cotSheetCostingPanel4.setPreferredSize(new java.awt.Dimension(556, 600));
+
+        jLabel282.setFont(new java.awt.Font("Times New Roman", 0, 24));
+        jLabel282.setText("Bolster Pillows Costing");
+
+        jLabel283.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel283.setText("Select Product Range:");
+
+        bolsterRangeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bolsterRangeCombo.setModel(new javax.swing.DefaultComboBoxModel(BolsterLogic.getProductRanges()));
+        bolsterRangeCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bolsterRangeComboActionPerformed(evt);
+            }
+        });
+
+        bolsterFabricWastage.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bolsterFabricWastage.setText("3");
+        bolsterFabricWastage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bolsterFabricWastageActionPerformed(evt);
+            }
+        });
+
+        jLabel284.setText("%");
+
+        jLabel285.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel285.setText("Fabric Wastage:");
+
+        jLabel286.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel286.setText("Diameter:");
+
+        bolsterCustomDiameter.setFont(new java.awt.Font("Times New Roman", 0, 16));
+
+        bolsterIncludeLable.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bolsterIncludeLable.setText("Include Lable");
+
+        bolsterIncludeTag.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bolsterIncludeTag.setText("Include Tag");
+
+        bolsterIncludePEBag.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bolsterIncludePEBag.setText("Include PE Bag");
+
+        jLabel292.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel292.setText("Length:");
+
+        bolsterCustomLength.setFont(new java.awt.Font("Times New Roman", 0, 16));
+
+        javax.swing.GroupLayout bolsterCustomPanelLayout = new javax.swing.GroupLayout(bolsterCustomPanel);
+        bolsterCustomPanel.setLayout(bolsterCustomPanelLayout);
+        bolsterCustomPanelLayout.setHorizontalGroup(
+            bolsterCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bolsterCustomPanelLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(bolsterCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bolsterIncludeTag)
+                    .addComponent(bolsterIncludePEBag)
+                    .addComponent(bolsterIncludeLable))
+                .addContainerGap())
+            .addGroup(bolsterCustomPanelLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(bolsterCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel286)
+                    .addComponent(jLabel292))
+                .addGap(73, 73, 73)
+                .addGroup(bolsterCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bolsterCustomDiameter, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+                    .addComponent(bolsterCustomLength, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE))
+                .addGap(73, 73, 73))
+        );
+        bolsterCustomPanelLayout.setVerticalGroup(
+            bolsterCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bolsterCustomPanelLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(bolsterCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel286)
+                    .addComponent(bolsterCustomDiameter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addGroup(bolsterCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel292)
+                    .addComponent(bolsterCustomLength, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(bolsterIncludeLable)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(bolsterIncludeTag)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bolsterIncludePEBag)
+                .addContainerGap())
+        );
+
+        jLabel287.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel287.setText("Select Fabric Type:");
+
+        bolsterFabricTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bolsterFabricTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(BolsterLogic.getMaterialTypes((String)bolsterRangeCombo.getSelectedItem())));
+        bolsterFabricTypeCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bolsterFabricTypeComboActionPerformed(evt);
+            }
+        });
+
+        jLabel288.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel288.setText("Select Size:");
+
+        bolsterSizeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bolsterSizeCombo.setModel(new javax.swing.DefaultComboBoxModel(BolsterLogic.getBolsterSizes((String)bolsterRangeCombo.getSelectedItem())));
+
+        bolsterSubmitButton.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bolsterSubmitButton.setText("Find Cost Per Unit");
+        bolsterSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bolsterSubmitButtonActionPerformed(evt);
+            }
+        });
+
+        bolsterUseCustom.setBackground(new java.awt.Color(204, 204, 204));
+        bolsterUseCustom.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        bolsterUseCustom.setText("Use Custom Sizes");
+        bolsterUseCustom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bolsterUseCustomActionPerformed(evt);
+            }
+        });
+
+        bolsterNewCostingButton.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bolsterNewCostingButton.setText("New Costing");
+        bolsterNewCostingButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bolsterNewCostingButtonActionPerformed(evt);
+            }
+        });
+
+        bolsterCustomFiberButton.setBackground(new java.awt.Color(204, 204, 204));
+        bolsterCustomFiberButton.setFont(new java.awt.Font("Times New Roman", 0, 11));
+        bolsterCustomFiberButton.setText("Custom Fiber Selection");
+        bolsterCustomFiberButton.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        bolsterCustomFiberButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bolsterCustomFiberButtonActionPerformed(evt);
+            }
+        });
+
+        bolsterFiberTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bolsterFiberTypeCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bolsterFiberTypeComboActionPerformed(evt);
+            }
+        });
+
+        jLabel289.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel289.setText("Select Fiber Type");
+
+        jLabel290.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel290.setText("Fiber Wastage:");
+
+        bolsterFiberWastage.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bolsterFiberWastage.setText("3");
+        bolsterFiberWastage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bolsterFiberWastageActionPerformed(evt);
+            }
+        });
+
+        jLabel291.setText("%");
+
+        javax.swing.GroupLayout cotSheetCostingPanel4Layout = new javax.swing.GroupLayout(cotSheetCostingPanel4);
+        cotSheetCostingPanel4.setLayout(cotSheetCostingPanel4Layout);
+        cotSheetCostingPanel4Layout.setHorizontalGroup(
+            cotSheetCostingPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cotSheetCostingPanel4Layout.createSequentialGroup()
+                .addGroup(cotSheetCostingPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cotSheetCostingPanel4Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addGroup(cotSheetCostingPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel288)
+                            .addComponent(jLabel287)
+                            .addComponent(jLabel285)
+                            .addComponent(jLabel290)
+                            .addComponent(jLabel289)
+                            .addComponent(jLabel283))
+                        .addGap(65, 65, 65)
+                        .addGroup(cotSheetCostingPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(cotSheetCostingPanel4Layout.createSequentialGroup()
+                                .addComponent(bolsterFiberWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel291))
+                            .addComponent(bolsterSizeCombo, 0, 215, Short.MAX_VALUE)
+                            .addComponent(bolsterFabricTypeCombo, 0, 215, Short.MAX_VALUE)
+                            .addGroup(cotSheetCostingPanel4Layout.createSequentialGroup()
+                                .addComponent(bolsterFabricWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel284))
+                            .addComponent(bolsterRangeCombo, 0, 215, Short.MAX_VALUE)
+                            .addComponent(bolsterFiberTypeCombo, 0, 215, Short.MAX_VALUE)
+                            .addComponent(bolsterCustomFiberButton, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(15, 15, 15))
+                    .addGroup(cotSheetCostingPanel4Layout.createSequentialGroup()
+                        .addGap(184, 184, 184)
+                        .addComponent(bolsterNewCostingButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, Short.MAX_VALUE))
+                    .addGroup(cotSheetCostingPanel4Layout.createSequentialGroup()
+                        .addGap(163, 163, 163)
+                        .addComponent(bolsterSubmitButton))
+                    .addGroup(cotSheetCostingPanel4Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(cotSheetCostingPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bolsterCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bolsterUseCustom))
+                        .addGap(30, 30, 30))
+                    .addGroup(cotSheetCostingPanel4Layout.createSequentialGroup()
+                        .addGap(118, 118, 118)
+                        .addComponent(jLabel282)))
+                .addContainerGap())
+        );
+        cotSheetCostingPanel4Layout.setVerticalGroup(
+            cotSheetCostingPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cotSheetCostingPanel4Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel282)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cotSheetCostingPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel283)
+                    .addComponent(bolsterRangeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cotSheetCostingPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel287)
+                    .addComponent(bolsterFabricTypeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cotSheetCostingPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel288)
+                    .addComponent(bolsterSizeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(cotSheetCostingPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(cotSheetCostingPanel4Layout.createSequentialGroup()
+                        .addGroup(cotSheetCostingPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel285)
+                            .addComponent(bolsterFabricWastage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel284))
+                        .addGap(24, 24, 24))
+                    .addGroup(cotSheetCostingPanel4Layout.createSequentialGroup()
+                        .addComponent(bolsterCustomFiberButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGroup(cotSheetCostingPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bolsterFiberTypeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel289))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(cotSheetCostingPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel290)
+                    .addComponent(bolsterFiberWastage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel291))
+                .addGap(18, 18, 18)
+                .addComponent(bolsterUseCustom)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bolsterCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(bolsterSubmitButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(bolsterNewCostingButton)
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+
+        bolsterCustomPanel.setVisible(false);
+        bolsterNewCostingButton.setVisible(false);
+        bolsterFiberTypeCombo.setModel(new DefaultComboBoxModel(BolsterLogic.getFiberTypes((String)bolsterRangeCombo.getSelectedItem())));
+
+        javax.swing.GroupLayout jPanel46Layout = new javax.swing.GroupLayout(jPanel46);
+        jPanel46.setLayout(jPanel46Layout);
+        jPanel46Layout.setHorizontalGroup(
+            jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel46Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(cotSheetCostingPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+        jPanel46Layout.setVerticalGroup(
+            jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel46Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(cotSheetCostingPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(28, 28, 28))
+        );
+
+        javax.swing.GroupLayout bolstersLayout = new javax.swing.GroupLayout(bolsters);
+        bolsters.setLayout(bolstersLayout);
+        bolstersLayout.setHorizontalGroup(
+            bolstersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bolstersLayout.createSequentialGroup()
+                .addComponent(jPanel46, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bolsterCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        bolstersLayout.setVerticalGroup(
+            bolstersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bolstersLayout.createSequentialGroup()
+                .addGroup(bolstersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel46, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bolsterCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        bolsterCPUPanel.setVisible(false);
+
+        bolsterScrollPane.setViewportView(bolsters);
+
+        userTabbedPane.addTab("Bolster Pillows", bolsterScrollPane);
 
         fileMenu.setText("File");
 
@@ -6842,12 +8170,12 @@ public class MainWindow extends javax.swing.JFrame {
             final MainWindow mW = this;
             java.awt.EventQueue.invokeLater(new Runnable() {
 
-            public void run() {
-                LoginForm dialog = new LoginForm(mW, true);
-                dialog.setVisible(false);
-                dialog.handleLogin(mW);
-            }
-        });
+                public void run() {
+                    LoginForm dialog = new LoginForm(mW, true);
+                    dialog.setVisible(false);
+                    dialog.handleLogin(mW);
+                }
+            });
         } else {
             adminView = false;
             adminTabbedPane.setVisible(false);
@@ -7250,6 +8578,359 @@ public class MainWindow extends javax.swing.JFrame {
         pillowsCPUPanel.setVisible(false);
     }//GEN-LAST:event_pillowsNewCostingButtonActionPerformed
 
+    private void cushionsRangeComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cushionsRangeComboActionPerformed
+        cushionsFabricTypeCombo.setModel(new DefaultComboBoxModel(PillowLogic.getMaterialTypes((String) cushionsRangeCombo.getSelectedItem())));
+        cushionsSizeCombo.setModel(new DefaultComboBoxModel(CushionLogic.getCushionSizes((String) cushionsRangeCombo.getSelectedItem())));
+        if (!cushionsCustomFiberButton.isSelected()) {
+            cushionsFiberTypeCombo.setModel(new DefaultComboBoxModel(CushionLogic.getFiberTypes((String) cushionsRangeCombo.getSelectedItem())));
+        }
+    }//GEN-LAST:event_cushionsRangeComboActionPerformed
+
+    private void cushionsFabricWastageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cushionsFabricWastageActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cushionsFabricWastageActionPerformed
+
+    private void cushionsFabricTypeComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cushionsFabricTypeComboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cushionsFabricTypeComboActionPerformed
+
+    private void cushionsSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cushionsSubmitButtonActionPerformed
+        CushionsViewModel cCost = new CushionsViewModel();
+
+        String cushionsRange = (String) cushionsRangeCombo.getSelectedItem();
+        cCost.setProductRange(cushionsRange);
+
+        String fabricType = (String) cushionsFabricTypeCombo.getSelectedItem();
+        cCost.setMaterialType(fabricType);
+
+        String size = (String) cushionsSizeCombo.getSelectedItem();
+        cCost.setSize(size);
+
+        try {
+            double fabricWastage = Double.parseDouble(cushionsFabricWastage.getText());
+            if (fabricWastage < 0 || fabricWastage > 10) {
+                JOptionPane.showMessageDialog(this, "Fabric wastage should be between 0 and 10 %");
+                return;
+            }
+            cCost.setFabricWastage(fabricWastage);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid fabric wastage value");
+            return;
+        }
+
+        String fiberType = (String) cushionsFiberTypeCombo.getSelectedItem();
+        cCost.setFiberType(fiberType);
+
+        try {
+            double fiberWastage = Double.parseDouble(cushionsFiberWastage.getText());
+            if (fiberWastage < 0 || fiberWastage > 10) {
+                JOptionPane.showMessageDialog(this, "Fiber wastage should be between 0 and 10 %");
+                return;
+            }
+            cCost.setFiberWastage(fiberWastage);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid fiber wastage value");
+            return;
+        }
+
+        boolean useCustom = cushionsUseCustom.isSelected();
+        if (useCustom) {
+            cCost.setIsCustom(useCustom);
+            try {
+                Integer widthHeight = Integer.parseInt(cushionsCustomWidthHeight.getText());
+                if (widthHeight <= 0 || widthHeight > 120) {
+                    JOptionPane.showMessageDialog(this, "Width & Height should be between 0 and 120");
+                    return;
+                }
+                cCost.setCustomWidthHeight(widthHeight);
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(this, "Please enter a valid width value");
+                return;
+            }
+
+            cCost.setIncludeLable(cushionsIncludeLable.isSelected());
+            cCost.setIncludeTag(cushionsIncludeTag.isSelected());
+            cCost.setIncludePEBag(cushionsIncludePEBag.isSelected());
+        }
+        DecimalFormat format = new DecimalFormat();
+        format.setMaximumFractionDigits(2);
+        format.setMinimumFractionDigits(2);
+
+        CushionsViewModel cReturn = CushionLogic.getCostPerUnit(cCost);
+        cushionsFabricCost.setText(format.format(cReturn.getFabricCost()) + "");
+        cushionsFiberCost.setText(format.format(cReturn.getFiberCost()) + "");
+        cushionsThreadCost.setText(format.format(cReturn.getThreadCost()) + "");
+        cushionsLableCost.setText(format.format(cReturn.getLableCost()) + "");
+        cushionsTagCost.setText(format.format(cReturn.getTagCost()) + "");
+        cushionsPEBagCost.setText(format.format(cReturn.getPEBagCost()) + "");
+        cushionsTotalMaterialCost.setText(format.format(cReturn.getTotalMaterialCost()) + "");
+        cushionsPOH.setText(format.format(cReturn.getPohCost()) + "");
+        cushionsLabourCost.setText(format.format(cReturn.getLabourCost()) + "");
+        cushionsToatalCost.setText(format.format(cReturn.getTotalCost()) + "");
+        cushionsFabricCutWidthHeight.setText(format.format(cReturn.getFabricCuttingWidthHeight()) + "");
+        cushionsFiberWeight.setText(format.format(cReturn.getFiberWeight()) + "");
+        cushionsSMVValue.setText(format.format(cReturn.getSmvValue()) + "");
+
+
+        cushionsRangeCombo.setEnabled(false);
+        cushionsFabricTypeCombo.setEnabled(false);
+        cushionsSizeCombo.setEnabled(false);
+        cushionsFabricWastage.setEnabled(false);
+        cushionsCustomFiberButton.setEnabled(false);
+        cushionsFiberTypeCombo.setEnabled(false);
+        cushionsFiberWastage.setEnabled(false);
+        cushionsUseCustom.setEnabled(false);
+        cushionsCustomWidthHeight.setEnabled(false);
+        cushionsIncludeLable.setEnabled(false);
+        cushionsIncludePEBag.setEnabled(false);
+        cushionsIncludeTag.setEnabled(false);
+
+        cushionsSubmitButton.setVisible(false);
+        cushionsNewCostingButton.setVisible(true);
+        cushionsCPUPanel.setVisible(true);
+
+    }//GEN-LAST:event_cushionsSubmitButtonActionPerformed
+
+    private void cushionsUseCustomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cushionsUseCustomActionPerformed
+        if (cushionsUseCustom.isSelected()) {
+            cushionsCustomPanel.setVisible(true);
+        } else {
+            cushionsCustomPanel.setVisible(false);
+        }
+    }//GEN-LAST:event_cushionsUseCustomActionPerformed
+
+    private void cushionsNewCostingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cushionsNewCostingButtonActionPerformed
+        cushionsRangeCombo.setModel(new DefaultComboBoxModel(CushionLogic.getProductRanges()));
+        cushionsFabricTypeCombo.setModel(new DefaultComboBoxModel(CushionLogic.getMaterialTypes((String) cushionsRangeCombo.getSelectedItem())));
+        cushionsSizeCombo.setModel(new DefaultComboBoxModel(CushionLogic.getCushionSizes((String) cushionsRangeCombo.getSelectedItem())));
+        cushionsFabricWastage.setText("3");
+        cushionsCustomFiberButton.setSelected(false);
+        cushionsFiberTypeCombo.setModel(new DefaultComboBoxModel(CushionLogic.getFiberTypes((String) cushionsRangeCombo.getSelectedItem())));
+        cushionsFiberWastage.setText("3");
+        cushionsUseCustom.setSelected(false);
+        cushionsCustomPanel.setVisible(false);
+        cushionsCustomWidthHeight.setText("");
+        cushionsIncludeLable.setSelected(false);
+        cushionsIncludePEBag.setSelected(false);
+        cushionsIncludeTag.setSelected(false);
+
+        cushionsRangeCombo.setEnabled(true);
+        cushionsFabricTypeCombo.setEnabled(true);
+        cushionsSizeCombo.setEnabled(true);
+        cushionsFabricWastage.setEnabled(true);
+        cushionsCustomFiberButton.setEnabled(true);
+        cushionsFiberTypeCombo.setEnabled(true);
+        cushionsFiberWastage.setEnabled(true);
+        cushionsUseCustom.setEnabled(true);
+        cushionsCustomWidthHeight.setEnabled(true);
+        cushionsIncludeLable.setEnabled(true);
+        cushionsIncludePEBag.setEnabled(true);
+        cushionsIncludeTag.setEnabled(true);
+
+        cushionsSubmitButton.setVisible(true);
+        cushionsNewCostingButton.setVisible(false);
+        cushionsCPUPanel.setVisible(false);
+    }//GEN-LAST:event_cushionsNewCostingButtonActionPerformed
+
+    private void cushionsCustomFiberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cushionsCustomFiberButtonActionPerformed
+        if (cushionsCustomFiberButton.isSelected()) {
+            cushionsFiberTypeCombo.setModel(new DefaultComboBoxModel(CushionLogic.getFiberTypes()));
+        } else {
+            cushionsFiberTypeCombo.setModel(new DefaultComboBoxModel(CushionLogic.getFiberTypes((String) cushionsRangeCombo.getSelectedItem())));
+        }
+    }//GEN-LAST:event_cushionsCustomFiberButtonActionPerformed
+
+    private void cushionsFiberTypeComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cushionsFiberTypeComboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cushionsFiberTypeComboActionPerformed
+
+    private void cushionsFiberWastageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cushionsFiberWastageActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cushionsFiberWastageActionPerformed
+
+    private void bolsterRangeComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolsterRangeComboActionPerformed
+        bolsterFabricTypeCombo.setModel(new DefaultComboBoxModel(BolsterLogic.getMaterialTypes((String) bolsterRangeCombo.getSelectedItem())));
+        bolsterSizeCombo.setModel(new DefaultComboBoxModel(BolsterLogic.getBolsterSizes((String) bolsterRangeCombo.getSelectedItem())));
+        if (!bolsterCustomFiberButton.isSelected()) {
+            bolsterFiberTypeCombo.setModel(new DefaultComboBoxModel(BolsterLogic.getFiberTypes((String) bolsterRangeCombo.getSelectedItem())));
+        }
+    }//GEN-LAST:event_bolsterRangeComboActionPerformed
+
+    private void bolsterFabricWastageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolsterFabricWastageActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bolsterFabricWastageActionPerformed
+
+    private void bolsterFabricTypeComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolsterFabricTypeComboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bolsterFabricTypeComboActionPerformed
+
+    private void bolsterSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolsterSubmitButtonActionPerformed
+        BolstersViewModel bCost = new BolstersViewModel();
+
+        String bolsterRange = (String) bolsterRangeCombo.getSelectedItem();
+        bCost.setProductRange(bolsterRange);
+
+        String fabricType = (String) bolsterFabricTypeCombo.getSelectedItem();
+        bCost.setMaterialType(fabricType);
+
+        String size = (String) bolsterSizeCombo.getSelectedItem();
+        bCost.setSize(size);
+
+        try {
+            double fabricWastage = Double.parseDouble(bolsterFabricWastage.getText());
+            if (fabricWastage < 0 || fabricWastage > 10) {
+                JOptionPane.showMessageDialog(this, "Fabric wastage should be between 0 and 10 %");
+                return;
+            }
+            bCost.setFabricWastage(fabricWastage);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid fabric wastage value");
+            return;
+        }
+
+        String fiberType = (String) bolsterFiberTypeCombo.getSelectedItem();
+        bCost.setFiberType(fiberType);
+
+        try {
+            double fiberWastage = Double.parseDouble(bolsterFiberWastage.getText());
+            if (fiberWastage < 0 || fiberWastage > 10) {
+                JOptionPane.showMessageDialog(this, "Fiber wastage should be between 0 and 10 %");
+                return;
+            }
+            bCost.setFiberWastage(fiberWastage);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid fiber wastage value");
+            return;
+        }
+
+        boolean useCustom = bolsterUseCustom.isSelected();
+        if (useCustom) {
+            bCost.setIsCustom(useCustom);
+            try {
+                Integer diameter = Integer.parseInt(bolsterCustomDiameter.getText());
+                if (diameter <= 0 || diameter > 120) {
+                    JOptionPane.showMessageDialog(this, "Diameter should be between 0 and 120");
+                    return;
+                }
+                bCost.setDiameter(diameter);
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(this, "Please enter a valid diameter value");
+                return;
+            }
+
+            try {
+                Integer length = Integer.parseInt(bolsterCustomDiameter.getText());
+                if (length <= 0 || length > 120) {
+                    JOptionPane.showMessageDialog(this, "Length should be between 0 and 120");
+                    return;
+                }
+                bCost.setLength(length);
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(this, "Please enter a valid length value");
+                return;
+            }
+
+            bCost.setIncludeLable(bolsterIncludeLable.isSelected());
+            bCost.setIncludeTag(bolsterIncludeTag.isSelected());
+            bCost.setIncludePEBag(bolsterIncludePEBag.isSelected());
+        }
+        DecimalFormat format = new DecimalFormat();
+        format.setMaximumFractionDigits(2);
+        format.setMinimumFractionDigits(2);
+
+        BolstersViewModel bReturn = BolsterLogic.getCostPerUnit(bCost);
+        bolsterFabricCost.setText(format.format(bReturn.getFabricCost()) + "");
+        bolsterFiberCost.setText(format.format(bReturn.getFiberCost()) + "");
+        bolsterThreadCost.setText(format.format(bReturn.getThreadCost()) + "");
+        bolsterLableCost.setText(format.format(bReturn.getLableCost()) + "");
+        bolsterTagCost.setText(format.format(bReturn.getTagCost()) + "");
+        bolsterPEBagCost.setText(format.format(bReturn.getPEBagCost()) + "");
+        bolsterTotalMaterialCost.setText(format.format(bReturn.getTotalMaterialCost()) + "");
+        bolsterPOH.setText(format.format(bReturn.getPohCost()) + "");
+        bolsterLabourCost.setText(format.format(bReturn.getLabourCost()) + "");
+        bolsterToatalCost.setText(format.format(bReturn.getTotalCost()) + "");
+        bolsterFiberWeight.setText(format.format(bReturn.getFiberWeight()) + "");
+        bolsterSMVValue.setText(format.format(bReturn.getSmvValue()) + "");
+
+
+        bolsterRangeCombo.setEnabled(false);
+        bolsterFabricTypeCombo.setEnabled(false);
+        bolsterSizeCombo.setEnabled(false);
+        bolsterFabricWastage.setEnabled(false);
+        bolsterCustomFiberButton.setEnabled(false);
+        bolsterFiberTypeCombo.setEnabled(false);
+        bolsterFiberWastage.setEnabled(false);
+        bolsterUseCustom.setEnabled(false);
+        bolsterCustomDiameter.setEnabled(false);
+        bolsterCustomLength.setEnabled(false);
+        bolsterIncludeLable.setEnabled(false);
+        bolsterIncludePEBag.setEnabled(false);
+        bolsterIncludeTag.setEnabled(false);
+
+        bolsterSubmitButton.setVisible(false);
+        bolsterNewCostingButton.setVisible(true);
+        bolsterCPUPanel.setVisible(true);
+    }//GEN-LAST:event_bolsterSubmitButtonActionPerformed
+
+    private void bolsterUseCustomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolsterUseCustomActionPerformed
+        if (bolsterUseCustom.isSelected()) {
+            bolsterCustomPanel.setVisible(true);
+        } else {
+            bolsterCustomPanel.setVisible(false);
+        }
+    }//GEN-LAST:event_bolsterUseCustomActionPerformed
+
+    private void bolsterNewCostingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolsterNewCostingButtonActionPerformed
+        bolsterRangeCombo.setModel(new DefaultComboBoxModel(BolsterLogic.getProductRanges()));
+        bolsterFabricTypeCombo.setModel(new DefaultComboBoxModel(BolsterLogic.getMaterialTypes((String) bolsterRangeCombo.getSelectedItem())));
+        bolsterSizeCombo.setModel(new DefaultComboBoxModel(BolsterLogic.getBolsterSizes((String) bolsterRangeCombo.getSelectedItem())));
+        bolsterFabricWastage.setText("3");
+        bolsterCustomFiberButton.setSelected(false);
+        bolsterFiberTypeCombo.setModel(new DefaultComboBoxModel(BolsterLogic.getFiberTypes((String) bolsterRangeCombo.getSelectedItem())));
+        bolsterFiberWastage.setText("3");
+        bolsterUseCustom.setSelected(false);
+        bolsterCustomPanel.setVisible(false);
+        bolsterCustomDiameter.setText("");
+        bolsterCustomLength.setText("");
+        bolsterIncludeLable.setSelected(false);
+        bolsterIncludePEBag.setSelected(false);
+        bolsterIncludeTag.setSelected(false);
+
+        bolsterRangeCombo.setEnabled(true);
+        bolsterFabricTypeCombo.setEnabled(true);
+        bolsterSizeCombo.setEnabled(true);
+        bolsterFabricWastage.setEnabled(true);
+        bolsterCustomFiberButton.setEnabled(true);
+        bolsterFiberTypeCombo.setEnabled(true);
+        bolsterFiberWastage.setEnabled(true);
+        bolsterUseCustom.setEnabled(true);
+        bolsterCustomDiameter.setEnabled(true);
+        bolsterCustomLength.setEnabled(true);
+        bolsterIncludeLable.setEnabled(true);
+        bolsterIncludePEBag.setEnabled(true);
+        bolsterIncludeTag.setEnabled(true);
+
+        bolsterSubmitButton.setVisible(true);
+        bolsterNewCostingButton.setVisible(false);
+        bolsterCPUPanel.setVisible(false);
+    }//GEN-LAST:event_bolsterNewCostingButtonActionPerformed
+
+    private void bolsterCustomFiberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolsterCustomFiberButtonActionPerformed
+        if (bolsterCustomFiberButton.isSelected()) {
+            bolsterFiberTypeCombo.setModel(new DefaultComboBoxModel(BolsterLogic.getFiberTypes()));
+        } else {
+            bolsterFiberTypeCombo.setModel(new DefaultComboBoxModel(BolsterLogic.getFiberTypes((String) bolsterRangeCombo.getSelectedItem())));
+        }
+    }//GEN-LAST:event_bolsterCustomFiberButtonActionPerformed
+
+    private void bolsterFiberTypeComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolsterFiberTypeComboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bolsterFiberTypeComboActionPerformed
+
+    private void bolsterFiberWastageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolsterFiberWastageActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bolsterFiberWastageActionPerformed
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
@@ -7298,10 +8979,47 @@ public class MainWindow extends javax.swing.JFrame {
     private view.BedsheetAccessoriesView bedsheetAccessoriesView1;
     private javax.swing.JPanel bedsheetPanel;
     private view.BedsheetView bedsheetView1;
+    private view.BolsterAccessoriesView bolsterAccessoriesView1;
+    private javax.swing.JPanel bolsterCPUPanel;
+    private javax.swing.JTextField bolsterCustomDiameter;
+    private javax.swing.JRadioButton bolsterCustomFiberButton;
+    private javax.swing.JTextField bolsterCustomLength;
+    private javax.swing.JPanel bolsterCustomPanel;
+    private javax.swing.JLabel bolsterFabricCost;
+    private javax.swing.JComboBox bolsterFabricTypeCombo;
+    private javax.swing.JTextField bolsterFabricWastage;
+    private javax.swing.JLabel bolsterFiberCost;
+    private javax.swing.JComboBox bolsterFiberTypeCombo;
+    private javax.swing.JTextField bolsterFiberWastage;
+    private javax.swing.JLabel bolsterFiberWeight;
+    private view.BolsterFiberWeightView bolsterFiberWeightView1;
+    private javax.swing.JRadioButton bolsterIncludeLable;
+    private javax.swing.JRadioButton bolsterIncludePEBag;
+    private javax.swing.JRadioButton bolsterIncludeTag;
+    private javax.swing.JLabel bolsterLableCost;
+    private javax.swing.JLabel bolsterLabourCost;
+    private javax.swing.JButton bolsterNewCostingButton;
+    private javax.swing.JLabel bolsterPEBagCost;
+    private javax.swing.JLabel bolsterPOH;
+    private javax.swing.JPanel bolsterPillowsPanel;
+    private javax.swing.JComboBox bolsterRangeCombo;
+    private javax.swing.JLabel bolsterSMVValue;
+    private javax.swing.JScrollPane bolsterScrollPane;
+    private javax.swing.JComboBox bolsterSizeCombo;
+    private javax.swing.JButton bolsterSubmitButton;
+    private javax.swing.JLabel bolsterTagCost;
+    private javax.swing.JLabel bolsterThreadCost;
+    private javax.swing.JLabel bolsterToatalCost;
+    private javax.swing.JLabel bolsterTotalMaterialCost;
+    private javax.swing.JRadioButton bolsterUseCustom;
+    private view.BolsterView bolsterView1;
+    private javax.swing.JPanel bolsters;
     private javax.swing.JPanel cotSheetCPUPanel;
     private javax.swing.JPanel cotSheetCostingPanel;
     private javax.swing.JPanel cotSheetCostingPanel1;
     private javax.swing.JPanel cotSheetCostingPanel2;
+    private javax.swing.JPanel cotSheetCostingPanel3;
+    private javax.swing.JPanel cotSheetCostingPanel4;
     private javax.swing.JTextField cotSheetCustomHeight;
     private javax.swing.JPanel cotSheetCustomPanel;
     private javax.swing.JTextField cotSheetCustomWidth;
@@ -7342,6 +9060,41 @@ public class MainWindow extends javax.swing.JFrame {
     private view.CotsheetAccessoriesView cotsheetAccessoriesView1;
     private javax.swing.JPanel cotsheetPanel;
     private view.CotsheetView cotsheetView1;
+    private view.CushionAccessoriesView cushionAccessoriesView1;
+    private view.CushionFiberWeightsView cushionFiberWeightsView1;
+    private javax.swing.JPanel cushionPanel;
+    private view.CushionView cushionView1;
+    private javax.swing.JPanel cushions;
+    private javax.swing.JPanel cushionsCPUPanel;
+    private javax.swing.JRadioButton cushionsCustomFiberButton;
+    private javax.swing.JPanel cushionsCustomPanel;
+    private javax.swing.JTextField cushionsCustomWidthHeight;
+    private javax.swing.JLabel cushionsFabricCost;
+    private javax.swing.JLabel cushionsFabricCutWidthHeight;
+    private javax.swing.JComboBox cushionsFabricTypeCombo;
+    private javax.swing.JTextField cushionsFabricWastage;
+    private javax.swing.JLabel cushionsFiberCost;
+    private javax.swing.JComboBox cushionsFiberTypeCombo;
+    private javax.swing.JTextField cushionsFiberWastage;
+    private javax.swing.JLabel cushionsFiberWeight;
+    private javax.swing.JRadioButton cushionsIncludeLable;
+    private javax.swing.JRadioButton cushionsIncludePEBag;
+    private javax.swing.JRadioButton cushionsIncludeTag;
+    private javax.swing.JLabel cushionsLableCost;
+    private javax.swing.JLabel cushionsLabourCost;
+    private javax.swing.JButton cushionsNewCostingButton;
+    private javax.swing.JLabel cushionsPEBagCost;
+    private javax.swing.JLabel cushionsPOH;
+    private javax.swing.JComboBox cushionsRangeCombo;
+    private javax.swing.JLabel cushionsSMVValue;
+    private javax.swing.JScrollPane cushionsScrollPane;
+    private javax.swing.JComboBox cushionsSizeCombo;
+    private javax.swing.JButton cushionsSubmitButton;
+    private javax.swing.JLabel cushionsTagCost;
+    private javax.swing.JLabel cushionsThreadCost;
+    private javax.swing.JLabel cushionsToatalCost;
+    private javax.swing.JLabel cushionsTotalMaterialCost;
+    private javax.swing.JRadioButton cushionsUseCustom;
     private javax.swing.JTextField dovetCoverCustomFlap;
     private javax.swing.JPanel dovetCovers;
     private javax.swing.JLabel dovetCoversButtonCost;
@@ -7589,14 +9342,70 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel236;
     private javax.swing.JLabel jLabel237;
     private javax.swing.JLabel jLabel238;
+    private javax.swing.JLabel jLabel239;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel240;
+    private javax.swing.JLabel jLabel241;
+    private javax.swing.JLabel jLabel242;
+    private javax.swing.JLabel jLabel243;
+    private javax.swing.JLabel jLabel244;
+    private javax.swing.JLabel jLabel245;
     private javax.swing.JLabel jLabel246;
     private javax.swing.JLabel jLabel247;
+    private javax.swing.JLabel jLabel248;
+    private javax.swing.JLabel jLabel249;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel250;
+    private javax.swing.JLabel jLabel251;
+    private javax.swing.JLabel jLabel252;
+    private javax.swing.JLabel jLabel253;
+    private javax.swing.JLabel jLabel254;
+    private javax.swing.JLabel jLabel255;
+    private javax.swing.JLabel jLabel256;
+    private javax.swing.JLabel jLabel257;
+    private javax.swing.JLabel jLabel258;
+    private javax.swing.JLabel jLabel259;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel260;
+    private javax.swing.JLabel jLabel261;
+    private javax.swing.JLabel jLabel262;
+    private javax.swing.JLabel jLabel263;
+    private javax.swing.JLabel jLabel264;
+    private javax.swing.JLabel jLabel265;
+    private javax.swing.JLabel jLabel266;
+    private javax.swing.JLabel jLabel267;
+    private javax.swing.JLabel jLabel268;
+    private javax.swing.JLabel jLabel269;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel270;
+    private javax.swing.JLabel jLabel271;
+    private javax.swing.JLabel jLabel272;
+    private javax.swing.JLabel jLabel273;
+    private javax.swing.JLabel jLabel274;
+    private javax.swing.JLabel jLabel275;
+    private javax.swing.JLabel jLabel276;
+    private javax.swing.JLabel jLabel277;
+    private javax.swing.JLabel jLabel278;
+    private javax.swing.JLabel jLabel279;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel280;
+    private javax.swing.JLabel jLabel281;
+    private javax.swing.JLabel jLabel282;
+    private javax.swing.JLabel jLabel283;
+    private javax.swing.JLabel jLabel284;
+    private javax.swing.JLabel jLabel285;
+    private javax.swing.JLabel jLabel286;
+    private javax.swing.JLabel jLabel287;
+    private javax.swing.JLabel jLabel288;
+    private javax.swing.JLabel jLabel289;
     private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel290;
+    private javax.swing.JLabel jLabel291;
+    private javax.swing.JLabel jLabel292;
+    private javax.swing.JLabel jLabel293;
+    private javax.swing.JLabel jLabel294;
+    private javax.swing.JLabel jLabel295;
+    private javax.swing.JLabel jLabel296;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
@@ -7709,12 +9518,22 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel39;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel40;
+    private javax.swing.JPanel jPanel41;
+    private javax.swing.JPanel jPanel42;
+    private javax.swing.JPanel jPanel43;
+    private javax.swing.JPanel jPanel44;
+    private javax.swing.JPanel jPanel45;
+    private javax.swing.JPanel jPanel46;
+    private javax.swing.JPanel jPanel47;
+    private javax.swing.JPanel jPanel48;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;

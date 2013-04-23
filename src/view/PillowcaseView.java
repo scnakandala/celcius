@@ -69,7 +69,7 @@ public class PillowcaseView extends JPanel {
         columnBinding.setColumnClass(String.class);
         columnBinding.setEditable(false);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${size}"));
-        columnBinding.setColumnName("Size");
+        columnBinding.setColumnName("Size ( width X size )");
         columnBinding.setColumnClass(String.class);
         columnBinding.setEditable(false);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${smv}"));
