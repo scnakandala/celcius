@@ -1,6 +1,6 @@
 package viewmodels;
 
-public class DovetsViewModel {
+public class DovetsViewModel extends AbstractViewModel{
     //inpputs
 
     private String duvetType = "";

@@ -1,6 +1,6 @@
 package viewmodels;
 
-public class BedSheetViewModel {
+public class BedSheetViewModel extends AbstractViewModel {
     //inpputs
     private String productRange = "";
     private String materialType = "";

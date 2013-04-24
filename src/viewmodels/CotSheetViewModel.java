@@ -1,6 +1,6 @@
 package viewmodels;
 
-public class CotSheetViewModel {
+public class CotSheetViewModel extends AbstractViewModel{
     //inpputs
 
     private String materialType = "";

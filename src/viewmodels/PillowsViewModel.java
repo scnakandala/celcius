@@ -1,6 +1,6 @@
 package viewmodels;
 
-public class PillowsViewModel {
+public class PillowsViewModel extends AbstractViewModel{
 
     //inpputs
     private String pillowType = "";

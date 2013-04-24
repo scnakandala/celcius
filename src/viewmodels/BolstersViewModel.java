@@ -1,6 +1,6 @@
 package viewmodels;
 
-public class BolstersViewModel {
+public class BolstersViewModel extends AbstractViewModel{
     //inpputs
 
     private String productRange = "";

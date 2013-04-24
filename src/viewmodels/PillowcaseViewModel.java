@@ -1,6 +1,6 @@
 package viewmodels;
 
-public class PillowcaseViewModel {
+public class PillowcaseViewModel extends AbstractViewModel{
     //inpputs
     private String productRange = "";
     private String materialType = "";

@@ -1,6 +1,6 @@
 package viewmodels;
 
-public class CushionsViewModel {
+public class CushionsViewModel extends AbstractViewModel{
     //inpputs
 
     private String productRange = "";

@@ -1,6 +1,6 @@
 package viewmodels;
 
-public class DovetCoversViewModel {
+public class DovetCoversViewModel extends AbstractViewModel{
     //inpputs
 
     private String productRange = "";

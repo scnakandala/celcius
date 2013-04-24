@@ -1,6 +1,6 @@
 package viewmodels;
 
-public class MettresProtectorViewModel {
+public class MettresProtectorViewModel extends AbstractViewModel{
     //inpputs
     private String productRange = "";
     private String materialType = "";
