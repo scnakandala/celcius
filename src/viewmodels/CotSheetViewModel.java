@@ -2,40 +2,40 @@ package viewmodels;
 
 public class CotSheetViewModel {
     //inpputs
-    private String materialType;
-    private String size;
-    private String paddingType;
-    private String taffataType;
-    private Double widthQuiltyShrinkage;
-    private Double heightQuiltyShrinkage;
-    private Double fabricWastage;
-    private Double paddingWastage;
-    private Double taffataWastage;
+
+    private String materialType = "";
+    private String size = "";
+    private String paddingType = "";
+    private String taffataType = "";
+    private Double widthQuiltyShrinkage = 0.0;
+    private Double heightQuiltyShrinkage = 0.0;
+    private Double fabricWastage = 0.0;
+    private Double paddingWastage = 0.0;
+    private Double taffataWastage = 0.0;
     private boolean isCustom = false;
-    private int customWidth;
-    private int customHeight;
-    private boolean includeLable;
-    private boolean includeTag;
-    private boolean includePEBag;
-    
+    private int customWidth = 0;
+    private int customHeight = 0;
+    private boolean includeLable = false;
+    private boolean includeTag = false;
+    private boolean includePEBag = false;
     //outputs
-    private Double fabricCost;
-    private Double paddingCost;
-    private Double taffataCost;
-    private Double threadCost;
-    private Double lableCost;
-    private Double tagCost;
-    private Double elasticCost;
-    private Double PEBagCost;
-    private Double pohCost;
-    private Double labourCost;
-    private Double totalMaterialCost;
-    private Double totalCost;
-    private Double fabricPaddingCuttingWidth;
-    private Double fabricPaddingCuttingHeight;
-    private Double taffataCuttingWidth;
-    private Double taffataCuttingHeight;
-    private Double smvValue;
+    private Double fabricCost = 0.0;
+    private Double paddingCost = 0.0;
+    private Double taffataCost = 0.0;
+    private Double threadCost = 0.0;
+    private Double lableCost = 0.0;
+    private Double tagCost = 0.0;
+    private Double elasticCost = 0.0;
+    private Double PEBagCost = 0.0;
+    private Double pohCost = 0.0;
+    private Double labourCost = 0.0;
+    private Double totalMaterialCost = 0.0;
+    private Double totalCost = 0.0;
+    private Double fabricPaddingCuttingWidth = 0.0;
+    private Double fabricPaddingCuttingHeight = 0.0;
+    private Double taffataCuttingWidth = 0.0;
+    private Double taffataCuttingHeight = 0.0;
+    private Double smvValue = 0.0;
 
     public String getTaffataType() {
         return taffataType;
@@ -44,7 +44,6 @@ public class CotSheetViewModel {
     public void setTaffataType(String taffataType) {
         this.taffataType = taffataType;
     }
-
 
     public Double getTotalMaterialCost() {
         return totalMaterialCost;
@@ -85,7 +84,6 @@ public class CotSheetViewModel {
     public void setTaffataCuttingWidth(Double taffataCuttingWidth) {
         this.taffataCuttingWidth = taffataCuttingWidth;
     }
-
 
     public Double getSmvValue() {
         return smvValue;
@@ -174,7 +172,6 @@ public class CotSheetViewModel {
     public void setPohCost(Double pohCost) {
         this.pohCost = pohCost;
     }
-
 
     public String getSize() {
         return size;
@@ -295,5 +292,4 @@ public class CotSheetViewModel {
     public void setTotalCost(Double totalCost) {
         this.totalCost = totalCost;
     }
-
 }

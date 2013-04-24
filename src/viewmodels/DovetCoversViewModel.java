@@ -3,36 +3,36 @@ package viewmodels;
 public class DovetCoversViewModel {
     //inpputs
 
-    private String productRange;
-    private String materialType;
-    private String size;
-    private String duvetCoverType;
-    private Double wastage;
-    private Double flap;
+    private String productRange = "";
+    private String materialType = "";
+    private String size = "";
+    private String duvetCoverType = "";
+    private Double wastage = 0.0;
+    private Double flap = 0.0;
     private boolean isCustom = false;
-    private int customWidth;
-    private int customHeight;
-    private boolean includeLable;
-    private boolean includeTag;
-    private boolean includeSealBag;
-    private boolean includeCardBoard;
+    private int customWidth = 0;
+    private int customHeight = 0;
+    private boolean includeLable = false;
+    private boolean includeTag = false;
+    private boolean includeSealBag = false;
+    private boolean includeCardBoard = false;
     //outputs
-    private Double fabricCost;
-    private Double threadCost;
-    private Double lableCost;
-    private Double tagCost;
-    private Double cardboardCost;
-    private Double sealBagCost;
-    private Double pohCost;
-    private Double labourCost;
-    private Double totalCost;
-    private Double cuttingWidth;
-    private Double cuttingHeight;
-    private Double smvValue;
-    private Double velcoCost;
-    private Double buttonCost;
-    private Double zipperCost;
-    private Double totalMaterialCost;
+    private Double fabricCost = 0.0;
+    private Double threadCost = 0.0;
+    private Double lableCost = 0.0;
+    private Double tagCost = 0.0;
+    private Double cardboardCost = 0.0;
+    private Double sealBagCost = 0.0;
+    private Double pohCost = 0.0;
+    private Double labourCost = 0.0;
+    private Double totalCost = 0.0;
+    private Double cuttingWidth = 0.0;
+    private Double cuttingHeight = 0.0;
+    private Double smvValue = 0.0;
+    private Double velcoCost = 0.0;
+    private Double buttonCost = 0.0;
+    private Double zipperCost = 0.0;
+    private Double totalMaterialCost = 0.0;
 
     public Double getTotalMaterialCost() {
         return totalMaterialCost;

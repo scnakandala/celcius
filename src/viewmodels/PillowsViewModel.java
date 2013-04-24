@@ -1,37 +1,37 @@
 package viewmodels;
 
 public class PillowsViewModel {
-    //inpputs
 
-    private String pillowType;
-    private String productRange;
-    private String materialType;
-    private String size;
-    private Double fabricWastage;
-    private String fiberType;
-    private Double fiberWastage;
+    //inpputs
+    private String pillowType = "";
+    private String productRange = "";
+    private String materialType = "";
+    private String size = "";
+    private Double fabricWastage = 0.0;
+    private String fiberType = "";
+    private Double fiberWastage = 0.0;
     private boolean isCustom = false;
-    private int customWidth;
-    private int customHeight;
-    private boolean includeLable;
-    private boolean includeTag;
-    private boolean includePEBag;
+    private int customWidth = 0;
+    private int customHeight = 0;
+    private boolean includeLable = false;
+    private boolean includeTag = false;
+    private boolean includePEBag = false;
     //outputs
-    private Double fabricCost;
-    private Double fiberCost;
-    private Double fiberWeight;
-    private Double threadCost;
-    private Double lableCost;
-    private Double tagCost;
-    private Double PEBagCost;
-    private Double pipingCost;
-    private Double pohCost;
-    private Double labourCost;
-    private Double totalMaterialCost;
-    private Double totalCost;
-    private Double fabricCuttingWidth;
-    private Double fabricCuttingHeight;
-    private Double smvValue;
+    private Double fabricCost = 0.0;
+    private Double fiberCost = 0.0;
+    private Double fiberWeight = 0.0;
+    private Double threadCost = 0.0;
+    private Double lableCost = 0.0;
+    private Double tagCost = 0.0;
+    private Double PEBagCost = 0.0;
+    private Double pipingCost = 0.0;
+    private Double pohCost = 0.0;
+    private Double labourCost = 0.0;
+    private Double totalMaterialCost = 0.0;
+    private Double totalCost = 0.0;
+    private Double fabricCuttingWidth = 0.0;
+    private Double fabricCuttingHeight = 0.0;
+    private Double smvValue = 0.0;
 
     public String getFiberType() {
         return fiberType;
@@ -41,7 +41,6 @@ public class PillowsViewModel {
         this.fiberType = fiberType;
     }
 
-    
     public Double getTotalMaterialCost() {
         return totalMaterialCost;
     }
@@ -173,7 +172,7 @@ public class PillowsViewModel {
     public void setFabricWastage(Double fabricWastage) {
         this.fabricWastage = fabricWastage;
     }
-    
+
     public boolean isIncludePEBag() {
         return includePEBag;
     }
@@ -257,5 +256,4 @@ public class PillowsViewModel {
     public void setFiberWeight(Double fiberWight) {
         this.fiberWeight = fiberWight;
     }
-
 }
