@@ -7147,9 +7147,10 @@ public class MainWindow extends javax.swing.JFrame {
         bedSheetSubmitButton.setVisible(true);
         bedSheetCustomPanel.setVisible(false);
 
-        bedSheetProductRangeCombo.setSelectedIndex(0);
-        bedSheetMaterialTypeCombo.setSelectedIndex(0);
-        bedSheetSizeCombo.setSelectedIndex(0);
+        bedSheetProductRangeCombo.setModel(new DefaultComboBoxModel(BedSheetLogic.getProductRanges()));
+        bedSheetMaterialTypeCombo.setModel(new DefaultComboBoxModel(
+                BedSheetLogic.getMaterialTypes((String)bedSheetProductRangeCombo.getSelectedItem())));
+        bedSheetSizeCombo.setModel(new DefaultComboBoxModel(BedSheetLogic.getBedSheetSizes()));
         bedSheetWastage.setText("3");
         bedSheetUseCustom.setSelected(false);
         bedSHeetCustomWidth.setText("");
@@ -7172,8 +7173,6 @@ public class MainWindow extends javax.swing.JFrame {
         bedSheetIncludeLable.setEnabled(true);
         bedSheetIncludeSealBag.setEnabled(true);
         bedSheetIncludeTag.setEnabled(true);
-
-
     }//GEN-LAST:event_bedSheetCostingPanelNewCostingButtonActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
@@ -7964,10 +7963,12 @@ public class MainWindow extends javax.swing.JFrame {
         pillowCaseNewCostingButton.setVisible(false);
         pillowcaseSubmitButton.setVisible(true);
 
-        pillowcaseProductRangeCombo.setSelectedIndex(0);
-        pillowcaseMaterialTypeCombo.setSelectedIndex(0);
-        pillowcaseSizeCombo.setSelectedIndex(0);
-        pillowcaseTypeCombo.setSelectedIndex(0);
+        pillowcaseProductRangeCombo.setModel(new DefaultComboBoxModel(PillowcaseLogic.getProductRanges()));
+        pillowcaseMaterialTypeCombo.setModel(
+                new DefaultComboBoxModel(PillowcaseLogic.getMaterialTypes(
+                (String)pillowcaseProductRangeCombo.getSelectedItem())));
+        pillowcaseSizeCombo.setModel(new DefaultComboBoxModel(PillowcaseLogic.getPillowcaseSizes()));
+        pillowcaseTypeCombo.setModel(new DefaultComboBoxModel(PillowcaseLogic.getPillowcaseTypes()));
 
         pillowcaseWastage.setText("3");
         pillowcaseUseCustom.setSelected(false);
@@ -8197,10 +8198,15 @@ public class MainWindow extends javax.swing.JFrame {
         dovetCoversNewCostingButton.setVisible(false);
 
         //enableing the input fields
-        dovetCoversProductRangeCombo.setSelectedIndex(0);
-        dovetCoversMaterialTypeCombo.setSelectedIndex(0);
-        dovetCoversTypeCombo.setSelectedIndex(0);
-        dovetCoversSizeCombo.setSelectedIndex(0);
+        dovetCoversProductRangeCombo.setModel(new DefaultComboBoxModel(
+                DuvetCoversLogic.getProductRanges()));
+        dovetCoversMaterialTypeCombo.setModel(new DefaultComboBoxModel(
+                DuvetCoversLogic.getMaterialTypes(
+                (String)dovetCoversProductRangeCombo.getSelectedItem())));
+        dovetCoversTypeCombo.setModel(new DefaultComboBoxModel(
+                DuvetCoversLogic.getDuvetCoverTypes()));
+        dovetCoversSizeCombo.setModel(new DefaultComboBoxModel(
+                DuvetCoversLogic.getDuvetCoverSizes()));
 
         dovetCoversWastage.setText("3");
         dovetCoversUseCustom.setSelected(false);
@@ -8237,11 +8243,17 @@ public class MainWindow extends javax.swing.JFrame {
         mattressProtectorNewCostingButton.setVisible(false);
         mattressProtectorCPUPanel.setVisible(false);
 
-        mettresProtectorProductRangeCombo.setSelectedIndex(0);
-        mettresProtectorMaterialTypeCombo.setSelectedIndex(0);
-        mettresProtectorSizeCombo.setSelectedIndex(0);
-        mettresProtectorPaddingTypeCombo.setSelectedIndex(0);
-        mettresProtectorTaffataTypeCombo.setSelectedIndex(0);
+        mettresProtectorProductRangeCombo.setModel(new DefaultComboBoxModel(
+                MattresProtectorLogic.getProductRanges()));
+        mettresProtectorMaterialTypeCombo.setModel(new DefaultComboBoxModel(
+                MattresProtectorLogic.getMaterialTypes(
+                (String)mettresProtectorProductRangeCombo.getSelectedItem())));
+        mettresProtectorSizeCombo.setModel(
+                new DefaultComboBoxModel(MattresProtectorLogic.getMettresProtectorSizes()));
+        mettresProtectorPaddingTypeCombo.setModel(
+                new DefaultComboBoxModel(MattresProtectorLogic.getPaddingTypes()));
+        mettresProtectorTaffataTypeCombo.setModel(
+                new DefaultComboBoxModel(MattresProtectorLogic.getTaffataTypes()));
 
         mettresProtectorWidthQuiltingShrinkage.setText("8");
         mettresProtectorHeightQuiltiingShrinkage.setText("3");
@@ -8290,10 +8302,14 @@ public class MainWindow extends javax.swing.JFrame {
         cotSheetSubmitButton.setVisible(true);
         cotSheetNewCosting.setVisible(false);
 
-        cotSheetMaterialTypeCombo.setSelectedIndex(0);
-        cotSheetSizeCombo.setSelectedIndex(0);
-        cotSheetPaddingTypeCombo.setSelectedIndex(0);
-        cotSheetTaffataTypeCombo.setSelectedIndex(0);
+        cotSheetMaterialTypeCombo.setModel(new DefaultComboBoxModel(
+                CotSheetLogic.getMaterialTypes()));
+        cotSheetSizeCombo.setModel(new DefaultComboBoxModel(
+                CotSheetLogic.getCotSheetizes()));
+        cotSheetPaddingTypeCombo.setModel(
+                new DefaultComboBoxModel(CotSheetLogic.getPaddingTypes()));
+        cotSheetTaffataTypeCombo.setModel(
+                new DefaultComboBoxModel(CotSheetLogic.getTaffataTypes()));
         cotSheetWidthQuiltingShrinkage.setText("8");
         cotSheetHeightQuiltiingShrinkage.setText("3");
         cotSheetFabricWastage.setText("3");
@@ -8493,12 +8509,18 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_pillowFiberTypeComboActionPerformed
 
     private void duvetsNewCostingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_duvetsNewCostingButtonActionPerformed
-        duvetTypeCombo.setSelectedIndex(0);
-        duvetProductRangeCombo.setSelectedIndex(0);
-        duvetFabricTypeCombo.setSelectedIndex(0);
-        duvetSizeCombo.setSelectedIndex(0);
+        duvetTypeCombo.setModel(new DefaultComboBoxModel(DuvetsLogic.getDuvetTypes()));
+        duvetProductRangeCombo.setModel(new DefaultComboBoxModel(
+                DuvetsLogic.getProductRanges(
+                (String)duvetTypeCombo.getSelectedItem())));
+        duvetFabricTypeCombo.setModel(new DefaultComboBoxModel(
+                DuvetsLogic.getMaterialTypes(
+                (String)duvetProductRangeCombo.getSelectedItem())));
+        duvetSizeCombo.setModel(new DefaultComboBoxModel(
+                DuvetsLogic.getDuvetsizes((String)duvetTypeCombo.getSelectedItem())));
         duvetsFabricWastage.setText("3");
-        duvetFiberTypeCombo.setSelectedIndex(0);
+        duvetFiberTypeCombo.setModel(
+                new DefaultComboBoxModel(DuvetsLogic.getFiberTypes()));
         duvetFiberWastage.setText("3");
         duvetFillingGsm.setText("");
         duvetsGelFeatherPanel.setVisible(false);
@@ -8542,13 +8564,17 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_duvetsNewCostingButtonActionPerformed
 
     private void pillowsNewCostingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pillowsNewCostingButtonActionPerformed
-        pillowRangeCombo.setSelectedIndex(0);
-        pillowTypeCombo.setSelectedIndex(0);
-        pillowFabricTypeCombo.setSelectedIndex(0);
-        pillowSizeCombo.setSelectedIndex(0);
+        pillowRangeCombo.setModel(new DefaultComboBoxModel(PillowLogic.getProductRanges()));
+        pillowTypeCombo.setModel(new DefaultComboBoxModel(
+                PillowLogic.getPillowTypes((String)pillowRangeCombo.getSelectedItem())));
+        pillowFabricTypeCombo.setModel(new DefaultComboBoxModel(
+                PillowLogic.getMaterialTypes((String)pillowRangeCombo.getSelectedItem())));
+        pillowSizeCombo.setModel(new DefaultComboBoxModel(PillowLogic.getPillowSizes(
+                (String)pillowRangeCombo.getSelectedItem(), (String)pillowTypeCombo.getSelectedItem())));
         pillowFabricWastage.setText("3");
         pillowCustomFiberButton.setSelected(false);
-        pillowFiberTypeCombo.setSelectedIndex(0);
+        pillowFiberTypeCombo.setModel(new DefaultComboBoxModel(
+                PillowLogic.getFiberTypes((String)pillowRangeCombo.getSelectedItem())));
         pillowFiberWastage.setText("3");
         pillowsUseCustom.setSelected(false);
         pillowsCustomPanel.setVisible(false);
@@ -8701,11 +8727,14 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void cushionsNewCostingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cushionsNewCostingButtonActionPerformed
         cushionsRangeCombo.setModel(new DefaultComboBoxModel(CushionLogic.getProductRanges()));
-        cushionsFabricTypeCombo.setModel(new DefaultComboBoxModel(CushionLogic.getMaterialTypes((String) cushionsRangeCombo.getSelectedItem())));
-        cushionsSizeCombo.setModel(new DefaultComboBoxModel(CushionLogic.getCushionSizes((String) cushionsRangeCombo.getSelectedItem())));
+        cushionsFabricTypeCombo.setModel(new DefaultComboBoxModel(CushionLogic.getMaterialTypes(
+                (String) cushionsRangeCombo.getSelectedItem())));
+        cushionsSizeCombo.setModel(new DefaultComboBoxModel(CushionLogic.getCushionSizes(
+                (String) cushionsRangeCombo.getSelectedItem())));
         cushionsFabricWastage.setText("3");
         cushionsCustomFiberButton.setSelected(false);
-        cushionsFiberTypeCombo.setModel(new DefaultComboBoxModel(CushionLogic.getFiberTypes((String) cushionsRangeCombo.getSelectedItem())));
+        cushionsFiberTypeCombo.setModel(new DefaultComboBoxModel(CushionLogic.getFiberTypes(
+                (String) cushionsRangeCombo.getSelectedItem())));
         cushionsFiberWastage.setText("3");
         cushionsUseCustom.setSelected(false);
         cushionsCustomPanel.setVisible(false);
