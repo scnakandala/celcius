@@ -29,7 +29,7 @@ public class DuvetCoversDataAccess {
 
     public String[] getProductRanges() throws SQLException {
         statement = (Statement) connect.createStatement();
-        resultSet = statement.executeQuery("select name from celcius.paddings");
+        resultSet = statement.executeQuery("select name from celcius.ranges");
         ArrayList<String> arr = new ArrayList<String>();
         while (resultSet.next()) {
             arr.add(resultSet.getString("name"));
