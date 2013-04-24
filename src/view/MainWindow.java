@@ -137,82 +137,6 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         bedSheetScrollPane = new javax.swing.JScrollPane();
         pillowcaseScrollPane = new javax.swing.JScrollPane();
-        pillowPanel = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        pillowCaseCostingPanel = new javax.swing.JPanel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        pillowcaseSizeLable = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        pillowcaseProductRangeCombo = new javax.swing.JComboBox();
-        pillowcaseMaterialTypeCombo = new javax.swing.JComboBox();
-        pillowcaseSizeCombo = new javax.swing.JComboBox();
-        pillowcaseTypeCombo = new javax.swing.JComboBox();
-        pillowcaseWastage = new javax.swing.JTextField();
-        jLabel36 = new javax.swing.JLabel();
-        pillowcaseUseCustom = new javax.swing.JRadioButton();
-        pillowcaseSubmitButton = new javax.swing.JButton();
-        pillowcaseCustomPanel = new javax.swing.JPanel();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        pillowcaseCustomWidth = new javax.swing.JTextField();
-        pillowcaseCustomHeight = new javax.swing.JTextField();
-        pillowcaseIncludeLable = new javax.swing.JRadioButton();
-        pillowcaseIncludeTag = new javax.swing.JRadioButton();
-        pillowcaseIncludeSealBag = new javax.swing.JRadioButton();
-        pillowcaseIncludeCardBoard = new javax.swing.JRadioButton();
-        jLabel35 = new javax.swing.JLabel();
-        pillowcaseCustomFlapSize = new javax.swing.JTextField();
-        pillowcaseFrillLabel = new javax.swing.JLabel();
-        pillowcaseCustomFrillSize = new javax.swing.JTextField();
-        pillowCaseNewCostingButton = new javax.swing.JButton();
-        jLabel171 = new javax.swing.JLabel();
-        jLabel236 = new javax.swing.JLabel();
-        pillowcaseTaxField = new javax.swing.JTextField();
-        jLabel266 = new javax.swing.JLabel();
-        jLabel288 = new javax.swing.JLabel();
-        pillowcaseMarginField = new javax.swing.JTextField();
-        jPanel10 = new javax.swing.JPanel();
-        pillowCaseCPUPanel = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel50 = new javax.swing.JLabel();
-        jLabel49 = new javax.swing.JLabel();
-        pillowcaseSMVValue = new javax.swing.JLabel();
-        pillowcaseCutHeight = new javax.swing.JLabel();
-        pillowcaseCutWidth = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
-        jLabel47 = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel45 = new javax.swing.JLabel();
-        pillowcaseToatalCost = new javax.swing.JLabel();
-        jLabel44 = new javax.swing.JLabel();
-        pillowcaseLabourCost = new javax.swing.JLabel();
-        jLabel43 = new javax.swing.JLabel();
-        pillowcasePOH = new javax.swing.JLabel();
-        jLabel78 = new javax.swing.JLabel();
-        pillowCaseTotalMaterialCost = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        pillowcaseSealBagCost = new javax.swing.JLabel();
-        jLabel51 = new javax.swing.JLabel();
-        pillowcaseCardBoardCost = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
-        pillowcaseTagCost = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
-        pillowcaseLableCost = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        pillowcaseThreadCost = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        pillowcaseFabricCost = new javax.swing.JLabel();
-        jLabel46 = new javax.swing.JLabel();
-        jLabel328 = new javax.swing.JLabel();
-        jLabel329 = new javax.swing.JLabel();
-        jLabel330 = new javax.swing.JLabel();
-        pillowcaseGrossSelliingPrice = new javax.swing.JLabel();
-        pillowcaseNetSeelingPrice = new javax.swing.JLabel();
-        pillowcaseTaxes = new javax.swing.JLabel();
         duvetcoverScrolPane = new javax.swing.JScrollPane();
         dovetCovers = new javax.swing.JPanel();
         jPanel19 = new javax.swing.JPanel();
@@ -1472,694 +1396,7 @@ public class MainWindow extends javax.swing.JFrame {
         bedSheetScrollPane.setViewportView(new BedSheetPanel());
         userTabbedPane.addTab("Bed Sheets", bedSheetScrollPane);
 
-        pillowCaseCostingPanel.setBackground(new java.awt.Color(204, 204, 204));
-        pillowCaseCostingPanel.setPreferredSize(new java.awt.Dimension(500, 800));
-        pillowCaseCostingPanel.setRequestFocusEnabled(false);
-
-        jLabel27.setFont(new java.awt.Font("Times New Roman", 0, 24));
-        jLabel27.setText("Pillowcase  Costing");
-
-        jLabel28.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        jLabel28.setText("Select Product Range:");
-
-        jLabel29.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        jLabel29.setText("Select Material Type:");
-
-        pillowcaseSizeLable.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseSizeLable.setText("Select Size:");
-
-        jLabel31.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        jLabel31.setText("Select Pillowcase Type:");
-
-        jLabel32.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        jLabel32.setText("Wastage:");
-
-        pillowcaseProductRangeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseProductRangeCombo.setModel(new javax.swing.DefaultComboBoxModel(PillowcaseLogic.getProductRanges()));
-        pillowcaseProductRangeCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pillowcaseProductRangeComboActionPerformed(evt);
-            }
-        });
-
-        pillowcaseMaterialTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseMaterialTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(PillowcaseLogic.getMaterialTypes((String)pillowcaseProductRangeCombo.getSelectedItem())));
-
-        pillowcaseSizeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseSizeCombo.setModel(new javax.swing.DefaultComboBoxModel(PillowcaseLogic.getPillowcaseSizes()));
-
-        pillowcaseTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(PillowcaseLogic.getPillowcaseTypes()));
-        pillowcaseTypeCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pillowcaseTypeComboActionPerformed(evt);
-            }
-        });
-
-        pillowcaseWastage.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseWastage.setText("3");
-        pillowcaseWastage.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pillowcaseWastageActionPerformed(evt);
-            }
-        });
-
-        jLabel36.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        jLabel36.setText("%");
-
-        pillowcaseUseCustom.setBackground(new java.awt.Color(204, 204, 204));
-        pillowcaseUseCustom.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseUseCustom.setText("Use Custom Sizes");
-        pillowcaseUseCustom.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pillowcaseUseCustomActionPerformed(evt);
-            }
-        });
-
-        pillowcaseSubmitButton.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseSubmitButton.setText("Find Cost Per Unit");
-        pillowcaseSubmitButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pillowcaseSubmitButtonActionPerformed(evt);
-            }
-        });
-
-        pillowcaseCustomPanel.setVisible(false);
-
-        jLabel33.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        jLabel33.setText("Width (inches) :");
-
-        jLabel34.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        jLabel34.setText("Height (inches):");
-
-        pillowcaseCustomWidth.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseCustomWidth.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pillowcaseCustomWidthActionPerformed(evt);
-            }
-        });
-
-        pillowcaseCustomHeight.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseCustomHeight.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pillowcaseCustomHeightActionPerformed(evt);
-            }
-        });
-
-        pillowcaseIncludeLable.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseIncludeLable.setText("Include Lable");
-
-        pillowcaseIncludeTag.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseIncludeTag.setText("Include Tag");
-
-        pillowcaseIncludeSealBag.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseIncludeSealBag.setText("Include Seal Bag");
-
-        pillowcaseIncludeCardBoard.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseIncludeCardBoard.setText("Include Cardboard");
-
-        jLabel35.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        jLabel35.setText("Flap (inches):");
-
-        pillowcaseCustomFlapSize.setFont(new java.awt.Font("Times New Roman", 0, 16));
-
-        pillowcaseFrillLabel.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseFrillLabel.setText("Frill  (inches):");
-
-        pillowcaseCustomFrillSize.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseCustomFrillSize.setText("2");
-
-        javax.swing.GroupLayout pillowcaseCustomPanelLayout = new javax.swing.GroupLayout(pillowcaseCustomPanel);
-        pillowcaseCustomPanel.setLayout(pillowcaseCustomPanelLayout);
-        pillowcaseCustomPanelLayout.setHorizontalGroup(
-            pillowcaseCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pillowcaseCustomPanelLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(pillowcaseCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pillowcaseCustomPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel33)
-                        .addGap(115, 115, 115)
-                        .addComponent(pillowcaseCustomWidth, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pillowcaseCustomPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel34)
-                        .addGap(117, 117, 117)
-                        .addComponent(pillowcaseCustomHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pillowcaseCustomPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel35)
-                        .addGap(129, 129, 129)
-                        .addComponent(pillowcaseCustomFlapSize, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pillowcaseCustomPanelLayout.createSequentialGroup()
-                        .addComponent(pillowcaseFrillLabel)
-                        .addGap(129, 129, 129)
-                        .addComponent(pillowcaseCustomFrillSize, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(pillowcaseIncludeLable)
-                    .addComponent(pillowcaseIncludeTag)
-                    .addComponent(pillowcaseIncludeSealBag)
-                    .addComponent(pillowcaseIncludeCardBoard)))
-        );
-        pillowcaseCustomPanelLayout.setVerticalGroup(
-            pillowcaseCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pillowcaseCustomPanelLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(pillowcaseCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pillowcaseCustomWidth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel33))
-                .addGap(5, 5, 5)
-                .addGroup(pillowcaseCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pillowcaseCustomHeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel34))
-                .addGap(5, 5, 5)
-                .addGroup(pillowcaseCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pillowcaseCustomFlapSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel35))
-                .addGap(5, 5, 5)
-                .addGroup(pillowcaseCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pillowcaseCustomFrillSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pillowcaseFrillLabel))
-                .addGap(5, 5, 5)
-                .addComponent(pillowcaseIncludeLable)
-                .addGap(3, 3, 3)
-                .addComponent(pillowcaseIncludeTag)
-                .addGap(3, 3, 3)
-                .addComponent(pillowcaseIncludeSealBag)
-                .addGap(3, 3, 3)
-                .addComponent(pillowcaseIncludeCardBoard))
-        );
-
-        pillowcaseFrillLabel.setVisible(false);
-        pillowcaseCustomFrillSize.setVisible(false);
-
-        pillowCaseNewCostingButton.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowCaseNewCostingButton.setText("New Costing");
-        pillowCaseNewCostingButton.setVisible(false);
-        pillowCaseNewCostingButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pillowCaseNewCostingButtonActionPerformed(evt);
-            }
-        });
-
-        jLabel171.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        jLabel171.setText("Margin:");
-
-        jLabel236.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        jLabel236.setText("Taxes:");
-
-        pillowcaseTaxField.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseTaxField.setText(Config.taxesRate);
-
-        jLabel266.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        jLabel266.setText("%");
-
-        jLabel288.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        jLabel288.setText("%");
-
-        pillowcaseMarginField.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseMarginField.setText(Config.profitMargin);
-
-        javax.swing.GroupLayout pillowCaseCostingPanelLayout = new javax.swing.GroupLayout(pillowCaseCostingPanel);
-        pillowCaseCostingPanel.setLayout(pillowCaseCostingPanelLayout);
-        pillowCaseCostingPanelLayout.setHorizontalGroup(
-            pillowCaseCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
-                .addGroup(pillowCaseCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(pillowcaseUseCustom))
-                    .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel32)
-                        .addGap(164, 164, 164)
-                        .addComponent(pillowcaseWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabel36))
-                    .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel31)
-                        .addGap(77, 77, 77)
-                        .addComponent(pillowcaseTypeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(pillowcaseSizeLable)
-                        .addGap(151, 151, 151)
-                        .addComponent(pillowcaseSizeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel29)
-                        .addGap(91, 91, 91)
-                        .addComponent(pillowcaseMaterialTypeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel28)
-                        .addGap(86, 86, 86)
-                        .addComponent(pillowcaseProductRangeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(jLabel27))
-                    .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(pillowCaseCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pillowcaseCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
-                                .addGroup(pillowCaseCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel236)
-                                    .addComponent(jLabel171))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
-                                .addGroup(pillowCaseCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
-                                        .addComponent(pillowcaseTaxField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel266))
-                                    .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
-                                        .addComponent(pillowcaseMarginField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel288)))
-                                .addGap(86, 86, 86)))))
-                .addContainerGap(56, Short.MAX_VALUE))
-            .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
-                .addGap(167, 167, 167)
-                .addGroup(pillowCaseCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(pillowcaseSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pillowCaseNewCostingButton))
-                .addContainerGap(183, Short.MAX_VALUE))
-        );
-        pillowCaseCostingPanelLayout.setVerticalGroup(
-            pillowCaseCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addComponent(jLabel27)
-                .addGap(11, 11, 11)
-                .addGroup(pillowCaseCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pillowCaseCostingPanelLayout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(jLabel28))
-                    .addComponent(pillowcaseProductRangeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addGroup(pillowCaseCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel29)
-                    .addComponent(pillowcaseMaterialTypeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addGroup(pillowCaseCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pillowcaseSizeLable)
-                    .addComponent(pillowcaseSizeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addGroup(pillowCaseCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel31)
-                    .addComponent(pillowcaseTypeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addGroup(pillowCaseCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel32)
-                    .addComponent(pillowcaseWastage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel36))
-                .addGap(5, 5, 5)
-                .addComponent(pillowcaseUseCustom)
-                .addGap(3, 3, 3)
-                .addComponent(pillowcaseCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pillowCaseCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(pillowcaseMarginField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel288)
-                    .addComponent(jLabel171))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pillowCaseCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(pillowcaseTaxField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel236)
-                    .addComponent(jLabel266))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(pillowcaseSubmitButton)
-                .addGap(13, 13, 13)
-                .addComponent(pillowCaseNewCostingButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(pillowCaseCostingPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pillowCaseCostingPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 691, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        pillowCaseCPUPanel.setPreferredSize(new java.awt.Dimension(500, 800));
-
-        jPanel8.setBackground(new java.awt.Color(204, 204, 204));
-
-        jLabel50.setFont(new java.awt.Font("Times New Roman", 0, 24));
-        jLabel50.setText("Production Parameters");
-
-        jLabel49.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        jLabel49.setText("SMV Value:");
-
-        pillowcaseSMVValue.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseSMVValue.setText("0.00");
-
-        pillowcaseCutHeight.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseCutHeight.setText("0.00");
-
-        pillowcaseCutWidth.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseCutWidth.setText("0.00");
-
-        jLabel48.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        jLabel48.setText("Cutting Height:");
-
-        jLabel47.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        jLabel47.setText("Cutting Width:");
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel49)
-                            .addComponent(jLabel48)
-                            .addComponent(jLabel47))
-                        .addGap(312, 312, 312)
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pillowcaseSMVValue, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(pillowcaseCutWidth, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(pillowcaseCutHeight, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(144, 144, 144)
-                        .addComponent(jLabel50)))
-                .addContainerGap(29, Short.MAX_VALUE))
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel47)
-                    .addComponent(pillowcaseCutWidth))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel48)
-                    .addComponent(pillowcaseCutHeight))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel49)
-                    .addComponent(pillowcaseSMVValue))
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
-
-        jPanel9.setBackground(new java.awt.Color(204, 204, 204));
-
-        jLabel45.setFont(new java.awt.Font("Times New Roman", 1, 18));
-        jLabel45.setText("Toatal Cost Per Unit:");
-
-        pillowcaseToatalCost.setFont(new java.awt.Font("Times New Roman", 1, 18));
-        pillowcaseToatalCost.setText("0.00");
-
-        jLabel44.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        jLabel44.setText("Labour Cost:");
-
-        pillowcaseLabourCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseLabourCost.setText("0.00");
-
-        jLabel43.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        jLabel43.setText("POH:");
-
-        pillowcasePOH.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcasePOH.setText("0.00");
-
-        jLabel78.setFont(new java.awt.Font("Times New Roman", 1, 18));
-        jLabel78.setText("Total Material Cost");
-
-        pillowCaseTotalMaterialCost.setFont(new java.awt.Font("Times New Roman", 1, 18));
-        pillowCaseTotalMaterialCost.setText("0.00");
-
-        jLabel42.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        jLabel42.setText("Seal Bag Cost:");
-
-        pillowcaseSealBagCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseSealBagCost.setText("0.00");
-
-        jLabel51.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        jLabel51.setText("Card Board Cost: ");
-
-        pillowcaseCardBoardCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseCardBoardCost.setText("0.00");
-
-        jLabel41.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        jLabel41.setText("Tag Cost:");
-
-        pillowcaseTagCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseTagCost.setText("0.00");
-
-        jLabel40.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        jLabel40.setText("Lable Cost:");
-
-        pillowcaseLableCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseLableCost.setText("0.00");
-
-        jLabel39.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        jLabel39.setText("Thread Cost:");
-
-        pillowcaseThreadCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseThreadCost.setText("0.00");
-
-        jLabel38.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        jLabel38.setText("Fabric Cost:");
-
-        pillowcaseFabricCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        pillowcaseFabricCost.setText("0.00");
-
-        jLabel46.setFont(new java.awt.Font("Times New Roman", 0, 24));
-        jLabel46.setText("Cost Per Unit");
-
-        jLabel328.setFont(new java.awt.Font("Times New Roman", 1, 18));
-        jLabel328.setText("Taxes:");
-
-        jLabel329.setFont(new java.awt.Font("Times New Roman", 1, 18));
-        jLabel329.setText("Net Selling Price:");
-
-        jLabel330.setFont(new java.awt.Font("Times New Roman", 1, 18));
-        jLabel330.setText("Gross Selling Price:");
-
-        pillowcaseGrossSelliingPrice.setFont(new java.awt.Font("Times New Roman", 1, 18));
-        pillowcaseGrossSelliingPrice.setText("0.00");
-
-        pillowcaseNetSeelingPrice.setFont(new java.awt.Font("Times New Roman", 1, 18));
-        pillowcaseNetSeelingPrice.setText("0.00");
-
-        pillowcaseTaxes.setFont(new java.awt.Font("Times New Roman", 1, 18));
-        pillowcaseTaxes.setText("0.00");
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(jLabel46))
-                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel9Layout.createSequentialGroup()
-                            .addComponent(jLabel329)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pillowcaseNetSeelingPrice))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel9Layout.createSequentialGroup()
-                            .addComponent(jLabel328)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pillowcaseTaxes))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel9Layout.createSequentialGroup()
-                            .addComponent(jLabel330)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pillowcaseGrossSelliingPrice))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel9Layout.createSequentialGroup()
-                            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel45, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel43, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel44, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel78, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel42, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel51, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel41, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel40, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel39, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel38, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addGap(229, 229, 229)
-                            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(pillowcasePOH)
-                                    .addComponent(pillowcaseLabourCost)
-                                    .addComponent(pillowcaseToatalCost))
-                                .addComponent(pillowCaseTotalMaterialCost)
-                                .addGroup(jPanel9Layout.createSequentialGroup()
-                                    .addGap(4, 4, 4)
-                                    .addComponent(pillowcaseSealBagCost))
-                                .addGroup(jPanel9Layout.createSequentialGroup()
-                                    .addGap(4, 4, 4)
-                                    .addComponent(pillowcaseCardBoardCost))
-                                .addGroup(jPanel9Layout.createSequentialGroup()
-                                    .addGap(4, 4, 4)
-                                    .addComponent(pillowcaseTagCost))
-                                .addGroup(jPanel9Layout.createSequentialGroup()
-                                    .addGap(4, 4, 4)
-                                    .addComponent(pillowcaseLableCost))
-                                .addGroup(jPanel9Layout.createSequentialGroup()
-                                    .addGap(4, 4, 4)
-                                    .addComponent(pillowcaseThreadCost))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel9Layout.createSequentialGroup()
-                                    .addGap(4, 4, 4)
-                                    .addComponent(pillowcaseFabricCost))))))
-                .addGap(32, 32, 32))
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(pillowcaseFabricCost)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(pillowcaseThreadCost)
-                        .addGap(6, 6, 6)
-                        .addComponent(pillowcaseLableCost)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pillowcaseTagCost)
-                        .addGap(11, 11, 11)
-                        .addComponent(pillowcaseCardBoardCost)
-                        .addGap(11, 11, 11)
-                        .addComponent(pillowcaseSealBagCost)
-                        .addGap(11, 11, 11)
-                        .addComponent(pillowCaseTotalMaterialCost)
-                        .addGap(13, 13, 13)
-                        .addComponent(pillowcasePOH)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pillowcaseLabourCost)
-                        .addGap(18, 18, 18)
-                        .addComponent(pillowcaseToatalCost))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel46)
-                        .addGap(11, 11, 11)
-                        .addComponent(jLabel38)
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel39)
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel40)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel41)
-                        .addGap(11, 11, 11)
-                        .addComponent(jLabel51)
-                        .addGap(11, 11, 11)
-                        .addComponent(jLabel42)
-                        .addGap(11, 11, 11)
-                        .addComponent(jLabel78)
-                        .addGap(13, 13, 13)
-                        .addComponent(jLabel43)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel44)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel45)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel329)
-                    .addComponent(pillowcaseNetSeelingPrice))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel328)
-                    .addComponent(pillowcaseTaxes))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel330)
-                    .addComponent(pillowcaseGrossSelliingPrice))
-                .addGap(29, 29, 29))
-        );
-
-        javax.swing.GroupLayout pillowCaseCPUPanelLayout = new javax.swing.GroupLayout(pillowCaseCPUPanel);
-        pillowCaseCPUPanel.setLayout(pillowCaseCPUPanelLayout);
-        pillowCaseCPUPanelLayout.setHorizontalGroup(
-            pillowCaseCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pillowCaseCPUPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pillowCaseCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(5, 5, 5))
-        );
-        pillowCaseCPUPanelLayout.setVerticalGroup(
-            pillowCaseCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pillowCaseCPUPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(148, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pillowCaseCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pillowCaseCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        pillowCaseCPUPanel.setVisible(false);
-
-        javax.swing.GroupLayout pillowPanelLayout = new javax.swing.GroupLayout(pillowPanel);
-        pillowPanel.setLayout(pillowPanelLayout);
-        pillowPanelLayout.setHorizontalGroup(
-            pillowPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pillowPanelLayout.createSequentialGroup()
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        pillowPanelLayout.setVerticalGroup(
-            pillowPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pillowPanelLayout.createSequentialGroup()
-                .addGroup(pillowPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        pillowcaseScrollPane.setViewportView(pillowPanel);
-
+        pillowcaseScrollPane.setViewportView(new PillowcasePanel());
         userTabbedPane.addTab("Pillowcases", pillowcaseScrollPane);
 
         dovetCovers.setMinimumSize(new java.awt.Dimension(800, 600));
@@ -2304,7 +1541,6 @@ public class MainWindow extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pillowcaseFrillLabel.setVisible(false);
         dovetCoversCustomFlapLable.setVisible(false);
         dovetCoverCustomFlap.setVisible(false);
 
@@ -8057,218 +7293,6 @@ public class MainWindow extends javax.swing.JFrame {
         dovetCoversMaterialTypeCombo.setModel(new DefaultComboBoxModel(DuvetCoversLogic.getMaterialTypes((String) dovetCoversProductRangeCombo.getSelectedItem())));
 }//GEN-LAST:event_dovetCoversProductRangeComboActionPerformed
 
-    private void pillowCaseNewCostingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pillowCaseNewCostingButtonActionPerformed
-        pillowCaseCPUPanel.setVisible(false);
-        pillowCaseNewCostingButton.setVisible(false);
-        pillowcaseSubmitButton.setVisible(true);
-
-        pillowcaseProductRangeCombo.setModel(new DefaultComboBoxModel(PillowcaseLogic.getProductRanges()));
-        pillowcaseMaterialTypeCombo.setModel(
-                new DefaultComboBoxModel(PillowcaseLogic.getMaterialTypes(
-                (String)pillowcaseProductRangeCombo.getSelectedItem())));
-        pillowcaseSizeCombo.setModel(new DefaultComboBoxModel(PillowcaseLogic.getPillowcaseSizes()));
-        pillowcaseTypeCombo.setModel(new DefaultComboBoxModel(PillowcaseLogic.getPillowcaseTypes()));
-
-        pillowcaseWastage.setText("3");
-        pillowcaseUseCustom.setSelected(false);
-        pillowcaseCustomPanel.setVisible(false);
-        pillowcaseCustomWidth.setText("");
-        pillowcaseCustomHeight.setText("");
-        pillowcaseCustomFlapSize.setText("");
-        pillowcaseCustomFrillSize.setText("");
-
-        pillowcaseIncludeCardBoard.setSelected(false);
-        pillowcaseIncludeLable.setSelected(false);
-        pillowcaseIncludeSealBag.setSelected(false);
-        pillowcaseIncludeTag.setSelected(false);
-
-        pillowcaseProductRangeCombo.setEnabled(true);
-        pillowcaseMaterialTypeCombo.setEnabled(true);
-        pillowcaseSizeCombo.setEnabled(true);
-        pillowcaseTypeCombo.setEnabled(true);
-        pillowcaseWastage.setEnabled(true);
-
-        pillowcaseUseCustom.setEnabled(true);
-        pillowcaseCustomWidth.setEnabled(true);
-        pillowcaseCustomHeight.setEnabled(true);
-        pillowcaseCustomFlapSize.setEnabled(true);
-        pillowcaseCustomFrillSize.setEnabled(true);
-
-        pillowcaseIncludeCardBoard.setEnabled(true);
-        pillowcaseIncludeLable.setEnabled(true);
-        pillowcaseIncludeSealBag.setEnabled(true);
-        pillowcaseIncludeTag.setEnabled(true);
-    }//GEN-LAST:event_pillowCaseNewCostingButtonActionPerformed
-
-    private void pillowcaseCustomHeightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pillowcaseCustomHeightActionPerformed
-        // TODO add your handling code here:
-}//GEN-LAST:event_pillowcaseCustomHeightActionPerformed
-
-    private void pillowcaseCustomWidthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pillowcaseCustomWidthActionPerformed
-        // TODO add your handling code here:
-}//GEN-LAST:event_pillowcaseCustomWidthActionPerformed
-
-    private void pillowcaseSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pillowcaseSubmitButtonActionPerformed
-        PillowcaseViewModel pCost = new PillowcaseViewModel();
-        String productRange = (String) pillowcaseProductRangeCombo.getSelectedItem();
-        pCost.setProductRange(productRange);
-
-        String materialType = (String) pillowcaseMaterialTypeCombo.getSelectedItem();
-        pCost.setMaterialType(materialType);
-
-        String size = (String) pillowcaseSizeCombo.getSelectedItem();
-        pCost.setSize(size);
-
-        String type = (String) pillowcaseTypeCombo.getSelectedItem();
-        pCost.setPillowcaseType(type);
-
-        try {
-            double wastage = Double.parseDouble(pillowcaseWastage.getText());
-            if (wastage < 0 || wastage > 10) {
-                JOptionPane.showMessageDialog(this, "Wastage should be between 0 and 10 %");
-                return;
-            }
-            pCost.setWastage(wastage);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Please enter a valid wastage value");
-            return;
-        }
-
-        boolean useCustom = pillowcaseUseCustom.isSelected();
-        if (useCustom) {
-            pCost.setIsCustom(useCustom);
-            try {
-                Integer width = Integer.parseInt(pillowcaseCustomWidth.getText());
-                if (width <= 0 || width > 120) {
-                    JOptionPane.showMessageDialog(this, "Width should be between 0 and 120");
-                    return;
-                }
-                pCost.setCustomWidth(width);
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(this, "Please enter a valid width value");
-                return;
-            }
-
-            try {
-                Integer height = Integer.parseInt(pillowcaseCustomHeight.getText());
-                if (height <= 0 || height > 120) {
-                    JOptionPane.showMessageDialog(this, "Height should be between 0 and 120");
-                    return;
-                }
-                pCost.setCustomHeight(height);
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(this, "Please enter a valid height value");
-                return;
-            }
-
-            try {
-                Integer flap = Integer.parseInt(pillowcaseCustomFlapSize.getText());
-                if (flap <= 0 || flap > 120) {
-                    JOptionPane.showMessageDialog(this, "Flap size should be between 0 and 120");
-                    return;
-                }
-                pCost.setFlap((double) flap);
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(this, "Please enter a valid number for flap size");
-                return;
-            }
-
-            if (pCost.getPillowcaseType().equals("frill")) {
-                try {
-                    Integer frill = Integer.parseInt(pillowcaseCustomFrillSize.getText());
-                    if (frill <= 0 || frill > 120) {
-                        JOptionPane.showMessageDialog(this, "Frill size should be between 0 and 120");
-                        return;
-                    }
-                    pCost.setFrill((double) frill);
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(this, "Please enter a valid number for frill size");
-                    return;
-                }
-            }
-
-            pCost.setIncludeLable(pillowcaseIncludeLable.isSelected());
-            pCost.setIncludeTag(pillowcaseIncludeTag.isSelected());
-            pCost.setIncludeSealBag(pillowcaseIncludeSealBag.isSelected());
-            pCost.setIncludeCardBoard(pillowcaseIncludeCardBoard.isSelected());
-        }
-        DecimalFormat format = new DecimalFormat();
-        format.setMaximumFractionDigits(2);
-        format.setMinimumFractionDigits(2);
-
-        PillowcaseViewModel bReturn = PillowcaseLogic.getCostPerUnit(pCost);
-        pillowcaseFabricCost.setText(format.format(bReturn.getFabricCost()) + "");
-        pillowcaseThreadCost.setText(format.format(bReturn.getThreadCost()) + "");
-        pillowcaseLableCost.setText(format.format(bReturn.getLableCost()) + "");
-        pillowcaseTagCost.setText(format.format(bReturn.getTagCost()) + "");
-        pillowcaseSealBagCost.setText(format.format(bReturn.getSealBagCost()) + "");
-        pillowcaseCardBoardCost.setText(format.format(bReturn.getCardboardCost()) + "");
-        pillowcasePOH.setText(format.format(bReturn.getPohCost()) + "");
-        pillowcaseLabourCost.setText(format.format(bReturn.getLabourCost()) + "");
-        pillowcaseToatalCost.setText(format.format(bReturn.getTotalCost()) + "");
-        pillowcaseCutWidth.setText(format.format(bReturn.getCuttingWidth()));
-        pillowcaseCutHeight.setText(format.format(bReturn.getCuttingHeight()));
-        pillowcaseSMVValue.setText(format.format(bReturn.getSmvValue()));
-        pillowCaseTotalMaterialCost.setText(format.format(bReturn.getTotalMaterialCost()));
-
-
-        pillowCaseCPUPanel.setVisible(true);
-        pillowcaseSubmitButton.setVisible(false);
-        pillowCaseNewCostingButton.setVisible(true);
-
-        pillowcaseProductRangeCombo.setEnabled(false);
-        pillowcaseMaterialTypeCombo.setEnabled(false);
-        pillowcaseSizeCombo.setEnabled(false);
-        pillowcaseTypeCombo.setEnabled(false);
-        pillowcaseWastage.setEnabled(false);
-
-        pillowcaseUseCustom.setEnabled(false);
-        pillowcaseCustomWidth.setEnabled(false);
-        pillowcaseCustomHeight.setEnabled(false);
-        pillowcaseCustomFlapSize.setEnabled(false);
-        pillowcaseCustomFrillSize.setEnabled(false);
-
-        pillowcaseIncludeCardBoard.setEnabled(false);
-        pillowcaseIncludeLable.setEnabled(false);
-        pillowcaseIncludeSealBag.setEnabled(false);
-        pillowcaseIncludeTag.setEnabled(false);
-    }//GEN-LAST:event_pillowcaseSubmitButtonActionPerformed
-
-    private void pillowcaseUseCustomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pillowcaseUseCustomActionPerformed
-        if (pillowcaseUseCustom.isSelected()) {
-            pillowcaseCustomPanel.setVisible(true);
-            if (((String) pillowcaseTypeCombo.getSelectedItem()).equals("frill")) {
-                jPanel2.setVisible(true);
-            }
-            pillowcaseSizeLable.setVisible(false);
-            pillowcaseSizeCombo.setVisible(false);
-        } else {
-            pillowcaseCustomPanel.setVisible(false);
-            jPanel2.setVisible(true);
-            pillowcaseSizeLable.setVisible(true);
-            pillowcaseSizeCombo.setVisible(true);
-        }
-}//GEN-LAST:event_pillowcaseUseCustomActionPerformed
-
-    private void pillowcaseWastageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pillowcaseWastageActionPerformed
-        // TODO add your handling code here:
-}//GEN-LAST:event_pillowcaseWastageActionPerformed
-
-    private void pillowcaseTypeComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pillowcaseTypeComboActionPerformed
-        if ((pillowcaseTypeCombo.getSelectedItem()).equals("frill")) {
-            pillowcaseFrillLabel.setVisible(true);
-            pillowcaseCustomFrillSize.setVisible(true);
-        } else {
-            pillowcaseFrillLabel.setVisible(false);
-            pillowcaseCustomFrillSize.setVisible(false);
-
-        }
-}//GEN-LAST:event_pillowcaseTypeComboActionPerformed
-
-    private void pillowcaseProductRangeComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pillowcaseProductRangeComboActionPerformed
-        pillowcaseMaterialTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(PillowcaseLogic.getMaterialTypes((String) pillowcaseProductRangeCombo.getSelectedItem())));
-}//GEN-LAST:event_pillowcaseProductRangeComboActionPerformed
-
     private void adminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButtonActionPerformed
         if (adminView == false) {
             final MainWindow mW = this;
@@ -9399,7 +8423,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel168;
     private javax.swing.JLabel jLabel169;
     private javax.swing.JLabel jLabel170;
-    private javax.swing.JLabel jLabel171;
     private javax.swing.JLabel jLabel172;
     private javax.swing.JLabel jLabel173;
     private javax.swing.JLabel jLabel174;
@@ -9465,7 +8488,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel233;
     private javax.swing.JLabel jLabel234;
     private javax.swing.JLabel jLabel235;
-    private javax.swing.JLabel jLabel236;
     private javax.swing.JLabel jLabel237;
     private javax.swing.JLabel jLabel238;
     private javax.swing.JLabel jLabel239;
@@ -9495,11 +8517,9 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel263;
     private javax.swing.JLabel jLabel264;
     private javax.swing.JLabel jLabel265;
-    private javax.swing.JLabel jLabel266;
     private javax.swing.JLabel jLabel267;
     private javax.swing.JLabel jLabel268;
     private javax.swing.JLabel jLabel269;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel270;
     private javax.swing.JLabel jLabel271;
     private javax.swing.JLabel jLabel272;
@@ -9510,7 +8530,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel277;
     private javax.swing.JLabel jLabel278;
     private javax.swing.JLabel jLabel279;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel280;
     private javax.swing.JLabel jLabel281;
     private javax.swing.JLabel jLabel282;
@@ -9519,9 +8538,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel285;
     private javax.swing.JLabel jLabel286;
     private javax.swing.JLabel jLabel287;
-    private javax.swing.JLabel jLabel288;
     private javax.swing.JLabel jLabel289;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel290;
     private javax.swing.JLabel jLabel291;
     private javax.swing.JLabel jLabel292;
@@ -9543,7 +8560,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel307;
     private javax.swing.JLabel jLabel308;
     private javax.swing.JLabel jLabel309;
-    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel310;
     private javax.swing.JLabel jLabel311;
     private javax.swing.JLabel jLabel312;
@@ -9554,16 +8570,11 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel317;
     private javax.swing.JLabel jLabel318;
     private javax.swing.JLabel jLabel319;
-    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel320;
     private javax.swing.JLabel jLabel321;
     private javax.swing.JLabel jLabel322;
     private javax.swing.JLabel jLabel323;
     private javax.swing.JLabel jLabel324;
-    private javax.swing.JLabel jLabel328;
-    private javax.swing.JLabel jLabel329;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel330;
     private javax.swing.JLabel jLabel331;
     private javax.swing.JLabel jLabel332;
     private javax.swing.JLabel jLabel333;
@@ -9573,7 +8584,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel337;
     private javax.swing.JLabel jLabel338;
     private javax.swing.JLabel jLabel339;
-    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel340;
     private javax.swing.JLabel jLabel341;
     private javax.swing.JLabel jLabel342;
@@ -9584,26 +8594,10 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel347;
     private javax.swing.JLabel jLabel348;
     private javax.swing.JLabel jLabel349;
-    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel350;
     private javax.swing.JLabel jLabel351;
-    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
@@ -9628,7 +8622,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel76;
-    private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
@@ -9650,7 +8643,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel98;
     private javax.swing.JLabel jLabel99;
     private javax.swing.JMenuBar jMenuBar;
-    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
@@ -9660,7 +8652,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
@@ -9690,9 +8681,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel46;
     private javax.swing.JPanel jPanel47;
     private javax.swing.JPanel jPanel48;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
@@ -9761,58 +8749,18 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JPanel mettressPrrtectors;
     private view.Padding padding1;
     private javax.swing.JPanel parametersPanel;
-    private javax.swing.JPanel pillowCaseCPUPanel;
-    private javax.swing.JPanel pillowCaseCostingPanel;
-    private javax.swing.JButton pillowCaseNewCostingButton;
-    private javax.swing.JLabel pillowCaseTotalMaterialCost;
     private javax.swing.JRadioButton pillowCustomFiberButton;
     private javax.swing.JComboBox pillowFabricTypeCombo;
     private javax.swing.JTextField pillowFabricWastage;
     private javax.swing.JComboBox pillowFiberTypeCombo;
     private javax.swing.JTextField pillowFiberWastage;
-    private javax.swing.JPanel pillowPanel;
     private javax.swing.JComboBox pillowRangeCombo;
     private javax.swing.JComboBox pillowSizeCombo;
     private javax.swing.JComboBox pillowTypeCombo;
     private view.PillowcaseAccessoriesView pillowcaseAccessoriesView1;
-    private javax.swing.JLabel pillowcaseCardBoardCost;
-    private javax.swing.JTextField pillowcaseCustomFlapSize;
-    private javax.swing.JTextField pillowcaseCustomFrillSize;
-    private javax.swing.JTextField pillowcaseCustomHeight;
-    private javax.swing.JPanel pillowcaseCustomPanel;
-    private javax.swing.JTextField pillowcaseCustomWidth;
-    private javax.swing.JLabel pillowcaseCutHeight;
-    private javax.swing.JLabel pillowcaseCutWidth;
-    private javax.swing.JLabel pillowcaseFabricCost;
-    private javax.swing.JLabel pillowcaseFrillLabel;
-    private javax.swing.JLabel pillowcaseGrossSelliingPrice;
-    private javax.swing.JRadioButton pillowcaseIncludeCardBoard;
-    private javax.swing.JRadioButton pillowcaseIncludeLable;
-    private javax.swing.JRadioButton pillowcaseIncludeSealBag;
-    private javax.swing.JRadioButton pillowcaseIncludeTag;
-    private javax.swing.JLabel pillowcaseLableCost;
-    private javax.swing.JLabel pillowcaseLabourCost;
-    private javax.swing.JTextField pillowcaseMarginField;
-    private javax.swing.JComboBox pillowcaseMaterialTypeCombo;
-    private javax.swing.JLabel pillowcaseNetSeelingPrice;
-    private javax.swing.JLabel pillowcasePOH;
     private javax.swing.JPanel pillowcasePanel;
-    private javax.swing.JComboBox pillowcaseProductRangeCombo;
-    private javax.swing.JLabel pillowcaseSMVValue;
     private javax.swing.JScrollPane pillowcaseScrollPane;
-    private javax.swing.JLabel pillowcaseSealBagCost;
-    private javax.swing.JComboBox pillowcaseSizeCombo;
-    private javax.swing.JLabel pillowcaseSizeLable;
-    private javax.swing.JButton pillowcaseSubmitButton;
-    private javax.swing.JLabel pillowcaseTagCost;
-    private javax.swing.JTextField pillowcaseTaxField;
-    private javax.swing.JLabel pillowcaseTaxes;
-    private javax.swing.JLabel pillowcaseThreadCost;
-    private javax.swing.JLabel pillowcaseToatalCost;
-    private javax.swing.JComboBox pillowcaseTypeCombo;
-    private javax.swing.JRadioButton pillowcaseUseCustom;
     private view.PillowcaseView pillowcaseView1;
-    private javax.swing.JTextField pillowcaseWastage;
     private javax.swing.JPanel pillows;
     private javax.swing.JPanel pillowsCPUPanel;
     private javax.swing.JPanel pillowsCostingPanel;
