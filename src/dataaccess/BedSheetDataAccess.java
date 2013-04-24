@@ -196,7 +196,8 @@ public class BedSheetDataAccess {
         //smv value should be zero at 0
         arr[0][0] = arr[1][0] = 0.0;
         for (int i = 0; i < sizes.size(); i++) {
-            arr[0][i + 1] = Double.parseDouble(sizes.get(i).split("X")[0])+ Double.parseDouble(sizes.get(i).split("X")[1]);
+            arr[0][i + 1] = Double.parseDouble(sizes.get(i).split("X")[0])+
+                    Double.parseDouble(sizes.get(i).split("X")[1]);
             arr[1][i + 1] = smvs.get(i);
         }
         return arr;
