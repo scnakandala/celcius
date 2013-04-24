@@ -2432,7 +2432,7 @@
                                               </Group>
                                               <Group type="102" attributes="0">
                                                   <EmptySpace min="30" pref="30" max="30" attributes="0"/>
-                                                  <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="pillowcaseSizeLable" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace min="151" pref="151" max="151" attributes="0"/>
                                                   <Component id="pillowcaseSizeCombo" min="-2" pref="194" max="-2" attributes="0"/>
                                               </Group>
@@ -2489,7 +2489,7 @@
                                       </Group>
                                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
+                                          <Component id="pillowcaseSizeLable" min="-2" max="-2" attributes="0"/>
                                           <Component id="pillowcaseSizeCombo" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
@@ -2541,7 +2541,7 @@
                                 <Property name="text" type="java.lang.String" value="Select Material Type:"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel30">
+                            <Component class="javax.swing.JLabel" name="pillowcaseSizeLable">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Times New Roman" size="16" style="0"/>
@@ -3415,7 +3415,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="bedSheetCostingPanel1" min="-2" pref="497" max="-2" attributes="0"/>
+                                  <Component id="bedSheetCostingPanel1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -3457,13 +3457,12 @@
                                                       <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace pref="124" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <Component id="dovetCoversUseCustom" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Group type="103" groupAlignment="0" attributes="0">
                                                           <Component id="jLabel53" alignment="0" min="-2" max="-2" attributes="0"/>
                                                           <Component id="jLabel52" alignment="0" min="-2" max="-2" attributes="0"/>
                                                           <Component id="jLabel73" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jLabel55" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="duvetCoverSizeLable" min="-2" max="-2" attributes="0"/>
                                                           <Component id="jLabel56" min="-2" max="-2" attributes="0"/>
                                                       </Group>
                                                       <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
@@ -3480,6 +3479,7 @@
                                                       </Group>
                                                   </Group>
                                                   <Component id="dovetCoversCustomPanel" alignment="0" pref="441" max="32767" attributes="1"/>
+                                                  <Component id="dovetCoversUseCustom" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
@@ -3490,7 +3490,7 @@
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <EmptySpace pref="25" max="32767" attributes="0"/>
+                                      <EmptySpace pref="28" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -3516,7 +3516,7 @@
                                       </Group>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel55" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="duvetCoverSizeLable" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="dovetCoversSizeCombo" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
@@ -3525,15 +3525,15 @@
                                           <Component id="dovetCoversWastage" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel54" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                       <Component id="dovetCoversUseCustom" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                       <Component id="dovetCoversCustomPanel" min="-2" pref="230" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="dovetCoversSubmitButton" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
                                       <Component id="dovetCoversNewCostingButton" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="20" max="32767" attributes="0"/>
+                                      <EmptySpace pref="24" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -3557,6 +3557,9 @@
                             </Component>
                             <Component class="javax.swing.JComboBox" name="dovetCoversProductRangeCombo">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                                   <Connection code="new javax.swing.DefaultComboBoxModel(BedSheetLogic.getProductRanges())" type="code"/>
                                 </Property>
@@ -3575,6 +3578,9 @@
                             </Component>
                             <Component class="javax.swing.JComboBox" name="dovetCoversMaterialTypeCombo">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                                   <Connection code="new javax.swing.DefaultComboBoxModel(logic.DuvetCoversLogic.getMaterialTypes((String)dovetCoversProductRangeCombo.getSelectedItem()))" type="code"/>
                                 </Property>
@@ -3582,6 +3588,9 @@
                             </Component>
                             <Component class="javax.swing.JComboBox" name="dovetCoversSizeCombo">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                                   <Connection code="new javax.swing.DefaultComboBoxModel(logic.DuvetCoversLogic.getDuvetCoverSizes())" type="code"/>
                                 </Property>
@@ -3603,10 +3612,13 @@
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel54">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
                                 <Property name="text" type="java.lang.String" value="%"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel55">
+                            <Component class="javax.swing.JLabel" name="duvetCoverSizeLable">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Times New Roman" size="16" style="0"/>
@@ -3814,6 +3826,9 @@
                             </Component>
                             <Component class="javax.swing.JComboBox" name="dovetCoversTypeCombo">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                                   <Connection code="new javax.swing.DefaultComboBoxModel(logic.DuvetCoversLogic.getDuvetCoverTypes())" type="code"/>
                                 </Property>
@@ -4511,10 +4526,10 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="bedSheetCostingPanel2" min="-2" pref="500" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="bedSheetCostingPanel2" min="-2" pref="500" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -4522,8 +4537,8 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="bedSheetCostingPanel2" pref="740" max="32767" attributes="2"/>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="bedSheetCostingPanel2" min="-2" pref="784" max="-2" attributes="2"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -4554,7 +4569,7 @@
                                           <Component id="jLabel81" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel107" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel85" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel84" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="mattressProtectorSizeLable" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel118" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel114" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel115" min="-2" max="-2" attributes="0"/>
@@ -4562,11 +4577,11 @@
                                       <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                              <Component id="mettresProtectorSizeCombo" alignment="0" pref="189" max="32767" attributes="1"/>
-                                              <Component id="mettresProtectorMaterialTypeCombo" alignment="0" pref="189" max="32767" attributes="1"/>
-                                              <Component id="mettresProtectorProductRangeCombo" alignment="0" pref="189" max="32767" attributes="1"/>
-                                              <Component id="mettresProtectorPaddingTypeCombo" alignment="0" pref="189" max="32767" attributes="1"/>
-                                              <Component id="mettresProtectorTaffataTypeCombo" alignment="0" pref="189" max="32767" attributes="1"/>
+                                              <Component id="mettresProtectorSizeCombo" alignment="0" pref="190" max="32767" attributes="1"/>
+                                              <Component id="mettresProtectorMaterialTypeCombo" alignment="0" pref="190" max="32767" attributes="1"/>
+                                              <Component id="mettresProtectorProductRangeCombo" alignment="0" pref="190" max="32767" attributes="1"/>
+                                              <Component id="mettresProtectorPaddingTypeCombo" alignment="0" pref="190" max="32767" attributes="1"/>
+                                              <Component id="mettresProtectorTaffataTypeCombo" alignment="0" pref="190" max="32767" attributes="1"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
@@ -4596,10 +4611,10 @@
                                                       <Component id="jLabel117" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <EmptySpace pref="146" max="-2" attributes="0"/>
+                                              <EmptySpace pref="145" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace pref="31" max="32767" attributes="0"/>
+                                      <EmptySpace pref="30" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="48" pref="48" max="48" attributes="0"/>
@@ -4644,7 +4659,7 @@
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="mettresProtectorSizeCombo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel84" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="mattressProtectorSizeLable" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
@@ -4694,7 +4709,7 @@
                                       <Component id="mettresProtectorSubmitButton" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="7" max="-2" attributes="1"/>
                                       <Component id="mattressProtectorNewCostingButton" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace pref="35" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -4718,6 +4733,9 @@
                             </Component>
                             <Component class="javax.swing.JComboBox" name="mettresProtectorProductRangeCombo">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                                   <Connection code="new javax.swing.DefaultComboBoxModel(logic.MattresProtectorLogic.getProductRanges())" type="code"/>
                                 </Property>
@@ -4736,6 +4754,9 @@
                             </Component>
                             <Component class="javax.swing.JComboBox" name="mettresProtectorMaterialTypeCombo">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                                   <Connection code="new javax.swing.DefaultComboBoxModel(logic.MattresProtectorLogic.getMaterialTypes((String)mettresProtectorProductRangeCombo.getSelectedItem()))" type="code"/>
                                 </Property>
@@ -4743,6 +4764,9 @@
                             </Component>
                             <Component class="javax.swing.JComboBox" name="mettresProtectorSizeCombo">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                                   <Connection code="new javax.swing.DefaultComboBoxModel(logic.MattresProtectorLogic.getMettresProtectorSizes())" type="code"/>
                                 </Property>
@@ -4764,10 +4788,13 @@
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel83">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
                                 <Property name="text" type="java.lang.String" value="%"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel84">
+                            <Component class="javax.swing.JLabel" name="mattressProtectorSizeLable">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Times New Roman" size="16" style="0"/>
@@ -4971,11 +4998,17 @@
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel105">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
                                 <Property name="text" type="java.lang.String" value="%"/>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel106">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
                                 <Property name="text" type="java.lang.String" value="%"/>
                               </Properties>
                             </Component>
@@ -4989,6 +5022,9 @@
                             </Component>
                             <Component class="javax.swing.JComboBox" name="mettresProtectorPaddingTypeCombo">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                                   <Connection code="new javax.swing.DefaultComboBoxModel(logic.MattresProtectorLogic.getPaddingTypes())" type="code"/>
                                 </Property>
@@ -5034,11 +5070,17 @@
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel116">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
                                 <Property name="text" type="java.lang.String" value="%"/>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel117">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
                                 <Property name="text" type="java.lang.String" value="%"/>
                               </Properties>
                             </Component>
@@ -5052,6 +5094,9 @@
                             </Component>
                             <Component class="javax.swing.JComboBox" name="mettresProtectorTaffataTypeCombo">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                                   <Connection code="new javax.swing.DefaultComboBoxModel(logic.MattresProtectorLogic.getTaffataTypes())" type="code"/>
                                 </Property>
@@ -6267,7 +6312,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="cotSheetCostingPanel" min="-2" pref="497" max="-2" attributes="0"/>
+                                  <Component id="cotSheetCostingPanel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -6300,7 +6345,7 @@
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="183" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="186" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="2" attributes="0">
                                           <Component id="cotSheetSubmitButton" alignment="2" min="-2" max="-2" attributes="0"/>
                                           <Component id="cotSheetNewCosting" alignment="2" min="-2" max="-2" attributes="0"/>
@@ -6308,12 +6353,12 @@
                                       <EmptySpace pref="167" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="164" max="-2" attributes="0"/>
                                       <Component id="jLabel119" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace pref="154" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace pref="23" max="32767" attributes="0"/>
+                                      <EmptySpace pref="24" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel128" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel127" min="-2" max="-2" attributes="0"/>
@@ -6322,15 +6367,15 @@
                                           <Component id="jLabel132" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel136" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel131" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel123" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cotSheetSizeLable" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel121" min="-2" max="-2" attributes="0"/>
                                           <Component id="cotSheetUseCustom" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="cotSheetPaddingTypeCombo" alignment="0" pref="201" max="32767" attributes="1"/>
-                                          <Component id="cotSheetSizeCombo" alignment="0" pref="201" max="32767" attributes="1"/>
-                                          <Component id="cotSheetMaterialTypeCombo" alignment="0" pref="201" max="32767" attributes="1"/>
+                                          <Component id="cotSheetPaddingTypeCombo" alignment="0" pref="203" max="32767" attributes="1"/>
+                                          <Component id="cotSheetSizeCombo" alignment="0" pref="203" max="32767" attributes="1"/>
+                                          <Component id="cotSheetMaterialTypeCombo" alignment="0" pref="203" max="32767" attributes="1"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="102" alignment="0" attributes="0">
@@ -6361,12 +6406,12 @@
                                               </Group>
                                               <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="cotSheetTaffataTypeCombo" alignment="0" pref="201" max="32767" attributes="1"/>
+                                          <Component id="cotSheetTaffataTypeCombo" alignment="0" pref="203" max="32767" attributes="1"/>
                                       </Group>
                                       <EmptySpace min="47" pref="47" max="47" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                       <Component id="cotSheetCustomPanel" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                                   </Group>
@@ -6385,7 +6430,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="cotSheetSizeCombo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel123" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cotSheetSizeLable" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
@@ -6493,10 +6538,13 @@
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel122">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
                                 <Property name="text" type="java.lang.String" value="%"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel123">
+                            <Component class="javax.swing.JLabel" name="cotSheetSizeLable">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Times New Roman" size="16" style="0"/>
@@ -6668,11 +6716,17 @@
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel129">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
                                 <Property name="text" type="java.lang.String" value="%"/>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel130">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
                                 <Property name="text" type="java.lang.String" value="%"/>
                               </Properties>
                             </Component>
@@ -6734,11 +6788,17 @@
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel134">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
                                 <Property name="text" type="java.lang.String" value="%"/>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel135">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
                                 <Property name="text" type="java.lang.String" value="%"/>
                               </Properties>
                             </Component>
@@ -7373,7 +7433,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="cotSheetCostingPanel1" min="-2" max="-2" attributes="0"/>
+                              <Component id="duvetsCostingPanel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace pref="24" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -7382,13 +7442,13 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                              <Component id="cotSheetCostingPanel1" max="32767" attributes="1"/>
+                              <Component id="duvetsCostingPanel" max="32767" attributes="1"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Container class="javax.swing.JPanel" name="cotSheetCostingPanel1">
+                    <Container class="javax.swing.JPanel" name="duvetsCostingPanel">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -7414,7 +7474,7 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel171" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="duvetsSizeLable" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel166" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel158" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel152" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -7477,7 +7537,7 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel171" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="duvetsSizeLable" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="duvetSizeCombo" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -7498,7 +7558,7 @@
                                   <Component id="duvetsSubmitButton" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="duvetsNewCostingButton" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="61" max="32767" attributes="0"/>
+                                  <EmptySpace pref="59" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -7559,6 +7619,9 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel157">
                           <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="%"/>
                           </Properties>
                         </Component>
@@ -7726,7 +7789,7 @@
                             </Property>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel171">
+                        <Component class="javax.swing.JLabel" name="duvetsSizeLable">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Times New Roman" size="16" style="0"/>
@@ -7853,6 +7916,9 @@
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel192">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
                                 <Property name="text" type="java.lang.String" value="%"/>
                               </Properties>
                             </Component>
@@ -7895,7 +7961,7 @@
                                           <Component id="jLabel168" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel163" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="55" max="32767" attributes="0"/>
+                                      <EmptySpace pref="53" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
@@ -8002,6 +8068,9 @@
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel169">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
                                 <Property name="text" type="java.lang.String" value="%"/>
                               </Properties>
                             </Component>
@@ -8018,6 +8087,9 @@
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel170">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
                                 <Property name="text" type="java.lang.String" value="%"/>
                               </Properties>
                             </Component>
@@ -8042,6 +8114,9 @@
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel165">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
                                 <Property name="text" type="java.lang.String" value="%"/>
                               </Properties>
                             </Component>
@@ -8053,7 +8128,7 @@
                               <Color blue="cc" green="cc" red="cc" type="rgb"/>
                             </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Times New Roman" size="14" style="0"/>
+                              <Font name="Times New Roman" size="16" style="0"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Use Custom Sizes"/>
                           </Properties>
@@ -8605,7 +8680,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                              <Component id="cotSheetCostingPanel2" min="-2" pref="493" max="-2" attributes="0"/>
+                              <Component id="pillowsCostingPanel" min="-2" pref="493" max="-2" attributes="0"/>
                               <EmptySpace pref="24" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -8614,14 +8689,14 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                              <Component id="cotSheetCostingPanel2" max="32767" attributes="1"/>
+                              <Component id="pillowsCostingPanel" pref="602" max="32767" attributes="1"/>
                               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Container class="javax.swing.JPanel" name="cotSheetCostingPanel2">
+                    <Container class="javax.swing.JPanel" name="pillowsCostingPanel">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -8652,7 +8727,7 @@
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jLabel236" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="pillowsSizeLable" alignment="0" min="-2" max="-2" attributes="0"/>
                                                       <Component id="jLabel235" alignment="0" min="-2" max="-2" attributes="0"/>
                                                       <Component id="jLabel231" alignment="0" min="-2" max="-2" attributes="0"/>
                                                       <Component id="jLabel229" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -8713,7 +8788,7 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel236" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="pillowsSizeLable" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="pillowSizeCombo" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -8810,6 +8885,9 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel230">
                           <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="%"/>
                           </Properties>
                         </Component>
@@ -8965,7 +9043,7 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pillowFabricTypeComboActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel236">
+                        <Component class="javax.swing.JLabel" name="pillowsSizeLable">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Times New Roman" size="16" style="0"/>
@@ -9000,7 +9078,7 @@
                               <Color blue="cc" green="cc" red="cc" type="rgb"/>
                             </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Times New Roman" size="14" style="0"/>
+                              <Font name="Times New Roman" size="16" style="0"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Use Custom Sizes"/>
                           </Properties>
@@ -9028,7 +9106,7 @@
                               <Color blue="cc" green="cc" red="cc" type="rgb"/>
                             </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Times New Roman" size="11" style="0"/>
+                              <Font name="Times New Roman" size="16" style="0"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Custom Fiber Selection"/>
                             <Property name="horizontalTextPosition" type="int" value="10"/>
@@ -9079,6 +9157,9 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel247">
                           <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="%"/>
                           </Properties>
                         </Component>
@@ -9591,7 +9672,7 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="36" pref="36" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel266" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="cushionsSizeLable" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel265" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel262" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel268" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -9661,7 +9742,7 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel266" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cushionsSizeLable" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="cushionsSizeCombo" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -9697,7 +9778,7 @@
                                   <Component id="cushionsSubmitButton" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="cushionsNewCostingButton" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="36" max="32767" attributes="0"/>
+                                  <EmptySpace pref="34" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -9745,6 +9826,9 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel260">
                           <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="%"/>
                           </Properties>
                         </Component>
@@ -9863,7 +9947,7 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cushionsFabricTypeComboActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel266">
+                        <Component class="javax.swing.JLabel" name="cushionsSizeLable">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Times New Roman" size="16" style="0"/>
@@ -9898,7 +9982,7 @@
                               <Color blue="cc" green="cc" red="cc" type="rgb"/>
                             </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Times New Roman" size="14" style="0"/>
+                              <Font name="Times New Roman" size="16" style="0"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Use Custom Sizes"/>
                           </Properties>
@@ -9926,7 +10010,7 @@
                               <Color blue="cc" green="cc" red="cc" type="rgb"/>
                             </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Times New Roman" size="11" style="0"/>
+                              <Font name="Times New Roman" size="16" style="0"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Custom Fiber Selection"/>
                             <Property name="horizontalTextPosition" type="int" value="10"/>
@@ -9977,6 +10061,9 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel269">
                           <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="%"/>
                           </Properties>
                         </Component>
@@ -10467,7 +10554,7 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="36" pref="36" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel288" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="bolsterSizeLable" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel287" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel285" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel290" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -10537,7 +10624,7 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel288" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="bolsterSizeLable" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="bolsterSizeCombo" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -10573,7 +10660,7 @@
                                   <Component id="bolsterSubmitButton" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="bolsterNewCostingButton" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="30" max="32767" attributes="0"/>
+                                  <EmptySpace pref="28" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -10621,6 +10708,9 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel284">
                           <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="%"/>
                           </Properties>
                         </Component>
@@ -10767,7 +10857,7 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bolsterFabricTypeComboActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel288">
+                        <Component class="javax.swing.JLabel" name="bolsterSizeLable">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Times New Roman" size="16" style="0"/>
@@ -10802,7 +10892,7 @@
                               <Color blue="cc" green="cc" red="cc" type="rgb"/>
                             </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Times New Roman" size="14" style="0"/>
+                              <Font name="Times New Roman" size="16" style="0"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Use Custom Sizes"/>
                           </Properties>
@@ -10830,7 +10920,7 @@
                               <Color blue="cc" green="cc" red="cc" type="rgb"/>
                             </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Times New Roman" size="11" style="0"/>
+                              <Font name="Times New Roman" size="16" style="0"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Custom Fiber Selection"/>
                             <Property name="horizontalTextPosition" type="int" value="10"/>
@@ -10884,6 +10974,9 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel291">
                           <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="%"/>
                           </Properties>
                         </Component>
