@@ -10,6 +10,9 @@ public class Config {
     public static String connectionString = "jdbc:mysql://127.0.0.1/celcius?"
             + "user=root&password=";
 
+    public static String profitMargin = "50";
+    public static String taxesRate = "14.28";
+
     public static boolean checkDBConnection() {
         try {
             Connection connect = (Connection) DriverManager.getConnection(Config.connectionString);

@@ -1400,15 +1400,13 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                                      <Component id="jPanel6" max="32767" attributes="0"/>
-                                      <EmptySpace min="67" pref="67" max="67" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="11" pref="11" max="11" attributes="0"/>
+                              <Component id="jPanel6" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1430,7 +1428,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="bedSheetCostingPanel" pref="562" max="32767" attributes="2"/>
+                                  <Component id="bedSheetCostingPanel" pref="654" max="32767" attributes="2"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -1492,10 +1490,29 @@
                                                       <EmptySpace min="132" pref="132" max="132" attributes="0"/>
                                                       <Component id="bedSheetSizeCombo" min="-2" pref="198" max="-2" attributes="0"/>
                                                   </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="jLabel30" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel55" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="bedSheetTaxField" min="-2" pref="86" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="jLabel123" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="bedSheetMarginField" min="-2" pref="86" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="jLabel84" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
+                                                  </Group>
                                               </Group>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="181" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="2" attributes="0">
                                                   <Component id="bedSheetSubmitButton" alignment="2" min="-2" max="-2" attributes="0"/>
                                                   <Component id="bedSheetCostingPanelNewCostingButton" alignment="2" min="-2" pref="130" max="-2" attributes="0"/>
@@ -1551,11 +1568,23 @@
                                       <Component id="bedSheetUseCustom" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                                       <Component id="bedSheetCustomPanel" min="-2" pref="220" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="bedSheetMarginField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel84" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel55" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="bedSheetTaxField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel123" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="bedSheetSubmitButton" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                                       <Component id="bedSheetCostingPanelNewCostingButton" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="21" max="32767" attributes="0"/>
+                                      <EmptySpace pref="22" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -1813,6 +1842,58 @@
                               <AuxValues>
                                 <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="bedSheetCostingPanelNewCostingButton.setVisible(false);"/>
                               </AuxValues>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel30">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Margin:"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel55">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Taxes:"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="bedSheetMarginField">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                              </Properties>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="bedSheetMarginField.setText(Config.profitMargin);"/>
+                              </AuxValues>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="bedSheetTaxField">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                              </Properties>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="bedSheetTaxField.setText(Config.taxesRate);"/>
+                              </AuxValues>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel84">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="%"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel123">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="%"/>
+                              </Properties>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -2388,7 +2469,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="pillowCaseCostingPanel" pref="631" max="32767" attributes="0"/>
+                                  <Component id="pillowCaseCostingPanel" pref="691" max="32767" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -2411,61 +2492,82 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <EmptySpace min="30" pref="30" max="30" attributes="0"/>
-                                                  <Component id="pillowcaseUseCustom" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <EmptySpace min="30" pref="30" max="30" attributes="0"/>
-                                                  <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="164" pref="164" max="164" attributes="0"/>
-                                                  <Component id="pillowcaseWastage" min="-2" pref="28" max="-2" attributes="0"/>
-                                                  <EmptySpace min="12" pref="12" max="12" attributes="0"/>
-                                                  <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <EmptySpace min="30" pref="30" max="30" attributes="0"/>
-                                                  <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="77" pref="77" max="77" attributes="0"/>
-                                                  <Component id="pillowcaseTypeCombo" min="-2" pref="194" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <EmptySpace min="30" pref="30" max="30" attributes="0"/>
-                                                  <Component id="pillowcaseSizeLable" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="151" pref="151" max="151" attributes="0"/>
-                                                  <Component id="pillowcaseSizeCombo" min="-2" pref="194" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <EmptySpace min="30" pref="30" max="30" attributes="0"/>
-                                                  <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="91" pref="91" max="91" attributes="0"/>
-                                                  <Component id="pillowcaseMaterialTypeCombo" min="-2" pref="194" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <EmptySpace min="30" pref="30" max="30" attributes="0"/>
-                                                  <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="86" pref="86" max="86" attributes="0"/>
-                                                  <Component id="pillowcaseProductRangeCombo" min="-2" pref="194" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <EmptySpace min="140" pref="140" max="140" attributes="0"/>
-                                                  <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="2" attributes="0">
-                                                  <EmptySpace min="30" pref="30" max="30" attributes="0"/>
-                                                  <Component id="pillowcaseCustomPanel" min="-2" pref="410" max="-2" attributes="0"/>
-                                              </Group>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="30" pref="30" max="30" attributes="0"/>
+                                              <Component id="pillowcaseUseCustom" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="30" pref="30" max="30" attributes="0"/>
+                                              <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="164" pref="164" max="164" attributes="0"/>
+                                              <Component id="pillowcaseWastage" min="-2" pref="28" max="-2" attributes="0"/>
+                                              <EmptySpace min="12" pref="12" max="12" attributes="0"/>
+                                              <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="30" pref="30" max="30" attributes="0"/>
+                                              <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="77" pref="77" max="77" attributes="0"/>
+                                              <Component id="pillowcaseTypeCombo" min="-2" pref="194" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="30" pref="30" max="30" attributes="0"/>
+                                              <Component id="pillowcaseSizeLable" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="151" pref="151" max="151" attributes="0"/>
+                                              <Component id="pillowcaseSizeCombo" min="-2" pref="194" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="30" pref="30" max="30" attributes="0"/>
+                                              <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="91" pref="91" max="91" attributes="0"/>
+                                              <Component id="pillowcaseMaterialTypeCombo" min="-2" pref="194" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="30" pref="30" max="30" attributes="0"/>
+                                              <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="86" pref="86" max="86" attributes="0"/>
+                                              <Component id="pillowcaseProductRangeCombo" min="-2" pref="194" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="140" pref="140" max="140" attributes="0"/>
+                                              <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="2" attributes="0">
-                                                  <Component id="pillowcaseSubmitButton" alignment="2" min="-2" pref="150" max="-2" attributes="0"/>
-                                                  <Component id="pillowCaseNewCostingButton" alignment="2" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="30" pref="30" max="30" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="pillowcaseCustomPanel" alignment="0" min="-2" pref="410" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="jLabel236" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel171" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace pref="179" max="32767" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="pillowcaseTaxField" min="-2" pref="86" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="jLabel266" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="pillowcaseMarginField" min="-2" pref="86" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="jLabel288" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
+                                                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                                                  </Group>
                                               </Group>
                                           </Group>
                                       </Group>
                                       <EmptySpace pref="56" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="167" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="2" attributes="0">
+                                          <Component id="pillowcaseSubmitButton" alignment="2" min="-2" pref="150" max="-2" attributes="0"/>
+                                          <Component id="pillowCaseNewCostingButton" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace pref="183" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -2508,10 +2610,22 @@
                                       <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                                       <Component id="pillowcaseCustomPanel" min="-2" pref="260" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="2" attributes="0">
+                                          <Component id="pillowcaseMarginField" alignment="2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel288" alignment="2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel171" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="2" attributes="0">
+                                          <Component id="pillowcaseTaxField" alignment="2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel236" alignment="2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel266" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="pillowcaseSubmitButton" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                       <Component id="pillowCaseNewCostingButton" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="23" max="32767" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -2850,6 +2964,58 @@
                               </Events>
                               <AuxValues>
                                 <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="pillowCaseNewCostingButton.setVisible(false);"/>
+                              </AuxValues>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel171">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Margin:"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel236">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Taxes:"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="pillowcaseTaxField">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                              </Properties>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="pillowcaseTaxField.setText(Config.taxesRate);"/>
+                              </AuxValues>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel266">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="%"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel288">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="%"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="pillowcaseMarginField">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                              </Properties>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="pillowcaseMarginField.setText(Config.profitMargin);"/>
                               </AuxValues>
                             </Component>
                           </SubComponents>
@@ -3415,7 +3581,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="bedSheetCostingPanel1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="duvetCoversCostingPanel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -3424,14 +3590,14 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
-                                  <Component id="bedSheetCostingPanel1" min="-2" max="-2" attributes="2"/>
+                                  <Component id="duvetCoversCostingPanel" min="-2" pref="660" max="-2" attributes="2"/>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Container class="javax.swing.JPanel" name="bedSheetCostingPanel1">
+                        <Container class="javax.swing.JPanel" name="duvetCoversCostingPanel">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -3448,49 +3614,66 @@
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
-                                                      <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace pref="124" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jLabel53" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jLabel52" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jLabel73" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="duvetCoverSizeLable" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jLabel56" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="1" attributes="0">
-                                                          <Component id="dovetCoversTypeCombo" alignment="0" pref="208" max="32767" attributes="1"/>
-                                                          <Component id="dovetCoversMaterialTypeCombo" alignment="0" pref="208" max="32767" attributes="1"/>
-                                                          <Component id="dovetCoversProductRangeCombo" alignment="0" pref="208" max="32767" attributes="1"/>
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <Component id="dovetCoversWastage" min="-2" pref="28" max="-2" attributes="1"/>
-                                                              <EmptySpace max="-2" attributes="0"/>
-                                                              <Component id="jLabel54" min="-2" max="-2" attributes="0"/>
-                                                          </Group>
-                                                          <Component id="dovetCoversSizeCombo" alignment="0" pref="208" max="32767" attributes="1"/>
-                                                      </Group>
-                                                  </Group>
-                                                  <Component id="dovetCoversCustomPanel" alignment="0" pref="441" max="32767" attributes="1"/>
-                                                  <Component id="dovetCoversUseCustom" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
+                                              <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace pref="124" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="180" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="2" attributes="0">
-                                                  <Component id="dovetCoversSubmitButton" alignment="2" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="dovetCoversNewCostingButton" alignment="2" min="-2" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel53" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel52" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel73" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="duvetCoverSizeLable" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel56" min="-2" max="-2" attributes="0"/>
                                               </Group>
+                                              <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="dovetCoversTypeCombo" alignment="0" pref="208" max="32767" attributes="1"/>
+                                                  <Component id="dovetCoversMaterialTypeCombo" alignment="0" pref="208" max="32767" attributes="1"/>
+                                                  <Component id="dovetCoversProductRangeCombo" alignment="0" pref="208" max="32767" attributes="1"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="dovetCoversWastage" min="-2" pref="28" max="-2" attributes="1"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="jLabel54" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="dovetCoversSizeCombo" alignment="0" pref="208" max="32767" attributes="1"/>
+                                              </Group>
+                                          </Group>
+                                          <Component id="dovetCoversCustomPanel" alignment="0" pref="441" max="32767" attributes="1"/>
+                                          <Component id="dovetCoversUseCustom" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel298" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel297" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace pref="182" max="32767" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="duvetCoversTaxField" min="-2" pref="86" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="jLabel299" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="duvetCoversMarginField" min="-2" pref="86" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="jLabel300" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace pref="28" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="2" attributes="0">
+                                          <Component id="dovetCoversSubmitButton" alignment="2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="dovetCoversNewCostingButton" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace pref="183" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -3529,11 +3712,23 @@
                                       <Component id="dovetCoversUseCustom" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="dovetCoversCustomPanel" min="-2" pref="230" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="2" attributes="0">
+                                          <Component id="jLabel297" alignment="2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="duvetCoversMarginField" alignment="2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel300" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="2" attributes="0">
+                                          <Component id="jLabel299" alignment="2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel298" alignment="2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="duvetCoversTaxField" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                       <Component id="dovetCoversSubmitButton" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
                                       <Component id="dovetCoversNewCostingButton" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="24" max="32767" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -3851,6 +4046,58 @@
                                 <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="dovetCoversNewCostingButton.setVisible(false);"/>
                               </AuxValues>
                             </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel297">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Margin:"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel298">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Taxes:"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="duvetCoversTaxField">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                              </Properties>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="duvetCoversTaxField.setText(Config.taxesRate);"/>
+                              </AuxValues>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel299">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="%"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel300">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="%"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="duvetCoversMarginField">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                              </Properties>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="duvetCoversMarginField.setText(Config.profitMargin);"/>
+                              </AuxValues>
+                            </Component>
                           </SubComponents>
                         </Container>
                       </SubComponents>
@@ -3892,7 +4139,7 @@
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                       <Component id="jPanel21" alignment="0" pref="514" max="32767" attributes="1"/>
-                                      <Component id="jPanel22" alignment="0" pref="514" max="32767" attributes="1"/>
+                                      <Component id="jPanel22" alignment="0" max="32767" attributes="1"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
@@ -3902,7 +4149,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jPanel22" min="-2" pref="449" max="-2" attributes="0"/>
+                                  <Component id="jPanel22" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace pref="26" max="32767" attributes="0"/>
                                   <Component id="jPanel21" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -4526,10 +4773,10 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="bedSheetCostingPanel2" min="-2" pref="500" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="mattressProtectorCostingPanel" min="-2" pref="500" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -4537,14 +4784,14 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="bedSheetCostingPanel2" min="-2" pref="784" max="-2" attributes="2"/>
+                                  <Component id="mattressProtectorCostingPanel" min="-2" pref="835" max="-2" attributes="2"/>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Container class="javax.swing.JPanel" name="bedSheetCostingPanel2">
+                        <Container class="javax.swing.JPanel" name="mattressProtectorCostingPanel">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -4626,18 +4873,39 @@
                                       <Component id="jLabel80" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace pref="110" max="32767" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="2" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="48" pref="48" max="48" attributes="0"/>
-                                      <Component id="mettresProtectorCustomPanel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="35" pref="35" max="35" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel302" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel301" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="mattressProtectorTaxField" min="-2" pref="86" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="jLabel303" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="mattressProtectorMarginField" min="-2" pref="86" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="jLabel304" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                          <Component id="mettresProtectorCustomPanel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="175" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="2" attributes="0">
                                           <Component id="mettresProtectorSubmitButton" alignment="2" min="-2" max="-2" attributes="0"/>
                                           <Component id="mattressProtectorNewCostingButton" alignment="2" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="178" max="32767" attributes="0"/>
+                                      <EmptySpace pref="177" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -4705,11 +4973,23 @@
                                       <Component id="mettresProtectorUseCustom" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="mettresProtectorCustomPanel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="2" attributes="0">
+                                          <Component id="jLabel301" alignment="2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="mattressProtectorMarginField" alignment="2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel304" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="2" attributes="0">
+                                          <Component id="jLabel302" alignment="2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel303" alignment="2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="mattressProtectorTaxField" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="mettresProtectorSubmitButton" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="7" max="-2" attributes="1"/>
                                       <Component id="mattressProtectorNewCostingButton" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="35" max="32767" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -5125,6 +5405,58 @@
                               </Events>
                               <AuxValues>
                                 <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="mattressProtectorNewCostingButton.setVisible(false);"/>
+                              </AuxValues>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel301">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Margin:"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel302">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Taxes:"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="mattressProtectorTaxField">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                              </Properties>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="mattressProtectorTaxField.setText(Config.taxesRate);"/>
+                              </AuxValues>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel303">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="%"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel304">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="%"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="mattressProtectorMarginField">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                              </Properties>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="mattressProtectorMarginField.setText(Config.profitMargin);"/>
                               </AuxValues>
                             </Component>
                           </SubComponents>
@@ -6320,9 +6652,9 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                                  <Component id="cotSheetCostingPanel" min="-2" pref="690" max="-2" attributes="2"/>
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="cotSheetCostingPanel" min="-2" pref="755" max="-2" attributes="2"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -6344,76 +6676,100 @@
                           <Layout>
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="186" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="2" attributes="0">
-                                          <Component id="cotSheetSubmitButton" alignment="2" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cotSheetNewCosting" alignment="2" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace pref="167" max="32767" attributes="0"/>
-                                  </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="164" max="-2" attributes="0"/>
                                       <Component id="jLabel119" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace pref="154" max="32767" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace pref="24" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel128" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel127" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel124" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel133" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel132" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel136" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel131" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cotSheetSizeLable" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel121" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cotSheetUseCustom" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="cotSheetPaddingTypeCombo" alignment="0" pref="203" max="32767" attributes="1"/>
-                                          <Component id="cotSheetSizeCombo" alignment="0" pref="203" max="32767" attributes="1"/>
-                                          <Component id="cotSheetMaterialTypeCombo" alignment="0" pref="203" max="32767" attributes="1"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel306" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel305" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace pref="174" max="32767" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="cotSheetPaddingWastage" min="-2" pref="28" max="-2" attributes="1"/>
+                                                      <Component id="cotSheetTaxField" min="-2" pref="86" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="jLabel130" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel307" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="cotSheetTaffateWastage" min="-2" pref="28" max="-2" attributes="1"/>
+                                                      <Component id="cotSheetsMarginField" min="-2" pref="86" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="jLabel129" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="cotSheetHeightQuiltiingShrinkage" min="-2" pref="28" max="-2" attributes="1"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="jLabel135" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="cotSheetWidthQuiltingShrinkage" min="-2" pref="28" max="-2" attributes="1"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="jLabel134" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="cotSheetFabricWastage" min="-2" pref="28" max="-2" attributes="1"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="jLabel122" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel308" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="cotSheetTaffataTypeCombo" alignment="0" pref="203" max="32767" attributes="1"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="cotSheetCustomPanel" alignment="0" max="32767" attributes="0"/>
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="jLabel128" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel127" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel124" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel133" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel132" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel136" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel131" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="cotSheetSizeLable" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel121" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="cotSheetUseCustom" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="cotSheetPaddingTypeCombo" alignment="0" pref="203" max="32767" attributes="1"/>
+                                                          <Component id="cotSheetSizeCombo" alignment="0" pref="203" max="32767" attributes="1"/>
+                                                          <Component id="cotSheetMaterialTypeCombo" alignment="0" pref="203" max="32767" attributes="1"/>
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                                  <Group type="102" alignment="0" attributes="0">
+                                                                      <Component id="cotSheetPaddingWastage" min="-2" pref="28" max="-2" attributes="1"/>
+                                                                      <EmptySpace max="-2" attributes="0"/>
+                                                                      <Component id="jLabel130" min="-2" max="-2" attributes="0"/>
+                                                                  </Group>
+                                                                  <Group type="102" alignment="0" attributes="0">
+                                                                      <Component id="cotSheetTaffateWastage" min="-2" pref="28" max="-2" attributes="1"/>
+                                                                      <EmptySpace max="-2" attributes="0"/>
+                                                                      <Component id="jLabel129" min="-2" max="-2" attributes="0"/>
+                                                                  </Group>
+                                                                  <Group type="102" alignment="0" attributes="0">
+                                                                      <Component id="cotSheetHeightQuiltiingShrinkage" min="-2" pref="28" max="-2" attributes="1"/>
+                                                                      <EmptySpace max="-2" attributes="0"/>
+                                                                      <Component id="jLabel135" min="-2" max="-2" attributes="0"/>
+                                                                  </Group>
+                                                                  <Group type="102" alignment="0" attributes="0">
+                                                                      <Component id="cotSheetWidthQuiltingShrinkage" min="-2" pref="28" max="-2" attributes="1"/>
+                                                                      <EmptySpace max="-2" attributes="0"/>
+                                                                      <Component id="jLabel134" min="-2" max="-2" attributes="0"/>
+                                                                  </Group>
+                                                                  <Group type="102" alignment="0" attributes="0">
+                                                                      <Component id="cotSheetFabricWastage" min="-2" pref="28" max="-2" attributes="1"/>
+                                                                      <EmptySpace max="-2" attributes="0"/>
+                                                                      <Component id="jLabel122" min="-2" max="-2" attributes="0"/>
+                                                                  </Group>
+                                                              </Group>
+                                                              <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Component id="cotSheetTaffataTypeCombo" alignment="0" pref="203" max="32767" attributes="1"/>
+                                                      </Group>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace min="47" pref="47" max="47" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                      <EmptySpace min="47" pref="47" max="47" attributes="0"/>
                                   </Group>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                      <Component id="cotSheetCustomPanel" max="32767" attributes="0"/>
-                                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="2" attributes="0">
+                                          <Component id="cotSheetSubmitButton" alignment="2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cotSheetNewCosting" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace pref="181" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -6476,11 +6832,23 @@
                                       <Component id="cotSheetUseCustom" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="cotSheetCustomPanel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="2" attributes="0">
+                                          <Component id="jLabel305" alignment="2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cotSheetsMarginField" alignment="2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel308" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="2" attributes="0">
+                                          <Component id="jLabel307" alignment="2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cotSheetTaxField" alignment="2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel306" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="cotSheetSubmitButton" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="cotSheetNewCosting" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace pref="16" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -6583,7 +6951,7 @@
                                                   <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
                                                       <Group type="102" attributes="0">
-                                                          <Component id="cotSheetCustomWidth" pref="96" max="32767" attributes="1"/>
+                                                          <Component id="cotSheetCustomWidth" pref="98" max="32767" attributes="1"/>
                                                           <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                                                       </Group>
                                                       <Component id="cotSheetCustomHeight" min="-2" pref="96" max="-2" attributes="1"/>
@@ -6857,6 +7225,58 @@
                               </Events>
                               <AuxValues>
                                 <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="cotSheetNewCosting.setVisible(false);"/>
+                              </AuxValues>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel305">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Margin:"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel306">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Taxes:"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="cotSheetTaxField">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                              </Properties>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="bedSheetTaxField.setText(Config.taxesRate);"/>
+                              </AuxValues>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel307">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="%"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel308">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="%"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="cotSheetsMarginField">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Times New Roman" size="16" style="0"/>
+                                </Property>
+                              </Properties>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="cotSheetsMarginField.setText(Config.profitMargin);"/>
                               </AuxValues>
                             </Component>
                           </SubComponents>
@@ -7503,22 +7923,53 @@
                                           <EmptySpace min="-2" pref="159" max="-2" attributes="0"/>
                                           <Component id="jLabel120" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="2" attributes="0">
-                                              <Component id="duvetsNewCostingButton" alignment="2" min="-2" max="-2" attributes="0"/>
-                                              <Component id="duvetsSubmitButton" alignment="2" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel310" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel309" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="duvetsTaxField" min="-2" pref="86" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jLabel311" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="duvetsMarginField" min="-2" pref="86" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jLabel312" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="duvetsSubmitButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                                  <Component id="duvetsNewCostingButton" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace pref="16" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <EmptySpace pref="35" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                                   <Component id="jLabel120" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -7555,10 +8006,22 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="duvetsCustomPanel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="duvetsSubmitButton" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="2" attributes="0">
+                                      <Component id="duvetsMarginField" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel309" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel312" alignment="2" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="2" attributes="0">
+                                      <Component id="duvetsTaxField" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel310" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel311" alignment="2" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                  <Component id="duvetsSubmitButton" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Component id="duvetsNewCostingButton" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="59" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -8150,6 +8613,58 @@
                             <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="duvetsNewCostingButton.setVisible(false);"/>
                           </AuxValues>
                         </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel309">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Margin:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel310">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Taxes:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="duvetsTaxField">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="duvetsTaxField.setText(Config.taxesRate);"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel311">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="%"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel312">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="%"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="duvetsMarginField">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="duvetsMarginField.setText(Config.profitMargin);"/>
+                          </AuxValues>
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -8689,7 +9204,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                              <Component id="pillowsCostingPanel" pref="602" max="32767" attributes="1"/>
+                              <Component id="pillowsCostingPanel" pref="686" max="32767" attributes="1"/>
                               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -8711,13 +9226,6 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="-2" pref="191" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="2" attributes="0">
-                                              <Component id="pillowsSubmitButton" alignment="2" min="-2" max="-2" attributes="0"/>
-                                              <Component id="pillowsNewCostingButton" alignment="2" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
                                           <Component id="jLabel228" min="-2" max="-2" attributes="0"/>
@@ -8759,10 +9267,38 @@
                                                   </Group>
                                               </Group>
                                               <Component id="pillowsCustomPanel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jLabel314" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel313" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace pref="159" max="32767" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="pillowsTaxField" min="-2" pref="86" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="jLabel315" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="pillowsMarginField" min="-2" pref="86" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="jLabel316" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
                                       </Group>
                                   </Group>
                                   <EmptySpace pref="28" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="2" attributes="0">
+                                      <Component id="pillowsSubmitButton" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="pillowsNewCostingButton" alignment="2" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="178" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -8820,7 +9356,19 @@
                                   <Component id="pillowsUseCustom" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="pillowsCustomPanel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="2" attributes="0">
+                                      <Component id="jLabel313" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="pillowsMarginField" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel316" alignment="2" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="2" attributes="0">
+                                      <Component id="pillowsTaxField" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel314" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel315" alignment="2" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="pillowsSubmitButton" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="pillowsNewCostingButton" min="-2" max="-2" attributes="0"/>
@@ -9163,6 +9711,58 @@
                             <Property name="text" type="java.lang.String" value="%"/>
                           </Properties>
                         </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel313">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Margin:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel314">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Taxes:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="pillowsTaxField">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="pillowsTaxField.setText(Config.taxesRate);"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel315">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="%"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel316">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="%"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="pillowsMarginField">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="pillowsMarginField.setText(Config.profitMargin);"/>
+                          </AuxValues>
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -9232,7 +9832,7 @@
                               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                               <Component id="jPanel42" min="-2" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                              <Component id="jPanel41" min="-2" pref="156" max="32767" attributes="0"/>
+                              <Component id="jPanel41" min="-2" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -9638,7 +10238,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                              <Component id="cotSheetCostingPanel3" min="-2" pref="465" max="-2" attributes="0"/>
+                              <Component id="cushionsCostingPanel" min="-2" pref="512" max="-2" attributes="0"/>
                               <EmptySpace pref="24" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -9647,14 +10247,14 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                              <Component id="cotSheetCostingPanel3" max="32767" attributes="1"/>
+                              <Component id="cushionsCostingPanel" pref="661" max="32767" attributes="1"/>
                               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Container class="javax.swing.JPanel" name="cotSheetCostingPanel3">
+                    <Container class="javax.swing.JPanel" name="cushionsCostingPanel">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -9668,9 +10268,15 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
+                                  <Component id="jLabel258" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="36" pref="36" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="cushionsSizeLable" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel265" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -9678,91 +10284,100 @@
                                               <Component id="jLabel268" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel267" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel259" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel318" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel317" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="cushionsFiberWastage" min="-2" pref="28" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jLabel269" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="cushionsTaxField" min="-2" pref="86" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="jLabel319" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="cushionsMarginField" min="-2" pref="86" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="jLabel320" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
                                               </Group>
-                                              <Component id="cushionsSizeCombo" alignment="0" pref="215" max="32767" attributes="1"/>
-                                              <Component id="cushionsFabricTypeCombo" alignment="0" pref="215" max="32767" attributes="1"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="cushionsFabricWastage" min="-2" pref="28" max="-2" attributes="1"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jLabel260" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="cushionsFiberWastage" min="-2" pref="28" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="jLabel269" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="cushionsSizeCombo" alignment="0" pref="214" max="32767" attributes="1"/>
+                                                      <Component id="cushionsFabricTypeCombo" alignment="0" pref="214" max="32767" attributes="1"/>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="cushionsFabricWastage" min="-2" pref="28" max="-2" attributes="1"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="jLabel260" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="cushionsRangeCombo" alignment="0" pref="214" max="32767" attributes="1"/>
+                                                      <Component id="cushionsFiberTypeCombo" alignment="0" pref="214" max="32767" attributes="1"/>
+                                                      <Component id="cushionsCustomFiberButton" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                                               </Group>
-                                              <Component id="cushionsRangeCombo" alignment="0" pref="215" max="32767" attributes="1"/>
-                                              <Component id="cushionsFiberTypeCombo" alignment="0" pref="215" max="32767" attributes="1"/>
-                                              <Component id="cushionsCustomFiberButton" alignment="1" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                                       </Group>
+                                      <Component id="cushionsUseCustom" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cushionsCustomPanel" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="184" max="-2" attributes="0"/>
-                                          <Component id="cushionsNewCostingButton" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace pref="153" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
-                                          <Component id="cushionsSubmitButton" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="cushionsUseCustom" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="cushionsCustomPanel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="2" attributes="0">
+                                              <Component id="cushionsNewCostingButton" alignment="2" min="-2" max="-2" attributes="0"/>
+                                              <Component id="cushionsSubmitButton" alignment="2" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace pref="150" max="32767" attributes="0"/>
-                                  <Component id="jLabel258" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel258" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel259" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cushionsRangeCombo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="2" attributes="0">
+                                      <Component id="jLabel259" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cushionsRangeCombo" alignment="2" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel265" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cushionsFabricTypeCombo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="2" attributes="0">
+                                      <Component id="cushionsFabricTypeCombo" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel265" alignment="2" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="cushionsSizeLable" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cushionsSizeCombo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="2" attributes="0">
+                                      <Component id="cushionsSizeLable" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cushionsSizeCombo" alignment="2" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel262" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="cushionsFabricWastage" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel260" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel262" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="cushionsFabricWastage" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel260" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="cushionsCustomFiberButton" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="cushionsCustomFiberButton" alignment="1" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="cushionsFiberTypeCombo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel267" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="2" attributes="0">
+                                      <Component id="jLabel267" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cushionsFiberTypeCombo" alignment="2" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="2" attributes="0">
@@ -9774,11 +10389,23 @@
                                   <Component id="cushionsUseCustom" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="cushionsCustomPanel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="2" attributes="0">
+                                      <Component id="cushionsMarginField" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel320" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel317" alignment="2" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="2" attributes="0">
+                                      <Component id="jLabel319" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cushionsTaxField" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel318" alignment="2" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                   <Component id="cushionsSubmitButton" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="cushionsNewCostingButton" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="34" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -10066,6 +10693,58 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="%"/>
                           </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel317">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Margin:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel318">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Taxes:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="cushionsTaxField">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="cushionsTaxField.setText(Config.taxesRate);"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel319">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="%"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel320">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="%"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="cushionsMarginField">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="cushionsMarginField.setText(Config.profitMargin);"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -10529,7 +11208,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                              <Component id="cotSheetCostingPanel4" max="32767" attributes="1"/>
+                              <Component id="cotSheetCostingPanel4" pref="663" max="32767" attributes="1"/>
                               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -10582,15 +11261,6 @@
                                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="184" max="-2" attributes="0"/>
-                                          <Component id="bolsterNewCostingButton" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace pref="153" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
-                                          <Component id="bolsterSubmitButton" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="bolsterCustomPanel" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -10602,8 +11272,39 @@
                                           <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
                                           <Component id="jLabel282" min="-2" max="-2" attributes="0"/>
                                       </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                                  <Component id="bolsterNewCostingButton" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="bolsterSubmitButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel322" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel321" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="150" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="bolsterTaxField" min="-2" pref="86" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jLabel323" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="bolsterMarginField" min="-2" pref="86" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jLabel324" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -10656,11 +11357,23 @@
                                   <Component id="bolsterUseCustom" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="bolsterCustomPanel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                  <Component id="bolsterSubmitButton" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="2" attributes="0">
+                                      <Component id="bolsterMarginField" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel324" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel321" alignment="2" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="2" attributes="0">
+                                      <Component id="bolsterTaxField" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel323" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel322" alignment="2" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="bolsterSubmitButton" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                                   <Component id="bolsterNewCostingButton" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="28" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -10979,6 +11692,58 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="%"/>
                           </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel321">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Margin:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel322">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Taxes:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="bolsterTaxField">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="bolsterTaxField.setText(Config.taxesRate);"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel323">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="%"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel324">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="%"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="bolsterMarginField">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="16" style="0"/>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="bolsterMarginField.setText(Config.profitMargin);"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
