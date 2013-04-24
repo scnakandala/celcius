@@ -244,7 +244,7 @@ public class BolsterDataAccess {
         result[0][0] = 0.0;
         result[1][0] = 0.0;
         int count = 1;
-        double val = Double.parseDouble(resultSet.getString("3.5_16"));
+        double val = Double.parseDouble(resultSet.getString("3p5_16"));
         if (val > 0) {
             result[0][count] = 3.5*3.5*16;
             result[1][count] = val;
