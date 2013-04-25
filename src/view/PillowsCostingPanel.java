@@ -8,7 +8,6 @@
  *
  * Created on Apr 25, 2013, 3:23:31 AM
  */
-
 package view;
 
 import celcius.Config;
@@ -274,6 +273,7 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
         });
 
         pillowFiberTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        pillowFiberTypeCombo.setModel(new DefaultComboBoxModel(PillowLogic.getFiberTypes((String)pillowRangeCombo.getSelectedItem())))
         pillowFiberTypeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pillowFiberTypeComboActionPerformed(evt);
@@ -844,6 +844,30 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
             return;
         }
 
+        try {
+            double margin = Double.parseDouble(pillowsMarginField.getText());
+            if (margin < 0) {
+                JOptionPane.showMessageDialog(this, "Profit margin should be a positive value");
+                return;
+            }
+            pCost.setMargin(margin);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid margin value");
+            return;
+        }
+
+        try {
+            double taxRate = Double.parseDouble(pillowsTaxField.getText());
+            if (taxRate < 0) {
+                JOptionPane.showMessageDialog(this, "Tax rate should be a positive value");
+                return;
+            }
+            pCost.setTaxRate(taxRate);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid tax rate value");
+            return;
+        }
+
         boolean useCustom = pillowsUseCustom.isSelected();
         if (useCustom) {
             pCost.setIsCustom(useCustom);
@@ -895,6 +919,9 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
         pillowsFabricCutHeight.setText(format.format(pReturn.getFabricCuttingHeight()) + "");
         pillowsFiberWeight.setText(format.format(pReturn.getFiberWeight()) + "");
         pillowsSMVValue.setText(format.format(pReturn.getSmvValue()) + "");
+                pillowsNetSellingPrice.setText(format.format(pReturn.getNetSellingPrice()));
+        pillowsTaxes.setText(format.format(pReturn.getTaxes()));
+        pillowsGrossSellingPrice.setText(format.format(pReturn.getGrossSellingPrice()));
 
 
         pillowRangeCombo.setEnabled(false);
@@ -911,6 +938,8 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
         pillowsIncludeLable.setEnabled(false);
         pillowsIncludePEBag.setEnabled(false);
         pillowsIncludeTag.setEnabled(false);
+        pillowsMarginField.setEnabled(false);
+        pillowsTaxField.setEnabled(false);
 
         pillowsSubmitButton.setVisible(false);
         pillowsNewCostingButton.setVisible(true);
@@ -932,15 +961,15 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
     private void pillowsNewCostingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pillowsNewCostingButtonActionPerformed
         pillowRangeCombo.setModel(new DefaultComboBoxModel(PillowLogic.getProductRanges()));
         pillowTypeCombo.setModel(new DefaultComboBoxModel(
-                PillowLogic.getPillowTypes((String)pillowRangeCombo.getSelectedItem())));
+                PillowLogic.getPillowTypes((String) pillowRangeCombo.getSelectedItem())));
         pillowFabricTypeCombo.setModel(new DefaultComboBoxModel(
-                PillowLogic.getMaterialTypes((String)pillowRangeCombo.getSelectedItem())));
+                PillowLogic.getMaterialTypes((String) pillowRangeCombo.getSelectedItem())));
         pillowSizeCombo.setModel(new DefaultComboBoxModel(PillowLogic.getPillowSizes(
-                (String)pillowRangeCombo.getSelectedItem(), (String)pillowTypeCombo.getSelectedItem())));
+                (String) pillowRangeCombo.getSelectedItem(), (String) pillowTypeCombo.getSelectedItem())));
         pillowFabricWastage.setText("3");
         pillowCustomFiberButton.setSelected(false);
         pillowFiberTypeCombo.setModel(new DefaultComboBoxModel(
-                PillowLogic.getFiberTypes((String)pillowRangeCombo.getSelectedItem())));
+                PillowLogic.getFiberTypes((String) pillowRangeCombo.getSelectedItem())));
         pillowFiberWastage.setText("3");
         pillowsUseCustom.setSelected(false);
         pillowsCustomPanel.setVisible(false);
@@ -964,6 +993,8 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
         pillowsIncludeLable.setEnabled(true);
         pillowsIncludePEBag.setEnabled(true);
         pillowsIncludeTag.setEnabled(true);
+        pillowsMarginField.setEnabled(true);
+        pillowsTaxField.setEnabled(true);
 
         pillowsSubmitButton.setVisible(true);
         pillowsNewCostingButton.setVisible(false);
@@ -979,14 +1010,11 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
 }//GEN-LAST:event_pillowCustomFiberButtonActionPerformed
 
     private void pillowFiberTypeComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pillowFiberTypeComboActionPerformed
-
 }//GEN-LAST:event_pillowFiberTypeComboActionPerformed
 
     private void pillowFiberWastageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pillowFiberWastageActionPerformed
         // TODO add your handling code here:
 }//GEN-LAST:event_pillowFiberWastageActionPerformed
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel208;
     private javax.swing.JLabel jLabel210;
@@ -1066,8 +1094,10 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel pillowsTotalMaterialCost;
     private javax.swing.JRadioButton pillowsUseCustom;
     // End of variables declaration//GEN-END:variables
+
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 JFrame frame = new JFrame();
                 frame.setContentPane(new PillowsCostingPanel());
@@ -1077,5 +1107,4 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
             }
         });
     }
-
 }

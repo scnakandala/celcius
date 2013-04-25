@@ -163,6 +163,10 @@ public class CotSheetLogic {
 
             Double totalCost = fabricCost + paddingCost + taffataCost + elasticCost + peBagCost + tagCost + labelCost + threadCost + pohCost + labourCost;
             Double totalMaterialCost = fabricCost + paddingCost + taffataCost + elasticCost + peBagCost + tagCost + labelCost + threadCost;
+            Double netSellingPrice = totalCost * ( 1.00 + cCost.getMargin()/100.0);
+            Double taxes = netSellingPrice * (cCost.getTaxRate()/100.0);
+            Double grossSellingPrice = netSellingPrice + taxes;
+
             cCost.setTotalMaterialCost(totalMaterialCost);
             cCost.setFabricCost(fabricCost);
             cCost.setPaddingCost(paddingCost);
@@ -175,6 +179,9 @@ public class CotSheetLogic {
             cCost.setPohCost(pohCost);
             cCost.setLabourCost(labourCost);
             cCost.setTotalCost(totalCost);
+            cCost.setNetSellingPrice(netSellingPrice);
+            cCost.setTaxes(taxes);
+            cCost.setGrossSellingPrice(grossSellingPrice);
 
             cCost.setFabricPaddingCuttingHeight(fabricPaddingCutHeight);
             cCost.setFabricPaddingCuttingWidth(fabricPaddingCutWidth);

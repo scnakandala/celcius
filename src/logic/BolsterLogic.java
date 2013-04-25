@@ -122,6 +122,14 @@ public class BolsterLogic {
             Double totalCost = materialCost + pohCost + cplmCost;
             bCost.setTotalCost(totalCost);
 
+            Double netSellingPrice = totalCost * ( 1.00 + bCost.getMargin()/100.0);
+            Double taxes = netSellingPrice * (bCost.getTaxRate()/100.0);
+            Double grossSellingPrice = netSellingPrice + taxes;
+
+            bCost.setNetSellingPrice(netSellingPrice);
+            bCost.setTaxes(taxes);
+            bCost.setGrossSellingPrice(grossSellingPrice);
+
         } catch (Exception ex) {
             System.out.println("Error");
         }

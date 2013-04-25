@@ -133,6 +133,10 @@ public class BedSheetLogic {
 
             Double totalCost = fabricCost + pohCost + labourCost + tagCost + labelCost + sealBagCost + threadCost;
             Double totalMaterialCost = fabricCost + tagCost + labelCost + sealBagCost + threadCost;
+            Double netSellingPrice = totalCost * (1.00 + bCost.getMargin()/100.0);
+            Double taxes = netSellingPrice * bCost.getTaxRate()/100.0;
+            Double grossSellingPrice = netSellingPrice + taxes;
+
             bCost.setTotalMaterialCost(totalMaterialCost);
             bCost.setFabricCost(fabricCost);
             bCost.setThreadCost(threadCost);
@@ -143,6 +147,9 @@ public class BedSheetLogic {
             bCost.setPohCost(pohCost);
             bCost.setLabourCost(labourCost);
             bCost.setTotalCost(totalCost);
+            bCost.setNetSellingPrice(netSellingPrice);
+            bCost.setTaxes(taxes);
+            bCost.setGrossSellingPrice(grossSellingPrice);
 
         } catch (Exception e) {
             System.out.println("Error");

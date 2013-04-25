@@ -164,6 +164,10 @@ public class DuvetCoversLogic {
 
             Double totalCost = fabricCost + pohCost + labourCost + tagCost + labelCost + sealBagCost + threadCost + zipperCost + velcoCost + buttonCost;
             Double totalMaterialCost = fabricCost + tagCost + labelCost + sealBagCost + threadCost + zipperCost + velcoCost + buttonCost;
+            Double netSellingPrice = totalCost * (1.00 + dCost.getMargin()/100.0);
+            Double taxes = totalCost * (dCost.getTaxRate()/100.0);
+            Double grossSellingPrice = netSellingPrice + taxes;
+
             dCost.setTotalMaterialCost(totalMaterialCost);
             dCost.setFabricCost(fabricCost);
             dCost.setThreadCost(threadCost);
@@ -177,6 +181,9 @@ public class DuvetCoversLogic {
             dCost.setVelcoCost(velcoCost);
             dCost.setZipperCost(zipperCost);
             dCost.setButtonCost(buttonCost);
+            dCost.setNetSellingPrice(netSellingPrice);
+            dCost.setTaxes(taxes);
+            dCost.setGrossSellingPrice(grossSellingPrice);
 
         } catch (Exception e) {
             System.out.println("Error");

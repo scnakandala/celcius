@@ -215,6 +215,14 @@ public class DuvetsLogic {
             dCost.setTotalCost(totalCost);
             dCost.setTotalMaterialCost(totalMaterialCost);
 
+            Double netSellingPrice = totalCost * ( 1.0 + dCost.getMargin()/100.0);
+            Double taxes = totalCost * ( dCost.getTaxRate()/100.0);
+            Double grossSellingPrice = netSellingPrice + taxes;
+
+            dCost.setNetSellingPrice(netSellingPrice);
+            dCost.setTaxes(taxes);
+            dCost.setGrossSellingPrice(grossSellingPrice);
+
         } catch (Exception e) {
             System.out.println("Error");
         }

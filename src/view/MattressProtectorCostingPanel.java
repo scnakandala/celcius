@@ -8,7 +8,6 @@
  *
  * Created on Apr 25, 2013, 3:09:19 AM
  */
-
 package view;
 
 import celcius.Config;
@@ -979,6 +978,30 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
         }
 
         try {
+            double margin = Double.parseDouble(mattressProtectorMarginField.getText());
+            if (margin < 0) {
+                JOptionPane.showMessageDialog(this, "Profit margin should be a positive value");
+                return;
+            }
+            mCost.setMargin(margin);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid margin value");
+            return;
+        }
+
+        try {
+            double taxRate = Double.parseDouble(mattressProtectorTaxField.getText());
+            if (taxRate < 0) {
+                JOptionPane.showMessageDialog(this, "Tax rate should be a positive value");
+                return;
+            }
+            mCost.setTaxRate(taxRate);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid tax rate value");
+            return;
+        }
+
+        try {
             double heightQuiltingShrinkage = Double.parseDouble(mettresProtectorHeightQuiltiingShrinkage.getText());
             if (heightQuiltingShrinkage < 0 || heightQuiltingShrinkage > 20) {
                 JOptionPane.showMessageDialog(this, "Width quilting shrinkage should be between 0 and 20 %");
@@ -1085,7 +1108,9 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
         mettresProtectorTafffataCutWidth.setText(format.format(mReturn.getTaffataCuttingWidth()) + "");
         mettresProtectorTaffataCutHeight.setText(format.format(mReturn.getTaffataCuttingHeight()) + "");
         mettresProtectorSMVValue.setText(format.format(mReturn.getSmvValue()) + "");
-
+        mettresProtectorNetSellingPrice.setText(format.format(mReturn.getNetSellingPrice()));
+        mettresProtectorTaxes.setText(format.format(mReturn.getTaxes()));
+        mettresProtectorGrossSellingPrice.setText(format.format(mReturn.getGrossSellingPrice()));
 
         mettresProtectorSubmitButton.setVisible(false);
         mattressProtectorNewCostingButton.setVisible(true);
@@ -1113,6 +1138,8 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
         mettresProtectorIncludePEBag.setEnabled(false);
         mettresProtectorIncludeNonWoven.setEnabled(false);
         mettresProtectorIncludePiping.setEnabled(false);
+        mattressProtectorMarginField.setEnabled(false);
+        mattressProtectorTaxField.setEnabled(false);
     }//GEN-LAST:event_mettresProtectorSubmitButtonActionPerformed
 
     private void mattressProtectorNewCostingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mattressProtectorNewCostingButtonActionPerformed
@@ -1124,7 +1151,7 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
                 MattresProtectorLogic.getProductRanges()));
         mettresProtectorMaterialTypeCombo.setModel(new DefaultComboBoxModel(
                 MattresProtectorLogic.getMaterialTypes(
-                (String)mettresProtectorProductRangeCombo.getSelectedItem())));
+                (String) mettresProtectorProductRangeCombo.getSelectedItem())));
         mettresProtectorSizeCombo.setModel(
                 new DefaultComboBoxModel(MattresProtectorLogic.getMettresProtectorSizes()));
         mettresProtectorPaddingTypeCombo.setModel(
@@ -1171,9 +1198,9 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
         mettresProtectorIncludePEBag.setEnabled(true);
         mettresProtectorIncludeNonWoven.setEnabled(true);
         mettresProtectorIncludePiping.setEnabled(true);
+        mattressProtectorMarginField.setEnabled(true);
+        mattressProtectorTaxField.setEnabled(true);
     }//GEN-LAST:event_mattressProtectorNewCostingButtonActionPerformed
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;
@@ -1271,8 +1298,10 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
     private javax.swing.JRadioButton mettresProtectorUseCustom;
     private javax.swing.JTextField mettresProtectorWidthQuiltingShrinkage;
     // End of variables declaration//GEN-END:variables
+
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 JFrame frame = new JFrame();
                 frame.setContentPane(new MattressProtectorCostingPanel());
@@ -1282,5 +1311,4 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
             }
         });
     }
-
 }

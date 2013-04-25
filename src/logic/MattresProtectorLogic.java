@@ -208,6 +208,9 @@ public class MattresProtectorLogic {
 
             Double totalCost = fabricCost + paddingCost + taffataCost + elasticCost + peBagCost + tagCost + labelCost + threadCost + nonWovenBagCost + pipingCost + pohCost + labourCost;
             Double totalMaterialCost = fabricCost + paddingCost + taffataCost + elasticCost + peBagCost + tagCost + labelCost + threadCost + nonWovenBagCost + pipingCost;
+            Double netSellingPrice = totalCost * (1.00 + mCost.getMargin()/100.0);
+            Double taxes = netSellingPrice * (mCost.getTaxRate()/100.0);
+            Double grossSellingPrice = netSellingPrice + taxes;
             mCost.setTotalMaterialCost(totalMaterialCost);
             mCost.setFabricCost(fabricCost);
             mCost.setPaddingCost(paddingCost);
@@ -222,6 +225,9 @@ public class MattresProtectorLogic {
             mCost.setPohCost(pohCost);
             mCost.setLabourCost(labourCost);
             mCost.setTotalCost(totalCost);
+            mCost.setNetSellingPrice(netSellingPrice);
+            mCost.setTaxes(taxes);
+            mCost.setGrossSellingPrice(grossSellingPrice);
 
             mCost.setFabricPaddingCuttingHeight(fabricPaddingCutHeight);
             mCost.setFabricPaddingCuttingWidth(fabricPaddingCutWidth);

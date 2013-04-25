@@ -128,6 +128,15 @@ public class CushionLogic {
             Double totalCost = materialCost + pohCost + cplmCost;
             cCost.setTotalCost(totalCost);
 
+            Double netSellingPrice = totalCost * (1.00 + cCost.getMargin()/100.0);
+            Double taxes = netSellingPrice * (cCost.getTaxRate()/100.0);
+            Double grossSellingPrice = netSellingPrice + taxes;
+
+            cCost.setNetSellingPrice(netSellingPrice);
+            cCost.setTaxes(taxes);
+            cCost.setGrossSellingPrice(grossSellingPrice);
+            
+
         } catch (Exception ex) {
             System.out.println("Error");
         }

@@ -1,30 +1,7 @@
 package view;
 
-import celcius.Config;
 import java.awt.Toolkit;
-import java.text.DecimalFormat;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import logic.BedSheetLogic;
-import logic.BolsterLogic;
-import logic.CotSheetLogic;
-import logic.CushionLogic;
-import logic.DuvetsLogic;
-import logic.DuvetCoversLogic;
-import logic.MattresProtectorLogic;
-import logic.PillowLogic;
-import logic.PillowcaseLogic;
-import viewmodels.BedSheetViewModel;
-import viewmodels.BolstersViewModel;
-import viewmodels.CotSheetViewModel;
-import viewmodels.CushionsViewModel;
-import viewmodels.DovetCoversViewModel;
-import viewmodels.DovetsViewModel;
-import viewmodels.MettresProtectorViewModel;
-import viewmodels.PillowcaseViewModel;
-import viewmodels.PillowsViewModel;
 
 public class MainWindow extends javax.swing.JFrame {
 
@@ -820,7 +797,7 @@ public class MainWindow extends javax.swing.JFrame {
         cotSheetsPane.setViewportView(new CotSheetCostingPanel());
         userTabbedPane.addTab("Cot Sheets", cotSheetsPane);
 
-        duvetsScrollPane.setViewportView(new logic.DuvetsCostingPanel());
+        duvetsScrollPane.setViewportView(new DuvetsCostingPanel());
         userTabbedPane.addTab("Duvets", duvetsScrollPane);
 
         pillowsScrollPane.setViewportView(new PillowsCostingPanel());

@@ -8,7 +8,6 @@
  *
  * Created on Apr 25, 2013, 3:31:52 AM
  */
-
 package view;
 
 import celcius.Config;
@@ -255,6 +254,7 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
         });
 
         bolsterFiberTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bolsterFiberTypeCombo.setModel(new DefaultComboBoxModel(BolsterLogic.getFiberTypes((String)bolsterRangeCombo.getSelectedItem())));
         bolsterFiberTypeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bolsterFiberTypeComboActionPerformed(evt);
@@ -420,7 +420,6 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
 
         bolsterCustomPanel.setVisible(false);
         bolsterNewCostingButton.setVisible(false);
-        bolsterFiberTypeCombo.setModel(new DefaultComboBoxModel(BolsterLogic.getFiberTypes((String)bolsterRangeCombo.getSelectedItem())));
 
         jPanel44.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -706,12 +705,12 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(cotSheetCostingPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 663, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(cotSheetCostingPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 663, Short.MAX_VALUE))
+                    .addComponent(bolsterCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(bolsterCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         bolsterCPUPanel.setVisible(false);
@@ -772,6 +771,30 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
             return;
         }
 
+        try {
+            double margin = Double.parseDouble(bolsterMarginField.getText());
+            if (margin < 0) {
+                JOptionPane.showMessageDialog(this, "Profit margin should be a positive value");
+                return;
+            }
+            bCost.setMargin(margin);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid margin value");
+            return;
+        }
+
+        try {
+            double taxRate = Double.parseDouble(bolsterTaxField.getText());
+            if (taxRate < 0) {
+                JOptionPane.showMessageDialog(this, "Tax rate should be a positive value");
+                return;
+            }
+            bCost.setTaxRate(taxRate);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid tax rate value");
+            return;
+        }
+
         boolean useCustom = bolsterUseCustom.isSelected();
         if (useCustom) {
             bCost.setIsCustom(useCustom);
@@ -820,7 +843,9 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
         bolsterToatalCost.setText(format.format(bReturn.getTotalCost()) + "");
         bolsterFiberWeight.setText(format.format(bReturn.getFiberWeight()) + "");
         bolsterSMVValue.setText(format.format(bReturn.getSmvValue()) + "");
-
+        bolsterNetSellingPrice.setText(format.format(bReturn.getNetSellingPrice()));
+        bolsterTaxes.setText(format.format(bReturn.getTaxes()));
+        bolsterGrossSellingPrice.setText(format.format(bReturn.getGrossSellingPrice()));
 
         bolsterRangeCombo.setEnabled(false);
         bolsterFabricTypeCombo.setEnabled(false);
@@ -835,6 +860,8 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
         bolsterIncludeLable.setEnabled(false);
         bolsterIncludePEBag.setEnabled(false);
         bolsterIncludeTag.setEnabled(false);
+        bolsterMarginField.setEnabled(false);
+        bolsterTaxField.setEnabled(false);
 
         bolsterSubmitButton.setVisible(false);
         bolsterNewCostingButton.setVisible(true);
@@ -882,6 +909,8 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
         bolsterIncludeLable.setEnabled(true);
         bolsterIncludePEBag.setEnabled(true);
         bolsterIncludeTag.setEnabled(true);
+        bolsterMarginField.setEnabled(true);
+        bolsterTaxField.setEnabled(true);
 
         bolsterSubmitButton.setVisible(true);
         bolsterNewCostingButton.setVisible(false);
@@ -903,8 +932,6 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
     private void bolsterFiberWastageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolsterFiberWastageActionPerformed
         // TODO add your handling code here:
 }//GEN-LAST:event_bolsterFiberWastageActionPerformed
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bolsterCPUPanel;
     private javax.swing.JTextField bolsterCustomDiameter;
@@ -976,8 +1003,10 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel44;
     private javax.swing.JPanel jPanel45;
     // End of variables declaration//GEN-END:variables
+
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 JFrame frame = new JFrame();
                 frame.setContentPane(new BolstersCostingPanel());
@@ -987,5 +1016,4 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
             }
         });
     }
-
 }

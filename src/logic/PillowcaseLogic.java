@@ -152,6 +152,9 @@ public class PillowcaseLogic {
 
             Double totalCost = fabricCost + pohCost + labourCost + tagCost + labelCost + sealBagCost + threadCost;
             Double totalMaterialCost = fabricCost + tagCost + labelCost + sealBagCost + threadCost;
+            Double netSellingPrice = totalCost * (1.00 + pCost.getMargin()/100.0);
+            Double taxes = netSellingPrice * (pCost.getTaxRate()/100.0);
+            Double grossSellingPrice = netSellingPrice + taxes;
 
             pCost.setTotalMaterialCost(totalMaterialCost);
             pCost.setFabricCost(fabricCost);
@@ -163,6 +166,9 @@ public class PillowcaseLogic {
             pCost.setPohCost(pohCost);
             pCost.setLabourCost(labourCost);
             pCost.setTotalCost(totalCost);
+            pCost.setNetSellingPrice(netSellingPrice);
+            pCost.setTaxes(taxes);
+            pCost.setGrossSellingPrice(grossSellingPrice);
 
         } catch (Exception e) {
             System.out.println("Error");

@@ -8,7 +8,6 @@
  *
  * Created on Apr 25, 2013, 3:17:08 AM
  */
-
 package view;
 
 import celcius.Config;
@@ -890,6 +889,30 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
         }
 
         try {
+            double margin = Double.parseDouble(cotSheetsMarginField.getText());
+            if (margin < 0) {
+                JOptionPane.showMessageDialog(this, "Profit margin should be a positive value");
+                return;
+            }
+            cCost.setMargin(margin);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid margin value");
+            return;
+        }
+
+        try {
+            double taxRate = Double.parseDouble(cotSheetTaxField.getText());
+            if (taxRate < 0) {
+                JOptionPane.showMessageDialog(this, "Tax rate should be a positive value");
+                return;
+            }
+            cCost.setTaxRate(taxRate);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid tax rate value");
+            return;
+        }
+
+        try {
             double heightQuiltingShrinkage = Double.parseDouble(cotSheetHeightQuiltiingShrinkage.getText());
             if (heightQuiltingShrinkage < 0 || heightQuiltingShrinkage > 20) {
                 JOptionPane.showMessageDialog(this, "Width quilting shrinkage should be between 0 and 20 %");
@@ -992,6 +1015,9 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
         cotSheetTafffataCutWidth.setText(format.format(cReturn.getTaffataCuttingWidth()) + "");
         cotSheetTaffataCutHeight.setText(format.format(cReturn.getTaffataCuttingWidth()) + "");
         cotSheetSMVValue.setText(format.format(cReturn.getSmvValue()) + "");
+        cotSheetNetSellingPrice.setText(format.format(cReturn.getNetSellingPrice()));
+        cotSheetTaxes.setText(format.format(cReturn.getTaxes()));
+        cotSheetGrossSellingPrice.setText(format.format(cReturn.getGrossSellingPrice()));
 
         cotSheetCPUPanel.setVisible(true);
         cotSheetSubmitButton.setVisible(false);
@@ -1015,6 +1041,8 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
         cotSheetIncludeLable.setEnabled(false);
         cotSheetIncludePEBag.setEnabled(false);
         cotSheetIncludeTag.setEnabled(false);
+        cotSheetsMarginField.setEnabled(false);
+        cotSheetTaxField.setEnabled(false);
     }//GEN-LAST:event_cotSheetSubmitButtonActionPerformed
 
     private void cotSheetUseCustomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cotSheetUseCustomActionPerformed
@@ -1074,9 +1102,9 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
         cotSheetIncludeLable.setEnabled(true);
         cotSheetIncludePEBag.setEnabled(true);
         cotSheetIncludeTag.setEnabled(true);
+        cotSheetsMarginField.setEnabled(true);
+        cotSheetTaxField.setEnabled(true);
 }//GEN-LAST:event_cotSheetNewCostingActionPerformed
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel cotSheetCPUPanel;
     private javax.swing.JPanel cotSheetCostingPanel;
@@ -1166,8 +1194,10 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel31;
     private javax.swing.JPanel jPanel32;
     // End of variables declaration//GEN-END:variables
+
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 JFrame frame = new JFrame();
                 frame.setContentPane(new CotSheetCostingPanel());
@@ -1177,5 +1207,4 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
             }
         });
     }
-
 }

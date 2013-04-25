@@ -8,7 +8,6 @@
  *
  * Created on Apr 25, 2013, 3:29:03 AM
  */
-
 package view;
 
 import celcius.Config;
@@ -241,6 +240,7 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
         });
 
         cushionsFiberTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        cushionsFiberTypeCombo.setModel(new DefaultComboBoxModel(CushionLogic.getFiberTypes((String)cushionsRangeCombo.getSelectedItem())))
         cushionsFiberTypeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cushionsFiberTypeComboActionPerformed(evt);
@@ -667,11 +667,11 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
         cushionsCPUPanel.setLayout(cushionsCPUPanelLayout);
         cushionsCPUPanelLayout.setHorizontalGroup(
             cushionsCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cushionsCPUPanelLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cushionsCPUPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(cushionsCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel42, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(cushionsCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel41, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel42, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         cushionsCPUPanelLayout.setVerticalGroup(
@@ -764,6 +764,30 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
             return;
         }
 
+        try {
+            double margin = Double.parseDouble(cushionsMarginField.getText());
+            if (margin < 0) {
+                JOptionPane.showMessageDialog(this, "Profit margin should be a positive value");
+                return;
+            }
+            cCost.setMargin(margin);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid margin value");
+            return;
+        }
+
+        try {
+            double taxRate = Double.parseDouble(cushionsTaxField.getText());
+            if (taxRate < 0) {
+                JOptionPane.showMessageDialog(this, "Tax rate should be a positive value");
+                return;
+            }
+            cCost.setTaxRate(taxRate);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid tax rate value");
+            return;
+        }
+
         boolean useCustom = cushionsUseCustom.isSelected();
         if (useCustom) {
             cCost.setIsCustom(useCustom);
@@ -801,6 +825,9 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
         cushionsFabricCutWidthHeight.setText(format.format(cReturn.getFabricCuttingWidthHeight()) + "");
         cushionsFiberWeight.setText(format.format(cReturn.getFiberWeight()) + "");
         cushionsSMVValue.setText(format.format(cReturn.getSmvValue()) + "");
+        cushionsNetSellingPrice.setText(format.format(cReturn.getNetSellingPrice()));
+        cushionsTaxes.setText(format.format(cReturn.getTaxes()));
+        cushionsGrossSellingPrice.setText(format.format(cReturn.getGrossSellingPrice()));
 
 
         cushionsRangeCombo.setEnabled(false);
@@ -815,6 +842,8 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
         cushionsIncludeLable.setEnabled(false);
         cushionsIncludePEBag.setEnabled(false);
         cushionsIncludeTag.setEnabled(false);
+        cushionsMarginField.setEnabled(false);
+        cushionsTaxField.setEnabled(false);
 
         cushionsSubmitButton.setVisible(false);
         cushionsNewCostingButton.setVisible(true);
@@ -863,6 +892,8 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
         cushionsIncludeLable.setEnabled(true);
         cushionsIncludePEBag.setEnabled(true);
         cushionsIncludeTag.setEnabled(true);
+        cushionsMarginField.setEnabled(true);
+        cushionsTaxField.setEnabled(true);
 
         cushionsSubmitButton.setVisible(true);
         cushionsNewCostingButton.setVisible(false);
@@ -884,8 +915,6 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
     private void cushionsFiberWastageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cushionsFiberWastageActionPerformed
         // TODO add your handling code here:
 }//GEN-LAST:event_cushionsFiberWastageActionPerformed
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel cushionsCPUPanel;
     private javax.swing.JPanel cushionsCostingPanel;
@@ -957,8 +986,10 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel41;
     private javax.swing.JPanel jPanel42;
     // End of variables declaration//GEN-END:variables
+
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 JFrame frame = new JFrame();
                 frame.setContentPane(new CushionsCostingPanel());
@@ -968,5 +999,4 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
             }
         });
     }
-
 }

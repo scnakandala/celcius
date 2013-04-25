@@ -8,7 +8,6 @@
  *
  * Created on Apr 25, 2013, 3:36:43 AM
  */
-
 package view;
 
 import celcius.Config;
@@ -941,10 +940,11 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(duvetsCostingPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(duvetsCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(duvetsCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1011,6 +1011,54 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
             dCost.setFabricWastage(fabricWastage);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Please enter a valid fabric wastage value");
+            return;
+        }
+
+        try {
+            double margin = Double.parseDouble(duvetsMarginField.getText());
+            if (margin < 0) {
+                JOptionPane.showMessageDialog(this, "Profit margin should be a positive value");
+                return;
+            }
+            dCost.setMargin(margin);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid margin value");
+            return;
+        }
+
+        try {
+            double taxRate = Double.parseDouble(duvetsTaxField.getText());
+            if (taxRate < 0) {
+                JOptionPane.showMessageDialog(this, "Tax rate should be a positive value");
+                return;
+            }
+            dCost.setTaxRate(taxRate);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid tax rate value");
+            return;
+        }
+
+        try {
+            double margin = Double.parseDouble(duvetsMarginField.getText());
+            if (margin < 0) {
+                JOptionPane.showMessageDialog(this, "Profit margin should be a positive value");
+                return;
+            }
+            dCost.setMargin(margin);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid margin value");
+            return;
+        }
+
+        try {
+            double taxRate = Double.parseDouble(duvetsTaxField.getText());
+            if (taxRate < 0) {
+                JOptionPane.showMessageDialog(this, "Tax rate should be a positive value");
+                return;
+            }
+            dCost.setTaxRate(taxRate);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid tax rate value");
             return;
         }
 
@@ -1139,6 +1187,10 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
         duvetsFabricCutHeight.setText(format.format(dReturn.getFabricCuttingHeight()) + "");
         duvetsFiberWeight.setText(format.format(dReturn.getFiberWeight()) + "");
         duvetsSMVValue.setText(format.format(dReturn.getSmvValue()) + "");
+        duvetsNetSellingPrice.setText(format.format(dReturn.getNetSellingPrice()));
+        duvetsTaxes.setText(format.format(dReturn.getTaxes()));
+        duvetsGrossSellingPrice.setText(format.format(dReturn.getGrossSellingPrice()));
+
 
         duvetTypeCombo.setEnabled(false);
         duvetProductRangeCombo.setEnabled(false);
@@ -1159,6 +1211,8 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
         duvetsIncludeNonWovenBag.setEnabled(false);
         duvetsIncludePEBag.setEnabled(false);
         duvetsIncludeTag.setEnabled(false);
+        duvetsMarginField.setEnabled(false);
+        duvetsTaxField.setEnabled(false);
 
         duvetsSubmitButton.setVisible(false);
         duvetsNewCostingButton.setVisible(true);
@@ -1201,12 +1255,12 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
         duvetTypeCombo.setModel(new DefaultComboBoxModel(DuvetsLogic.getDuvetTypes()));
         duvetProductRangeCombo.setModel(new DefaultComboBoxModel(
                 DuvetsLogic.getProductRanges(
-                (String)duvetTypeCombo.getSelectedItem())));
+                (String) duvetTypeCombo.getSelectedItem())));
         duvetFabricTypeCombo.setModel(new DefaultComboBoxModel(
                 DuvetsLogic.getMaterialTypes(
-                (String)duvetProductRangeCombo.getSelectedItem())));
+                (String) duvetProductRangeCombo.getSelectedItem())));
         duvetSizeCombo.setModel(new DefaultComboBoxModel(
-                DuvetsLogic.getDuvetsizes((String)duvetTypeCombo.getSelectedItem())));
+                DuvetsLogic.getDuvetsizes((String) duvetTypeCombo.getSelectedItem())));
         duvetsFabricWastage.setText("3");
         duvetFiberTypeCombo.setModel(
                 new DefaultComboBoxModel(DuvetsLogic.getFiberTypes()));
@@ -1246,13 +1300,13 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
         duvetsIncludeNonWovenBag.setEnabled(true);
         duvetsIncludePEBag.setEnabled(true);
         duvetsIncludeTag.setEnabled(true);
+        duvetsMarginField.setEnabled(true);
+        duvetsTaxField.setEnabled(true);
 
         duvetsSubmitButton.setVisible(true);
         duvetsNewCostingButton.setVisible(false);
         duvetsCPUPanel.setVisible(false);
 }//GEN-LAST:event_duvetsNewCostingButtonActionPerformed
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox duvetFabricTypeCombo;
     private javax.swing.JComboBox duvetFiberTypeCombo;
@@ -1351,8 +1405,10 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel34;
     private javax.swing.JPanel jPanel35;
     // End of variables declaration//GEN-END:variables
+
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 JFrame frame = new JFrame();
                 frame.setContentPane(new DuvetsCostingPanel());

@@ -713,6 +713,30 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
             return;
         }
 
+        try {
+            double margin = Double.parseDouble(bedSheetMarginField.getText());
+            if (margin < 0 ) {
+                JOptionPane.showMessageDialog(this, "Profit margin should be a positive value");
+                return;
+            }
+            bCost.setMargin(margin);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid margin value");
+            return;
+        }
+
+        try {
+            double taxRate = Double.parseDouble(bedSheetTaxField.getText());
+            if (taxRate < 0 ) {
+                JOptionPane.showMessageDialog(this, "Tax rate should be a positive value");
+                return;
+            }
+            bCost.setTaxRate(taxRate);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid tax rate value");
+            return;
+        }
+
         boolean useCustom = bedSheetUseCustom.isSelected();
         if (useCustom) {
             bCost.setIsCustom(useCustom);
@@ -763,6 +787,9 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
         bedSheetCutHeight.setText(format.format(bReturn.getCuttingHeight()));
         bedSheetSMVValue.setText(format.format(bReturn.getSmvValue()));
         bedSheetTotalMaterialCost.setText(format.format(bReturn.getTotalMaterialCost()));
+        bedSheetNetSellingPrice.setText(format.format(bReturn.getNetSellingPrice()));
+        bedSheetTaxes.setText(format.format(bReturn.getTaxes()));
+        bedSheetGrossSellingPrice.setText(format.format(bReturn.getGrossSellingPrice()));
 
         bedSheetCPUPanel.setVisible(true);
         bedSheetCostingPanelNewCostingButton.setVisible(true);
@@ -781,6 +808,8 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
         bedSheetIncludeLable.setEnabled(false);
         bedSheetIncludeSealBag.setEnabled(false);
         bedSheetIncludeTag.setEnabled(false);
+        bedSheetMarginField.setEnabled(false);
+        bedSheetTaxField.setEnabled(false);
 }//GEN-LAST:event_bedSheetSubmitButtonActionPerformed
 
     private void bedSheetCostingPanelNewCostingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bedSheetCostingPanelNewCostingButtonActionPerformed
@@ -815,6 +844,8 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
         bedSheetIncludeLable.setEnabled(true);
         bedSheetIncludeSealBag.setEnabled(true);
         bedSheetIncludeTag.setEnabled(true);
+        bedSheetMarginField.setEnabled(true);
+        bedSheetTaxField.setEnabled(true);
 }//GEN-LAST:event_bedSheetCostingPanelNewCostingButtonActionPerformed
 
       public static void main(String[] args) {

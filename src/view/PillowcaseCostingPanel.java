@@ -816,6 +816,30 @@ public class PillowcaseCostingPanel extends javax.swing.JPanel {
             return;
         }
 
+        try {
+            double margin = Double.parseDouble(pillowcaseMarginField.getText());
+            if (margin < 0) {
+                JOptionPane.showMessageDialog(this, "Profit margin should be a positive value");
+                return;
+            }
+            pCost.setMargin(margin);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid margin value");
+            return;
+        }
+
+        try {
+            double taxRate = Double.parseDouble(pillowcaseTaxField.getText());
+            if (taxRate < 0) {
+                JOptionPane.showMessageDialog(this, "Tax rate should be a positive value");
+                return;
+            }
+            pCost.setTaxRate(taxRate);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid tax rate value");
+            return;
+        }
+
         boolean useCustom = pillowcaseUseCustom.isSelected();
         if (useCustom) {
             pCost.setIsCustom(useCustom);
@@ -878,20 +902,23 @@ public class PillowcaseCostingPanel extends javax.swing.JPanel {
         format.setMaximumFractionDigits(2);
         format.setMinimumFractionDigits(2);
 
-        PillowcaseViewModel bReturn = PillowcaseLogic.getCostPerUnit(pCost);
-        pillowcaseFabricCost.setText(format.format(bReturn.getFabricCost()) + "");
-        pillowcaseThreadCost.setText(format.format(bReturn.getThreadCost()) + "");
-        pillowcaseLableCost.setText(format.format(bReturn.getLableCost()) + "");
-        pillowcaseTagCost.setText(format.format(bReturn.getTagCost()) + "");
-        pillowcaseSealBagCost.setText(format.format(bReturn.getSealBagCost()) + "");
-        pillowcaseCardBoardCost.setText(format.format(bReturn.getCardboardCost()) + "");
-        pillowcasePOH.setText(format.format(bReturn.getPohCost()) + "");
-        pillowcaseLabourCost.setText(format.format(bReturn.getLabourCost()) + "");
-        pillowcaseToatalCost.setText(format.format(bReturn.getTotalCost()) + "");
-        pillowcaseCutWidth.setText(format.format(bReturn.getCuttingWidth()));
-        pillowcaseCutHeight.setText(format.format(bReturn.getCuttingHeight()));
-        pillowcaseSMVValue.setText(format.format(bReturn.getSmvValue()));
-        pillowCaseTotalMaterialCost.setText(format.format(bReturn.getTotalMaterialCost()));
+        PillowcaseViewModel pReturn = PillowcaseLogic.getCostPerUnit(pCost);
+        pillowcaseFabricCost.setText(format.format(pReturn.getFabricCost()) + "");
+        pillowcaseThreadCost.setText(format.format(pReturn.getThreadCost()) + "");
+        pillowcaseLableCost.setText(format.format(pReturn.getLableCost()) + "");
+        pillowcaseTagCost.setText(format.format(pReturn.getTagCost()) + "");
+        pillowcaseSealBagCost.setText(format.format(pReturn.getSealBagCost()) + "");
+        pillowcaseCardBoardCost.setText(format.format(pReturn.getCardboardCost()) + "");
+        pillowcasePOH.setText(format.format(pReturn.getPohCost()) + "");
+        pillowcaseLabourCost.setText(format.format(pReturn.getLabourCost()) + "");
+        pillowcaseToatalCost.setText(format.format(pReturn.getTotalCost()) + "");
+        pillowcaseCutWidth.setText(format.format(pReturn.getCuttingWidth()));
+        pillowcaseCutHeight.setText(format.format(pReturn.getCuttingHeight()));
+        pillowcaseSMVValue.setText(format.format(pReturn.getSmvValue()));
+        pillowCaseTotalMaterialCost.setText(format.format(pReturn.getTotalMaterialCost()));
+        pillowcaseNetSeelingPrice.setText(format.format(pReturn.getNetSellingPrice()));
+        pillowcaseTaxes.setText(format.format(pReturn.getTaxes()));
+        pillowcaseGrossSelliingPrice.setText(format.format(pReturn.getGrossSellingPrice()));
 
 
         pillowCaseCPUPanel.setVisible(true);
@@ -914,6 +941,8 @@ public class PillowcaseCostingPanel extends javax.swing.JPanel {
         pillowcaseIncludeLable.setEnabled(false);
         pillowcaseIncludeSealBag.setEnabled(false);
         pillowcaseIncludeTag.setEnabled(false);
+        pillowcaseMarginField.setEnabled(false);
+        pillowcaseTaxField.setEnabled(false);
 }//GEN-LAST:event_pillowcaseSubmitButtonActionPerformed
 
     private void pillowcaseCustomWidthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pillowcaseCustomWidthActionPerformed
@@ -965,6 +994,8 @@ public class PillowcaseCostingPanel extends javax.swing.JPanel {
         pillowcaseIncludeLable.setEnabled(true);
         pillowcaseIncludeSealBag.setEnabled(true);
         pillowcaseIncludeTag.setEnabled(true);
+        pillowcaseMarginField.setEnabled(true);
+        pillowcaseTaxField.setEnabled(true);
 }//GEN-LAST:event_pillowCaseNewCostingButtonActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel171;
@@ -1040,8 +1071,10 @@ public class PillowcaseCostingPanel extends javax.swing.JPanel {
     private javax.swing.JRadioButton pillowcaseUseCustom;
     private javax.swing.JTextField pillowcaseWastage;
     // End of variables declaration//GEN-END:variables
-      public static void main(String[] args) {
+
+    public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 JFrame frame = new JFrame();
                 frame.setContentPane(new PillowcaseCostingPanel());
@@ -1052,4 +1085,3 @@ public class PillowcaseCostingPanel extends javax.swing.JPanel {
         });
     }
 }
-

@@ -1,6 +1,7 @@
 package logic;
 
 import algorithms.Approximate;
+import com.sun.org.apache.bcel.internal.generic.DCMPG;
 import dataaccess.PillowsDataAccess;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -142,6 +143,13 @@ public class PillowLogic {
 
             Double totalCost  = materialCost + pohCost + cplmCost;
             pCost.setTotalCost(totalCost);
+            Double netSellingPrice = totalCost*(1.0+pCost.getMargin()/100.0);
+            Double taxes = netSellingPrice*pCost.getTaxRate()/100.0;
+            Double grossSellingPrice = netSellingPrice + taxes;
+
+            pCost.setNetSellingPrice(netSellingPrice);
+            pCost.setTaxes(taxes);
+            pCost.setGrossSellingPrice(grossSellingPrice);
             
         } catch (Exception ex) {
             System.out.println("Error");
