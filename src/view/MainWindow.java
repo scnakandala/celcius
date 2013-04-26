@@ -40,6 +40,7 @@ public class MainWindow extends javax.swing.JFrame {
         jScrollPane8 = new javax.swing.JScrollPane();
         jPanel18 = new javax.swing.JPanel();
         jLabel209 = new javax.swing.JLabel();
+        parametersView1 = new view.ParametersView();
         bedsheetPanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel12 = new javax.swing.JPanel();
@@ -88,6 +89,9 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel219 = new javax.swing.JLabel();
         jLabel223 = new javax.swing.JLabel();
         jLabel238 = new javax.swing.JLabel();
+        pillowsView1 = new view.PillowsView();
+        pillowAccessories1 = new view.PillowAccessories();
+        pillowsFiberWeightsView1 = new view.PillowsFiberWeightsView();
         cushionPanel = new javax.swing.JPanel();
         jScrollPane10 = new javax.swing.JScrollPane();
         jPanel47 = new javax.swing.JPanel();
@@ -218,15 +222,19 @@ public class MainWindow extends javax.swing.JFrame {
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel209)
-                .addContainerGap(689, Short.MAX_VALUE))
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel209)
+                    .addComponent(parametersView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(466, Short.MAX_VALUE))
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel209)
-                .addContainerGap(542, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(parametersView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(303, Short.MAX_VALUE))
         );
 
         jScrollPane8.setViewportView(jPanel18);
@@ -567,6 +575,9 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel238.setFont(new java.awt.Font("Tahoma", 0, 18));
         jLabel238.setText("Fiber Weights (kg)");
 
+        pillowAccessories1.setMinimumSize(new java.awt.Dimension(400, 400));
+        pillowAccessories1.setPreferredSize(new java.awt.Dimension(400, 400));
+
         javax.swing.GroupLayout jPanel40Layout = new javax.swing.GroupLayout(jPanel40);
         jPanel40.setLayout(jPanel40Layout);
         jPanel40Layout.setHorizontalGroup(
@@ -574,12 +585,20 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(jPanel40Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel238)
                     .addGroup(jPanel40Layout.createSequentialGroup()
-                        .addComponent(jLabel223)
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel219))
-                    .addComponent(jLabel238))
-                .addContainerGap(514, Short.MAX_VALUE))
+                        .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(pillowsFiberWeightsView1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel40Layout.createSequentialGroup()
+                                .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel223)
+                                    .addComponent(pillowsView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(38, 38, 38)
+                                .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel219)
+                                    .addComponent(pillowAccessories1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel40Layout.setVerticalGroup(
             jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -588,9 +607,15 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel223)
                     .addComponent(jLabel219))
-                .addGap(56, 56, 56)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pillowsView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pillowAccessories1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45)
                 .addComponent(jLabel238)
-                .addContainerGap(459, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pillowsFiberWeightsView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jScrollPane9.setViewportView(jPanel40);
@@ -1003,12 +1028,16 @@ public class MainWindow extends javax.swing.JFrame {
     private view.MattressprotectorView mattressprotectorView1;
     private view.Padding padding1;
     private javax.swing.JPanel parametersPanel;
+    private view.ParametersView parametersView1;
+    private view.PillowAccessories pillowAccessories1;
     private view.PillowcaseAccessoriesView pillowcaseAccessoriesView1;
     private javax.swing.JPanel pillowcasePanel;
     private javax.swing.JScrollPane pillowcaseScrollPane;
     private view.PillowcaseView pillowcaseView1;
+    private view.PillowsFiberWeightsView pillowsFiberWeightsView1;
     private javax.swing.JPanel pillowsPanel;
     private javax.swing.JScrollPane pillowsScrollPane;
+    private view.PillowsView pillowsView1;
     private view.Taffata taffata2;
     private javax.swing.JTabbedPane userTabbedPane;
     // End of variables declaration//GEN-END:variables
