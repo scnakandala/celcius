@@ -12,6 +12,8 @@
 package view;
 
 import celcius.Config;
+import export.Export;
+import export.ExportModel;
 import java.awt.EventQueue;
 import java.text.DecimalFormat;
 import javax.swing.DefaultComboBoxModel;
@@ -25,6 +27,8 @@ import viewmodels.BedSheetViewModel;
  * @author naka
  */
 public class BedSheetCostingPanel extends javax.swing.JPanel {
+
+    private export.ExportModel model;
 
     /** Creates new form BedSheetPanel */
     public BedSheetCostingPanel() {
@@ -106,6 +110,7 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
         bedSheetNetSellingPrice = new javax.swing.JLabel();
         bedSheetTaxes = new javax.swing.JLabel();
         bedSheetGrossSellingPrice = new javax.swing.JLabel();
+        bedSheetExportButton = new javax.swing.JButton();
 
         bedSheetCostingPanel.setBackground(new java.awt.Color(204, 204, 204));
         bedSheetCostingPanel.setMinimumSize(new java.awt.Dimension(500, 500));
@@ -494,79 +499,92 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
         bedSheetGrossSellingPrice.setFont(new java.awt.Font("Times New Roman", 1, 18));
         bedSheetGrossSellingPrice.setText("0.00");
 
+        bedSheetExportButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/export.png"))); // NOI18N
+        bedSheetExportButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bedSheetExportButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(127, 127, 127)
-                        .addComponent(jLabel22))
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                            .addComponent(jLabel327)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bedSheetGrossSellingPrice))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                            .addComponent(jLabel326)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bedSheetTaxes))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                            .addComponent(jLabel325)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bedSheetNetSellingPrice))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addComponent(jLabel19)
-                                        .addGap(267, 267, 267))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                        .addComponent(jLabel20)
-                                        .addGap(310, 310, 310))))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(bedSheetPOH)
-                                .addComponent(bedSheetLabourCost)
-                                .addComponent(bedSheetToatalCost)))
-                        .addGroup(jPanel4Layout.createSequentialGroup()
-                            .addComponent(jLabel14)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bedSheetFabricCost))
-                        .addGroup(jPanel4Layout.createSequentialGroup()
-                            .addComponent(jLabel15)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bedSheetThreadCost))
-                        .addGroup(jPanel4Layout.createSequentialGroup()
-                            .addComponent(jLabel13)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bedSheetLableCost))
-                        .addGroup(jPanel4Layout.createSequentialGroup()
-                            .addComponent(jLabel16)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bedSheetTagCost))
-                        .addGroup(jPanel4Layout.createSequentialGroup()
-                            .addComponent(jLabel26)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bedSheetCardBoardCost))
-                        .addGroup(jPanel4Layout.createSequentialGroup()
-                            .addComponent(jLabel77)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bedSheetTotalMaterialCost))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                            .addComponent(jLabel18)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bedSheetSealBagCost))))
-                .addContainerGap(69, Short.MAX_VALUE))
+                        .addGap(30, 30, 30)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(127, 127, 127)
+                                .addComponent(jLabel22))
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
+                                    .addComponent(jLabel327)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(bedSheetGrossSellingPrice))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
+                                    .addComponent(jLabel326)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(bedSheetTaxes))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
+                                    .addComponent(jLabel325)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(bedSheetNetSellingPrice))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
+                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                                .addComponent(jLabel19)
+                                                .addGap(267, 267, 267))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                                .addComponent(jLabel20)
+                                                .addGap(310, 310, 310))))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(bedSheetPOH)
+                                        .addComponent(bedSheetLabourCost)
+                                        .addComponent(bedSheetToatalCost)))
+                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                    .addComponent(jLabel14)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(bedSheetFabricCost))
+                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                    .addComponent(jLabel15)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(bedSheetThreadCost))
+                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                    .addComponent(jLabel13)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(bedSheetLableCost))
+                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                    .addComponent(jLabel16)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(bedSheetTagCost))
+                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                    .addComponent(jLabel26)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(bedSheetCardBoardCost))
+                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                    .addComponent(jLabel77)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(bedSheetTotalMaterialCost))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
+                                    .addComponent(jLabel18)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(bedSheetSealBagCost)))))
+                    .addComponent(bedSheetExportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(78, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel22)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel22))
+                    .addComponent(bedSheetExportButton))
                 .addGap(20, 20, 20)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
@@ -791,6 +809,18 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
         bedSheetTaxes.setText(format.format(bReturn.getTaxes()));
         bedSheetGrossSellingPrice.setText(format.format(bReturn.getGrossSellingPrice()));
 
+        //export model
+        model = new ExportModel();
+        model.setProductName("Bed Sheet");
+        model.setProductRange(bReturn.getProductRange());
+        model.setTotalMaterialCost(bReturn.getTotalMaterialCost());
+        model.setLabourCost(bReturn.getLabourCost());
+        model.setProductionOverHead(bReturn.getPohCost());
+        model.setTotalCostPerUnit(bReturn.getTotalCost());
+        model.setNetSellingPrice(bReturn.getNetSellingPrice());
+        model.setTaxes(bReturn.getTaxes());
+        model.setGrossSellingPrice(bReturn.getGrossSellingPrice());
+
         bedSheetCPUPanel.setVisible(true);
         bedSheetCostingPanelNewCostingButton.setVisible(true);
         bedSheetSubmitButton.setVisible(false);
@@ -846,7 +876,17 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
         bedSheetIncludeTag.setEnabled(true);
         bedSheetMarginField.setEnabled(true);
         bedSheetTaxField.setEnabled(true);
+
+        //nulling the export model
+        model = null;
 }//GEN-LAST:event_bedSheetCostingPanelNewCostingButtonActionPerformed
+
+    private void bedSheetExportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bedSheetExportButtonActionPerformed
+        if(model!=null){
+            Export exp = new Export(model);
+            exp.openFile();
+        }
+    }//GEN-LAST:event_bedSheetExportButtonActionPerformed
 
       public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
@@ -870,6 +910,7 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
     private javax.swing.JPanel bedSheetCustomPanel;
     private javax.swing.JLabel bedSheetCutHeight;
     private javax.swing.JLabel bedSheetCutWidth;
+    private javax.swing.JButton bedSheetExportButton;
     private javax.swing.JLabel bedSheetFabricCost;
     private javax.swing.JLabel bedSheetGrossSellingPrice;
     private javax.swing.JRadioButton bedSheetIncludeCardBoard;

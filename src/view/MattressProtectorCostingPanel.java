@@ -11,6 +11,8 @@
 package view;
 
 import celcius.Config;
+import export.Export;
+import export.ExportModel;
 import java.awt.EventQueue;
 import java.text.DecimalFormat;
 import javax.swing.DefaultComboBoxModel;
@@ -24,6 +26,7 @@ import viewmodels.MettresProtectorViewModel;
  * @author naka
  */
 public class MattressProtectorCostingPanel extends javax.swing.JPanel {
+    private ExportModel model;
 
     /** Creates new form MattressProtectorCostingPanel */
     public MattressProtectorCostingPanel() {
@@ -134,6 +137,7 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
         mettresProtectorNetSellingPrice = new javax.swing.JLabel();
         mettresProtectorGrossSellingPrice = new javax.swing.JLabel();
         mettresProtectorTaxes = new javax.swing.JLabel();
+        mattressProtectorExportButton = new javax.swing.JButton();
 
         mattressProtectorCostingPanel.setBackground(new java.awt.Color(204, 204, 204));
         mattressProtectorCostingPanel.setMinimumSize(new java.awt.Dimension(500, 500));
@@ -725,12 +729,20 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
         mettresProtectorTaxes.setFont(new java.awt.Font("Times New Roman", 1, 18));
         mettresProtectorTaxes.setText("0.00");
 
+        mattressProtectorExportButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/export.png"))); // NOI18N
+        mattressProtectorExportButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mattressProtectorExportButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
         jPanel24.setLayout(jPanel24Layout);
         jPanel24Layout.setHorizontalGroup(
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel24Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addComponent(mattressProtectorExportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
                 .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel24Layout.createSequentialGroup()
                         .addComponent(jLabel336)
@@ -784,82 +796,85 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
         jPanel24Layout.setVerticalGroup(
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel24Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel24Layout.createSequentialGroup()
-                        .addComponent(mettresProtectorFabricCost)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(mettresProtectorPaddingCost)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(mettresProtectorTaffataCost)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(mettresProtectorThreadCost)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(mettresProtectorLableCost)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(mettresProtectorTagCost)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(mettresProtectorElasticCost)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(mettresProtectorPipingCost)
-                        .addGap(11, 11, 11)
-                        .addComponent(mettresProtectorPEBagCost)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(mettresProtectorNonWovenBagCost)
-                        .addGap(18, 18, 18)
-                        .addComponent(mettresProtectorTotalMaterialCost)
-                        .addGap(18, 18, 18)
-                        .addComponent(mettresProtectorPOH)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(mettresProtectorLabourCost)
-                        .addGap(13, 13, 13)
-                        .addComponent(mettresProtectorToatalCost))
-                    .addGroup(jPanel24Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
                         .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel24Layout.createSequentialGroup()
-                                .addComponent(jLabel96, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(154, 154, 154))
+                                .addComponent(mettresProtectorFabricCost)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(mettresProtectorPaddingCost)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(mettresProtectorTaffataCost)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(mettresProtectorThreadCost)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(mettresProtectorLableCost)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(mettresProtectorTagCost)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(mettresProtectorElasticCost)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(mettresProtectorPipingCost)
+                                .addGap(11, 11, 11)
+                                .addComponent(mettresProtectorPEBagCost)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(mettresProtectorNonWovenBagCost)
+                                .addGap(18, 18, 18)
+                                .addComponent(mettresProtectorTotalMaterialCost)
+                                .addGap(18, 18, 18)
+                                .addComponent(mettresProtectorPOH)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(mettresProtectorLabourCost)
+                                .addGap(13, 13, 13)
+                                .addComponent(mettresProtectorToatalCost))
                             .addGroup(jPanel24Layout.createSequentialGroup()
-                                .addComponent(jLabel88)
+                                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel24Layout.createSequentialGroup()
+                                        .addComponent(jLabel96, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(154, 154, 154))
+                                    .addGroup(jPanel24Layout.createSequentialGroup()
+                                        .addComponent(jLabel88)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel109)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel110)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel89)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel90)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel91)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel109)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel110)
+                                .addComponent(jLabel101)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel89)
+                                .addComponent(jLabel113)
+                                .addGap(11, 11, 11)
+                                .addComponent(jLabel92)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel90)
+                                .addComponent(jLabel108)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel102)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel93)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel91)))
+                                .addComponent(jLabel94)
+                                .addGap(13, 13, 13)
+                                .addComponent(jLabel95)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel101)
+                        .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jLabel334)
+                            .addComponent(mettresProtectorNetSellingPrice))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel113)
-                        .addGap(11, 11, 11)
-                        .addComponent(jLabel92)
+                        .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel335)
+                            .addComponent(mettresProtectorTaxes))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel108)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel102)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel93)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel94)
-                        .addGap(13, 13, 13)
-                        .addComponent(jLabel95)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel334)
-                    .addComponent(mettresProtectorNetSellingPrice))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel335)
-                    .addComponent(mettresProtectorTaxes))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel336)
-                    .addComponent(mettresProtectorGrossSellingPrice))
-                .addContainerGap(19, Short.MAX_VALUE))
+                        .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel336)
+                            .addComponent(mettresProtectorGrossSellingPrice)))
+                    .addComponent(mattressProtectorExportButton))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mattressProtectorCPUPanelLayout = new javax.swing.GroupLayout(mattressProtectorCPUPanel);
@@ -1112,6 +1127,19 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
         mettresProtectorTaxes.setText(format.format(mReturn.getTaxes()));
         mettresProtectorGrossSellingPrice.setText(format.format(mReturn.getGrossSellingPrice()));
 
+        //export model
+        model = new ExportModel();
+        model.setProductName("Mattress Protector");
+        model.setProductRange(mReturn.getProductRange());
+        model.setTotalMaterialCost(mReturn.getTotalMaterialCost());
+        model.setLabourCost(mReturn.getLabourCost());
+        model.setProductionOverHead(mReturn.getPohCost());
+        model.setTotalCostPerUnit(mReturn.getTotalCost());
+        model.setNetSellingPrice(mReturn.getNetSellingPrice());
+        model.setTaxes(mReturn.getTaxes());
+        model.setGrossSellingPrice(mReturn.getGrossSellingPrice());
+
+
         mettresProtectorSubmitButton.setVisible(false);
         mattressProtectorNewCostingButton.setVisible(true);
         mattressProtectorCPUPanel.setVisible(true);
@@ -1200,7 +1228,18 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
         mettresProtectorIncludePiping.setEnabled(true);
         mattressProtectorMarginField.setEnabled(true);
         mattressProtectorTaxField.setEnabled(true);
+
+        //nulling the model
+        model = null;
     }//GEN-LAST:event_mattressProtectorNewCostingButtonActionPerformed
+
+    private void mattressProtectorExportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mattressProtectorExportButtonActionPerformed
+        if(model!=null){
+            Export export = new Export(model);
+            export.openFile();
+        }
+}//GEN-LAST:event_mattressProtectorExportButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;
@@ -1251,6 +1290,7 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel mattressProtectorCPUPanel;
     private javax.swing.JPanel mattressProtectorCostingPanel;
+    private javax.swing.JButton mattressProtectorExportButton;
     private javax.swing.JTextField mattressProtectorMarginField;
     private javax.swing.JButton mattressProtectorNewCostingButton;
     private javax.swing.JLabel mattressProtectorSizeLable;

@@ -11,6 +11,8 @@
 package view;
 
 import celcius.Config;
+import export.Export;
+import export.ExportModel;
 import java.awt.EventQueue;
 import java.text.DecimalFormat;
 import javax.swing.DefaultComboBoxModel;
@@ -24,6 +26,7 @@ import viewmodels.BolstersViewModel;
  * @author naka
  */
 public class BolstersCostingPanel extends javax.swing.JPanel {
+    private ExportModel model;
 
     /** Creates new form BolstersCostingPanel */
     public BolstersCostingPanel() {
@@ -108,6 +111,7 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
         bolsterNetSellingPrice = new javax.swing.JLabel();
         bolsterTaxes = new javax.swing.JLabel();
         bolsterGrossSellingPrice = new javax.swing.JLabel();
+        bolsterExportButton = new javax.swing.JButton();
 
         cotSheetCostingPanel4.setBackground(new java.awt.Color(204, 204, 204));
         cotSheetCostingPanel4.setPreferredSize(new java.awt.Dimension(556, 600));
@@ -558,6 +562,13 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
         bolsterGrossSellingPrice.setFont(new java.awt.Font("Times New Roman", 1, 18));
         bolsterGrossSellingPrice.setText("0.00");
 
+        bolsterExportButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/export.png"))); // NOI18N
+        bolsterExportButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bolsterExportButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel45Layout = new javax.swing.GroupLayout(jPanel45);
         jPanel45.setLayout(jPanel45Layout);
         jPanel45Layout.setHorizontalGroup(
@@ -605,13 +616,15 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
                                     .addComponent(bolsterFiberCost, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(bolsterLabourCost, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(bolsterPEBagCost, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(bolsterThreadCost, javax.swing.GroupLayout.Alignment.TRAILING))))))
+                                    .addComponent(bolsterThreadCost, javax.swing.GroupLayout.Alignment.TRAILING)))))
+                    .addComponent(bolsterExportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
         jPanel45Layout.setVerticalGroup(
             jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel45Layout.createSequentialGroup()
-                .addContainerGap()
+                .addComponent(bolsterExportButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel45Layout.createSequentialGroup()
                         .addComponent(bolsterFabricCost)
@@ -667,7 +680,7 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
                 .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel351)
                     .addComponent(bolsterGrossSellingPrice))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout bolsterCPUPanelLayout = new javax.swing.GroupLayout(bolsterCPUPanel);
@@ -847,6 +860,19 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
         bolsterTaxes.setText(format.format(bReturn.getTaxes()));
         bolsterGrossSellingPrice.setText(format.format(bReturn.getGrossSellingPrice()));
 
+
+                //export model
+        model = new ExportModel();
+        model.setProductName("Bolster Pillow");
+        model.setProductRange(bReturn.getProductRange());
+        model.setTotalMaterialCost(bReturn.getTotalMaterialCost());
+        model.setLabourCost(bReturn.getLabourCost());
+        model.setProductionOverHead(bReturn.getPohCost());
+        model.setTotalCostPerUnit(bReturn.getTotalCost());
+        model.setNetSellingPrice(bReturn.getNetSellingPrice());
+        model.setTaxes(bReturn.getTaxes());
+        model.setGrossSellingPrice(bReturn.getGrossSellingPrice());
+
         bolsterRangeCombo.setEnabled(false);
         bolsterFabricTypeCombo.setEnabled(false);
         bolsterSizeCombo.setEnabled(false);
@@ -915,6 +941,9 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
         bolsterSubmitButton.setVisible(true);
         bolsterNewCostingButton.setVisible(false);
         bolsterCPUPanel.setVisible(false);
+
+        //nulling the model
+        model = null;
 }//GEN-LAST:event_bolsterNewCostingButtonActionPerformed
 
     private void bolsterCustomFiberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolsterCustomFiberButtonActionPerformed
@@ -932,12 +961,21 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
     private void bolsterFiberWastageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolsterFiberWastageActionPerformed
         // TODO add your handling code here:
 }//GEN-LAST:event_bolsterFiberWastageActionPerformed
+
+    private void bolsterExportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolsterExportButtonActionPerformed
+        if (model != null) {
+            Export export = new Export(model);
+            export.openFile();
+        }
+}//GEN-LAST:event_bolsterExportButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bolsterCPUPanel;
     private javax.swing.JTextField bolsterCustomDiameter;
     private javax.swing.JRadioButton bolsterCustomFiberButton;
     private javax.swing.JTextField bolsterCustomLength;
     private javax.swing.JPanel bolsterCustomPanel;
+    private javax.swing.JButton bolsterExportButton;
     private javax.swing.JLabel bolsterFabricCost;
     private javax.swing.JComboBox bolsterFabricTypeCombo;
     private javax.swing.JTextField bolsterFabricWastage;

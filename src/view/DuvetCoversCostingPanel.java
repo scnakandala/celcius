@@ -1,6 +1,8 @@
 package view;
 
 import celcius.Config;
+import export.Export;
+import export.ExportModel;
 import java.awt.EventQueue;
 import java.text.DecimalFormat;
 import javax.swing.DefaultComboBoxModel;
@@ -10,6 +12,8 @@ import logic.DuvetCoversLogic;
 import viewmodels.DovetCoversViewModel;
 
 public class DuvetCoversCostingPanel extends javax.swing.JPanel {
+
+    private ExportModel model;
 
     public DuvetCoversCostingPanel() {
         initComponents();
@@ -95,6 +99,7 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
         dovetCoversNetSellingPrice = new javax.swing.JLabel();
         dovetCoversTaxes = new javax.swing.JLabel();
         dovetCoversGrossSellingPrice = new javax.swing.JLabel();
+        duvetExportButton = new javax.swing.JButton();
 
         duvetCoversCostingPanel.setBackground(new java.awt.Color(204, 204, 204));
         duvetCoversCostingPanel.setMinimumSize(new java.awt.Dimension(500, 573));
@@ -379,7 +384,7 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
                 .addComponent(dovetCoversSubmitButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dovetCoversNewCostingButton)
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
 
         dovetCoversNewCostingButton.setVisible(false);
@@ -583,59 +588,70 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
         dovetCoversGrossSellingPrice.setFont(new java.awt.Font("Times New Roman", 1, 18));
         dovetCoversGrossSellingPrice.setText("0.00");
 
+        duvetExportButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/export.png"))); // NOI18N
+        duvetExportButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                duvetExportButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
         jPanel22.setLayout(jPanel22Layout);
         jPanel22Layout.setHorizontalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel22Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel22Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
+                        .addContainerGap()
                         .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel79)
-                            .addComponent(jLabel63)
-                            .addComponent(jLabel72)
-                            .addComponent(jLabel59)
-                            .addComponent(jLabel60)
-                            .addComponent(jLabel61)
-                            .addComponent(jLabel62)
-                            .addComponent(jLabel74)
-                            .addComponent(jLabel75)
-                            .addComponent(jLabel76)
-                            .addComponent(jLabel66)
-                            .addComponent(jLabel65)
-                            .addComponent(jLabel64)
-                            .addComponent(jLabel331)
-                            .addComponent(jLabel332)
-                            .addComponent(jLabel333))
-                        .addGap(218, 218, 218)
-                        .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dovetCoversTotalMaterialCost, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(dovetCoversTagCost, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(dovetCoversZipperCost, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(dovetCoversLabourCost, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(dovetCoversButtonCost, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(dovetCoversFabricCost, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(dovetCoversToatalCost, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(dovetCoversThreadCost, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(dovetCoversCardBoardCost, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(dovetCoversPOH, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(dovetCoversGrossSellingPrice, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(dovetCoversTaxes, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(dovetCoversSealBagCost, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(dovetCoversVelcoCost, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(dovetCoversLableCost, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(dovetCoversNetSellingPrice, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(jPanel22Layout.createSequentialGroup()
-                        .addGap(181, 181, 181)
-                        .addComponent(jLabel67)))
-                .addGap(44, 44, 44))
+                            .addGroup(jPanel22Layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel79)
+                                    .addComponent(jLabel63)
+                                    .addComponent(jLabel72)
+                                    .addComponent(jLabel59)
+                                    .addComponent(jLabel60)
+                                    .addComponent(jLabel61)
+                                    .addComponent(jLabel62)
+                                    .addComponent(jLabel74)
+                                    .addComponent(jLabel75)
+                                    .addComponent(jLabel76)
+                                    .addComponent(jLabel66)
+                                    .addComponent(jLabel65)
+                                    .addComponent(jLabel64)
+                                    .addComponent(jLabel331)
+                                    .addComponent(jLabel332)
+                                    .addComponent(jLabel333))
+                                .addGap(218, 218, 218)
+                                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(dovetCoversTotalMaterialCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(dovetCoversTagCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(dovetCoversZipperCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(dovetCoversLabourCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(dovetCoversButtonCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(dovetCoversFabricCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(dovetCoversToatalCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(dovetCoversThreadCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(dovetCoversCardBoardCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(dovetCoversPOH, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(dovetCoversGrossSellingPrice, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(dovetCoversTaxes, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(dovetCoversSealBagCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(dovetCoversVelcoCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(dovetCoversLableCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(dovetCoversNetSellingPrice, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addGroup(jPanel22Layout.createSequentialGroup()
+                                .addGap(181, 181, 181)
+                                .addComponent(jLabel67))))
+                    .addComponent(duvetExportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel22Layout.createSequentialGroup()
-                .addContainerGap()
+                .addComponent(duvetExportButton)
+                .addGap(8, 8, 8)
                 .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel22Layout.createSequentialGroup()
                         .addComponent(dovetCoversFabricCost)
@@ -703,7 +719,7 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
                         .addComponent(jLabel332)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel333)))
-                .addGap(24, 24, 24))
+                .addGap(38, 38, 38))
         );
 
         javax.swing.GroupLayout duvetCversCPUPanel2Layout = new javax.swing.GroupLayout(duvetCversCPUPanel2);
@@ -712,7 +728,7 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
             duvetCversCPUPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, duvetCversCPUPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, 484, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(duvetCversCPUPanel2Layout.createSequentialGroup()
                 .addContainerGap()
@@ -723,7 +739,7 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
             duvetCversCPUPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(duvetCversCPUPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, 517, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(19, Short.MAX_VALUE))
@@ -810,9 +826,9 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
             return;
         }
 
-         try {
+        try {
             double margin = Double.parseDouble(duvetCoversMarginField.getText());
-            if (margin < 0 ) {
+            if (margin < 0) {
                 JOptionPane.showMessageDialog(this, "Profit margin should be a positive value");
                 return;
             }
@@ -824,7 +840,7 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
 
         try {
             double taxRate = Double.parseDouble(duvetCoversTaxField.getText());
-            if (taxRate < 0 ) {
+            if (taxRate < 0) {
                 JOptionPane.showMessageDialog(this, "Tax rate should be a positive value");
                 return;
             }
@@ -905,6 +921,17 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
         dovetCoversTaxes.setText(format.format(dReturn.getTaxes()));
         dovetCoversGrossSellingPrice.setText(format.format(dReturn.getGrossSellingPrice()));
 
+        //export model
+        model = new ExportModel();
+        model.setProductName("Duvet Cover");
+        model.setProductRange(dReturn.getProductRange());
+        model.setTotalMaterialCost(dReturn.getTotalMaterialCost());
+        model.setLabourCost(dReturn.getLabourCost());
+        model.setProductionOverHead(dReturn.getPohCost());
+        model.setTotalCostPerUnit(dReturn.getTotalCost());
+        model.setNetSellingPrice(dReturn.getNetSellingPrice());
+        model.setTaxes(dReturn.getTaxes());
+        model.setGrossSellingPrice(dReturn.getGrossSellingPrice());
 
         dovetCoversSubmitButton.setVisible(false);
         dovetCoversNewCostingButton.setVisible(true);
@@ -987,7 +1014,18 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
         dovetCoversIncludeTag.setEnabled(true);
         duvetCoversMarginField.setEnabled(true);
         duvetCoversTaxField.setEnabled(true);
+
+        //nulling the model
+        model = null;
     }//GEN-LAST:event_dovetCoversNewCostingButtonActionPerformed
+
+    private void duvetExportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_duvetExportButtonActionPerformed
+        if(model!=null){
+            Export export = new Export(model);
+            export.openFile();
+        }
+    }//GEN-LAST:event_duvetExportButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField dovetCoverCustomFlap;
     private javax.swing.JLabel dovetCoversButtonCost;
@@ -1030,6 +1068,7 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
     private javax.swing.JTextField duvetCoversMarginField;
     private javax.swing.JTextField duvetCoversTaxField;
     private javax.swing.JPanel duvetCversCPUPanel2;
+    private javax.swing.JButton duvetExportButton;
     private javax.swing.JLabel jLabel297;
     private javax.swing.JLabel jLabel298;
     private javax.swing.JLabel jLabel299;

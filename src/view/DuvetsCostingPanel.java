@@ -11,6 +11,8 @@
 package view;
 
 import celcius.Config;
+import export.Export;
+import export.ExportModel;
 import java.awt.EventQueue;
 import java.text.DecimalFormat;
 import javax.swing.DefaultComboBoxModel;
@@ -24,6 +26,7 @@ import viewmodels.DovetsViewModel;
  * @author naka
  */
 public class DuvetsCostingPanel extends javax.swing.JPanel {
+    private ExportModel model;
 
     /** Creates new form DuvetsCostingPanel */
     public DuvetsCostingPanel() {
@@ -135,6 +138,7 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
         duvetsNetSellingPrice = new javax.swing.JLabel();
         duvetsTaxes = new javax.swing.JLabel();
         duvetsGrossSellingPrice = new javax.swing.JLabel();
+        duvetExportButton = new javax.swing.JButton();
 
         duvetsCostingPanel.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -783,6 +787,13 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
         duvetsGrossSellingPrice.setFont(new java.awt.Font("Times New Roman", 1, 18));
         duvetsGrossSellingPrice.setText("0.00");
 
+        duvetExportButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/export.png"))); // NOI18N
+        duvetExportButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                duvetExportButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
         jPanel35.setLayout(jPanel35Layout);
         jPanel35Layout.setHorizontalGroup(
@@ -836,14 +847,18 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
                                     .addComponent(duvetsPipingCost)
                                     .addComponent(duvetsPaddingCost)
                                     .addComponent(duvetsPEBagCost)
-                                    .addComponent(duvetsTotalMaterialCost))))))
+                                    .addComponent(duvetsTotalMaterialCost)))))
+                    .addComponent(duvetExportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
         jPanel35Layout.setVerticalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel35Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel180, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel35Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel180, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(duvetExportButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jLabel172)
@@ -1191,6 +1206,18 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
         duvetsTaxes.setText(format.format(dReturn.getTaxes()));
         duvetsGrossSellingPrice.setText(format.format(dReturn.getGrossSellingPrice()));
 
+        //export model
+        model = new ExportModel();
+        model.setProductName("Duvet");
+        model.setProductRange(dReturn.getProductRange());
+        model.setTotalMaterialCost(dReturn.getTotalMaterialCost());
+        model.setLabourCost(dReturn.getLabourCost());
+        model.setProductionOverHead(dReturn.getPohCost());
+        model.setTotalCostPerUnit(dReturn.getTotalCost());
+        model.setNetSellingPrice(dReturn.getNetSellingPrice());
+        model.setTaxes(dReturn.getTaxes());
+        model.setGrossSellingPrice(dReturn.getGrossSellingPrice());
+
 
         duvetTypeCombo.setEnabled(false);
         duvetProductRangeCombo.setEnabled(false);
@@ -1306,8 +1333,20 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
         duvetsSubmitButton.setVisible(true);
         duvetsNewCostingButton.setVisible(false);
         duvetsCPUPanel.setVisible(false);
+
+        //nulling the model
+        model = null;
 }//GEN-LAST:event_duvetsNewCostingButtonActionPerformed
+
+    private void duvetExportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_duvetExportButtonActionPerformed
+        if(model!=null){
+            Export export = new Export(model);
+            export.openFile();
+        }
+}//GEN-LAST:event_duvetExportButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton duvetExportButton;
     private javax.swing.JComboBox duvetFabricTypeCombo;
     private javax.swing.JComboBox duvetFiberTypeCombo;
     private javax.swing.JTextField duvetFiberWastage;

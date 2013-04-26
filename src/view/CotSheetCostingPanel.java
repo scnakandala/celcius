@@ -11,6 +11,8 @@
 package view;
 
 import celcius.Config;
+import export.Export;
+import export.ExportModel;
 import java.awt.EventQueue;
 import java.text.DecimalFormat;
 import javax.swing.DefaultComboBoxModel;
@@ -24,6 +26,7 @@ import viewmodels.CotSheetViewModel;
  * @author naka
  */
 public class CotSheetCostingPanel extends javax.swing.JPanel {
+    private ExportModel model;
 
     /** Creates new form CotSheetCostingPanel */
     public CotSheetCostingPanel() {
@@ -114,6 +117,7 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
         cotSheetNetSellingPrice = new javax.swing.JLabel();
         cotSheetGrossSellingPrice = new javax.swing.JLabel();
         cotSheetTaxes = new javax.swing.JLabel();
+        cotSheetExportButton = new javax.swing.JButton();
         jPanel32 = new javax.swing.JPanel();
         cotSheetTafffataCutWidth = new javax.swing.JLabel();
         cotSheetSMVValue = new javax.swing.JLabel();
@@ -580,6 +584,13 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
         cotSheetTaxes.setFont(new java.awt.Font("Times New Roman", 1, 18));
         cotSheetTaxes.setText("0.00");
 
+        cotSheetExportButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/export.png"))); // NOI18N
+        cotSheetExportButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cotSheetExportButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
         jPanel31.setLayout(jPanel31Layout);
         jPanel31Layout.setHorizontalGroup(
@@ -625,7 +636,8 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
                                     .addComponent(cotSheetPOH)
                                     .addComponent(cotSheetNetSellingPrice)
                                     .addComponent(cotSheetGrossSellingPrice)
-                                    .addComponent(cotSheetTaxes))))))
+                                    .addComponent(cotSheetTaxes)))))
+                    .addComponent(cotSheetExportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
         jPanel31Layout.setVerticalGroup(
@@ -633,72 +645,75 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
             .addGroup(jPanel31Layout.createSequentialGroup()
                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel31Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel145, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(31, 31, 31)
+                        .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel31Layout.createSequentialGroup()
-                                .addComponent(cotSheetFabricCost)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cotSheetPaddingCost)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cotSheetTaffataCost)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cotSheetThreadCost)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cotSheetLableCost)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cotSheetTagCost)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cotSheetElasticCost)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cotSheetPEBagCost)
-                                .addGap(18, 18, 18)
-                                .addComponent(cotSheetTotalMaterialCost)
-                                .addGap(18, 18, 18)
-                                .addComponent(cotSheetPOH))
+                                .addComponent(jLabel145, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel31Layout.createSequentialGroup()
+                                        .addComponent(cotSheetFabricCost)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cotSheetPaddingCost)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cotSheetTaffataCost)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cotSheetThreadCost)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cotSheetLableCost)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cotSheetTagCost)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cotSheetElasticCost)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cotSheetPEBagCost)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(cotSheetTotalMaterialCost)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(cotSheetPOH))
+                                    .addGroup(jPanel31Layout.createSequentialGroup()
+                                        .addComponent(jLabel137)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel153)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel154)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel138)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel139)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel140)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel150)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel141)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel151)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel142))))
                             .addGroup(jPanel31Layout.createSequentialGroup()
-                                .addComponent(jLabel137)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel153)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel154)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel138)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel139)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel140)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel150)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel141)
+                                .addGap(334, 334, 334)
+                                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel143)
+                                    .addComponent(cotSheetLabourCost))
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel151)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel142))))
-                    .addGroup(jPanel31Layout.createSequentialGroup()
-                        .addGap(334, 334, 334)
+                                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel144)
+                                    .addComponent(cotSheetToatalCost))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel337)
+                            .addComponent(cotSheetNetSellingPrice))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jLabel338)
+                            .addComponent(cotSheetTaxes))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel143)
-                            .addComponent(cotSheetLabourCost))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel144)
-                            .addComponent(cotSheetToatalCost))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel337)
-                    .addComponent(cotSheetNetSellingPrice))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel338)
-                    .addComponent(cotSheetTaxes))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel339)
-                    .addComponent(cotSheetGrossSellingPrice))
-                .addContainerGap(26, Short.MAX_VALUE))
+                            .addComponent(jLabel339)
+                            .addComponent(cotSheetGrossSellingPrice)))
+                    .addComponent(cotSheetExportButton))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel32.setBackground(new java.awt.Color(204, 204, 204));
@@ -1019,6 +1034,18 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
         cotSheetTaxes.setText(format.format(cReturn.getTaxes()));
         cotSheetGrossSellingPrice.setText(format.format(cReturn.getGrossSellingPrice()));
 
+        //export model
+        model = new ExportModel();
+        model.setProductName("Cot Sheet");
+        model.setProductRange("");//cot sheets deoesn't have a product range
+        model.setTotalMaterialCost(cReturn.getTotalMaterialCost());
+        model.setLabourCost(cReturn.getLabourCost());
+        model.setProductionOverHead(cReturn.getPohCost());
+        model.setTotalCostPerUnit(cReturn.getTotalCost());
+        model.setNetSellingPrice(cReturn.getNetSellingPrice());
+        model.setTaxes(cReturn.getTaxes());
+        model.setGrossSellingPrice(cReturn.getGrossSellingPrice());
+
         cotSheetCPUPanel.setVisible(true);
         cotSheetSubmitButton.setVisible(false);
         cotSheetNewCosting.setVisible(true);
@@ -1104,7 +1131,18 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
         cotSheetIncludeTag.setEnabled(true);
         cotSheetsMarginField.setEnabled(true);
         cotSheetTaxField.setEnabled(true);
+
+        //nulling the model
+        model = null;
 }//GEN-LAST:event_cotSheetNewCostingActionPerformed
+
+    private void cotSheetExportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cotSheetExportButtonActionPerformed
+        if(model!=null){
+            Export export = new Export(model);
+            export.openFile();
+        }
+}//GEN-LAST:event_cotSheetExportButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel cotSheetCPUPanel;
     private javax.swing.JPanel cotSheetCostingPanel;
@@ -1112,6 +1150,7 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
     private javax.swing.JPanel cotSheetCustomPanel;
     private javax.swing.JTextField cotSheetCustomWidth;
     private javax.swing.JLabel cotSheetElasticCost;
+    private javax.swing.JButton cotSheetExportButton;
     private javax.swing.JLabel cotSheetFabricCost;
     private javax.swing.JLabel cotSheetFabricPaddingCutHeight;
     private javax.swing.JLabel cotSheetFabricPaddingCutWidth;

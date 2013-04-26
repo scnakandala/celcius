@@ -749,85 +749,92 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="27" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
-                              <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="1">
-                                  <Component id="jLabel329" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="pillowcaseNetSeelingPrice" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="1">
-                                  <Component id="jLabel328" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="pillowcaseTaxes" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="1">
-                                  <Component id="jLabel330" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="pillowcaseGrossSelliingPrice" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="jLabel45" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel43" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel44" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel78" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel42" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel51" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel41" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel40" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel39" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel38" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
+                                      <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="229" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                          <Component id="pillowcasePOH" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="pillowcaseLabourCost" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="pillowcaseToatalCost" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="pillowCaseTotalMaterialCost" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="1" attributes="1">
-                                          <EmptySpace min="4" pref="4" max="4" attributes="0"/>
-                                          <Component id="pillowcaseSealBagCost" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="1">
-                                          <EmptySpace min="4" pref="4" max="4" attributes="0"/>
-                                          <Component id="pillowcaseCardBoardCost" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="1">
-                                          <EmptySpace min="4" pref="4" max="4" attributes="0"/>
-                                          <Component id="pillowcaseTagCost" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="1">
-                                          <EmptySpace min="4" pref="4" max="4" attributes="0"/>
-                                          <Component id="pillowcaseLableCost" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="1">
-                                          <EmptySpace min="4" pref="4" max="4" attributes="0"/>
-                                          <Component id="pillowcaseThreadCost" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Group type="102" alignment="0" attributes="1">
+                                          <Component id="jLabel329" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="pillowcaseNetSeelingPrice" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="1">
-                                          <EmptySpace min="4" pref="4" max="4" attributes="0"/>
-                                          <Component id="pillowcaseFabricCost" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel328" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="pillowcaseTaxes" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="1">
+                                          <Component id="jLabel330" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="pillowcaseGrossSelliingPrice" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel45" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel43" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel78" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel42" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel51" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel41" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel40" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel39" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel38" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel44" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="229" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                                  <Component id="pillowcasePOH" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="pillowcaseLabourCost" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="pillowcaseToatalCost" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="pillowCaseTotalMaterialCost" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="1" attributes="1">
+                                                  <EmptySpace min="4" pref="4" max="4" attributes="0"/>
+                                                  <Component id="pillowcaseSealBagCost" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="1" attributes="1">
+                                                  <EmptySpace min="4" pref="4" max="4" attributes="0"/>
+                                                  <Component id="pillowcaseCardBoardCost" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="1" attributes="1">
+                                                  <EmptySpace min="4" pref="4" max="4" attributes="0"/>
+                                                  <Component id="pillowcaseTagCost" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="1" attributes="1">
+                                                  <EmptySpace min="4" pref="4" max="4" attributes="0"/>
+                                                  <Component id="pillowcaseLableCost" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="1" attributes="1">
+                                                  <EmptySpace min="4" pref="4" max="4" attributes="0"/>
+                                                  <Component id="pillowcaseThreadCost" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="1">
+                                                  <EmptySpace min="4" pref="4" max="4" attributes="0"/>
+                                                  <Component id="pillowcaseFabricCost" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
                                       </Group>
                                   </Group>
                               </Group>
                           </Group>
+                          <Component id="pillowcaseExportButton" alignment="0" min="-2" pref="31" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace pref="49" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
+                      <Component id="pillowcaseExportButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
@@ -844,15 +851,8 @@
                               <Component id="pillowcaseSealBagCost" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="11" pref="11" max="11" attributes="0"/>
                               <Component id="pillowCaseTotalMaterialCost" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                              <Component id="pillowcasePOH" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="pillowcaseLabourCost" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="pillowcaseToatalCost" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                               <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
@@ -868,13 +868,22 @@
                               <Component id="jLabel42" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="11" pref="11" max="11" attributes="0"/>
                               <Component id="jLabel78" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                              <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
                           </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="2" attributes="0">
+                          <Component id="jLabel43" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="pillowcasePOH" alignment="2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="2" attributes="0">
+                          <Component id="jLabel44" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="pillowcaseLabourCost" alignment="2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="pillowcaseToatalCost" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel45" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -891,7 +900,7 @@
                           <Component id="jLabel330" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="pillowcaseGrossSelliingPrice" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1112,6 +1121,16 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="0.00"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="pillowcaseExportButton">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/resources/export.png"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pillowcaseExportButtonActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

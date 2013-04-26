@@ -11,6 +11,8 @@
 package view;
 
 import celcius.Config;
+import export.Export;
+import export.ExportModel;
 import java.awt.EventQueue;
 import java.text.DecimalFormat;
 import javax.swing.DefaultComboBoxModel;
@@ -25,6 +27,7 @@ import viewmodels.CushionsViewModel;
  * @author naka
  */
 public class CushionsCostingPanel extends javax.swing.JPanel {
+    private ExportModel model;
 
     /** Creates new form CushionsCostingPanel */
     public CushionsCostingPanel() {
@@ -109,6 +112,7 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
         cushionsNetSellingPrice = new javax.swing.JLabel();
         cushionsTaxes = new javax.swing.JLabel();
         cushionsGrossSellingPrice = new javax.swing.JLabel();
+        cushionsExportButton = new javax.swing.JButton();
 
         cushionsCostingPanel.setBackground(new java.awt.Color(204, 204, 204));
         cushionsCostingPanel.setPreferredSize(new java.awt.Dimension(556, 600));
@@ -240,7 +244,7 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
         });
 
         cushionsFiberTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16));
-        cushionsFiberTypeCombo.setModel(new DefaultComboBoxModel(CushionLogic.getFiberTypes((String)cushionsRangeCombo.getSelectedItem())))
+        cushionsFiberTypeCombo.setModel(new DefaultComboBoxModel(CushionLogic.getFiberTypes((String)cushionsRangeCombo.getSelectedItem())));
         cushionsFiberTypeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cushionsFiberTypeComboActionPerformed(evt);
@@ -396,7 +400,7 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
                 .addComponent(cushionsSubmitButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cushionsNewCostingButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         cushionsCustomPanel.setVisible(false);
@@ -551,6 +555,13 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
         cushionsGrossSellingPrice.setFont(new java.awt.Font("Times New Roman", 1, 18));
         cushionsGrossSellingPrice.setText("0.00");
 
+        cushionsExportButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/export.png"))); // NOI18N
+        cushionsExportButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cushionsExportButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel42Layout = new javax.swing.GroupLayout(jPanel42);
         jPanel42.setLayout(jPanel42Layout);
         jPanel42Layout.setHorizontalGroup(
@@ -598,13 +609,15 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
                                     .addComponent(cushionsFiberCost, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(cushionsLabourCost, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(cushionsPEBagCost, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(cushionsThreadCost, javax.swing.GroupLayout.Alignment.TRAILING))))))
+                                    .addComponent(cushionsThreadCost, javax.swing.GroupLayout.Alignment.TRAILING)))))
+                    .addComponent(cushionsExportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
         jPanel42Layout.setVerticalGroup(
             jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel42Layout.createSequentialGroup()
-                .addContainerGap()
+                .addComponent(cushionsExportButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel42Layout.createSequentialGroup()
                         .addComponent(cushionsFabricCost)
@@ -660,18 +673,18 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
                 .addGroup(jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel348)
                     .addComponent(cushionsGrossSellingPrice))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout cushionsCPUPanelLayout = new javax.swing.GroupLayout(cushionsCPUPanel);
         cushionsCPUPanel.setLayout(cushionsCPUPanelLayout);
         cushionsCPUPanelLayout.setHorizontalGroup(
             cushionsCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cushionsCPUPanelLayout.createSequentialGroup()
+            .addGroup(cushionsCPUPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(cushionsCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel41, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel42, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(cushionsCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel41, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel42, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         cushionsCPUPanelLayout.setVerticalGroup(
@@ -699,11 +712,11 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(cushionsCostingPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 661, Short.MAX_VALUE)
+                .addComponent(cushionsCostingPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 663, Short.MAX_VALUE)
                 .addGap(21, 21, 21))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(cushionsCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         cushionsCPUPanel.setVisible(false);
@@ -829,6 +842,17 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
         cushionsTaxes.setText(format.format(cReturn.getTaxes()));
         cushionsGrossSellingPrice.setText(format.format(cReturn.getGrossSellingPrice()));
 
+        //export model
+        model = new ExportModel();
+        model.setProductName("Cushion");
+        model.setProductRange(cReturn.getProductRange());
+        model.setTotalMaterialCost(cReturn.getTotalMaterialCost());
+        model.setLabourCost(cReturn.getLabourCost());
+        model.setProductionOverHead(cReturn.getPohCost());
+        model.setTotalCostPerUnit(cReturn.getTotalCost());
+        model.setNetSellingPrice(cReturn.getNetSellingPrice());
+        model.setTaxes(cReturn.getTaxes());
+        model.setGrossSellingPrice(cReturn.getGrossSellingPrice());
 
         cushionsRangeCombo.setEnabled(false);
         cushionsFabricTypeCombo.setEnabled(false);
@@ -898,6 +922,9 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
         cushionsSubmitButton.setVisible(true);
         cushionsNewCostingButton.setVisible(false);
         cushionsCPUPanel.setVisible(false);
+
+        //nulling the model
+        model = null;
 }//GEN-LAST:event_cushionsNewCostingButtonActionPerformed
 
     private void cushionsCustomFiberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cushionsCustomFiberButtonActionPerformed
@@ -915,12 +942,21 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
     private void cushionsFiberWastageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cushionsFiberWastageActionPerformed
         // TODO add your handling code here:
 }//GEN-LAST:event_cushionsFiberWastageActionPerformed
+
+    private void cushionsExportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cushionsExportButtonActionPerformed
+        if (model != null) {
+            Export export = new Export(model);
+            export.openFile();
+        }
+}//GEN-LAST:event_cushionsExportButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel cushionsCPUPanel;
     private javax.swing.JPanel cushionsCostingPanel;
     private javax.swing.JRadioButton cushionsCustomFiberButton;
     private javax.swing.JPanel cushionsCustomPanel;
     private javax.swing.JTextField cushionsCustomWidthHeight;
+    private javax.swing.JButton cushionsExportButton;
     private javax.swing.JLabel cushionsFabricCost;
     private javax.swing.JLabel cushionsFabricCutWidthHeight;
     private javax.swing.JComboBox cushionsFabricTypeCombo;
