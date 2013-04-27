@@ -21,9 +21,9 @@
     <class>entities.Duvets</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/celcius"/>
-      <property name="javax.persistence.jdbc.password" value=""/>
+      <property name="javax.persistence.jdbc.password" value="celcius"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.user" value="celcius"/>
     </properties>
   </persistence-unit>
   <persistence-unit name="celciusPU" transaction-type="RESOURCE_LOCAL">
@@ -39,10 +39,10 @@
     <class>entities.BolsterFiberWeights</class>
     <class>entities.CushionFiberWeights</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/celcius"/>
-      <property name="javax.persistence.jdbc.password" value=""/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/celcius"/>
+      <property name="javax.persistence.jdbc.password" value="celcius"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.user" value="celcius"/>
     </properties>
   </persistence-unit>
 </persistence>

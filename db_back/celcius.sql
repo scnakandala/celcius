@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 23, 2013 at 09:53 AM
+-- Generation Time: Apr 27, 2013 at 06:18 PM
 -- Server version: 5.5.8-log
 -- PHP Version: 5.3.5
 
@@ -146,7 +146,7 @@ INSERT INTO `bolster_fiber_weights` (`id`, `name`, `3p5_16`, `4_18`, `8_18`, `8_
 (1, 'Gel Fiber', 0, 0, 0, 0, 0, 0),
 (2, 'Feather Fiber', 0, 0, 0, 0, 0, 0),
 (3, 'Goose Feather Fiber', 0, 0, 0, 0, 0, 0),
-(4, 'New Fiber', 0.08, 0.18, 0.35, 0.4, 0.7, 1.58);
+(4, 'New Fiber', 0.09, 0.18, 0.35, 0.4, 0.7, 1.58);
 
 -- --------------------------------------------------------
 
@@ -447,7 +447,7 @@ INSERT INTO `fibers` (`id`, `name`, `price`, `classic`, `super`, `gelfeather`, `
 (1, 'Gel Fiber', 700, 0, 0, 1, 0),
 (2, 'Feather Fiber', 1200, 0, 0, 1, 0),
 (3, 'Goose Feather Fiber', 1100, 1, 0, 1, 0),
-(4, 'New Fiber', 180.45, 1, 1, 1, 1);
+(4, 'New Fiber', 188, 0, 1, 1, 1);
 
 --
 -- Triggers `fibers`
@@ -579,7 +579,7 @@ CREATE TABLE IF NOT EXISTS `parameters` (
 
 INSERT INTO `parameters` (`id`, `name`, `value`) VALUES
 (1, 'cost per labour minute', 2.3),
-(2, 'POH per minute', 1.59);
+(2, 'POH per minute', 2);
 
 -- --------------------------------------------------------
 
@@ -682,7 +682,7 @@ CREATE TABLE IF NOT EXISTS `pillows_fiber_weights` (
 INSERT INTO `pillows_fiber_weights` (`id`, `name`, `8_12`, `10_14`, `11_15`, `12_18`, `16_24`, `18_27`, `20_30`, `20_40`) VALUES
 (1, 'Gel Fiber', 100, 200, 300, 400, 500, 600, 700, 800),
 (2, 'Feather Fiber', 1, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 9.5),
-(3, 'Goose Feather Fiber', 120, 150, 450, 780, 890, 900, 990, 1000);
+(3, 'Goose Feather Fiber', 120, 150, 45, 780, 890, 900, 990, 1000);
 
 -- --------------------------------------------------------
 
