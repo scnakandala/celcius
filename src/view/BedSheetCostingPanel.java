@@ -112,7 +112,6 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
         bedSheetGrossSellingPrice = new javax.swing.JLabel();
         bedSheetExportButton = new javax.swing.JButton();
 
-        bedSheetCostingPanel.setBackground(new java.awt.Color(204, 204, 204));
         bedSheetCostingPanel.setMinimumSize(new java.awt.Dimension(500, 500));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 24));
@@ -346,8 +345,6 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
         bedSheetCPUPanel.setVisible(false);
         bedSheetCPUPanel.setPreferredSize(new java.awt.Dimension(500, 800));
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
-
         jLabel17.setFont(new java.awt.Font("Times New Roman", 0, 16));
         jLabel17.setText("Cutting Width:");
 
@@ -413,8 +410,6 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
                         .addComponent(jLabel24)))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
-
-        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel14.setFont(new java.awt.Font("Times New Roman", 0, 16));
         jLabel14.setText("Fabric Cost:");

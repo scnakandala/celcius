@@ -114,7 +114,6 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
         cushionsGrossSellingPrice = new javax.swing.JLabel();
         cushionsExportButton = new javax.swing.JButton();
 
-        cushionsCostingPanel.setBackground(new java.awt.Color(204, 204, 204));
         cushionsCostingPanel.setPreferredSize(new java.awt.Dimension(556, 600));
 
         jLabel258.setFont(new java.awt.Font("Times New Roman", 0, 24));
@@ -406,8 +405,6 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
         cushionsCustomPanel.setVisible(false);
         cushionsNewCostingButton.setVisible(false);
 
-        jPanel41.setBackground(new java.awt.Color(204, 204, 204));
-
         jLabel240.setFont(new java.awt.Font("Times New Roman", 0, 16));
         jLabel240.setText("SMV Value:");
 
@@ -471,8 +468,6 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
                         .addComponent(jLabel240)))
                 .addGap(37, 37, 37))
         );
-
-        jPanel42.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel244.setFont(new java.awt.Font("Times New Roman", 0, 16));
         jLabel244.setText("PE Bag Cost:");
@@ -569,10 +564,11 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
             .addGroup(jPanel42Layout.createSequentialGroup()
                 .addGroup(jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel42Layout.createSequentialGroup()
-                        .addGap(166, 166, 166)
+                        .addComponent(cushionsExportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(135, 135, 135)
                         .addComponent(jLabel245))
                     .addGroup(jPanel42Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
+                        .addGap(23, 23, 23)
                         .addGroup(jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel42Layout.createSequentialGroup()
                                 .addComponent(jLabel348)
@@ -609,15 +605,18 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
                                     .addComponent(cushionsFiberCost, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(cushionsLabourCost, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(cushionsPEBagCost, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(cushionsThreadCost, javax.swing.GroupLayout.Alignment.TRAILING)))))
-                    .addComponent(cushionsExportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(37, Short.MAX_VALUE))
+                                    .addComponent(cushionsThreadCost, javax.swing.GroupLayout.Alignment.TRAILING))))))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         jPanel42Layout.setVerticalGroup(
             jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel42Layout.createSequentialGroup()
-                .addComponent(cushionsExportButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(jPanel42Layout.createSequentialGroup()
+                .addGroup(jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cushionsExportButton)
+                    .addGroup(jPanel42Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel245, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel42Layout.createSequentialGroup()
                         .addComponent(cushionsFabricCost)
@@ -640,8 +639,6 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cushionsToatalCost))
                     .addGroup(jPanel42Layout.createSequentialGroup()
-                        .addComponent(jLabel245, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel257)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel255)
@@ -673,7 +670,7 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
                 .addGroup(jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel348)
                     .addComponent(cushionsGrossSellingPrice))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout cushionsCPUPanelLayout = new javax.swing.GroupLayout(cushionsCPUPanel);

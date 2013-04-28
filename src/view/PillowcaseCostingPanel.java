@@ -116,7 +116,6 @@ public class PillowcaseCostingPanel extends javax.swing.JPanel {
         pillowcaseTaxes = new javax.swing.JLabel();
         pillowcaseExportButton = new javax.swing.JButton();
 
-        pillowCaseCostingPanel.setBackground(new java.awt.Color(204, 204, 204));
         pillowCaseCostingPanel.setPreferredSize(new java.awt.Dimension(500, 800));
         pillowCaseCostingPanel.setRequestFocusEnabled(false);
 
@@ -430,8 +429,6 @@ public class PillowcaseCostingPanel extends javax.swing.JPanel {
 
         pillowCaseCPUPanel.setPreferredSize(new java.awt.Dimension(500, 800));
 
-        jPanel8.setBackground(new java.awt.Color(204, 204, 204));
-
         jLabel50.setFont(new java.awt.Font("Times New Roman", 0, 24));
         jLabel50.setText("Production Parameters");
 
@@ -495,8 +492,6 @@ public class PillowcaseCostingPanel extends javax.swing.JPanel {
                 .addComponent(pillowcaseSMVValue)
                 .addContainerGap())
         );
-
-        jPanel9.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel45.setFont(new java.awt.Font("Times New Roman", 1, 18));
         jLabel45.setText("Toatal Cost Per Unit:");

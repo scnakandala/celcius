@@ -122,7 +122,6 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
         pillowsGrossSellingPrice = new javax.swing.JLabel();
         pillowsExportButton = new javax.swing.JButton();
 
-        pillowsCostingPanel.setBackground(new java.awt.Color(204, 204, 204));
         pillowsCostingPanel.setPreferredSize(new java.awt.Dimension(556, 600));
 
         jLabel228.setFont(new java.awt.Font("Times New Roman", 0, 24));
@@ -447,8 +446,6 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
         pillowsCustomPanel.setVisible(false);
         pillowsNewCostingButton.setVisible(false);
 
-        jPanel36.setBackground(new java.awt.Color(204, 204, 204));
-
         jLabel208.setFont(new java.awt.Font("Times New Roman", 0, 16));
         jLabel208.setText("Fabric Cutting Height:");
 
@@ -494,14 +491,14 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
                             .addComponent(pillowsSMVValue, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(pillowsFabricCutHeight, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(pillowsFabricCutWidth, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(41, 41, 41))
+                        .addGap(48, 48, 48))
                     .addGroup(jPanel36Layout.createSequentialGroup()
                         .addComponent(jLabel210)
-                        .addContainerGap(356, Short.MAX_VALUE))))
+                        .addContainerGap(363, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel36Layout.createSequentialGroup()
                 .addGap(124, 124, 124)
                 .addComponent(jLabel211)
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addContainerGap(117, Short.MAX_VALUE))
         );
         jPanel36Layout.setVerticalGroup(
             jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -528,8 +525,6 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
                 .addComponent(pillowsSMVValue)
                 .addContainerGap())
         );
-
-        jPanel37.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel214.setFont(new java.awt.Font("Times New Roman", 0, 16));
         jLabel214.setText("PE Bag Cost:");
@@ -632,9 +627,6 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
             .addGroup(jPanel37Layout.createSequentialGroup()
                 .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel37Layout.createSequentialGroup()
-                        .addGap(166, 166, 166)
-                        .addComponent(jLabel215))
-                    .addGroup(jPanel37Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel37Layout.createSequentialGroup()
@@ -675,45 +667,49 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
                                     .addComponent(pillowsLabourCost, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(pillowsFiberCost, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(pillowsThreadCost, javax.swing.GroupLayout.Alignment.TRAILING)))))
-                    .addComponent(pillowsExportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(33, Short.MAX_VALUE))
+                    .addGroup(jPanel37Layout.createSequentialGroup()
+                        .addComponent(pillowsExportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(134, 134, 134)
+                        .addComponent(jLabel215)))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         jPanel37Layout.setVerticalGroup(
             jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel37Layout.createSequentialGroup()
                 .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel37Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jLabel215, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(pillowsExportButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel227)
-                    .addComponent(pillowsFabricCost))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel225)
-                    .addComponent(pillowsFiberCost))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel216)
-                    .addComponent(pillowsThreadCost))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel226)
-                    .addComponent(pillowsLableCost))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel222)
-                    .addComponent(pillowsTagCost))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel218)
-                    .addComponent(pillowsPipingCost, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel214)
-                    .addComponent(pillowsPEBagCost))
+                        .addComponent(pillowsExportButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jLabel227)
+                            .addComponent(pillowsFabricCost))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jLabel225)
+                            .addComponent(pillowsFiberCost))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jLabel216)
+                            .addComponent(pillowsThreadCost))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jLabel226)
+                            .addComponent(pillowsLableCost))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jLabel222)
+                            .addComponent(pillowsTagCost))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jLabel218)
+                            .addComponent(pillowsPipingCost, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jLabel214)
+                            .addComponent(pillowsPEBagCost)))
+                    .addGroup(jPanel37Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel215, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(11, 11, 11)
                 .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jLabel224)
@@ -744,7 +740,7 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
                         .addComponent(pillowsTaxes)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(pillowsGrossSellingPrice)))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pillowsCPUPanelLayout = new javax.swing.GroupLayout(pillowsCPUPanel);
@@ -753,10 +749,10 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
             pillowsCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pillowsCPUPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pillowsCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGroup(pillowsCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel37, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel36, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pillowsCPUPanelLayout.setVerticalGroup(
             pillowsCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -777,7 +773,7 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
                 .addComponent(pillowsCostingPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(pillowsCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

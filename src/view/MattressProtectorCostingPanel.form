@@ -16,12 +16,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="mattressProtectorCostingPanel" min="-2" pref="500" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="mattressProtectorCPUPanel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -29,11 +29,11 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="mattressProtectorCPUPanel" min="-2" max="-2" attributes="1"/>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace min="11" pref="11" max="11" attributes="0"/>
                       <Component id="mattressProtectorCostingPanel" pref="835" max="32767" attributes="2"/>
                   </Group>
+                  <Component id="mattressProtectorCPUPanel" alignment="0" min="-2" max="-2" attributes="1"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -43,9 +43,6 @@
   <SubComponents>
     <Container class="javax.swing.JPanel" name="mattressProtectorCostingPanel">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
-        </Property>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[500, 500]"/>
         </Property>
@@ -721,13 +718,13 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jPanel24" alignment="1" max="32767" attributes="0"/>
                       <Component id="jPanel23" alignment="0" min="-2" max="32767" attributes="0"/>
-                      <Component id="jPanel24" alignment="0" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -736,20 +733,15 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel24" min="-2" max="32767" attributes="0"/>
-                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jPanel23" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
         <Container class="javax.swing.JPanel" name="jPanel23">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
-            </Property>
-          </Properties>
 
           <Layout>
             <DimensionLayout dim="0">
@@ -911,75 +903,75 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel24">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
-            </Property>
-          </Properties>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="mattressProtectorExportButton" min="-2" pref="31" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel336" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="226" max="32767" attributes="0"/>
-                              <Component id="mettresProtectorGrossSellingPrice" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel336" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace pref="226" max="32767" attributes="0"/>
+                                      <Component id="mettresProtectorGrossSellingPrice" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel335" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace pref="328" max="32767" attributes="0"/>
+                                      <Component id="mettresProtectorTaxes" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="1">
+                                      <Component id="jLabel334" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace pref="239" max="32767" attributes="0"/>
+                                      <Component id="mettresProtectorNetSellingPrice" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel92" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel89" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel90" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel91" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel88" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel110" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel109" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel101" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel95" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel94" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel93" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel102" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel108" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel113" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="206" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="mettresProtectorLabourCost" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="mettresProtectorToatalCost" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="mettresProtectorPEBagCost" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="mettresProtectorPOH" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="mettresProtectorLableCost" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="mettresProtectorNonWovenBagCost" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="mettresProtectorTagCost" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="mettresProtectorFabricCost" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="mettresProtectorThreadCost" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="mettresProtectorPaddingCost" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="mettresProtectorTaffataCost" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="mettresProtectorElasticCost" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="mettresProtectorTotalMaterialCost" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="mettresProtectorPipingCost" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace pref="39" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
                               <Component id="jLabel96" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel335" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="328" max="32767" attributes="0"/>
-                              <Component id="mettresProtectorTaxes" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="1">
-                              <Component id="jLabel334" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="239" max="32767" attributes="0"/>
-                              <Component id="mettresProtectorNetSellingPrice" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel92" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel89" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel90" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel91" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel88" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel110" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel109" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel101" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel95" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel94" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel93" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel102" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel108" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel113" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="206" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="mettresProtectorLabourCost" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="mettresProtectorToatalCost" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="mettresProtectorPEBagCost" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="mettresProtectorPOH" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="mettresProtectorLableCost" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="mettresProtectorNonWovenBagCost" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="mettresProtectorTagCost" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="mettresProtectorFabricCost" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="mettresProtectorThreadCost" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="mettresProtectorPaddingCost" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="mettresProtectorTaffataCost" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="mettresProtectorElasticCost" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="mettresProtectorTotalMaterialCost" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="mettresProtectorPipingCost" alignment="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="39" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1020,25 +1012,17 @@
                                       <Component id="mettresProtectorToatalCost" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jLabel96" min="-2" pref="28" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jLabel88" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jLabel109" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="jLabel110" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jLabel89" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jLabel90" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jLabel91" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                      <Component id="jLabel88" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel109" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jLabel110" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel89" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel90" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel91" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jLabel101" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -1074,8 +1058,12 @@
                               </Group>
                           </Group>
                           <Component id="mattressProtectorExportButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel96" min="-2" pref="28" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="31" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

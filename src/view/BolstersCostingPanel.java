@@ -113,7 +113,6 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
         bolsterGrossSellingPrice = new javax.swing.JLabel();
         bolsterExportButton = new javax.swing.JButton();
 
-        cotSheetCostingPanel4.setBackground(new java.awt.Color(204, 204, 204));
         cotSheetCostingPanel4.setPreferredSize(new java.awt.Dimension(556, 600));
 
         jLabel282.setFont(new java.awt.Font("Times New Roman", 0, 24));
@@ -425,8 +424,6 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
         bolsterCustomPanel.setVisible(false);
         bolsterNewCostingButton.setVisible(false);
 
-        jPanel44.setBackground(new java.awt.Color(204, 204, 204));
-
         jLabel250.setFont(new java.awt.Font("Times New Roman", 0, 16));
         jLabel250.setText("SMV Value:");
 
@@ -478,8 +475,6 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
                     .addComponent(bolsterSMVValue))
                 .addGap(27, 27, 27))
         );
-
-        jPanel45.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel271.setFont(new java.awt.Font("Times New Roman", 0, 16));
         jLabel271.setText("PE Bag Cost:");
@@ -576,9 +571,6 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
             .addGroup(jPanel45Layout.createSequentialGroup()
                 .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel45Layout.createSequentialGroup()
-                        .addGap(166, 166, 166)
-                        .addComponent(jLabel272))
-                    .addGroup(jPanel45Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel45Layout.createSequentialGroup()
@@ -596,7 +588,6 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
                             .addGroup(jPanel45Layout.createSequentialGroup()
                                 .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel278)
-                                    .addComponent(jLabel275)
                                     .addComponent(jLabel276)
                                     .addComponent(jLabel274)
                                     .addComponent(jLabel271)
@@ -604,7 +595,8 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
                                     .addComponent(jLabel280)
                                     .addComponent(jLabel279)
                                     .addComponent(jLabel281)
-                                    .addComponent(jLabel273))
+                                    .addComponent(jLabel273)
+                                    .addComponent(jLabel275))
                                 .addGap(202, 202, 202)
                                 .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(bolsterToatalCost, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -617,16 +609,23 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
                                     .addComponent(bolsterLabourCost, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(bolsterPEBagCost, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(bolsterThreadCost, javax.swing.GroupLayout.Alignment.TRAILING)))))
-                    .addComponent(bolsterExportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel45Layout.createSequentialGroup()
+                        .addComponent(bolsterExportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(136, 136, 136)
+                        .addComponent(jLabel272)))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
         jPanel45Layout.setVerticalGroup(
             jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel45Layout.createSequentialGroup()
-                .addComponent(bolsterExportButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(jPanel45Layout.createSequentialGroup()
+                .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bolsterExportButton)
                     .addGroup(jPanel45Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel272, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel45Layout.createSequentialGroup()
                         .addComponent(bolsterFabricCost)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bolsterFiberCost)
@@ -639,16 +638,8 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bolsterPEBagCost)
                         .addGap(11, 11, 11)
-                        .addComponent(bolsterTotalMaterialCost)
-                        .addGap(19, 19, 19)
-                        .addComponent(bolsterPOH)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(bolsterLabourCost)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bolsterToatalCost))
-                    .addGroup(jPanel45Layout.createSequentialGroup()
-                        .addComponent(jLabel272, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bolsterTotalMaterialCost))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel45Layout.createSequentialGroup()
                         .addComponent(jLabel281)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel279)
@@ -661,10 +652,18 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel271)
                         .addGap(11, 11, 11)
-                        .addComponent(jLabel278)
-                        .addGap(19, 19, 19)
-                        .addComponent(jLabel275)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel278)))
+                .addGap(19, 19, 19)
+                .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel275)
+                    .addComponent(bolsterPOH))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel45Layout.createSequentialGroup()
+                        .addComponent(bolsterLabourCost)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bolsterToatalCost))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel45Layout.createSequentialGroup()
                         .addComponent(jLabel274)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel276)))
@@ -680,7 +679,7 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
                 .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel351)
                     .addComponent(bolsterGrossSellingPrice))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout bolsterCPUPanelLayout = new javax.swing.GroupLayout(bolsterCPUPanel);
