@@ -54,6 +54,10 @@ public class Export {
         html = html + "<td width=\"107\"><div align=\"right\">" + model.getProductRange() + "</div></td>";
         html = html + "</tr>";
         html = html + "<tr>";
+        html = html + "<th width=\"215\" scope=\"row\"><div align=\"left\">Size&nbsp;</div></th>";
+        html = html + "<td width=\"107\"><div align=\"right\">" + model.getProductSize() + "</div></td>";
+        html = html + "</tr>";
+        html = html + "<tr>";
         html = html + "<th width=\"215\" scope=\"row\"><div align=\"left\">Total Material Cost Per Unit&nbsp;</div></th>";
         html = html + "<td width=\"107\"><div align=\"right\">" + format.format(model.getTotalMaterialCost()) + "</div></td>";
         html = html + "</tr>";

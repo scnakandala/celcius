@@ -783,6 +783,11 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
         model = new ExportModel();
         model.setProductName("Bed Sheet");
         model.setProductRange(bReturn.getProductRange());
+        if(bReturn.isIsCustom()){
+            model.setProductSize(bReturn.getCustomWidth()+"X"+bReturn.getCustomHeight());
+        }else{
+            model.setProductSize(bReturn.getSize());
+        }
         model.setTotalMaterialCost(bReturn.getTotalMaterialCost());
         model.setLabourCost(bReturn.getLabourCost());
         model.setProductionOverHead(bReturn.getPohCost());

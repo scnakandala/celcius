@@ -860,10 +860,15 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
         bolsterGrossSellingPrice.setText(format.format(bReturn.getGrossSellingPrice()));
 
 
-                //export model
+        //export model
         model = new ExportModel();
         model.setProductName("Bolster Pillow");
         model.setProductRange(bReturn.getProductRange());
+        if(bReturn.isIsCustom()){
+            model.setProductSize(bReturn.getDiameter()+"X"+bReturn.getLength());
+        }else{
+            model.setProductSize(bReturn.getSize());
+        }
         model.setTotalMaterialCost(bReturn.getTotalMaterialCost());
         model.setLabourCost(bReturn.getLabourCost());
         model.setProductionOverHead(bReturn.getPohCost());

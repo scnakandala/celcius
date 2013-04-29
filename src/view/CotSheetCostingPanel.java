@@ -1031,7 +1031,12 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
         //export model
         model = new ExportModel();
         model.setProductName("Cot Sheet");
-        model.setProductRange("");//cot sheets deoesn't have a product range
+        model.setProductRange(" - - - ");//cot sheets deoesn't have a product range
+        if(cReturn.isIsCustom()){
+            model.setProductSize(cReturn.getCustomWidth()+"X"+cReturn.getCustomHeight());
+        }else{
+            model.setProductSize(cReturn.getSize());
+        }
         model.setTotalMaterialCost(cReturn.getTotalMaterialCost());
         model.setLabourCost(cReturn.getLabourCost());
         model.setProductionOverHead(cReturn.getPohCost());

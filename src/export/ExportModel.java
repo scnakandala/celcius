@@ -4,6 +4,7 @@ public class ExportModel {
 
     private String productName = "";
     private String productRange = "";
+    private String productSize = "";
     private Double totalMaterialCost = 0.0;
     private Double labourCost = 0.0;
     private Double productionOverHead = 0.0;
@@ -18,6 +19,14 @@ public class ExportModel {
 
     public void setProductionOverHead(Double productionOverHead) {
         this.productionOverHead = productionOverHead;
+    }
+
+    public String getProductSize() {
+        return productSize;
+    }
+
+    public void setProductSize(String productSize) {
+        this.productSize = productSize;
     }
 
     public Double getGrossSellingPrice() {

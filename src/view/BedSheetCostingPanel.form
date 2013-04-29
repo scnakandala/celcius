@@ -33,7 +33,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="bedSheetCostingPanel" max="32767" attributes="2"/>
                   </Group>
-                  <Component id="bedSheetCPUPanel" alignment="0" min="-2" pref="800" max="-2" attributes="2"/>
+                  <Component id="bedSheetCPUPanel" alignment="0" min="-2" max="-2" attributes="2"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>

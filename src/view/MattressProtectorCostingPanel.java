@@ -1127,6 +1127,11 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
         model = new ExportModel();
         model.setProductName("Mattress Protector");
         model.setProductRange(mReturn.getProductRange());
+        if(mReturn.isIsCustom()){
+            model.setProductSize(mReturn.getCustomWidth()+"X"+mReturn.getCustomHeight());
+        }else{
+            model.setProductSize(mReturn.getSize());
+        }
         model.setTotalMaterialCost(mReturn.getTotalMaterialCost());
         model.setLabourCost(mReturn.getLabourCost());
         model.setProductionOverHead(mReturn.getPohCost());

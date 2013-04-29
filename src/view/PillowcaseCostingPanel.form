@@ -20,7 +20,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="pillowCaseCostingPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="pillowCaseCPUPanel" min="-2" pref="500" max="-2" attributes="0"/>
+              <Component id="pillowCaseCPUPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -650,7 +650,7 @@
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="55" max="32767" attributes="0"/>
+                      <EmptySpace pref="56" max="32767" attributes="0"/>
                       <Component id="pillowcaseCutWidth" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="pillowcaseCutHeight" min="-2" max="-2" attributes="0"/>

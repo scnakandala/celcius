@@ -555,7 +555,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel42" min="-2" max="32767" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jPanel41" min="-2" pref="156" max="32767" attributes="0"/>
+                  <Component id="jPanel41" min="-2" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
               </Group>
           </Group>

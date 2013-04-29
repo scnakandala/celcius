@@ -939,6 +939,11 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
         model = new ExportModel();
         model.setProductName("Pillow");
         model.setProductRange(pReturn.getProductRange());
+        if(pReturn.isIsCustom()){
+            model.setProductSize(pReturn.getCustomWidth()+"X"+pReturn.getCustomHeight());
+        }else{
+            model.setProductSize(pReturn.getSize());
+        }
         model.setTotalMaterialCost(pReturn.getTotalMaterialCost());
         model.setLabourCost(pReturn.getLabourCost());
         model.setProductionOverHead(pReturn.getPohCost());

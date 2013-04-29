@@ -1200,6 +1200,11 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
         model = new ExportModel();
         model.setProductName("Duvet");
         model.setProductRange(dReturn.getProductRange());
+        if(dReturn.isIsCustom()){
+            model.setProductSize(dReturn.getCustomWidth()+"X"+dReturn.getCustomHeight());
+        }else{
+            model.setProductSize(dReturn.getSize());
+        }
         model.setTotalMaterialCost(dReturn.getTotalMaterialCost());
         model.setLabourCost(dReturn.getLabourCost());
         model.setProductionOverHead(dReturn.getPohCost());

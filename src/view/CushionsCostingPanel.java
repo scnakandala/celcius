@@ -843,6 +843,11 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
         model = new ExportModel();
         model.setProductName("Cushion");
         model.setProductRange(cReturn.getProductRange());
+        if(cReturn.isIsCustom()){
+            model.setProductSize(cReturn.getCustomWidthHeight()+"X"+cReturn.getCustomWidthHeight());
+        }else{
+            model.setProductSize(cReturn.getSize());
+        }
         model.setTotalMaterialCost(cReturn.getTotalMaterialCost());
         model.setLabourCost(cReturn.getLabourCost());
         model.setProductionOverHead(cReturn.getPohCost());
