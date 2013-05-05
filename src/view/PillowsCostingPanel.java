@@ -1,13 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * PillowsCostingPanel.java
- *
- * Created on Apr 25, 2013, 3:23:31 AM
- */
 package view;
 
 import celcius.Config;
@@ -884,7 +874,7 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
         if (useCustom) {
             pCost.setIsCustom(useCustom);
             try {
-                Integer width = Integer.parseInt(pillowsCustomWidth.getText());
+                Double width = Double.parseDouble(pillowsCustomWidth.getText());
                 if (width <= 0 || width > 120) {
                     JOptionPane.showMessageDialog(this, "Width should be between 0 and 120");
                     return;
@@ -896,7 +886,7 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
             }
 
             try {
-                Integer height = Integer.parseInt(pillowsCustomHeight.getText());
+                Double height = Double.parseDouble(pillowsCustomHeight.getText());
                 if (height <= 0 || height > 120) {
                     JOptionPane.showMessageDialog(this, "Height should be between 0 and 120");
                     return;

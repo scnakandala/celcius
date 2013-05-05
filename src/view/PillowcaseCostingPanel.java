@@ -1,13 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * PillowcasePanel.java
- *
- * Created on Apr 25, 2013, 2:24:43 AM
- */
 package view;
 
 import celcius.Config;
@@ -849,7 +839,7 @@ public class PillowcaseCostingPanel extends javax.swing.JPanel {
         if (useCustom) {
             pCost.setIsCustom(useCustom);
             try {
-                Integer width = Integer.parseInt(pillowcaseCustomWidth.getText());
+                Double width = Double.parseDouble(pillowcaseCustomWidth.getText());
                 if (width <= 0 || width > 120) {
                     JOptionPane.showMessageDialog(this, "Width should be between 0 and 120");
                     return;
@@ -861,7 +851,7 @@ public class PillowcaseCostingPanel extends javax.swing.JPanel {
             }
 
             try {
-                Integer height = Integer.parseInt(pillowcaseCustomHeight.getText());
+                Double height = Double.parseDouble(pillowcaseCustomHeight.getText());
                 if (height <= 0 || height > 120) {
                     JOptionPane.showMessageDialog(this, "Height should be between 0 and 120");
                     return;
@@ -873,12 +863,12 @@ public class PillowcaseCostingPanel extends javax.swing.JPanel {
             }
 
             try {
-                Integer flap = Integer.parseInt(pillowcaseCustomFlapSize.getText());
+                Double flap = Double.parseDouble(pillowcaseCustomFlapSize.getText());
                 if (flap <= 0 || flap > 120) {
                     JOptionPane.showMessageDialog(this, "Flap size should be between 0 and 120");
                     return;
                 }
-                pCost.setFlap((double) flap);
+                pCost.setFlap(flap);
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(this, "Please enter a valid number for flap size");
                 return;

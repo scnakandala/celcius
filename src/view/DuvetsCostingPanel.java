@@ -1,13 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * DuvetsCostingPanel.java
- *
- * Created on Apr 25, 2013, 3:36:43 AM
- */
 package view;
 
 import celcius.Config;
@@ -1141,7 +1131,7 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
         if (useCustom) {
             dCost.setIsCustom(useCustom);
             try {
-                Integer width = Integer.parseInt(duvetsCustomWidth.getText());
+                Double width = Double.parseDouble(duvetsCustomWidth.getText());
                 if (width <= 0 || width > 120) {
                     JOptionPane.showMessageDialog(this, "Width should be between 0 and 120");
                     return;
@@ -1153,7 +1143,7 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
             }
 
             try {
-                Integer height = Integer.parseInt(duvetsCustomHeight.getText());
+                Double height = Double.parseDouble(duvetsCustomHeight.getText());
                 if (height <= 0 || height > 120) {
                     JOptionPane.showMessageDialog(this, "Height should be between 0 and 120");
                     return;

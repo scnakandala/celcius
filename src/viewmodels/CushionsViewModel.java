@@ -10,7 +10,7 @@ public class CushionsViewModel extends AbstractViewModel{
     private String fiberType = "";
     private Double fiberWastage = 0.0;
     private boolean isCustom = false;
-    private int customWidthHeight = 0;
+    private Double customWidthHeight = 0.0;
     private boolean includeLable = false;
     private boolean includeTag = false;
     private boolean includePEBag = false;
@@ -54,11 +54,11 @@ public class CushionsViewModel extends AbstractViewModel{
         this.smvValue = smvValue;
     }
 
-    public int getCustomWidthHeight() {
+    public Double getCustomWidthHeight() {
         return customWidthHeight;
     }
 
-    public void setCustomWidthHeight(int customWidthHeight) {
+    public void setCustomWidthHeight(Double customWidthHeight) {
         this.customWidthHeight = customWidthHeight;
     }
 

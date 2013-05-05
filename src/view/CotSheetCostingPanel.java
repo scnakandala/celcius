@@ -975,7 +975,7 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
         if (useCustom) {
             cCost.setIsCustom(useCustom);
             try {
-                Integer width = Integer.parseInt(cotSheetCustomWidth.getText());
+                Double width = Double.parseDouble(cotSheetCustomWidth.getText());
                 if (width <= 0 || width > 120) {
                     JOptionPane.showMessageDialog(this, "Width should be between 0 and 120");
                     return;
@@ -987,7 +987,7 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
             }
 
             try {
-                Integer height = Integer.parseInt(cotSheetCustomHeight.getText());
+                Double height = Double.parseDouble(cotSheetCustomHeight.getText());
                 if (height <= 0 || height > 120) {
                     JOptionPane.showMessageDialog(this, "Height should be between 0 and 120");
                     return;

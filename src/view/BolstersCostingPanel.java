@@ -811,7 +811,7 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
         if (useCustom) {
             bCost.setIsCustom(useCustom);
             try {
-                Integer diameter = Integer.parseInt(bolsterCustomDiameter.getText());
+                Double diameter = Double.parseDouble(bolsterCustomDiameter.getText());
                 if (diameter <= 0 || diameter > 120) {
                     JOptionPane.showMessageDialog(this, "Diameter should be between 0 and 120");
                     return;
@@ -823,7 +823,7 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
             }
 
             try {
-                Integer length = Integer.parseInt(bolsterCustomDiameter.getText());
+                Double length = Double.parseDouble(bolsterCustomLength.getText());
                 if (length <= 0 || length > 120) {
                     JOptionPane.showMessageDialog(this, "Length should be between 0 and 120");
                     return;

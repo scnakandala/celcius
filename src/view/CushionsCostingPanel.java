@@ -1,13 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * CushionsCostingPanel.java
- *
- * Created on Apr 25, 2013, 3:29:03 AM
- */
 package view;
 
 import celcius.Config;
@@ -802,7 +792,7 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
         if (useCustom) {
             cCost.setIsCustom(useCustom);
             try {
-                Integer widthHeight = Integer.parseInt(cushionsCustomWidthHeight.getText());
+                Double widthHeight = Double.parseDouble(cushionsCustomWidthHeight.getText());
                 if (widthHeight <= 0 || widthHeight > 120) {
                     JOptionPane.showMessageDialog(this, "Width & Height should be between 0 and 120");
                     return;

@@ -53,7 +53,7 @@ public class BedSheetLogic {
             Integer materialWidth = BedSheetDataAccess.getInstance().getMaterialWidth(bCost.getMaterialType());
             Double wastage = bCost.getWastage();
 
-            Integer width, height;
+            Double width, height;
             Double labelCost, tagCost, threadCost, sealBagCost, cardBoardCost, smv;
             if (bCost.isIsCustom()) {
                 width = bCost.getCustomWidth();
@@ -90,8 +90,8 @@ public class BedSheetLogic {
                 Approximate approx = new Approximate(arr[0], arr[1]);
                 smv = approx.getApproximatedValue((double)width+height);
             } else {
-                width = Integer.parseInt(bCost.getSize().split("X")[0]);
-                height = Integer.parseInt(bCost.getSize().split("X")[1]);
+                width = Double.parseDouble(bCost.getSize().split("X")[0]);
+                height = Double.parseDouble(bCost.getSize().split("X")[1]);
 
                 tagCost = BedSheetDataAccess.getInstance().getTagCost();
                 labelCost = BedSheetDataAccess.getInstance().getLableCost();

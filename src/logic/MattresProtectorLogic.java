@@ -80,7 +80,7 @@ public class MattresProtectorLogic {
             Double widthQuitingShrinkage = mCost.getWidthQuiltyShrinkage();
             Double hightQuitingShrinkage = mCost.getHeightQuiltyShrinkage();
 
-            Integer width, height;
+            Double width, height;
             Double labelCost, tagCost, threadCost, nonWovenBagCost, pipingCost, peBagCost, smv, elasticCost;
             if (mCost.isIsCustom()) {
                 width = mCost.getCustomWidth();
@@ -105,8 +105,8 @@ public class MattresProtectorLogic {
                 Approximate cFitting = new Approximate(arr[0], arr[1]);
                 smv = cFitting.getApproximatedValue(((double) height + width));
             } else {
-                width = Integer.parseInt(mCost.getSize().split("X")[0]);
-                height = Integer.parseInt(mCost.getSize().split("X")[1]);
+                width = Double.parseDouble(mCost.getSize().split("X")[0]);
+                height = Double.parseDouble(mCost.getSize().split("X")[1]);
 
                 tagCost = MattresProtectorsDataAccess.getInstance().getTagCost();
                 labelCost = MattresProtectorsDataAccess.getInstance().getLableCost();

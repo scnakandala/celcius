@@ -62,7 +62,7 @@ public class CotSheetLogic {
             Double widthQuitingShrinkage = cCost.getWidthQuiltyShrinkage();
             Double hightQuitingShrinkage = cCost.getHeightQuiltyShrinkage();
 
-            Integer width, height;
+            Double width, height;
             Double labelCost, tagCost, threadCost, peBagCost, smv, elasticCost;
             if (cCost.isIsCustom()) {
                 width = cCost.getCustomWidth();
@@ -87,8 +87,8 @@ public class CotSheetLogic {
                 Approximate approx = new Approximate(arr[0], arr[1]);
                 smv = approx.getApproximatedValue(((double)height+width));
             } else {
-                width = Integer.parseInt(cCost.getSize().split("X")[0]);
-                height = Integer.parseInt(cCost.getSize().split("X")[1]);
+                width = Double.parseDouble(cCost.getSize().split("X")[0]);
+                height = Double.parseDouble(cCost.getSize().split("X")[1]);
 
                 tagCost = CotSheetDataAccess.getInstance().getTagCost();
                 labelCost = CotSheetDataAccess.getInstance().getLableCost();

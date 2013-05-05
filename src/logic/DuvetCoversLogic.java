@@ -54,7 +54,7 @@ public class DuvetCoversLogic {
             Integer materialWidth = DuvetCoversDataAccess.getInstance().getMaterialWidth(dCost.getMaterialType());
             Double wastage = dCost.getWastage();
 
-            Integer width, height;
+            Double width, height;
             Double labelCost, tagCost, threadCost, sealBagCost, cardBoardCost, velcoCost, zipperCost, buttonCost, smv;
             if (dCost.isIsCustom()) {
                 width = dCost.getCustomWidth();
@@ -91,8 +91,8 @@ public class DuvetCoversLogic {
                 Approximate cFitting = new Approximate(arr[0], arr[1]);
                 smv = cFitting.getApproximatedValue(((double)height+width));
             } else {
-                width = Integer.parseInt(dCost.getSize().split("X")[0]);
-                height = Integer.parseInt(dCost.getSize().split("X")[1]);
+                width = Double.parseDouble(dCost.getSize().split("X")[0]);
+                height = Double.parseDouble(dCost.getSize().split("X")[1]);
 
                 tagCost = DuvetCoversDataAccess.getInstance().getTagCost();
                 labelCost = DuvetCoversDataAccess.getInstance().getLableCost();

@@ -2,7 +2,6 @@ package viewmodels;
 
 public class BolstersViewModel extends AbstractViewModel{
     //inpputs
-
     private String productRange = "";
     private String materialType = "";
     private String size = "";
@@ -10,11 +9,12 @@ public class BolstersViewModel extends AbstractViewModel{
     private String fiberType = "";
     private Double fiberWastage = 0.0;
     private boolean isCustom = false;
-    private int diameter = 0;
-    private int length = 0;
+    private Double diameter = 0.0;
+    private Double length = 0.0;
     private boolean includeLable = false;
     private boolean includeTag = false;
     private boolean includePEBag = false;
+    
     //outputs
     private Double fabricCost = 0.0;
     private Double fiberCost = 0.0;
@@ -182,19 +182,19 @@ public class BolstersViewModel extends AbstractViewModel{
         this.totalCost = totalCost;
     }
 
-    public int getDiameter() {
+    public Double getDiameter() {
         return diameter;
     }
 
-    public void setDiameter(int diameter) {
+    public void setDiameter(Double diameter) {
         this.diameter = diameter;
     }
 
-    public int getLength() {
+    public Double getLength() {
         return length;
     }
 
-    public void setLength(int length) {
+    public void setLength(Double length) {
         this.length = length;
     }
 

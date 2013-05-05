@@ -1,7 +1,6 @@
 package logic;
 
 import algorithms.Approximate;
-import com.sun.org.apache.bcel.internal.generic.DCMPG;
 import dataaccess.PillowsDataAccess;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -66,7 +65,7 @@ public class PillowLogic {
             Double tagPrice = PillowsDataAccess.getInstance().getTagCost();
             Integer fabricWidth = PillowsDataAccess.getInstance().getMaterialWidth(pCost.getMaterialType());
 
-            Integer height = 0, width = 0;
+            Double height = 0.0, width = 0.0;
             Double smv = 0.0;
             if (pCost.isIsCustom()) {
                 height = pCost.getCustomHeight();
@@ -85,8 +84,8 @@ public class PillowLogic {
                     peBagPrice = 0.0;
                 }
             } else {
-                width = Integer.parseInt(pCost.getSize().split("X")[0]);
-                height = Integer.parseInt(pCost.getSize().split("X")[1]);
+                width = Double.parseDouble(pCost.getSize().split("X")[0]);
+                height = Double.parseDouble(pCost.getSize().split("X")[1]);
                 smv = PillowsDataAccess.getInstance().getSMVValue(pCost.getSize(), pCost.getProductRange(), pCost.getPillowType());
             }
 

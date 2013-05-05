@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 
 public class Config {
 
-    public static String connectionString = "jdbc:mysql://192.168.2.5/celcius?"
+    public static String connectionString = "jdbc:mysql://127.0.0.1/celcius?"
             + "user=celcius&password=celcius";
 
     public static String profitMargin = "50";

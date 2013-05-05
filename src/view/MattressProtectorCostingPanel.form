@@ -764,7 +764,7 @@
                               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="2" max="32767" attributes="0"/>
+                      <EmptySpace pref="5" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="mettresProtectorTafffataCutWidth" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="mettresProtectorTaffataCutHeight" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -911,7 +911,7 @@
                       <Component id="mattressProtectorExportButton" min="-2" pref="31" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel336" min="-2" max="-2" attributes="0"/>

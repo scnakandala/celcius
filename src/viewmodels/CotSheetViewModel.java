@@ -13,8 +13,8 @@ public class CotSheetViewModel extends AbstractViewModel{
     private Double paddingWastage = 0.0;
     private Double taffataWastage = 0.0;
     private boolean isCustom = false;
-    private int customWidth = 0;
-    private int customHeight = 0;
+    private Double customWidth = 0.0;
+    private Double customHeight = 0.0;
     private boolean includeLable = false;
     private boolean includeTag = false;
     private boolean includePEBag = false;
@@ -93,19 +93,19 @@ public class CotSheetViewModel extends AbstractViewModel{
         this.smvValue = smvValue;
     }
 
-    public int getCustomHeight() {
+    public Double getCustomHeight() {
         return customHeight;
     }
 
-    public void setCustomHeight(int customHeight) {
+    public void setCustomHeight(Double customHeight) {
         this.customHeight = customHeight;
     }
 
-    public int getCustomWidth() {
+    public Double getCustomWidth() {
         return customWidth;
     }
 
-    public void setCustomWidth(int customWidth) {
+    public void setCustomWidth(Double customWidth) {
         this.customWidth = customWidth;
     }
 

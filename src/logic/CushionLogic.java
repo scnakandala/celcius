@@ -64,7 +64,7 @@ public class CushionLogic {
             Double tagPrice = CushionsDataAccess.getInstance().getTagCost();
             Integer fabricWidth = CushionsDataAccess.getInstance().getMaterialWidth(cCost.getMaterialType());
 
-            Integer height = 0, width = 0;
+            Double height = 0.0, width = 0.0;
             Double smv = 0.0;
             if (cCost.isIsCustom()) {
                 height = cCost.getCustomWidthHeight();
@@ -83,8 +83,8 @@ public class CushionLogic {
                     peBagPrice = 0.0;
                 }
             } else {
-                width = Integer.parseInt(cCost.getSize().split("X")[0]);
-                height = Integer.parseInt(cCost.getSize().split("X")[1]);
+                width = Double.parseDouble(cCost.getSize().split("X")[0]);
+                height = Double.parseDouble(cCost.getSize().split("X")[1]);
                 smv = CushionsDataAccess.getInstance().getSMVValue(cCost.getSize(), cCost.getProductRange());
             }
 

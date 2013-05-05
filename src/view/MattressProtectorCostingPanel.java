@@ -1,13 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * MattressProtectorCostingPanel.java
- *
- * Created on Apr 25, 2013, 3:09:19 AM
- */
 package view;
 
 import celcius.Config;
@@ -580,7 +570,7 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
                         .addComponent(jLabel100)
                         .addGap(50, 50, 50)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 2, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 5, Short.MAX_VALUE)
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(mettresProtectorTafffataCutWidth, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(mettresProtectorTaffataCutHeight, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -709,10 +699,10 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
         jLabel334.setFont(new java.awt.Font("Times New Roman", 1, 18));
         jLabel334.setText("Net Selling Price:");
 
-        jLabel335.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        jLabel335.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel335.setText("Taxes");
 
-        jLabel336.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        jLabel336.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel336.setText("Gross Selling Price");
 
         mettresProtectorNetSellingPrice.setFont(new java.awt.Font("Times New Roman", 1, 18));
@@ -739,7 +729,7 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
                 .addComponent(mattressProtectorExportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel24Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel24Layout.createSequentialGroup()
                                 .addComponent(jLabel336)
@@ -1066,7 +1056,7 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
         if (useCustom) {
             mCost.setIsCustom(useCustom);
             try {
-                Integer width = Integer.parseInt(mettresProtectorCustomWidth.getText());
+                Double width = Double.parseDouble(mettresProtectorCustomWidth.getText());
                 if (width <= 0 || width > 120) {
                     JOptionPane.showMessageDialog(this, "Width should be between 0 and 120");
                     return;
@@ -1078,7 +1068,7 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
             }
 
             try {
-                Integer height = Integer.parseInt(mettresProtectorCustomHeight.getText());
+                Double height = Double.parseDouble(mettresProtectorCustomHeight.getText());
                 if (height <= 0 || height > 120) {
                     JOptionPane.showMessageDialog(this, "Height should be between 0 and 120");
                     return;

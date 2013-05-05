@@ -7,12 +7,13 @@ public class BedSheetViewModel extends AbstractViewModel {
     private String size = "";
     private Double wastage = 0.0;
     private boolean isCustom = false;
-    private int customWidth = 0;
-    private int customHeight = 0;
+    private Double customWidth = 0.0;
+    private Double customHeight = 0.0;
     private boolean includeLable = false;
     private boolean includeTag = false;
     private boolean includeSealBag = false;
     private boolean includeCardBoard = false;
+
     //outputs
     private Double fabricCost = 0.0;
     private Double threadCost = 0.0;
@@ -76,19 +77,19 @@ public class BedSheetViewModel extends AbstractViewModel {
         this.cardboardCost = cardboardCost;
     }
 
-    public int getCustomHeight() {
+    public Double getCustomHeight() {
         return customHeight;
     }
 
-    public void setCustomHeight(int customHeight) {
+    public void setCustomHeight(Double customHeight) {
         this.customHeight = customHeight;
     }
 
-    public int getCustomWidth() {
+    public Double getCustomWidth() {
         return customWidth;
     }
 
-    public void setCustomWidth(int customWidth) {
+    public void setCustomWidth(Double customWidth) {
         this.customWidth = customWidth;
     }
 

@@ -856,7 +856,7 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
         if (useCustom) {
             dCost.setIsCustom(useCustom);
             try {
-                Integer width = Integer.parseInt(dovetCoversCustomWidth.getText());
+                Double width = Double.parseDouble(dovetCoversCustomWidth.getText());
                 if (width <= 0 || width > 120) {
                     JOptionPane.showMessageDialog(this, "Width should be between 0 and 120");
                     return;
@@ -868,7 +868,7 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
             }
 
             try {
-                Integer height = Integer.parseInt(dovetCoversCustomHeight.getText());
+                Double height = Double.parseDouble(dovetCoversCustomHeight.getText());
                 if (height <= 0 || height > 120) {
                     JOptionPane.showMessageDialog(this, "Height should be between 0 and 120");
                     return;
@@ -927,6 +927,11 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
         model = new ExportModel();
         model.setProductName("Duvet Cover");
         model.setProductRange(dReturn.getProductRange());
+                if(dReturn.isIsCustom()){
+            model.setProductSize(dReturn.getCustomWidth()+"X"+dReturn.getCustomHeight());
+        }else{
+            model.setProductSize(dReturn.getSize());
+        }
         model.setTotalMaterialCost(dReturn.getTotalMaterialCost());
         model.setLabourCost(dReturn.getLabourCost());
         model.setProductionOverHead(dReturn.getPohCost());

@@ -62,7 +62,7 @@ public class PillowcaseLogic {
             Integer materialWidth = PillowcaseDataAccess.getInstance().getMaterialWidth(pCost.getMaterialType());
             Double wastage = pCost.getWastage();
 
-            Integer width, height;
+            Double width, height;
             Double labelCost, tagCost, threadCost, sealBagCost, cardBoardCost, smv;
             if (pCost.isIsCustom()) {
                 width = pCost.getCustomWidth();
@@ -99,8 +99,8 @@ public class PillowcaseLogic {
                 Approximate cFitting = new Approximate(arr[0], arr[1]);
                 smv = cFitting.getApproximatedValue(((double) height + width));
             } else {
-                width = Integer.parseInt(pCost.getSize().split("X")[0]);
-                height = Integer.parseInt(pCost.getSize().split("X")[1]);
+                width = Double.parseDouble(pCost.getSize().split("X")[0]);
+                height = Double.parseDouble(pCost.getSize().split("X")[1]);
                 tagCost = PillowcaseDataAccess.getInstance().getTagCost();
                 labelCost = PillowcaseDataAccess.getInstance().getLableCost();
                 sealBagCost = PillowcaseDataAccess.getInstance().getSealBagCost();

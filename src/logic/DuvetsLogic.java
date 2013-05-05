@@ -84,13 +84,13 @@ public class DuvetsLogic {
                 fillingGsm = dCost.getFillingGsm();
             }
 
-            Integer width, height;
+            Double width, height;
             if (dCost.isIsCustom()) {
                 width = dCost.getCustomWidth();
                 height = dCost.getCustomHeight();
             } else {
-                width = Integer.parseInt(dCost.getSize().split("X")[0]);
-                height = Integer.parseInt(dCost.getSize().split("X")[1]);
+                width = Double.parseDouble(dCost.getSize().split("X")[0]);
+                height = Double.parseDouble(dCost.getSize().split("X")[1]);
             }
 
             //Fabric Padding cutting sizes

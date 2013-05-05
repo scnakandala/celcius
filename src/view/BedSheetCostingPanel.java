@@ -729,7 +729,7 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
         if (useCustom) {
             bCost.setIsCustom(useCustom);
             try {
-                Integer width = Integer.parseInt(bedSHeetCustomWidth.getText());
+                Double width = Double.parseDouble(bedSHeetCustomWidth.getText());
                 if (width <= 0 || width > 120) {
                     JOptionPane.showMessageDialog(this, "Width should be between 0 and 120");
                     return;
@@ -741,7 +741,7 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
             }
 
             try {
-                Integer height = Integer.parseInt(bedSheetCustomHeight.getText());
+                Double height = Double.parseDouble(bedSheetCustomHeight.getText());
                 if (height <= 0 || height > 120) {
                     JOptionPane.showMessageDialog(this, "Height should be between 0 and 120");
                     return;

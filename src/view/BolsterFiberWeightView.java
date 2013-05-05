@@ -82,7 +82,7 @@ public class BolsterFiberWeightView extends JPanel {
         columnBinding.setColumnClass(Double.class);
         columnBinding.setEditable(false);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${a1}"));
-        columnBinding.setColumnName("18X18");
+        columnBinding.setColumnName("8X18");
         columnBinding.setColumnClass(Double.class);
         columnBinding.setEditable(false);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${a2}"));
