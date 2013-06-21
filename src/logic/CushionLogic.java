@@ -102,7 +102,7 @@ public class CushionLogic {
             Double cutArea = cutWidth * cutHeight * (1.0 + cCost.getFabricWastage() / 100.0);
             Double fabricCost = materialPrice / (36 * fabricWidth) * cutArea;
 
-            Double fiberCost = fiberPrice * fiberWeight;
+            Double fiberCost = fiberPrice * fiberWeight * ( 1 + cCost.getFiberWastage()/100);
 
             Double materialCost = fabricCost + fiberCost + tagPrice + lablePrice + threadPrice + peBagPrice;
             Double cplm = CushionsDataAccess.getInstance().getCostPerLabourMinute();

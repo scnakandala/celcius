@@ -96,7 +96,7 @@ public class BolsterLogic {
             fiberWeight = fiberWeight * (1.0 + bCost.getFiberWastage() / 100.0);
             Double fiberCost = fiberPrice * fiberWeight;
 
-            Double cutArea = ((diameter + 0.5) * (diameter + 0.5) * 2 + (length + 1) * 3.141 * diameter) * (1.0 + bCost.getFabricWastage() / 100.0);
+            Double cutArea = ((diameter + 0.5) * (diameter + 0.5) * 2 + (length + 1) * 3.141 * (diameter + 0.5)) * (1.0 + bCost.getFabricWastage() / 100.0);
             Double fabricCost = materialPrice / (36 * fabricWidth) * cutArea;
 
             Double materialCost = fabricCost + fiberCost + tagPrice + lablePrice + threadPrice + peBagPrice;
@@ -122,8 +122,8 @@ public class BolsterLogic {
             Double totalCost = materialCost + pohCost + cplmCost;
             bCost.setTotalCost(totalCost);
 
-            Double netSellingPrice = totalCost * ( 1.00 + bCost.getMargin()/100.0);
-            Double taxes = netSellingPrice * (bCost.getTaxRate()/100.0);
+            Double netSellingPrice = totalCost * (1.00 + bCost.getMargin() / 100.0);
+            Double taxes = netSellingPrice * (bCost.getTaxRate() / 100.0);
             Double grossSellingPrice = netSellingPrice + taxes;
 
             bCost.setNetSellingPrice(netSellingPrice);

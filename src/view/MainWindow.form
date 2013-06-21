@@ -381,7 +381,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="bedsheetAccessoriesView1" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="bedsheetView1" alignment="0" pref="374" max="32767" attributes="1"/>
+                                  <Component id="bedsheetView1" alignment="0" max="32767" attributes="1"/>
                               </Group>
                               <EmptySpace pref="353" max="32767" attributes="0"/>
                           </Group>

@@ -150,8 +150,8 @@ public class PillowcaseLogic {
             Double pohCost = smv * poh;
             Double labourCost = smv * cplm;
 
-            Double totalCost = fabricCost + pohCost + labourCost + tagCost + labelCost + sealBagCost + threadCost;
-            Double totalMaterialCost = fabricCost + tagCost + labelCost + sealBagCost + threadCost;
+            Double totalCost = fabricCost + pohCost + labourCost + tagCost + labelCost + sealBagCost + threadCost + cardBoardCost;
+            Double totalMaterialCost = fabricCost + tagCost + labelCost + sealBagCost + threadCost + cardBoardCost;
             Double netSellingPrice = totalCost * (1.00 + pCost.getMargin()/100.0);
             Double taxes = netSellingPrice * (pCost.getTaxRate()/100.0);
             Double grossSellingPrice = netSellingPrice + taxes;

@@ -98,12 +98,12 @@ public class DuvetsLogic {
                     pipingCost = 0.0, fiberCost = 0.0, fiberWeight = 0.0, paddingCost = 0.0;
             if (!dCost.getDuvetType().equalsIgnoreCase("Gel/Feather")) {
                 fabricCutWidth = (width + 1.5) * (1 + widthQuitingShrinkage / 100.0);
-                fabricCutHeight = (height + 1.5) * (1 + hightQuitingShrinkage / 100.0) * 2;
+                fabricCutHeight = (height + 1.5) * (1 + hightQuitingShrinkage / 100.0);
 
                 paddingCutWidth = fabricCutWidth;
                 paddingCutHeight = (height + 1.5) * (1 + hightQuitingShrinkage / 100);
                 //piping cost
-                pipingCost = 2 * (paddingCutHeight + paddingCutWidth) * DuvetsDataAccess.getInstance().getPipingCost() / 36;
+                pipingCost = 2 * (height + width + 3) * DuvetsDataAccess.getInstance().getPipingCost() / 36;
                 //padding cost
                 Double paddingPricePerUnitInch = paddingPrice / (paddingWidth * 36);
                 paddingCost = (paddingPricePerUnitInch * paddingCutHeight * paddingCutWidth) * (1 + paddingWastage / 100.0);
@@ -160,7 +160,7 @@ public class DuvetsLogic {
             dCost.setThreadCost(threadCost);
 
             //fabric cost
-            Double fabricCutArea = fabricCutWidth * fabricCutHeight;
+            Double fabricCutArea = fabricCutWidth * fabricCutHeight * 2;
             Double fabricPricePerUnitInch = fabricPrice / (materialWidth * 36);
             Double fabricCost = (fabricPricePerUnitInch * fabricCutArea) * (1 + fabricWastage / 100);
 
@@ -209,14 +209,14 @@ public class DuvetsLogic {
             }
             dCost.setNonWovenBagCost(nonWovenBagCost);
 
-            Double totalCost = fabricCost + paddingCost + peBagCost + tagCost + lableCost + threadCost + nonWovenBagCost + pipingCost + pohCost + labourCost;
-            Double totalMaterialCost = fabricCost + paddingCost + peBagCost + tagCost + lableCost + threadCost + nonWovenBagCost + pipingCost;
+            Double totalCost = fabricCost + fiberCost + paddingCost + peBagCost + tagCost + lableCost + threadCost + nonWovenBagCost + pipingCost + pohCost + labourCost;
+            Double totalMaterialCost = fabricCost + fiberCost + paddingCost + peBagCost + tagCost + lableCost + threadCost + nonWovenBagCost + pipingCost;
 
             dCost.setTotalCost(totalCost);
             dCost.setTotalMaterialCost(totalMaterialCost);
 
             Double netSellingPrice = totalCost * ( 1.0 + dCost.getMargin()/100.0);
-            Double taxes = totalCost * ( dCost.getTaxRate()/100.0);
+            Double taxes = netSellingPrice * ( dCost.getTaxRate()/100.0);
             Double grossSellingPrice = netSellingPrice + taxes;
 
             dCost.setNetSellingPrice(netSellingPrice);

@@ -132,7 +132,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("celcius");
-        setFont(new java.awt.Font("Times New Roman", 0, 10));
+        setFont(new java.awt.Font("Times New Roman", 0, 10)); // NOI18N
         setIconImage(new ImageIcon(getClass().getResource("/resources/icon_1.png")).getImage());
         setMinimumSize(new java.awt.Dimension(800, 600));
 
@@ -285,7 +285,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(bedsheetAccessoriesView1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bedsheetView1, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE))
+                    .addComponent(bedsheetView1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(353, Short.MAX_VALUE))
         );
 

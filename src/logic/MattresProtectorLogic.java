@@ -132,7 +132,7 @@ public class MattresProtectorLogic {
 
             //Piping cost
             if ((mCost.isIsCustom() && mCost.isIncludePiping()) || !mCost.isIsCustom()) {
-                pipingCost = 2 * (taffataCutWidth + taffataCutHeight) / 36.0 * MattresProtectorsDataAccess.getInstance().getPipingCost();
+                pipingCost = 2 * (width + height + 3)/ 36.0 * MattresProtectorsDataAccess.getInstance().getPipingCost();
             } else {
                 pipingCost = 0.0;
             }
