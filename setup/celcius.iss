@@ -10,14 +10,14 @@
 ; NOTE: The value of AppId uniquely identifies this application.
 ; Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{2E040EC1-653D-42B1-B02E-4FA0BDC72493}
+AppId={{FC65CC7C-D20A-44DD-B921-0AE3702BD034}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisher={#MyAppPublisher}
 DefaultDirName=C:\{#MyAppName}
 DefaultGroupName={#MyAppName}
-LicenseFile=C:\Users\naka\Desktop\license (2).txt
+LicenseFile=C:\Users\naka\Desktop\license.txt
 OutputDir=C:\Users\naka\Desktop
 OutputBaseFilename=setup
 Compression=lzma

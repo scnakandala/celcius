@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <exe4j version="4.5.2" transformSequenceNumber="1">
-  <directoryPresets config="G:/WorkDir/celcius" />
+  <directoryPresets config="G:/WorkDir/celcius/dist" />
   <application name="Costing" distributionSourceDir="C:/Users/naka/Desktop">
     <languages>
       <principalLanguage id="en" customLocalizationFile="" />
@@ -32,6 +32,7 @@
       <archive location="G:/WorkDir/celcius/mysql-connector-java-5.1.23-bin.jar" failOnError="false" />
       <archive location="G:/WorkDir/celcius/toplink-essentials-agent.jar" failOnError="false" />
       <archive location="G:/WorkDir/celcius/toplink-essentials.jar" failOnError="false" />
+      <archive location="G:/WorkDir/celcius/dist/Celcius.jar" failOnError="false" />
     </classPath>
     <nativeLibraryDirectories />
   </java>
