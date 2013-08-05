@@ -89,12 +89,16 @@ public class CushionLogic {
             }
 
             Double fiberWeight = 0.0;
-            double[][] arr = CushionsDataAccess.getInstance().getFiberWeights(cCost.getFiberType());
-            Approximate cFitting = new Approximate(arr[0], arr[1]);
-            fiberWeight = cFitting.getApproximatedValue(((double) height + width));
+            if (cCost.getCustomeFiberWeight() == 0.0) {
+                double[][] arr = CushionsDataAccess.getInstance().getFiberWeights(cCost.getFiberType());
+                Approximate cFitting = new Approximate(arr[0], arr[1]);
+                fiberWeight = cFitting.getApproximatedValue(((double) height + width));
 
-            fiberWeight = fiberWeight * (1.0 + cCost.getFiberWastage() / 100.0);
-
+                fiberWeight = fiberWeight * (1.0 + cCost.getFiberWastage() / 100.0);
+            } else {
+                fiberWeight = cCost.getCustomeFiberWeight();
+            }
+            
             Double cutWidth = 0.0, cutHeight = 0.0;
             cutHeight = height * 2 + 1.0;
             cutWidth = width + 1.0;
@@ -102,9 +106,9 @@ public class CushionLogic {
             Double cutArea = cutWidth * cutHeight * (1.0 + cCost.getFabricWastage() / 100.0);
             Double fabricCost = materialPrice / (36 * fabricWidth) * cutArea;
 
-            Double fiberCost = fiberPrice * fiberWeight * ( 1 + cCost.getFiberWastage()/100);
+            Double fiberCost = fiberPrice * fiberWeight * (1 + cCost.getFiberWastage() / 100);
 
-            Double materialCost = fabricCost + fiberCost + tagPrice + lablePrice + threadPrice + peBagPrice;
+            Double materialCost = fabricCost + fiberCost + tagPrice + lablePrice + threadPrice + peBagPrice + cCost.getOtherCost();
             Double cplm = CushionsDataAccess.getInstance().getCostPerLabourMinute();
             Double poh = CushionsDataAccess.getInstance().getPOHValue();
 
@@ -128,14 +132,14 @@ public class CushionLogic {
             Double totalCost = materialCost + pohCost + cplmCost;
             cCost.setTotalCost(totalCost);
 
-            Double netSellingPrice = totalCost * (1.00 + cCost.getMargin()/100.0);
-            Double taxes = netSellingPrice * (cCost.getTaxRate()/100.0);
+            Double netSellingPrice = totalCost * (1.00 + cCost.getMargin() / 100.0);
+            Double taxes = netSellingPrice * (cCost.getTaxRate() / 100.0);
             Double grossSellingPrice = netSellingPrice + taxes;
 
             cCost.setNetSellingPrice(netSellingPrice);
             cCost.setTaxes(taxes);
             cCost.setGrossSellingPrice(grossSellingPrice);
-            
+
 
         } catch (Exception ex) {
             System.out.println("Error");

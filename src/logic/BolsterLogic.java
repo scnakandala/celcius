@@ -89,17 +89,20 @@ public class BolsterLogic {
             }
 
             Double fiberWeight = 0.0;
-            double[][] arr = BolsterDataAccess.getInstance().getFiberWeights(bCost.getFiberType());
-            Approximate cFitting = new Approximate(arr[0], arr[1]);
-            fiberWeight = cFitting.getApproximatedValue((length * diameter * diameter));
-
-            fiberWeight = fiberWeight * (1.0 + bCost.getFiberWastage() / 100.0);
+            if (bCost.getCustomeFiberWeight() == 0.0) {
+                double[][] arr = BolsterDataAccess.getInstance().getFiberWeights(bCost.getFiberType());
+                Approximate cFitting = new Approximate(arr[0], arr[1]);
+                fiberWeight = cFitting.getApproximatedValue((length * diameter * diameter));
+                fiberWeight = fiberWeight * (1.0 + bCost.getFiberWastage() / 100.0);
+            } else {
+                fiberWeight = bCost.getCustomeFiberWeight();
+            }
             Double fiberCost = fiberPrice * fiberWeight;
 
             Double cutArea = ((diameter + 0.5) * (diameter + 0.5) * 2 + (length + 1) * 3.141 * (diameter + 0.5)) * (1.0 + bCost.getFabricWastage() / 100.0);
             Double fabricCost = materialPrice / (36 * fabricWidth) * cutArea;
 
-            Double materialCost = fabricCost + fiberCost + tagPrice + lablePrice + threadPrice + peBagPrice;
+            Double materialCost = fabricCost + fiberCost + tagPrice + lablePrice + threadPrice + peBagPrice + bCost.getOtherCost();
             Double cplm = CushionsDataAccess.getInstance().getCostPerLabourMinute();
             Double poh = CushionsDataAccess.getInstance().getPOHValue();
 

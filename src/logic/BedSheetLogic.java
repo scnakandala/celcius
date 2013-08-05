@@ -120,7 +120,7 @@ public class BedSheetLogic {
                     fabricCost = fabricCost + (materialWidth - cutWidth) * cutHeight * pricePerUnitInch;
                 }
             } else {
-                if ((materialWidth - Math.max(cutWidth, cutHeight)) < 9) {
+                if ((materialWidth - Math.min(cutWidth, cutHeight)) < 9) {
                     fabricCost = fabricCost + (materialWidth - cutWidth) * cutHeight * pricePerUnitInch;
                 }
             }
@@ -131,8 +131,8 @@ public class BedSheetLogic {
             Double pohCost = smv * poh;
             Double labourCost = smv * cplm;
 
-            Double totalCost = fabricCost + pohCost + labourCost + tagCost + labelCost + sealBagCost + threadCost + cardBoardCost;
-            Double totalMaterialCost = fabricCost + tagCost + labelCost + sealBagCost + threadCost + cardBoardCost;
+            Double totalCost = fabricCost + pohCost + labourCost + tagCost + labelCost + sealBagCost + threadCost + cardBoardCost + bCost.getOtherCost();
+            Double totalMaterialCost = fabricCost + tagCost + labelCost + sealBagCost + threadCost + cardBoardCost + bCost.getOtherCost();
             Double netSellingPrice = totalCost * (1.00 + bCost.getMargin()/100.0);
             Double taxes = netSellingPrice * bCost.getTaxRate()/100.0;
             Double grossSellingPrice = netSellingPrice + taxes;

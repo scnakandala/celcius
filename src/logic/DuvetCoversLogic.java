@@ -151,7 +151,7 @@ public class DuvetCoversLogic {
                     fabricCost = fabricCost + (materialWidth - cutWidth) * cutHeight * pricePerUnitInch;
                 }
             } else {
-                if ((materialWidth - Math.max(cutWidth, cutHeight)) < 9) {
+                if ((materialWidth - Math.min(cutWidth, cutHeight)) < 9) {
                     fabricCost = fabricCost + (materialWidth - cutWidth) * cutHeight * pricePerUnitInch;
                 }
             }
@@ -162,8 +162,8 @@ public class DuvetCoversLogic {
             Double pohCost = smv * poh;
             Double labourCost = smv * cplm;
 
-            Double totalCost = fabricCost + pohCost + labourCost + tagCost + labelCost + sealBagCost + threadCost + zipperCost + velcoCost + buttonCost;
-            Double totalMaterialCost = fabricCost + tagCost + labelCost + sealBagCost + threadCost + zipperCost + velcoCost + buttonCost;
+            Double totalCost = fabricCost + pohCost + labourCost + tagCost + labelCost + sealBagCost + threadCost + zipperCost + velcoCost + buttonCost + dCost.getOtherCost();
+            Double totalMaterialCost = fabricCost + tagCost + labelCost + sealBagCost + threadCost + zipperCost + velcoCost + buttonCost + dCost.getOtherCost();
             Double netSellingPrice = totalCost * (1.00 + dCost.getMargin()/100.0);
             Double taxes = totalCost * (dCost.getTaxRate()/100.0);
             Double grossSellingPrice = netSellingPrice + taxes;

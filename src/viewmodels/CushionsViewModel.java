@@ -14,6 +14,15 @@ public class CushionsViewModel extends AbstractViewModel{
     private boolean includeLable = false;
     private boolean includeTag = false;
     private boolean includePEBag = false;
+    private Double customeFiberWeight = 0.0;
+
+    public Double getCustomeFiberWeight() {
+        return customeFiberWeight;
+    }
+
+    public void setCustomeFiberWeight(Double customeFiberWeight) {
+        this.customeFiberWeight = customeFiberWeight;
+    }
     //outputs
     private Double fabricCost = 0.0;
     private Double fiberCost = 0.0;

@@ -1,4 +1,4 @@
-<?xml version="1.1" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <AuxValues>
@@ -18,8 +18,8 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="cushionsCostingPanel" min="-2" pref="512" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="cushionsCostingPanel" min="-2" pref="504" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="cushionsCPUPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="18" max="32767" attributes="0"/>
           </Group>
@@ -34,7 +34,7 @@
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <Component id="cushionsCPUPanel" min="-2" max="-2" attributes="1"/>
-              <EmptySpace pref="25" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -58,6 +58,8 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="cushionsUseCustom" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="cushionsCustomPanel" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -69,6 +71,7 @@
                               <Component id="jLabel259" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel318" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel317" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel321" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -84,6 +87,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel320" min="-2" max="-2" attributes="0"/>
                                       </Group>
+                                      <Component id="cushionsOtherCostVal" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
@@ -94,32 +98,31 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel269" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="cushionsSizeCombo" alignment="0" pref="214" max="32767" attributes="1"/>
-                                      <Component id="cushionsFabricTypeCombo" alignment="0" pref="214" max="32767" attributes="1"/>
+                                      <Component id="cushionsSizeCombo" alignment="0" max="32767" attributes="1"/>
+                                      <Component id="cushionsFabricTypeCombo" alignment="0" max="32767" attributes="1"/>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="cushionsFabricWastage" min="-2" pref="28" max="-2" attributes="1"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel260" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="cushionsRangeCombo" alignment="0" pref="214" max="32767" attributes="1"/>
-                                      <Component id="cushionsFiberTypeCombo" alignment="0" pref="214" max="32767" attributes="1"/>
+                                      <Component id="cushionsRangeCombo" alignment="0" max="32767" attributes="1"/>
+                                      <Component id="cushionsFiberTypeCombo" alignment="0" max="32767" attributes="1"/>
                                       <Component id="cushionsCustomFiberButton" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                               </Group>
-                          </Group>
-                      </Group>
-                      <Component id="cushionsUseCustom" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="cushionsCustomPanel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="2" attributes="0">
-                              <Component id="cushionsNewCostingButton" alignment="2" min="-2" max="-2" attributes="0"/>
-                              <Component id="cushionsSubmitButton" alignment="2" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="2" attributes="0">
+                                      <Component id="cushionsNewCostingButton" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cushionsSubmitButton" alignment="2" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -184,11 +187,15 @@
                       <Component id="cushionsTaxField" alignment="2" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel318" alignment="2" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel321" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cushionsOtherCostVal" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                   <Component id="cushionsSubmitButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="cushionsNewCostingButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="13" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -262,13 +269,19 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="cushionsIncludeTag" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="cushionsIncludePEBag" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="cushionsIncludePEBag" min="-2" max="-2" attributes="0"/>
                           <Component id="cushionsIncludeLable" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="cushionsIncludeTag" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel263" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel263" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel264" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                              <Component id="cushionsCustomWidthHeight" min="-2" pref="112" max="-2" attributes="1"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="cushionsCustomFiberWeight" min="-2" pref="112" max="-2" attributes="1"/>
+                                  <Component id="cushionsCustomWidthHeight" min="-2" pref="112" max="-2" attributes="1"/>
+                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace pref="93" max="32767" attributes="0"/>
@@ -283,13 +296,18 @@
                           <Component id="jLabel263" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cushionsCustomWidthHeight" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                      <Component id="cushionsIncludeLable" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="cushionsIncludeTag" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel264" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cushionsCustomFiberWeight" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="cushionsIncludeLable" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="cushionsIncludeTag" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="cushionsIncludePEBag" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="31" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -332,6 +350,22 @@
                   <Font name="Times New Roman" size="16" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Include PE Bag"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel264">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Times New Roman" size="16" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Fiber weight(g):"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="cushionsCustomFiberWeight">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Times New Roman" size="16" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="0.0"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -529,6 +563,25 @@
             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="cushionsMarginField.setText(Config.profitMargin);"/>
           </AuxValues>
         </Component>
+        <Component class="javax.swing.JLabel" name="jLabel321">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="16" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Other costs:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="cushionsOtherCostVal">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="16" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="0.0"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="cushionsTaxField.setText(Config.taxesRate);"/>
+          </AuxValues>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="cushionsCPUPanel">
@@ -570,7 +623,7 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
                       <Component id="jLabel241" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="118" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
@@ -579,7 +632,7 @@
                           <Component id="jLabel240" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel242" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="182" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="cushionsFabricCutWidthHeight" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="cushionsSMVValue" alignment="1" min="-2" max="-2" attributes="0"/>

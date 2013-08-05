@@ -74,13 +74,13 @@ public class PillowLogic {
                 Approximate cFitting = new Approximate(arr[0], arr[1]);
                 smv = cFitting.getApproximatedValue(((double) height + width));
 
-                if(!pCost.isIncludeLable()){
+                if (!pCost.isIncludeLable()) {
                     peBagPrice = 0.0;
                 }
-                if(!pCost.isIncludeTag()){
-                    tagPrice=0.0;
+                if (!pCost.isIncludeTag()) {
+                    tagPrice = 0.0;
                 }
-                if(!pCost.isIncludePEBag()){
+                if (!pCost.isIncludePEBag()) {
                     peBagPrice = 0.0;
                 }
             } else {
@@ -90,15 +90,19 @@ public class PillowLogic {
             }
 
             Double fiberWeight = 0.0;
-            double[][] arr = PillowsDataAccess.getInstance().getFiberWeights(pCost.getFiberType());
-            Approximate cFitting = new Approximate(arr[0], arr[1]);
-            fiberWeight = cFitting.getApproximatedValue(((double) height + width));
+            if (pCost.getCustomeFiberWeight() == 0.0) {
+                double[][] arr = PillowsDataAccess.getInstance().getFiberWeights(pCost.getFiberType());
+                Approximate cFitting = new Approximate(arr[0], arr[1]);
+                fiberWeight = cFitting.getApproximatedValue(((double) height + width));
 
-            if (pCost.getPillowType().equalsIgnoreCase("Vacume") && (pCost.getProductRange().equalsIgnoreCase("Classic") || pCost.getProductRange().equalsIgnoreCase("Super"))) {
-                fiberWeight = fiberWeight + 0.05;
+                if (pCost.getPillowType().equalsIgnoreCase("Vacume") && (pCost.getProductRange().equalsIgnoreCase("Classic") || pCost.getProductRange().equalsIgnoreCase("Super"))) {
+                    fiberWeight = fiberWeight + 0.05;
+                }
+                fiberWeight = fiberWeight * (1.0 + pCost.getFiberWastage() / 100.0);
+            } else {
+                fiberWeight = pCost.getCustomeFiberWeight();
             }
-            fiberWeight = fiberWeight*(1.0 + pCost.getFiberWastage()/100.0);
-
+            
             Double cutWidth = 0.0, cutHeight = 0.0;
             if (pCost.getProductRange().equalsIgnoreCase("Gel/Feather")) {
                 cutHeight = (height + 1.0) * 2;
@@ -107,22 +111,22 @@ public class PillowLogic {
             }
             cutWidth = width + 1.0;
 
-            Double cutArea = cutWidth * cutHeight * (1.0 + pCost.getFabricWastage()/100.0);
+            Double cutArea = cutWidth * cutHeight * (1.0 + pCost.getFabricWastage() / 100.0);
             Double fabricCost = materialPrice / (36 * fabricWidth) * cutArea;
 
             Double fiberCost = fiberPrice * fiberWeight;
 
             Double pipingCost = 0.0;
             if (pCost.getProductRange().equalsIgnoreCase("Gel/Feather")) {
-                pipingCost = pipingPrice * 2.0 * (cutHeight + cutWidth)/36.0;
+                pipingCost = pipingPrice * 2.0 * (cutHeight + cutWidth) / 36.0;
             }
 
-            Double materialCost  = fabricCost +  fiberCost + pipingCost + tagPrice + lablePrice + threadPrice + peBagPrice;
+            Double materialCost = fabricCost + fiberCost + pipingCost + tagPrice + lablePrice + threadPrice + peBagPrice + pCost.getOtherCost();
             Double cplm = PillowsDataAccess.getInstance().getCostPerLabourMinute();
             Double poh = PillowsDataAccess.getInstance().getPOHValue();
 
             Double pohCost = poh * smv;
-            Double cplmCost  = cplm * smv;
+            Double cplmCost = cplm * smv;
 
             pCost.setFabricCost(fabricCost);
             pCost.setFiberCost(fiberCost);
@@ -140,16 +144,16 @@ public class PillowLogic {
             pCost.setFabricCuttingHeight(cutHeight);
             pCost.setFabricCuttingWidth(cutWidth);
 
-            Double totalCost  = materialCost + pohCost + cplmCost;
+            Double totalCost = materialCost + pohCost + cplmCost;
             pCost.setTotalCost(totalCost);
-            Double netSellingPrice = totalCost*(1.0+pCost.getMargin()/100.0);
-            Double taxes = netSellingPrice*pCost.getTaxRate()/100.0;
+            Double netSellingPrice = totalCost * (1.0 + pCost.getMargin() / 100.0);
+            Double taxes = netSellingPrice * pCost.getTaxRate() / 100.0;
             Double grossSellingPrice = netSellingPrice + taxes;
 
             pCost.setNetSellingPrice(netSellingPrice);
             pCost.setTaxes(taxes);
             pCost.setGrossSellingPrice(grossSellingPrice);
-            
+
         } catch (Exception ex) {
             System.out.println("Error");
         }

@@ -161,8 +161,8 @@ public class CotSheetLogic {
             Double labourCost = smv * cplm;
 
 
-            Double totalCost = fabricCost + paddingCost + taffataCost + elasticCost + peBagCost + tagCost + labelCost + threadCost + pohCost + labourCost;
-            Double totalMaterialCost = fabricCost + paddingCost + taffataCost + elasticCost + peBagCost + tagCost + labelCost + threadCost;
+            Double totalCost = fabricCost + paddingCost + taffataCost + elasticCost + peBagCost + tagCost + labelCost + threadCost + pohCost + labourCost + cCost.getOtherCost();
+            Double totalMaterialCost = fabricCost + paddingCost + taffataCost + elasticCost + peBagCost + tagCost + labelCost + threadCost + cCost.getOtherCost();
             Double netSellingPrice = totalCost * ( 1.00 + cCost.getMargin()/100.0);
             Double taxes = netSellingPrice * (cCost.getTaxRate()/100.0);
             Double grossSellingPrice = netSellingPrice + taxes;

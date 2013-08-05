@@ -73,6 +73,8 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
         bedSheetTaxField = new javax.swing.JTextField();
         jLabel84 = new javax.swing.JLabel();
         jLabel123 = new javax.swing.JLabel();
+        bedsheetOtherCost = new javax.swing.JLabel();
+        bedSheetOtherCostVal = new javax.swing.JTextField();
         bedSheetCPUPanel = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
@@ -114,13 +116,13 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
 
         bedSheetCostingPanel.setMinimumSize(new java.awt.Dimension(500, 500));
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 24));
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jLabel5.setText("Bed Sheets Costing");
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel6.setText("Select Product Range:");
 
-        bedSheetProductRangeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bedSheetProductRangeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetProductRangeCombo.setModel(new javax.swing.DefaultComboBoxModel(BedSheetLogic.getProductRanges()));
         bedSheetProductRangeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,16 +130,16 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel7.setText("Select Material Type:");
 
-        bedSheetMaterialTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bedSheetMaterialTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetMaterialTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(BedSheetLogic.getMaterialTypes((String)bedSheetProductRangeCombo.getSelectedItem())));
 
-        bedSheetSizeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bedSheetSizeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetSizeCombo.setModel(new javax.swing.DefaultComboBoxModel(BedSheetLogic.getBedSheetSizes()));
 
-        bedSheetWastage.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bedSheetWastage.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetWastage.setText("3");
         bedSheetWastage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,17 +147,17 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel12.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel12.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel12.setText("%");
 
-        bedSheetSizeLable.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bedSheetSizeLable.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetSizeLable.setText("Select Size:");
 
-        jLabel11.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel11.setText("Wastage:");
 
         bedSheetUseCustom.setBackground(new java.awt.Color(204, 204, 204));
-        bedSheetUseCustom.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bedSheetUseCustom.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetUseCustom.setText("Use Custom Sizes");
         bedSheetUseCustom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,42 +165,42 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
             }
         });
 
-        bedSheetCustomPanel.setFont(new java.awt.Font("Tahoma", 0, 16));
+        bedSheetCustomPanel.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         bedSheetCustomPanel.setPreferredSize(new java.awt.Dimension(411, 206));
         bedSheetCustomPanel.setVisible(false);
         bedSheetCustomPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel9.setText("Width (inches) :");
         bedSheetCustomPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 16, -1, -1));
 
-        jLabel10.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel10.setText("Height (inches):");
         bedSheetCustomPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 52, -1, -1));
 
-        bedSHeetCustomWidth.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bedSHeetCustomWidth.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetCustomPanel.add(bedSHeetCustomWidth, new org.netbeans.lib.awtextra.AbsoluteConstraints(199, 11, 96, -1));
 
-        bedSheetCustomHeight.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bedSheetCustomHeight.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetCustomPanel.add(bedSheetCustomHeight, new org.netbeans.lib.awtextra.AbsoluteConstraints(199, 49, 96, -1));
 
-        bedSheetIncludeLable.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bedSheetIncludeLable.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetIncludeLable.setText("Include Lable");
         bedSheetCustomPanel.add(bedSheetIncludeLable, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 87, -1, -1));
 
-        bedSheetIncludeTag.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bedSheetIncludeTag.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetIncludeTag.setText("Include Tag");
         bedSheetCustomPanel.add(bedSheetIncludeTag, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
-        bedSheetIncludeSealBag.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bedSheetIncludeSealBag.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetIncludeSealBag.setText("Include Seal Bag");
         bedSheetCustomPanel.add(bedSheetIncludeSealBag, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
 
-        bedSheetIncludeCardBoard.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bedSheetIncludeCardBoard.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetIncludeCardBoard.setText("Include Cardboard");
         bedSheetCustomPanel.add(bedSheetIncludeCardBoard, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
 
-        bedSheetSubmitButton.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bedSheetSubmitButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetSubmitButton.setText("Find Cost Per Unit");
         bedSheetSubmitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -206,7 +208,7 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
             }
         });
 
-        bedSheetCostingPanelNewCostingButton.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bedSheetCostingPanelNewCostingButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetCostingPanelNewCostingButton.setText("New Costing");
         bedSheetCostingPanelNewCostingButton.setVisible(false);
         bedSheetCostingPanelNewCostingButton.addActionListener(new java.awt.event.ActionListener() {
@@ -215,23 +217,30 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel30.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel30.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel30.setText("Margin:");
 
-        jLabel55.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel55.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel55.setText("Taxes:");
 
-        bedSheetMarginField.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bedSheetMarginField.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetMarginField.setText(Config.profitMargin);
 
-        bedSheetTaxField.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bedSheetTaxField.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetTaxField.setText(Config.taxesRate);
 
-        jLabel84.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel84.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel84.setText("%");
 
-        jLabel123.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel123.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel123.setText("%");
+
+        bedsheetOtherCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        bedsheetOtherCost.setText("Other costs");
+
+        bedSheetOtherCostVal.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        bedSheetOtherCostVal.setText("0.00");
+        bedSheetTaxField.setText(Config.taxesRate);
 
         javax.swing.GroupLayout bedSheetCostingPanelLayout = new javax.swing.GroupLayout(bedSheetCostingPanel);
         bedSheetCostingPanel.setLayout(bedSheetCostingPanelLayout);
@@ -271,9 +280,11 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
                             .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
                                 .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel30)
-                                    .addComponent(jLabel55))
-                                .addGap(149, 149, 149)
+                                    .addComponent(jLabel55)
+                                    .addComponent(bedsheetOtherCost))
+                                .addGap(125, 125, 125)
                                 .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(bedSheetOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
                                         .addComponent(bedSheetTaxField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -281,12 +292,12 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
                                     .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
                                         .addComponent(bedSheetMarginField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel84))))
-                            .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
-                                .addGap(126, 126, 126)
-                                .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                                    .addComponent(bedSheetSubmitButton)
-                                    .addComponent(bedSheetCostingPanelNewCostingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                        .addComponent(jLabel84))))))
+                    .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
+                        .addGap(171, 171, 171)
+                        .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(bedSheetSubmitButton)
+                            .addComponent(bedSheetCostingPanelNewCostingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(54, Short.MAX_VALUE))
         );
         bedSheetCostingPanelLayout.setVerticalGroup(
@@ -335,35 +346,39 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
                     .addComponent(jLabel55)
                     .addComponent(bedSheetTaxField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel123))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bedsheetOtherCost)
+                    .addComponent(bedSheetOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
                 .addComponent(bedSheetSubmitButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(bedSheetCostingPanelNewCostingButton)
-                .addContainerGap(198, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         bedSheetCPUPanel.setVisible(false);
         bedSheetCPUPanel.setPreferredSize(new java.awt.Dimension(500, 800));
 
-        jLabel17.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel17.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel17.setText("Cutting Width:");
 
-        jLabel23.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel23.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel23.setText("Cutting Height:");
 
-        bedSheetCutWidth.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bedSheetCutWidth.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetCutWidth.setText("0.00");
 
-        bedSheetCutHeight.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bedSheetCutHeight.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetCutHeight.setText("0.00");
 
-        jLabel24.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel24.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel24.setText("SMV Value:");
 
-        bedSheetSMVValue.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bedSheetSMVValue.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetSMVValue.setText("0.00");
 
-        jLabel25.setFont(new java.awt.Font("Times New Roman", 0, 24));
+        jLabel25.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jLabel25.setText("Production Parameters");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -411,85 +426,85 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
-        jLabel14.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel14.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel14.setText("Fabric Cost:");
 
-        jLabel15.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel15.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel15.setText("Thread Cost:");
 
-        jLabel13.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel13.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel13.setText("Lable Cost:");
 
-        jLabel16.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel16.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel16.setText("Tag Cost:");
 
-        jLabel18.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel18.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel18.setText("Seal Bag Cost:");
 
-        jLabel20.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        jLabel20.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel20.setText("POH:");
 
-        jLabel19.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        jLabel19.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel19.setText("Labour Cost:");
 
-        jLabel21.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        jLabel21.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel21.setText("Toatal Cost Per Unit:");
 
-        bedSheetFabricCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bedSheetFabricCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetFabricCost.setText("0.00");
 
-        bedSheetThreadCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bedSheetThreadCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetThreadCost.setText("0.00");
 
-        bedSheetLableCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bedSheetLableCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetLableCost.setText("0.00");
 
-        bedSheetTagCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bedSheetTagCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetTagCost.setText("0.00");
 
-        bedSheetSealBagCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bedSheetSealBagCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetSealBagCost.setText("0.00");
 
-        bedSheetPOH.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        bedSheetPOH.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         bedSheetPOH.setText("0.00");
 
-        bedSheetLabourCost.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        bedSheetLabourCost.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         bedSheetLabourCost.setText("0.00");
 
-        bedSheetToatalCost.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        bedSheetToatalCost.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         bedSheetToatalCost.setText("0.00");
 
-        jLabel22.setFont(new java.awt.Font("Times New Roman", 0, 24));
+        jLabel22.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jLabel22.setText("Cost Per Unit");
 
-        jLabel26.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel26.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel26.setText("Card Board Cost: ");
 
-        bedSheetCardBoardCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        bedSheetCardBoardCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetCardBoardCost.setText("0.00");
 
-        jLabel77.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        jLabel77.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel77.setText("Total Material Cost");
 
-        bedSheetTotalMaterialCost.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        bedSheetTotalMaterialCost.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         bedSheetTotalMaterialCost.setText("0.00");
 
-        jLabel325.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        jLabel325.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel325.setText("Net Selling Price:");
 
-        jLabel326.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        jLabel326.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel326.setText("Taxes:");
 
-        jLabel327.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        jLabel327.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel327.setText("Gross Selling Price:");
 
-        bedSheetNetSellingPrice.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        bedSheetNetSellingPrice.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         bedSheetNetSellingPrice.setText("0.00");
 
-        bedSheetTaxes.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        bedSheetTaxes.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         bedSheetTaxes.setText("0.00");
 
-        bedSheetGrossSellingPrice.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        bedSheetGrossSellingPrice.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         bedSheetGrossSellingPrice.setText("0.00");
 
         bedSheetExportButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/export.png"))); // NOI18N
@@ -652,7 +667,7 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(bedSheetCostingPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(bedSheetCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bedSheetCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -698,6 +713,18 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
             bCost.setWastage(wastage);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Please enter a valid wastage value");
+            return;
+        }
+        
+        try {
+            double otherCost = Double.parseDouble(bedSheetOtherCostVal.getText());
+            if (otherCost < 0) {
+                JOptionPane.showMessageDialog(this, "Please enter a valid value for other costs");
+                return;
+            }
+            bCost.setOtherCost(otherCost);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid value for other costs");
             return;
         }
 
@@ -797,24 +824,24 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
         model.setGrossSellingPrice(bReturn.getGrossSellingPrice());
 
         bedSheetCPUPanel.setVisible(true);
-        bedSheetCostingPanelNewCostingButton.setVisible(true);
-        bedSheetSubmitButton.setVisible(false);
-
-        bedSheetProductRangeCombo.setEnabled(false);
-        bedSheetMaterialTypeCombo.setEnabled(false);
-        bedSheetSizeCombo.setEnabled(false);
-        bedSheetWastage.setEnabled(false);
-
-        bedSheetUseCustom.setEnabled(false);
-        bedSHeetCustomWidth.setEnabled(false);
-        bedSheetCustomHeight.setEnabled(false);
-
-        bedSheetIncludeCardBoard.setEnabled(false);
-        bedSheetIncludeLable.setEnabled(false);
-        bedSheetIncludeSealBag.setEnabled(false);
-        bedSheetIncludeTag.setEnabled(false);
-        bedSheetMarginField.setEnabled(false);
-        bedSheetTaxField.setEnabled(false);
+//        bedSheetCostingPanelNewCostingButton.setVisible(true);
+//        bedSheetSubmitButton.setVisible(false);
+//
+//        bedSheetProductRangeCombo.setEnabled(false);
+//        bedSheetMaterialTypeCombo.setEnabled(false);
+//        bedSheetSizeCombo.setEnabled(false);
+//        bedSheetWastage.setEnabled(false);
+//
+//        bedSheetUseCustom.setEnabled(false);
+//        bedSHeetCustomWidth.setEnabled(false);
+//        bedSheetCustomHeight.setEnabled(false);
+//
+//        bedSheetIncludeCardBoard.setEnabled(false);
+//        bedSheetIncludeLable.setEnabled(false);
+//        bedSheetIncludeSealBag.setEnabled(false);
+//        bedSheetIncludeTag.setEnabled(false);
+//        bedSheetMarginField.setEnabled(false);
+//        bedSheetTaxField.setEnabled(false);
 }//GEN-LAST:event_bedSheetSubmitButtonActionPerformed
 
     private void bedSheetCostingPanelNewCostingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bedSheetCostingPanelNewCostingButtonActionPerformed
@@ -897,6 +924,7 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
     private javax.swing.JTextField bedSheetMarginField;
     private javax.swing.JComboBox bedSheetMaterialTypeCombo;
     private javax.swing.JLabel bedSheetNetSellingPrice;
+    private javax.swing.JTextField bedSheetOtherCostVal;
     private javax.swing.JLabel bedSheetPOH;
     private javax.swing.JComboBox bedSheetProductRangeCombo;
     private javax.swing.JLabel bedSheetSMVValue;
@@ -912,6 +940,7 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel bedSheetTotalMaterialCost;
     private javax.swing.JRadioButton bedSheetUseCustom;
     private javax.swing.JTextField bedSheetWastage;
+    private javax.swing.JLabel bedsheetOtherCost;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

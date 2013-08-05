@@ -16,6 +16,15 @@ public class PillowsViewModel extends AbstractViewModel{
     private boolean includeLable = false;
     private boolean includeTag = false;
     private boolean includePEBag = false;
+
+    public Double getCustomeFiberWeight() {
+        return customeFiberWeight;
+    }
+
+    public void setCustomeFiberWeight(Double customeFiberWeight) {
+        this.customeFiberWeight = customeFiberWeight;
+    }
+    private Double customeFiberWeight = 0.0;
     //outputs
     private Double fabricCost = 0.0;
     private Double fiberCost = 0.0;

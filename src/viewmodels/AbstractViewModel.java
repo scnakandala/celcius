@@ -4,6 +4,15 @@ public class AbstractViewModel {
     //inputs
     private Double margin = 0.0;
     private Double taxRate = 0.0;
+    private Double otherCost = 0.0;
+
+    public Double getOtherCost() {
+        return otherCost;
+    }
+
+    public void setOtherCost(Double otherCost) {
+        this.otherCost = otherCost;
+    }
 
 
     //outputs

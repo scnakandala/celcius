@@ -1,4 +1,4 @@
-<?xml version="1.1" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <AuxValues>
@@ -31,7 +31,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="cotSheetCostingPanel4" pref="663" max="32767" attributes="1"/>
+                      <Component id="cotSheetCostingPanel4" pref="677" max="32767" attributes="1"/>
                   </Group>
                   <Component id="bolsterCPUPanel" alignment="0" min="-2" max="-2" attributes="1"/>
               </Group>
@@ -70,40 +70,38 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel291" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="bolsterSizeCombo" alignment="0" pref="215" max="32767" attributes="1"/>
-                              <Component id="bolsterFabricTypeCombo" alignment="0" pref="215" max="32767" attributes="1"/>
+                              <Component id="bolsterSizeCombo" alignment="0" max="32767" attributes="1"/>
+                              <Component id="bolsterFabricTypeCombo" alignment="0" max="32767" attributes="1"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="bolsterFabricWastage" min="-2" pref="28" max="-2" attributes="1"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel284" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="bolsterRangeCombo" alignment="0" pref="215" max="32767" attributes="1"/>
-                              <Component id="bolsterFiberTypeCombo" alignment="0" pref="215" max="32767" attributes="1"/>
+                              <Component id="bolsterRangeCombo" alignment="0" max="32767" attributes="1"/>
+                              <Component id="bolsterFiberTypeCombo" alignment="0" max="32767" attributes="1"/>
                               <Component id="bolsterCustomFiberButton" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="bolsterCustomPanel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="bolsterUseCustom" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
-                          <Component id="jLabel282" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="bolsterCustomPanel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="bolsterUseCustom" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
+                                  <Component id="jLabel282" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="179" max="-2" attributes="0"/>
                                   <Component id="bolsterNewCostingButton" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="bolsterSubmitButton" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -113,8 +111,9 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel322" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel321" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel325" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="150" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="bolsterTaxField" min="-2" pref="86" max="-2" attributes="0"/>
@@ -126,8 +125,14 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel324" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="bolsterOtherCostVal" min="-2" pref="86" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
+                  <Component id="bolsterSubmitButton" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -192,9 +197,14 @@
                       <Component id="jLabel323" alignment="2" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel322" alignment="2" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel325" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="bolsterOtherCostVal" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="bolsterSubmitButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                   <Component id="bolsterNewCostingButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -281,11 +291,13 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel286" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel292" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel293" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="bolsterCustomDiameter" alignment="0" pref="183" max="32767" attributes="1"/>
-                          <Component id="bolsterCustomLength" alignment="0" pref="183" max="32767" attributes="1"/>
+                          <Component id="bolsterCustomDiameter" alignment="0" pref="142" max="32767" attributes="1"/>
+                          <Component id="bolsterCustomLength" alignment="0" pref="142" max="32767" attributes="1"/>
+                          <Component id="bolsterCustomFiberWeight" max="32767" attributes="1"/>
                       </Group>
                       <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                   </Group>
@@ -299,10 +311,15 @@
                           <Component id="jLabel286" alignment="2" min="-2" max="-2" attributes="0"/>
                           <Component id="bolsterCustomDiameter" alignment="2" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="11" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="2" attributes="0">
-                          <Component id="jLabel292" alignment="2" min="-2" max="-2" attributes="0"/>
-                          <Component id="bolsterCustomLength" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel292" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bolsterCustomLength" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel293" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bolsterCustomFiberWeight" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="bolsterIncludeLable" min="-2" max="-2" attributes="0"/>
@@ -368,6 +385,22 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="16" style="0"/>
                 </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel293">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Times New Roman" size="16" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Fiber weight (g):"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="bolsterCustomFiberWeight">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Times New Roman" size="16" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="0.0"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -565,6 +598,25 @@
             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="bolsterMarginField.setText(Config.profitMargin);"/>
           </AuxValues>
         </Component>
+        <Component class="javax.swing.JLabel" name="jLabel325">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="16" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Other costs:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="bolsterOtherCostVal">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="16" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="0.00"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="bolsterTaxField.setText(Config.taxesRate);"/>
+          </AuxValues>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="bolsterCPUPanel">
@@ -591,7 +643,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel45" min="-2" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                  <Component id="jPanel44" min="-2" pref="156" max="32767" attributes="0"/>
+                  <Component id="jPanel44" min="-2" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               </Group>
           </Group>

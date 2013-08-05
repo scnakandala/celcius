@@ -56,6 +56,8 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
         jLabel299 = new javax.swing.JLabel();
         jLabel300 = new javax.swing.JLabel();
         duvetCoversMarginField = new javax.swing.JTextField();
+        jLabel301 = new javax.swing.JLabel();
+        duvetCoversOtherCostVal = new javax.swing.JTextField();
         duvetCversCPUPanel2 = new javax.swing.JPanel();
         jPanel21 = new javax.swing.JPanel();
         jLabel68 = new javax.swing.JLabel();
@@ -103,13 +105,13 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
 
         duvetCoversCostingPanel.setMinimumSize(new java.awt.Dimension(500, 573));
 
-        jLabel37.setFont(new java.awt.Font("Times New Roman", 0, 24));
+        jLabel37.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jLabel37.setText("Duvet Covers Costing");
 
-        jLabel52.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel52.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel52.setText("Select Product Range:");
 
-        dovetCoversProductRangeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversProductRangeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversProductRangeCombo.setModel(new javax.swing.DefaultComboBoxModel(DuvetCoversLogic.getProductRanges()));
         dovetCoversProductRangeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,13 +119,13 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel53.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel53.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel53.setText("Select Material Type:");
 
-        dovetCoversMaterialTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversMaterialTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversMaterialTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(logic.DuvetCoversLogic.getMaterialTypes((String)dovetCoversProductRangeCombo.getSelectedItem())));
 
-        dovetCoversSizeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversSizeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversSizeCombo.setModel(new javax.swing.DefaultComboBoxModel(logic.DuvetCoversLogic.getDuvetCoverSizes()));
         dovetCoversSizeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,7 +133,7 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
             }
         });
 
-        dovetCoversWastage.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversWastage.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversWastage.setText("3");
         dovetCoversWastage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,17 +141,17 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel54.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel54.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel54.setText("%");
 
-        duvetCoverSizeLable.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        duvetCoverSizeLable.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         duvetCoverSizeLable.setText("Select Size:");
 
-        jLabel56.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel56.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel56.setText("Wastage:");
 
         dovetCoversUseCustom.setBackground(new java.awt.Color(204, 204, 204));
-        dovetCoversUseCustom.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversUseCustom.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversUseCustom.setText("Use Custom Sizes");
         dovetCoversUseCustom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,32 +159,32 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel57.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel57.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel57.setText("Width (inches) :");
 
-        jLabel58.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel58.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel58.setText("Height (inches):");
 
-        dovetCoversCustomWidth.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversCustomWidth.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
-        dovetCoversCustomHeight.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversCustomHeight.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
-        dovetCoversIncludeLable.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversIncludeLable.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversIncludeLable.setText("Include Lable");
 
-        dovetCoversIncludeTag.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversIncludeTag.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversIncludeTag.setText("Include Tag");
 
-        dovetCoversIncludeSealBag.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversIncludeSealBag.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversIncludeSealBag.setText("Include Seal Bag");
 
-        dovetCoversIncludeCardBoard.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversIncludeCardBoard.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversIncludeCardBoard.setText("Include Cardboard");
 
-        dovetCoversCustomFlapLable.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversCustomFlapLable.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversCustomFlapLable.setText("Flap  (inches):");
 
-        dovetCoverCustomFlap.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoverCustomFlap.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoverCustomFlap.setText("10");
 
         dovetCoversCustomPanel.setVisible(false);
@@ -208,7 +210,7 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
                             .addComponent(dovetCoverCustomFlap)
                             .addComponent(dovetCoversCustomHeight)
                             .addComponent(dovetCoversCustomWidth, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         dovetCoversCustomPanelLayout.setVerticalGroup(
             dovetCoversCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,7 +223,6 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
                 .addGroup(dovetCoversCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(dovetCoversCustomHeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel58))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(dovetCoversCustomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(dovetCoversCustomPanelLayout.createSequentialGroup()
                         .addGap(37, 37, 37)
@@ -241,7 +242,7 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
         dovetCoversCustomFlapLable.setVisible(false);
         dovetCoverCustomFlap.setVisible(false);
 
-        dovetCoversSubmitButton.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversSubmitButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversSubmitButton.setText("Find Cost Per Unit");
         dovetCoversSubmitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -249,10 +250,10 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel73.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel73.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel73.setText("Select Duvet Cover Type:");
 
-        dovetCoversTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(logic.DuvetCoversLogic.getDuvetCoverTypes()));
         dovetCoversTypeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -260,7 +261,7 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
             }
         });
 
-        dovetCoversNewCostingButton.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversNewCostingButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversNewCostingButton.setText("New Costing");
         dovetCoversNewCostingButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -268,39 +269,52 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel297.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel297.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel297.setText("Margin:");
 
-        jLabel298.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel298.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel298.setText("Taxes:");
 
-        duvetCoversTaxField.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        duvetCoversTaxField.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         duvetCoversTaxField.setText(Config.taxesRate);
 
-        jLabel299.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel299.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel299.setText("%");
 
-        jLabel300.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel300.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel300.setText("%");
 
-        duvetCoversMarginField.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        duvetCoversMarginField.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         duvetCoversMarginField.setText(Config.profitMargin);
+
+        jLabel301.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel301.setText("Other cost:");
+
+        duvetCoversOtherCostVal.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        duvetCoversOtherCostVal.setText("0.0");
+        duvetCoversTaxField.setText(Config.taxesRate);
 
         javax.swing.GroupLayout duvetCoversCostingPanelLayout = new javax.swing.GroupLayout(duvetCoversCostingPanel);
         duvetCoversCostingPanel.setLayout(duvetCoversCostingPanelLayout);
         duvetCoversCostingPanelLayout.setHorizontalGroup(
             duvetCoversCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(duvetCoversCostingPanelLayout.createSequentialGroup()
+                .addGap(171, 171, 171)
+                .addGroup(duvetCoversCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(dovetCoversSubmitButton)
+                    .addComponent(dovetCoversNewCostingButton))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(duvetCoversCostingPanelLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(duvetCoversCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(duvetCoversCostingPanelLayout.createSequentialGroup()
                         .addComponent(dovetCoversUseCustom)
-                        .addContainerGap())
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(duvetCoversCostingPanelLayout.createSequentialGroup()
                         .addGroup(duvetCoversCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel298)
                             .addComponent(jLabel297))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 186, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(duvetCoversCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(duvetCoversCostingPanelLayout.createSequentialGroup()
                                 .addComponent(duvetCoversTaxField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -332,17 +346,16 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel54))
                                     .addGroup(duvetCoversCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(dovetCoversTypeCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, 208, Short.MAX_VALUE)
-                                        .addComponent(dovetCoversMaterialTypeCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, 208, Short.MAX_VALUE)
-                                        .addComponent(dovetCoversProductRangeCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, 208, Short.MAX_VALUE)
-                                        .addComponent(dovetCoversSizeCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, 208, Short.MAX_VALUE)))))
-                        .addGap(28, 28, 28))))
-            .addGroup(duvetCoversCostingPanelLayout.createSequentialGroup()
-                .addGap(171, 171, 171)
-                .addGroup(duvetCoversCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(dovetCoversSubmitButton)
-                    .addComponent(dovetCoversNewCostingButton))
-                .addContainerGap(182, Short.MAX_VALUE))
+                                        .addComponent(dovetCoversTypeCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(dovetCoversMaterialTypeCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(dovetCoversProductRangeCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(dovetCoversSizeCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                        .addGap(28, 28, 28))
+                    .addGroup(duvetCoversCostingPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel301)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(duvetCoversOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(151, 151, 151))))
         );
         duvetCoversCostingPanelLayout.setVerticalGroup(
             duvetCoversCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -385,36 +398,40 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
                     .addGroup(duvetCoversCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                         .addComponent(jLabel299)
                         .addComponent(duvetCoversTaxField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(duvetCoversCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel301)
+                    .addComponent(duvetCoversOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
                 .addComponent(dovetCoversSubmitButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dovetCoversNewCostingButton)
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         dovetCoversNewCostingButton.setVisible(false);
 
         jPanel21.setPreferredSize(new java.awt.Dimension(400, 157));
 
-        jLabel68.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel68.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel68.setText("Cutting Width:");
 
-        jLabel69.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel69.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel69.setText("Cutting Height:");
 
-        dovetCoversSMVValue.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversSMVValue.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversSMVValue.setText("0.00");
 
-        jLabel70.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel70.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel70.setText("SMV Value:");
 
-        dovetCoversCutWidth.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversCutWidth.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversCutWidth.setText("0.00");
 
-        jLabel71.setFont(new java.awt.Font("Times New Roman", 0, 24));
+        jLabel71.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jLabel71.setText("Production Parameters");
 
-        dovetCoversCutHeight.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversCutHeight.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversCutHeight.setText("0.00");
 
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
@@ -441,155 +458,156 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel21Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel71, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14)
-                .addComponent(jLabel68)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel69)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel70)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
-                .addContainerGap(53, Short.MAX_VALUE)
-                .addComponent(dovetCoversCutWidth)
-                .addGap(18, 18, 18)
-                .addComponent(dovetCoversCutHeight)
-                .addGap(18, 18, 18)
-                .addComponent(dovetCoversSMVValue)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel71, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel68)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel69)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel70))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(dovetCoversCutWidth)
+                        .addGap(18, 18, 18)
+                        .addComponent(dovetCoversCutHeight)
+                        .addGap(18, 18, 18)
+                        .addComponent(dovetCoversSMVValue)))
                 .addContainerGap())
         );
 
         jLabel66.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel66.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        jLabel66.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel66.setText("Toatal Cost Per Unit:");
 
         jLabel61.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel61.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel61.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel61.setText("Lable Cost:");
 
         dovetCoversCardBoardCost.setBackground(new java.awt.Color(204, 204, 204));
-        dovetCoversCardBoardCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversCardBoardCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversCardBoardCost.setText("0.00");
 
         dovetCoversPOH.setBackground(new java.awt.Color(204, 204, 204));
-        dovetCoversPOH.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversPOH.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversPOH.setText("0.00");
 
         jLabel63.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel63.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel63.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel63.setText("Seal Bag Cost:");
 
         dovetCoversSealBagCost.setBackground(new java.awt.Color(204, 204, 204));
-        dovetCoversSealBagCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversSealBagCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversSealBagCost.setText("0.00");
 
         jLabel67.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel67.setFont(new java.awt.Font("Times New Roman", 0, 24));
+        jLabel67.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jLabel67.setText("Cost Per Unit");
 
         dovetCoversVelcoCost.setBackground(new java.awt.Color(204, 204, 204));
-        dovetCoversVelcoCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversVelcoCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversVelcoCost.setText("0.00");
 
         jLabel60.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel60.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel60.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel60.setText("Thread Cost:");
 
         jLabel72.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel72.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel72.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel72.setText("Card Board Cost: ");
 
         jLabel79.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel79.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        jLabel79.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel79.setText("Total Material Cost");
 
         dovetCoversLableCost.setBackground(new java.awt.Color(204, 204, 204));
-        dovetCoversLableCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversLableCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversLableCost.setText("0.00");
 
         dovetCoversZipperCost.setBackground(new java.awt.Color(204, 204, 204));
-        dovetCoversZipperCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversZipperCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversZipperCost.setText("0.00");
 
         dovetCoversTagCost.setBackground(new java.awt.Color(204, 204, 204));
-        dovetCoversTagCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversTagCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversTagCost.setText("0.00");
 
         dovetCoversTotalMaterialCost.setBackground(new java.awt.Color(204, 204, 204));
-        dovetCoversTotalMaterialCost.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        dovetCoversTotalMaterialCost.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         dovetCoversTotalMaterialCost.setText("0.00");
 
         jLabel76.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel76.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel76.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel76.setText("Velco Cost");
 
         dovetCoversThreadCost.setBackground(new java.awt.Color(204, 204, 204));
-        dovetCoversThreadCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversThreadCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversThreadCost.setText("0.00");
 
         dovetCoversToatalCost.setBackground(new java.awt.Color(204, 204, 204));
-        dovetCoversToatalCost.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        dovetCoversToatalCost.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         dovetCoversToatalCost.setText("0.00");
 
         jLabel64.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel64.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel64.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel64.setText("POH:");
 
         dovetCoversFabricCost.setBackground(new java.awt.Color(204, 204, 204));
-        dovetCoversFabricCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversFabricCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversFabricCost.setText("0.00");
 
         jLabel75.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel75.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel75.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel75.setText("Zipper Cost");
 
         jLabel65.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel65.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel65.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel65.setText("Labour Cost:");
 
         jLabel74.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel74.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel74.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel74.setText("Button Cost");
 
         dovetCoversLabourCost.setBackground(new java.awt.Color(204, 204, 204));
-        dovetCoversLabourCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversLabourCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversLabourCost.setText("0.00");
 
         dovetCoversButtonCost.setBackground(new java.awt.Color(204, 204, 204));
-        dovetCoversButtonCost.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        dovetCoversButtonCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversButtonCost.setText("0.00");
 
         jLabel62.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel62.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel62.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel62.setText("Tag Cost:");
 
         jLabel59.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel59.setFont(new java.awt.Font("Times New Roman", 0, 16));
+        jLabel59.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel59.setText("Fabric Cost:");
 
         jLabel331.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel331.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        jLabel331.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel331.setText("Net Selling Price:");
 
         jLabel332.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel332.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        jLabel332.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel332.setText("Taxes:");
 
         jLabel333.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel333.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        jLabel333.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel333.setText("Gross Selling Price:");
 
         dovetCoversNetSellingPrice.setBackground(new java.awt.Color(204, 204, 204));
-        dovetCoversNetSellingPrice.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        dovetCoversNetSellingPrice.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         dovetCoversNetSellingPrice.setText("0.00");
 
         dovetCoversTaxes.setBackground(new java.awt.Color(204, 204, 204));
-        dovetCoversTaxes.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        dovetCoversTaxes.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         dovetCoversTaxes.setText("0.00");
 
         dovetCoversGrossSellingPrice.setBackground(new java.awt.Color(204, 204, 204));
-        dovetCoversGrossSellingPrice.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        dovetCoversGrossSellingPrice.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         dovetCoversGrossSellingPrice.setText("0.00");
 
         duvetExportButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/export.png"))); // NOI18N
@@ -829,6 +847,18 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
         }
 
         try {
+            double otherCost = Double.parseDouble(duvetCoversOtherCostVal.getText());
+            if (otherCost < 0) {
+                JOptionPane.showMessageDialog(this, "Please enter a valid value for other costs");
+                return;
+            }
+            dCost.setOtherCost(otherCost);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid value for other costs");
+            return;
+        }
+
+        try {
             double margin = Double.parseDouble(duvetCoversMarginField.getText());
             if (margin < 0) {
                 JOptionPane.showMessageDialog(this, "Profit margin should be a positive value");
@@ -927,9 +957,9 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
         model = new ExportModel();
         model.setProductName("Duvet Cover");
         model.setProductRange(dReturn.getProductRange());
-                if(dReturn.isIsCustom()){
-            model.setProductSize(dReturn.getCustomWidth()+"X"+dReturn.getCustomHeight());
-        }else{
+        if (dReturn.isIsCustom()) {
+            model.setProductSize(dReturn.getCustomWidth() + "X" + dReturn.getCustomHeight());
+        } else {
             model.setProductSize(dReturn.getSize());
         }
         model.setTotalMaterialCost(dReturn.getTotalMaterialCost());
@@ -940,29 +970,29 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
         model.setTaxes(dReturn.getTaxes());
         model.setGrossSellingPrice(dReturn.getGrossSellingPrice());
 
-        dovetCoversSubmitButton.setVisible(false);
-        dovetCoversNewCostingButton.setVisible(true);
+//        dovetCoversSubmitButton.setVisible(false);
+//        dovetCoversNewCostingButton.setVisible(true);
         duvetCversCPUPanel2.setVisible(true);
 
         //disabling the input fields
-        dovetCoversProductRangeCombo.setEnabled(false);
-        dovetCoversMaterialTypeCombo.setEnabled(false);
-        dovetCoversTypeCombo.setEnabled(false);
-        dovetCoversSizeCombo.setEnabled(false);
-
-        dovetCoversWastage.setEnabled(false);
-
-        dovetCoversUseCustom.setEnabled(false);
-        dovetCoversCustomHeight.setEnabled(false);
-        dovetCoversCustomWidth.setEnabled(false);
-        dovetCoverCustomFlap.setEnabled(false);
-
-        dovetCoversIncludeCardBoard.setEnabled(false);
-        dovetCoversIncludeLable.setEnabled(false);
-        dovetCoversIncludeSealBag.setEnabled(false);
-        dovetCoversIncludeTag.setEnabled(false);
-        duvetCoversMarginField.setEnabled(false);
-        duvetCoversTaxField.setEnabled(false);
+//        dovetCoversProductRangeCombo.setEnabled(false);
+//        dovetCoversMaterialTypeCombo.setEnabled(false);
+//        dovetCoversTypeCombo.setEnabled(false);
+//        dovetCoversSizeCombo.setEnabled(false);
+//
+//        dovetCoversWastage.setEnabled(false);
+//
+//        dovetCoversUseCustom.setEnabled(false);
+//        dovetCoversCustomHeight.setEnabled(false);
+//        dovetCoversCustomWidth.setEnabled(false);
+//        dovetCoverCustomFlap.setEnabled(false);
+//
+//        dovetCoversIncludeCardBoard.setEnabled(false);
+//        dovetCoversIncludeLable.setEnabled(false);
+//        dovetCoversIncludeSealBag.setEnabled(false);
+//        dovetCoversIncludeTag.setEnabled(false);
+//        duvetCoversMarginField.setEnabled(false);
+//        duvetCoversTaxField.setEnabled(false);
 }//GEN-LAST:event_dovetCoversSubmitButtonActionPerformed
 
     private void dovetCoversTypeComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dovetCoversTypeComboActionPerformed
@@ -1027,12 +1057,11 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_dovetCoversNewCostingButtonActionPerformed
 
     private void duvetExportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_duvetExportButtonActionPerformed
-        if(model!=null){
+        if (model != null) {
             Export export = new Export(model);
             export.openFile();
         }
     }//GEN-LAST:event_duvetExportButtonActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField dovetCoverCustomFlap;
     private javax.swing.JLabel dovetCoversButtonCost;
@@ -1073,6 +1102,7 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel duvetCoverSizeLable;
     private javax.swing.JPanel duvetCoversCostingPanel;
     private javax.swing.JTextField duvetCoversMarginField;
+    private javax.swing.JTextField duvetCoversOtherCostVal;
     private javax.swing.JTextField duvetCoversTaxField;
     private javax.swing.JPanel duvetCversCPUPanel2;
     private javax.swing.JButton duvetExportButton;
@@ -1080,6 +1110,7 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel298;
     private javax.swing.JLabel jLabel299;
     private javax.swing.JLabel jLabel300;
+    private javax.swing.JLabel jLabel301;
     private javax.swing.JLabel jLabel331;
     private javax.swing.JLabel jLabel332;
     private javax.swing.JLabel jLabel333;
@@ -1115,7 +1146,6 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
 
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
-
             public void run() {
                 JFrame frame = new JFrame();
                 frame.setContentPane(new DuvetCoversCostingPanel());

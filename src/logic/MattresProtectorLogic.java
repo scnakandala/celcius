@@ -159,7 +159,7 @@ public class MattresProtectorLogic {
                     fabricCost = fabricCost + (materialWidth - fabricPaddingCutWidth) * fabricPaddingCutHeight * fabricPricePerUnitInch;
                 }
             } else {
-                if ((materialWidth - Math.max(fabricPaddingCutWidth, fabricPaddingCutHeight)) < 9) {
+                if ((materialWidth - Math.min(fabricPaddingCutWidth, fabricPaddingCutHeight)) < 9) {
                     fabricCost = fabricCost + (materialWidth - fabricPaddingCutWidth) * fabricPaddingCutHeight * fabricPricePerUnitInch;
                 }
             }
@@ -206,8 +206,8 @@ public class MattresProtectorLogic {
             }
 
 
-            Double totalCost = fabricCost + paddingCost + taffataCost + elasticCost + peBagCost + tagCost + labelCost + threadCost + nonWovenBagCost + pipingCost + pohCost + labourCost;
-            Double totalMaterialCost = fabricCost + paddingCost + taffataCost + elasticCost + peBagCost + tagCost + labelCost + threadCost + nonWovenBagCost + pipingCost;
+            Double totalCost = fabricCost + paddingCost + taffataCost + elasticCost + peBagCost + tagCost + labelCost + threadCost + nonWovenBagCost + pipingCost + pohCost + labourCost + mCost.getOtherCost();
+            Double totalMaterialCost = fabricCost + paddingCost + taffataCost + elasticCost + peBagCost + tagCost + labelCost + threadCost + nonWovenBagCost + pipingCost + mCost.getOtherCost();
             Double netSellingPrice = totalCost * (1.00 + mCost.getMargin()/100.0);
             Double taxes = netSellingPrice * (mCost.getTaxRate()/100.0);
             Double grossSellingPrice = netSellingPrice + taxes;

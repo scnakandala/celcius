@@ -209,8 +209,8 @@ public class DuvetsLogic {
             }
             dCost.setNonWovenBagCost(nonWovenBagCost);
 
-            Double totalCost = fabricCost + fiberCost + paddingCost + peBagCost + tagCost + lableCost + threadCost + nonWovenBagCost + pipingCost + pohCost + labourCost;
-            Double totalMaterialCost = fabricCost + fiberCost + paddingCost + peBagCost + tagCost + lableCost + threadCost + nonWovenBagCost + pipingCost;
+            Double totalCost = fabricCost + fiberCost + paddingCost + peBagCost + tagCost + lableCost + threadCost + nonWovenBagCost + pipingCost + pohCost + labourCost + dCost.getOtherCost();
+            Double totalMaterialCost = fabricCost + fiberCost + paddingCost + peBagCost + tagCost + lableCost + threadCost + nonWovenBagCost + pipingCost + dCost.getOtherCost();
 
             dCost.setTotalCost(totalCost);
             dCost.setTotalMaterialCost(totalMaterialCost);
