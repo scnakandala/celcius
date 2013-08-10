@@ -170,7 +170,7 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
         bolsterCustomLength.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         jLabel293.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        jLabel293.setText("Fiber weight (g):");
+        jLabel293.setText("Fiber weight (kg):");
 
         bolsterCustomFiberWeight.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bolsterCustomFiberWeight.setText("0.0");
@@ -452,7 +452,7 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
                 .addComponent(bolsterSubmitButton)
                 .addGap(5, 5, 5)
                 .addComponent(bolsterNewCostingButton)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         bolsterCustomPanel.setVisible(false);
@@ -754,7 +754,7 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(cotSheetCostingPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 677, Short.MAX_VALUE))
+                        .addComponent(cotSheetCostingPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 677, Short.MAX_VALUE))
                     .addComponent(bolsterCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );

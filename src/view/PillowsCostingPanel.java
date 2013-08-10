@@ -179,7 +179,7 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
         pillowsIncludePEBag.setText("Include PE Bag");
 
         jLabel236.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        jLabel236.setText("Custom Fiber Weight(g):");
+        jLabel236.setText("Custom Fiber Weight(kg):");
 
         pillowsCustomFiberWeight.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         pillowsCustomFiberWeight.setText("0.0");
@@ -391,7 +391,7 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
                                         .addComponent(jLabel316))
                                     .addComponent(pillowsOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(121, 121, 121)))))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
             .addGroup(pillowsCostingPanelLayout.createSequentialGroup()
                 .addGap(168, 168, 168)
                 .addGroup(pillowsCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
@@ -801,7 +801,7 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pillowsCostingPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 705, Short.MAX_VALUE)
+                .addComponent(pillowsCostingPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 705, Short.MAX_VALUE)
                 .addGap(41, 41, 41))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(pillowsCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)

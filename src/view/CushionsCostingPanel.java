@@ -156,7 +156,7 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
         cushionsIncludePEBag.setText("Include PE Bag");
 
         jLabel264.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        jLabel264.setText("Fiber weight(g):");
+        jLabel264.setText("Fiber weight(kg):");
 
         cushionsCustomFiberWeight.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cushionsCustomFiberWeight.setText("0.0");
@@ -733,7 +733,7 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(cushionsCostingPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 663, Short.MAX_VALUE)
+                .addComponent(cushionsCostingPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 663, Short.MAX_VALUE)
                 .addGap(21, 21, 21))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(cushionsCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
