@@ -38,6 +38,14 @@
     <class>entities.CushionAccessories</class>
     <class>entities.BolsterFiberWeights</class>
     <class>entities.CushionFiberWeights</class>
+    <class>entities.Bolsterpillowcases</class>
+    <class>entities.BolsterpillowcaseAccessories</class>
+    <class>entities.Fittedsheet</class>
+    <class>entities.FittedsheetAccessories</class>
+    <class>entities.Pillowprotectors</class>
+    <class>entities.PillowprotectorAccessories</class>
+    <class>entities.Pillowslips</class>
+    <class>entities.PillowslipAccessories</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/celcius"/>
       <property name="javax.persistence.jdbc.password" value=""/>

@@ -991,6 +991,13 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
         summary[7] = "";
 
         MainWindow.workbook.addOrderItem(summary, specifications, cpus, prodPaprameters, title);
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                final AddOrderSuccess dialog = new AddOrderSuccess(new javax.swing.JFrame(), true);
+                dialog.setVisible(true);
+            }
+        });
     }//GEN-LAST:event_bedSheetExportButtonActionPerformed
 
     public static void main(String[] args) {

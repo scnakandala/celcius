@@ -1024,10 +1024,125 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
 }//GEN-LAST:event_bolsterFiberWastageActionPerformed
 
     private void bolsterExportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolsterExportButtonActionPerformed
-        if (model != null) {
-            Export export = new Export(model);
-            export.openFile();
+        //if (model != null) {
+        //    Export export = new Export(model);
+        //    export.openFile();
+        //}
+        String title = "Bolster Costing";
+
+        String[][] specifications = new String[2][14];
+        specifications[0][0] = "Range";
+        specifications[0][1] = "Material";
+        specifications[0][2] = "Size";
+        specifications[0][3] = "Wastage";
+        specifications[0][4] = "Fiber Type";
+        specifications[0][5] = "Fiber Wastage";
+        specifications[0][6] = "Fiber Weight";
+        specifications[0][7] = "Lable";
+        specifications[0][8] = "Tag";
+        specifications[0][9] = "PE Bag";
+        specifications[0][11] = "Margin";
+        specifications[0][12] = "Taxes";
+        specifications[0][13] = "Other Costs";
+
+        specifications[1][0] = bolsterRangeCombo.getSelectedItem() + "";
+        specifications[1][1] = bolsterFabricTypeCombo.getSelectedItem() + "";
+        if (bolsterUseCustom.isSelected()) {
+            specifications[1][2] = bolsterCustomDiameter.getText() + "X" + bolsterCustomLength.getText();
+        } else {
+            specifications[1][2] = bolsterSizeCombo.getSelectedItem() + "";
         }
+        specifications[1][3] = bolsterFabricWastage.getText();
+
+        if (bolsterCustomFiberButton.isSelected()) {
+            specifications[1][4] = bolsterFiberTypeCombo.getSelectedItem() + "";
+            specifications[1][5] = bolsterFiberWastage.getText();
+        }
+
+        if (bolsterUseCustom.isSelected()) {
+            specifications[1][6] = bolsterFiberWeight.getText();
+        }
+
+        if (bolsterIncludeLable.isSelected()) {
+            specifications[1][7] = "Added";
+        } else {
+            specifications[1][8] = "Not Added";
+        }
+
+        if (bolsterIncludeTag.isSelected()) {
+            specifications[1][9] = "Added";
+        } else {
+            specifications[1][9] = "Not Added";
+        }
+
+        if (bolsterIncludePEBag.isSelected()) {
+            specifications[1][10] = "Added";
+        } else {
+            specifications[1][10] = "Not Added";
+        }
+
+        specifications[1][11] = bolsterMarginField.getText();
+        specifications[1][12] = bolsterTaxField.getText();
+        specifications[1][13] = bolsterOtherCostVal.getText();
+
+        String[][] cpus = new String[2][13];
+        cpus[0][0] = "Fabric Cost";
+        cpus[0][1] = "Fiber Cost";
+        cpus[0][2] = "Thread Cost";
+        cpus[0][3] = "Lable Cost";
+        cpus[0][4] = "Tag Cost";
+        cpus[0][5] = "Seal Bag Cost";
+        cpus[0][6] = "Total Material Cost";
+        cpus[0][7] = "POH";
+        cpus[0][8] = "Labor Cost";
+        cpus[0][9] = "Total Cost Per Unit";
+        cpus[0][10] = "Net Selling Price";
+        cpus[0][11] = "Taxes";
+        cpus[0][12] = "Gross Selling Price";
+
+        cpus[1][0] = bolsterFabricCost.getText();
+        cpus[1][1] = bolsterFiberCost.getText();
+        cpus[1][2] = bolsterThreadCost.getText();
+        cpus[1][3] = bolsterLableCost.getText();
+        cpus[1][4] = bolsterTagCost.getText();
+        cpus[1][5] = bolsterPEBagCost.getText();
+        cpus[1][6] = bolsterTotalMaterialCost.getText();
+        cpus[1][7] = bolsterPOH.getText();
+        cpus[1][8] = bolsterLabourCost.getText();
+        cpus[1][9] = bolsterToatalCost.getText();
+        cpus[1][10] = bolsterNetSellingPrice.getText();
+        cpus[1][11] = bolsterTaxes.getText();
+        cpus[1][12] = bolsterGrossSellingPrice.getText();
+
+
+        String[][] prodPaprameters = new String[2][2];
+        prodPaprameters[0][0] = "Fiber Weight";
+        prodPaprameters[0][1] = "SMV Value";
+
+        prodPaprameters[1][0] = bolsterFiberWeight.getText();
+        prodPaprameters[1][1] = bolsterSMVValue.getText();
+
+        String[] summary = new String[8];
+        summary[0] = "Bolster Pillow";
+        summary[1] = bolsterRangeCombo.getSelectedItem() + "";
+        summary[2] = bolsterFabricTypeCombo.getSelectedItem() + "";
+        if (bolsterCustomFiberButton.isSelected()) {
+            summary[3] = bolsterFiberTypeCombo.getSelectedItem()+"";
+        }
+        summary[4] = specifications[1][0] + " (Fiber Weight)";
+        summary[5] = "1";
+        summary[6] = bolsterGrossSellingPrice.getText();
+        summary[7] = "";
+
+        MainWindow.workbook.addOrderItem(summary, specifications, cpus, prodPaprameters, title);
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                final AddOrderSuccess dialog = new AddOrderSuccess(new javax.swing.JFrame(), true);
+                dialog.setVisible(true);
+            }
+        });
+
 }//GEN-LAST:event_bolsterExportButtonActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bolsterCPUPanel;

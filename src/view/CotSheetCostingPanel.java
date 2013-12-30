@@ -1169,10 +1169,135 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
 }//GEN-LAST:event_cotSheetNewCostingActionPerformed
 
     private void cotSheetExportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cotSheetExportButtonActionPerformed
-        if (model != null) {
-            Export export = new Export(model);
-            export.openFile();
+//        if (model != null) {
+//            Export export = new Export(model);
+//            export.openFile();
+//        }
+        String title = "Cot Sheet Costing";
+
+        String[][] specifications = new String[2][15];
+        specifications[0][0] = "Fabric Type";
+        specifications[0][1] = "Size";
+        specifications[0][2] = "Padding Type";
+        specifications[0][3] = "Taffata Type";
+        specifications[0][4] = "Width Quilting Shrinkage";
+        specifications[0][5] = "Height Quilting Shrinkage";
+        specifications[0][6] = "Fabric Wastage";
+        specifications[0][7] = "Taffata Wastage";
+        specifications[0][8] = "Padding Wastage";
+        specifications[0][9] = "Lable";
+        specifications[0][10] = "Tag";
+        specifications[0][11] = "PE Bag";
+        specifications[0][12] = "Margin";
+        specifications[0][13] = "Taxes";
+        specifications[0][14] = "Other Costs";
+
+        specifications[1][0] = cotSheetMaterialTypeCombo.getSelectedItem() + "";
+        if (cotSheetUseCustom.isSelected()) {
+            specifications[1][1] = cotSheetCustomHeight.getText() + "X" + cotSheetCustomWidth.getText();
+        } else {
+            specifications[1][1] = cotSheetSizeCombo.getSelectedItem() + "";
         }
+        specifications[1][2] = cotSheetPaddingTypeCombo.getSelectedItem()+"";
+
+        specifications[1][3] = cotSheetTaffataTypeCombo.getSelectedItem()+"";
+        
+        specifications[1][4] = cotSheetWidthQuiltingShrinkage.getText();
+        
+        specifications[1][5] = cotSheetHeightQuiltiingShrinkage.getText();
+        
+        specifications[1][6] = cotSheetFabricWastage.getText();
+        
+        specifications[1][7] = cotSheetTaffateWastage.getText();
+        
+        specifications[1][8] = cotSheetPaddingWastage.getText();
+        
+
+        if (cotSheetIncludeLable.isSelected()) {
+            specifications[1][9] = "Added";
+        } else {
+            specifications[1][9] = "Not Added";
+        }
+
+        if (cotSheetIncludeTag.isSelected()) {
+            specifications[1][10] = "Added";
+        } else {
+            specifications[1][10] = "Not Added";
+        }
+
+        if (cotSheetIncludePEBag.isSelected()) {
+            specifications[1][11] = "Added";
+        } else {
+            specifications[1][11] = "Not Added";
+        }
+
+        specifications[1][12] = cotSheetsMarginField.getText();
+        specifications[1][13] = cotSheetTaxes.getText();
+        specifications[1][14] = cotSheetOtherCostVal.getText();
+
+        String[][] cpus = new String[2][14];
+        cpus[0][0] = "Fabric Cost";
+        cpus[0][1] = "Padding Cost";
+        cpus[0][2] = "Taffata Cost";
+        cpus[0][3] = "Thread Cost";
+        cpus[0][4] = "Lable Cost";
+        cpus[0][5] = "Tag Cost";
+        cpus[0][6] = "Elastic Cost";        
+        cpus[0][7] = "PE Bag Cost";
+        cpus[0][8] = "Total Material Cost";
+        cpus[0][9] = "Labor Cost";
+        cpus[0][10] = "Total Cost Per Unit";
+        cpus[0][11] = "Net Selling Price";
+        cpus[0][12] = "Taxes";
+        cpus[0][13] = "Gross Selling Price";
+
+        cpus[1][0] = cotSheetFabricCost.getText();
+        cpus[1][1] = cotSheetPaddingCost.getText();
+        cpus[1][2] = cotSheetTaffataCost.getText();
+        cpus[1][3] = cotSheetThreadCost.getText();
+        cpus[1][4] = cotSheetLableCost.getText();
+        cpus[1][5] = cotSheetTagCost.getText();
+        cpus[1][6] = cotSheetElasticCost.getText();
+        cpus[1][7] = cotSheetPEBagCost.getText();
+        cpus[1][8] = cotSheetTotalMaterialCost.getText();
+        cpus[1][9] = cotSheetLabourCost.getText();
+        cpus[1][10] = cotSheetToatalCost.getText();
+        cpus[1][11] = cotSheetNetSellingPrice.getText();
+        cpus[1][12] = cotSheetTaxes.getText();
+        cpus[1][13] = cotSheetGrossSellingPrice.getText();
+
+
+        String[][] prodPaprameters = new String[2][5];
+        prodPaprameters[0][0] = "Fabir/Padding Cutting Width";
+        prodPaprameters[0][1] = "Fabir/Padding Cutting Height";
+        prodPaprameters[0][2] = "Taffata Cutting Width";
+        prodPaprameters[0][3] = "Taffata Cutting Height";
+        prodPaprameters[0][4] = "SMV Value";
+
+        prodPaprameters[1][0] = cotSheetFabricPaddingCutWidth.getText();
+        prodPaprameters[1][1] = cotSheetFabricPaddingCutHeight.getText();
+        prodPaprameters[1][2] = cotSheetTaffataCutHeight.getText();
+        prodPaprameters[1][3] = cotSheetTafffataCutWidth.getText();
+        prodPaprameters[1][4] = cotSheetSMVValue.getText();
+
+        String[] summary = new String[8];
+        summary[0] = "Cot Sheet";
+        summary[1] = "";
+        summary[2] = cotSheetMaterialTypeCombo.getSelectedItem() + "";
+        summary[3] = specifications[1][2];
+        summary[4] = specifications[1][1];
+        summary[5] = "1";
+        summary[6] = cotSheetGrossSellingPrice.getText();
+        summary[7] = "";
+
+        MainWindow.workbook.addOrderItem(summary, specifications, cpus, prodPaprameters, title);
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                final AddOrderSuccess dialog = new AddOrderSuccess(new javax.swing.JFrame(), true);
+                dialog.setVisible(true);
+            }
+        });
 }//GEN-LAST:event_cotSheetExportButtonActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel cotSheetCPUPanel;

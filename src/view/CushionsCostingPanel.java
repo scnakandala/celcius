@@ -995,10 +995,122 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
 }//GEN-LAST:event_cushionsFiberWastageActionPerformed
 
     private void cushionsExportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cushionsExportButtonActionPerformed
-        if (model != null) {
-            Export export = new Export(model);
-            export.openFile();
+//        if (model != null) {
+//            Export export = new Export(model);
+//            export.openFile();
+//        }
+        String title = "Cushion Costing";
+
+        String[][] specifications = new String[2][13];
+        specifications[0][0] = "Range";
+        specifications[0][1] = "Material";
+        specifications[0][2] = "Size";
+        specifications[0][3] = "Material Wastage";
+        specifications[0][4] = "Fiber Type";
+        specifications[0][5] = "Fiber Wastage";
+        specifications[0][6] = "Fiber Weight";
+        specifications[0][7] = "Lable";
+        specifications[0][8] = "Tag";
+        specifications[0][9] = "PE Bag";
+        specifications[0][10] = "Margin";
+        specifications[0][11] = "Taxes";
+        specifications[0][12] = "Other Costs";
+
+        specifications[1][0] = cushionsRangeCombo.getSelectedItem() + "";
+        specifications[1][1] = cushionsFabricTypeCombo.getSelectedItem() + "";
+        if (cushionsUseCustom.isSelected()) {
+            specifications[1][2] = cushionsCustomWidthHeight.getText() + "X"
+                    + cushionsCustomWidthHeight.getText();
+        } else {
+            specifications[1][2] = cushionsSizeCombo.getSelectedItem() + "";
         }
+        specifications[1][3] = cushionsFabricWastage.getText();
+
+        specifications[1][4] = cushionsFiberTypeCombo.getSelectedItem() + "";
+        specifications[1][5] = cushionsFiberWastage.getText();
+
+        specifications[1][6] = cushionsFiberWeight.getText();
+
+        if (cushionsIncludeLable.isSelected()) {
+            specifications[1][7] = "Added";
+        } else {
+            specifications[1][7] = "Not Added";
+        }
+
+        if (cushionsIncludeTag.isSelected()) {
+            specifications[1][8] = "Added";
+        } else {
+            specifications[1][8] = "Not Added";
+        }
+
+        if (cushionsIncludePEBag.isSelected()) {
+            specifications[1][9] = "Added";
+        } else {
+            specifications[1][9] = "Not Added";
+        }
+
+        specifications[1][10] = cushionsMarginField.getText();
+        specifications[1][11] = cushionsTaxField.getText();
+        specifications[1][12] = cushionsOtherCostVal.getText();
+
+        String[][] cpus = new String[2][13];
+        cpus[0][0] = "Fabric Cost";
+        cpus[0][1] = "Fiber Cost";
+        cpus[0][2] = "Thread Cost";
+        cpus[0][3] = "Lable Cost";
+        cpus[0][4] = "Tag Cost";
+        cpus[0][5] = "PE Bag Cost";
+        cpus[0][6] = "Total Material Cost";
+        cpus[0][7] = "POH";
+        cpus[0][8] = "Labor Cost";
+        cpus[0][9] = "Total Cost Per Unit";
+        cpus[0][10] = "Net Selling Price";
+        cpus[0][11] = "Taxes";
+        cpus[0][12] = "Gross Selling Price";
+
+        cpus[1][0] = cushionsFabricCost.getText();
+        cpus[1][1] = cushionsFiberCost.getText();
+        cpus[1][2] = cushionsThreadCost.getText();
+        cpus[1][3] = cushionsLableCost.getText();
+        cpus[1][4] = cushionsTagCost.getText();
+        cpus[1][5] = cushionsPEBagCost.getText();
+        cpus[1][6] = cushionsTotalMaterialCost.getText();
+        cpus[1][7] = cushionsPOH.getText();
+        cpus[1][8] = cushionsLabourCost.getText();
+        cpus[1][9] = cushionsToatalCost.getText();
+        cpus[1][10] = cushionsNetSellingPrice.getText();
+        cpus[1][11] = cushionsTaxes.getText();
+        cpus[1][12] = cushionsGrossSellingPrice.getText();
+
+
+        String[][] prodPaprameters = new String[2][3];
+        prodPaprameters[0][0] = "Cutting Width/Height";
+        prodPaprameters[0][1] = "Fiber Weight";
+        prodPaprameters[0][2] = "SMV Value";
+
+        prodPaprameters[1][0] = cushionsFabricCutWidthHeight.getText();
+        prodPaprameters[1][1] = cushionsFiberWeight.getText();
+        prodPaprameters[1][2] = cushionsSMVValue.getText();
+
+        String[] summary = new String[8];
+        summary[0] = "Cushion";
+        summary[1] = cushionsRangeCombo.getSelectedItem() + "";
+        summary[2] = cushionsFabricTypeCombo.getSelectedItem() + "";
+        summary[3] = cushionsFiberTypeCombo.getSelectedItem() + "";
+        summary[4] = specifications[1][2];
+        summary[5] = "1";
+        summary[6] = cushionsGrossSellingPrice.getText();
+        summary[7] = "";
+
+        MainWindow.workbook.addOrderItem(summary, specifications, cpus, prodPaprameters, title);
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                final AddOrderSuccess dialog = new AddOrderSuccess(new javax.swing.JFrame(), true);
+                dialog.setVisible(true);
+            }
+        });
+
 }//GEN-LAST:event_cushionsExportButtonActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel cushionsCPUPanel;
