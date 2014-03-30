@@ -277,4 +277,36 @@ public class PillowProtectorDataAccess {
         resultSet.next();
         return Double.parseDouble(resultSet.getString("price"));
     }
+
+    public double getTaffataWidth(String taffataType) throws SQLException{
+        statement = (Statement) connect.createStatement();
+        String sql = "select width from celcius.taffatas where name ='" + taffataType + "'";
+        resultSet = statement.executeQuery(sql);
+        resultSet.next();
+        return Double.parseDouble(resultSet.getString("width"));
+    }
+    
+    public Double getTaffataCost(String taffataType) throws SQLException{
+        statement = (Statement) connect.createStatement();
+        String sql = "select width from celcius.taffatas where name ='" + taffataType + "'";
+        resultSet = statement.executeQuery(sql);
+        resultSet.next();
+        return Double.parseDouble(resultSet.getString("width"));
+    }
+
+    public double getPaddingWidth(String paddingType) throws SQLException{
+        statement = (Statement) connect.createStatement();
+        String sql = "select width from celcius.paddings where name ='" + paddingType + "'";
+        resultSet = statement.executeQuery(sql);
+        resultSet.next();
+        return Double.parseDouble(resultSet.getString("width"));
+    }
+
+    public double getPaddingPrice(String paddingType) throws SQLException{
+        statement = (Statement) connect.createStatement();
+        String sql = "select price from celcius.paddings where name ='" + paddingType + "'";
+        resultSet = statement.executeQuery(sql);
+        resultSet.next();
+        return Double.parseDouble(resultSet.getString("price"));
+    }
 }

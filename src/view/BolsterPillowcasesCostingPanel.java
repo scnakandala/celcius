@@ -144,8 +144,8 @@ public class BolsterPillowcasesCostingPanel extends javax.swing.JPanel {
         bolsterPillowcaseMaterialTypeCombo.setRenderer(new ComboBoxRenderer(BolsterPillowcaseLogic.getMaterialTypes((String)bolsterPillowcaseProductRangeCombo.getSelectedItem())));
 
         bolsterPillowcaseSizeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        bolsterPillowcaseSizeCombo.setModel(new javax.swing.DefaultComboBoxModel(BolsterPillowcaseLogic.getBedSheetSizes()));
-        bolsterPillowcaseSizeCombo.setRenderer(new ComboBoxRenderer(BolsterPillowcaseLogic.getBedSheetSizes()));
+        bolsterPillowcaseSizeCombo.setModel(new javax.swing.DefaultComboBoxModel(BolsterPillowcaseLogic.getBolsterPillowCaseSizes()));
+        bolsterPillowcaseSizeCombo.setRenderer(new ComboBoxRenderer(BolsterPillowcaseLogic.getBolsterPillowCaseSizes()));
 
         bolsterPillowcaseWastage.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bolsterPillowcaseWastage.setText("3");

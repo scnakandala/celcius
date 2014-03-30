@@ -794,6 +794,8 @@ public class PillowSlipCostingPanel extends javax.swing.JPanel {
         format.setMaximumFractionDigits(2);
         format.setMinimumFractionDigits(2);
 
+        fCost.setIsPillowSlip(true);
+        
         PillowProtectorViewModel bReturn = PillowProtectorLogic.getCostPerUnit(fCost);
         pillowProtectorFabricCost.setText(format.format(bReturn.getFabricCost()) + "");
         pillowProtectorThreadCost.setText(format.format(bReturn.getThreadCost()) + "");

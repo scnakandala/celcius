@@ -37,6 +37,8 @@ public class PillowProtectorViewModel extends AbstractViewModel {
     private Double cuttingHeight = 0.0;
     private Double smvValue = 0.0;
     private Double totalMaterialCost = 0.0;
+    
+    private boolean isPillowSlip = false;
 
     public Double getZipperCost() {
         return zipperCost;
@@ -319,4 +321,12 @@ public class PillowProtectorViewModel extends AbstractViewModel {
     public Double getElasticCost() {
         return this.elasticCost;
     }
+
+    public boolean isIsPillowSlip() {
+        return isPillowSlip;
+    }
+
+    public void setIsPillowSlip(boolean isPillowSlip) {
+        this.isPillowSlip = isPillowSlip;
+    }    
 }

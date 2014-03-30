@@ -1,6 +1,7 @@
 package logic;
 
 import algorithms.Approximate;
+import dataaccess.BedSheetDataAccess;
 import dataaccess.BolsterPillowCaseDataAccess;
 import dataaccess.FittedSheetDataAccess;
 import java.sql.SQLException;
@@ -102,7 +103,7 @@ public class FittedSheetLogic {
                 threadCost = FittedSheetDataAccess.getInstance().getThreadCost();
                 cardboardCost = FittedSheetDataAccess.getInstance().getCardBoardCost();
 
-                smv = BolsterPillowCaseDataAccess.getInstance().getSMVValue(fCost.getSize());
+                smv = FittedSheetDataAccess.getInstance().getSMVValue(fCost.getSize());
             }
 
             fCost.setSmvValue(smv);
@@ -136,6 +137,7 @@ public class FittedSheetLogic {
             fCost.setThreadCost(threadCost);
             fCost.setLableCost(labelCost);
             fCost.setTagCost(tagCost);
+            fCost.setPEBagCost(peBagCost);
             fCost.setCardBoardCost(cardboardCost);
             fCost.setElasticCost(elasticCost);
             fCost.setPohCost(pohCost);

@@ -144,7 +144,7 @@ public class FittedSheetDataAccess {
 
     public Double getPEBagCost() throws SQLException {
         statement = (Statement) connect.createStatement();
-        String sql = "select price from celcius.fittedsheet_accessories where name ='PE Bag'";
+        String sql = "select price from celcius.fittedsheet_accessories where name ='Seal Bag'";
         resultSet = statement.executeQuery(sql);
         resultSet.next();
         return Double.parseDouble(resultSet.getString("price"));
@@ -207,8 +207,8 @@ public class FittedSheetDataAccess {
         //smv value should be zero at 0
         arr[0][0] = arr[1][0] = 0.0;
         for (int i = 0; i < sizes.size(); i++) {
-            arr[0][i + 1] = 2 * 3.141 * Double.parseDouble(sizes.get(i).split("X")[0])
-                    + Double.parseDouble(sizes.get(i).split("X")[1]);
+            arr[0][i + 1] = Double.parseDouble(sizes.get(i).split("X")[0])+
+                    Double.parseDouble(sizes.get(i).split("X")[1]);
             arr[1][i + 1] = smvs.get(i);
         }
         return arr;

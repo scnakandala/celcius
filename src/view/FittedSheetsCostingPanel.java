@@ -153,8 +153,8 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
         fittedSheetMaterialTypeCombo.setRenderer(new ComboBoxRenderer(BolsterPillowcaseLogic.getMaterialTypes((String)fittedSheetProductRangeCombo.getSelectedItem())));
 
         fittedSheetSizeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        fittedSheetSizeCombo.setModel(new javax.swing.DefaultComboBoxModel(BolsterPillowcaseLogic.getBedSheetSizes()));
-        fittedSheetSizeCombo.setRenderer(new ComboBoxRenderer(BolsterPillowcaseLogic.getBedSheetSizes()));
+        fittedSheetSizeCombo.setModel(new javax.swing.DefaultComboBoxModel(FittedSheetLogic.getFittedSheetSizes()));
+        fittedSheetSizeCombo.setRenderer(new ComboBoxRenderer(FittedSheetLogic.getFittedSheetSizes()));
 
         fittedSheetHeight.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         fittedSheetHeight.setText("10");
@@ -690,7 +690,7 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
                 .addGroup(fittedSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         fittedSheetCPUPanelLayout.setVerticalGroup(
             fittedSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -75,7 +75,7 @@ public class PillowLogic {
                 smv = cFitting.getApproximatedValue(((double) height + width));
 
                 if (!pCost.isIncludeLable()) {
-                    peBagPrice = 0.0;
+                    lablePrice = 0.0;
                 }
                 if (!pCost.isIncludeTag()) {
                     tagPrice = 0.0;
@@ -102,7 +102,7 @@ public class PillowLogic {
             } else {
                 fiberWeight = pCost.getCustomeFiberWeight();
             }
-            
+
             Double cutWidth = 0.0, cutHeight = 0.0;
             if (pCost.getProductRange().equalsIgnoreCase("Gel/Feather")) {
                 cutHeight = (height + 1.0) * 2;

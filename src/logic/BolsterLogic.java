@@ -74,7 +74,7 @@ public class BolsterLogic {
                 Approximate cFitting = new Approximate(arr[0], arr[1]);
                 smv = cFitting.getApproximatedValue(2 * 3.141 * diameter + length);
                 if (!bCost.isIncludeLable()) {
-                    peBagPrice = 0.0;
+                    lablePrice = 0.0;
                 }
                 if (!bCost.isIncludeTag()) {
                     tagPrice = 0.0;

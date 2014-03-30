@@ -74,7 +74,7 @@ public class CushionLogic {
                 smv = cFitting.getApproximatedValue(((double) height + width));
 
                 if (!cCost.isIncludeLable()) {
-                    peBagPrice = 0.0;
+                    lablePrice = 0.0;
                 }
                 if (!cCost.isIncludeTag()) {
                     tagPrice = 0.0;

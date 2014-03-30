@@ -1,7 +1,6 @@
 package logic;
 
 import algorithms.Approximate;
-import dataaccess.BolsterPillowCaseDataAccess;
 import dataaccess.FittedSheetDataAccess;
 import dataaccess.PillowProtectorDataAccess;
 import java.sql.SQLException;
@@ -99,9 +98,9 @@ public class PillowProtectorLogic {
                 threadCost = FittedSheetDataAccess.getInstance().getThreadCost();
 
                 //smv = has to calculate
-                double[][] arr = FittedSheetDataAccess.getInstance().getSMVXYPairs();
+                double[][] arr = PillowProtectorDataAccess.getInstance().getSMVXYPairs();
                 Approximate approx = new Approximate(arr[0], arr[1]);
-                smv = approx.getApproximatedValue((double) width + length);
+                smv = approx.getApproximatedValue(2 * 3.141 * width + length);
             } else {
                 width = Double.parseDouble(fCost.getSize().split("X")[0]);
                 length = Double.parseDouble(fCost.getSize().split("X")[1]);
@@ -114,7 +113,7 @@ public class PillowProtectorLogic {
                 smv = PillowProtectorDataAccess.getInstance().getSMVValue(fCost.getSize());
             }
 
-            fCost.setSmvValue(smv);
+            zipperCost = PillowProtectorDataAccess.getInstance().getZipperCost();
 
             cutWidth = (width + 1);
             cutLength = (length * 2 + 5);
@@ -132,19 +131,22 @@ public class PillowProtectorLogic {
 
             zipperCost = (width + 1) / 36 * PillowProtectorDataAccess.getInstance().getZipperCost();
 
-            //should get from db
-            double paddingWidth = 60;
-            double paddingPrice = 23.23;
-            paddingCost = (width + 2) * (length + 3) * paddingPrice / (paddingWidth * 36);
+            nonWOvenTaffataCost = 0.0;
+            paddingCost = 0.0;
+            if (!fCost.isIsPillowSlip()) {
+                //should get from db
+                double paddingWidth = PillowProtectorDataAccess.getInstance().getPaddingWidth(fCost.getPaddingType());
+                double paddingPrice = PillowProtectorDataAccess.getInstance().getPaddingPrice(fCost.getPaddingType());
+                paddingCost = (width + 2) * (length + 3) * paddingPrice / (paddingWidth * 36);
 
-            if (fCost.isUseNonWoven()) {
-                nonWOvenTaffataCost = (width + 2) * (length + 2) * PillowProtectorDataAccess.getInstance().getNonWovenCost();
-            } else {
-                //should get from the db for respective taffata
-                nonWOvenTaffataCost = 34.23;
+                if (fCost.isUseNonWoven()) {
+                    nonWOvenTaffataCost = (width + 2) * (length + 2) * PillowProtectorDataAccess.getInstance().getNonWovenCost();
+                } else {
+                    double taffataWidth = PillowProtectorDataAccess.getInstance().getTaffataWidth(fCost.getTaffataType());
+                    double taffataPrice = PillowProtectorDataAccess.getInstance().getTaffataCost(fCost.getTaffataType());
+                    nonWOvenTaffataCost = (width + 2) * (length + 3) * taffataPrice / (taffataWidth * 36);
+                }
             }
-
-
             Double totalCost = fabricCost + pohCost + labourCost + tagCost + labelCost
                     + peBagCost + threadCost + nonWOvenTaffataCost + zipperCost + paddingCost + fCost.getOtherCost();
             Double totalMaterialCost = fabricCost + tagCost + labelCost + peBagCost
@@ -158,7 +160,12 @@ public class PillowProtectorLogic {
             fCost.setThreadCost(threadCost);
             fCost.setLableCost(labelCost);
             fCost.setTagCost(tagCost);
+            fCost.setPEBagCost(peBagCost);
+            fCost.setZipperCost(zipperCost);
+            fCost.setNonWovenTaffataCost(nonWOvenTaffataCost);
+            fCost.setPaddingCost(paddingCost);
             fCost.setPohCost(pohCost);
+            fCost.setSmvValue(smv);
             fCost.setLabourCost(labourCost);
             fCost.setTotalCost(totalCost);
             fCost.setNetSellingPrice(netSellingPrice);
@@ -168,7 +175,6 @@ public class PillowProtectorLogic {
             fCost.setCuttingHeight(cutLength);
             fCost.setCuttingWidth(cutWidth);
             fCost.setSmvValue(smv);
-
 
         } catch (Exception e) {
             System.out.println("Error");

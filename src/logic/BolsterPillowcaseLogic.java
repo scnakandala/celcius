@@ -36,7 +36,7 @@ public class BolsterPillowcaseLogic {
         return null;
     }
 
-    public static String[] getBedSheetSizes() {
+    public static String[] getBolsterPillowCaseSizes() {
         try {
             return BolsterPillowCaseDataAccess.getInstance().getBolsterPillowCaseSizes();
         } catch (SQLException ex) {
@@ -124,6 +124,7 @@ public class BolsterPillowcaseLogic {
             bCost.setThreadCost(threadCost);
             bCost.setLableCost(labelCost);
             bCost.setZipperVelcoCost(zipperVelcoCost);
+            bCost.setPEBagCost(peBagCost);
             bCost.setTagCost(tagCost);
             bCost.setPohCost(pohCost);
             bCost.setLabourCost(labourCost);
