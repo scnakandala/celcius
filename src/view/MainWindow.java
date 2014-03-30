@@ -1,20 +1,26 @@
 package view;
 
-import excel.ExcelFile;
+import excel.CostingSummary;
+import excel.Quotation;
 import java.awt.Toolkit;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class MainWindow extends javax.swing.JFrame {
 
     private boolean adminView = false;
-    public static ExcelFile workbook;
+    public static Quotation quotation;
 
     /**
      * Creates new form MainWindow
      */
     public MainWindow() {
         initComponents();
-        workbook = new ExcelFile();
+        quotation = new Quotation();
         //setting size
         this.setSize(Toolkit.getDefaultToolkit().getScreenSize().width, Toolkit.getDefaultToolkit().getScreenSize().height);
     }
@@ -170,7 +176,7 @@ public class MainWindow extends javax.swing.JFrame {
         exitButton = new javax.swing.JMenuItem();
         orderMenuButton = new javax.swing.JMenu();
         clearOrderButton = new javax.swing.JMenuItem();
-        exportOrderButton = new javax.swing.JMenuItem();
+        exportQuotationButton = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
@@ -1087,10 +1093,10 @@ public class MainWindow extends javax.swing.JFrame {
         FittedSheetsScrollPane.setViewportView(new view.FittedSheetsCostingPanel());
         userTabbedPane.addTab("Fitted Sheets", FittedSheetsScrollPane);
 
-        comfortersScrollPane.setViewportView(new view.ComfortersCostingPanel());
+        pillowProtectorScrollPane.setViewportView(new view.PillowProtectorCostingPanel());
         userTabbedPane.addTab("Pillow Protectors", pillowProtectorScrollPane);
 
-        comfortersScrollPane.setViewportView(new view.ComfortersCostingPanel());
+        pillowSlipScrollPane.setViewportView(new view.PillowSlipCostingPanel());
         userTabbedPane.addTab("Pillow Slips", pillowSlipScrollPane);
 
         fileMenu.setText("File");
@@ -1125,13 +1131,13 @@ public class MainWindow extends javax.swing.JFrame {
         });
         orderMenuButton.add(clearOrderButton);
 
-        exportOrderButton.setText("Export Order");
-        exportOrderButton.addActionListener(new java.awt.event.ActionListener() {
+        exportQuotationButton.setText("Export Quotation");
+        exportQuotationButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exportOrderButtonActionPerformed(evt);
+                exportQuotationButtonActionPerformed(evt);
             }
         });
-        orderMenuButton.add(exportOrderButton);
+        orderMenuButton.add(exportQuotationButton);
 
         jMenuBar.add(orderMenuButton);
 
@@ -1197,12 +1203,20 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_adminButtonActionPerformed
 
     private void clearOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearOrderButtonActionPerformed
-        MainWindow.workbook = new ExcelFile();
+        this.quotation = new Quotation();
     }//GEN-LAST:event_clearOrderButtonActionPerformed
 
-    private void exportOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportOrderButtonActionPerformed
-        MainWindow.workbook.export();
-    }//GEN-LAST:event_exportOrderButtonActionPerformed
+    private void exportQuotationButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportQuotationButtonActionPerformed
+        try {
+            this.quotation.exportQuatation();
+        } catch (Exception ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(new JFrame(),
+                "Please close any existing Quotation files and try again",
+                "Error",
+                JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_exportQuotationButtonActionPerformed
 
     public void displayAdminView() {
         adminView = true;
@@ -1255,7 +1269,7 @@ public class MainWindow extends javax.swing.JFrame {
     private view.DuvetcoverView duvetcoverView1;
     private javax.swing.JScrollPane duvetsScrollPane;
     private javax.swing.JMenuItem exitButton;
-    private javax.swing.JMenuItem exportOrderButton;
+    private javax.swing.JMenuItem exportQuotationButton;
     private view.FabricsView fabricsView1;
     private view.FibersView fibersView1;
     private javax.swing.JMenu fileMenu;

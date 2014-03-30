@@ -1,19 +1,22 @@
 package view;
 
 import celcius.Config;
-import export.Export;
-import export.ExportModel;
+import excel.ItemSummaryObject;
+import excel.QuationObject;
+import excel.SummaryObject;
 import java.awt.EventQueue;
 import java.text.DecimalFormat;
+import java.util.AbstractMap;
+import java.util.ArrayList;
+import java.util.Map;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import logic.DuvetCoversLogic;
+import ui.helpers.ComboBoxRenderer;
 import viewmodels.DovetCoversViewModel;
 
 public class DuvetCoversCostingPanel extends javax.swing.JPanel {
-
-    private ExportModel model;
 
     public DuvetCoversCostingPanel() {
         initComponents();
@@ -49,7 +52,6 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
         dovetCoversSubmitButton = new javax.swing.JButton();
         jLabel73 = new javax.swing.JLabel();
         dovetCoversTypeCombo = new javax.swing.JComboBox();
-        dovetCoversNewCostingButton = new javax.swing.JButton();
         jLabel297 = new javax.swing.JLabel();
         jLabel298 = new javax.swing.JLabel();
         duvetCoversTaxField = new javax.swing.JTextField();
@@ -58,6 +60,8 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
         duvetCoversMarginField = new javax.swing.JTextField();
         jLabel301 = new javax.swing.JLabel();
         duvetCoversOtherCostVal = new javax.swing.JTextField();
+        jLabel302 = new javax.swing.JLabel();
+        quantity = new javax.swing.JTextField();
         duvetCversCPUPanel2 = new javax.swing.JPanel();
         jPanel21 = new javax.swing.JPanel();
         jLabel68 = new javax.swing.JLabel();
@@ -113,6 +117,7 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
 
         dovetCoversProductRangeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversProductRangeCombo.setModel(new javax.swing.DefaultComboBoxModel(DuvetCoversLogic.getProductRanges()));
+        dovetCoversProductRangeCombo.setRenderer(new ComboBoxRenderer(DuvetCoversLogic.getProductRanges()));
         dovetCoversProductRangeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dovetCoversProductRangeComboActionPerformed(evt);
@@ -124,9 +129,11 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
 
         dovetCoversMaterialTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversMaterialTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(logic.DuvetCoversLogic.getMaterialTypes((String)dovetCoversProductRangeCombo.getSelectedItem())));
+        dovetCoversMaterialTypeCombo.setRenderer(new ComboBoxRenderer(logic.DuvetCoversLogic.getMaterialTypes((String)dovetCoversProductRangeCombo.getSelectedItem())));
 
         dovetCoversSizeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversSizeCombo.setModel(new javax.swing.DefaultComboBoxModel(logic.DuvetCoversLogic.getDuvetCoverSizes()));
+        dovetCoversSizeCombo.setRenderer(new ComboBoxRenderer(logic.DuvetCoversLogic.getDuvetCoverSizes()));
         dovetCoversSizeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dovetCoversSizeComboActionPerformed(evt);
@@ -255,17 +262,10 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
 
         dovetCoversTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         dovetCoversTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(logic.DuvetCoversLogic.getDuvetCoverTypes()));
+        dovetCoversTypeCombo.setRenderer(new ComboBoxRenderer(logic.DuvetCoversLogic.getDuvetCoverTypes()));
         dovetCoversTypeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dovetCoversTypeComboActionPerformed(evt);
-            }
-        });
-
-        dovetCoversNewCostingButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        dovetCoversNewCostingButton.setText("New Costing");
-        dovetCoversNewCostingButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dovetCoversNewCostingButtonActionPerformed(evt);
             }
         });
 
@@ -294,16 +294,17 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
         duvetCoversOtherCostVal.setText("0.0");
         duvetCoversTaxField.setText(Config.taxesRate);
 
+        jLabel302.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel302.setText("Quantity");
+
+        quantity.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        quantity.setText("1");
+        duvetCoversTaxField.setText(Config.taxesRate);
+
         javax.swing.GroupLayout duvetCoversCostingPanelLayout = new javax.swing.GroupLayout(duvetCoversCostingPanel);
         duvetCoversCostingPanel.setLayout(duvetCoversCostingPanelLayout);
         duvetCoversCostingPanelLayout.setHorizontalGroup(
             duvetCoversCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(duvetCoversCostingPanelLayout.createSequentialGroup()
-                .addGap(171, 171, 171)
-                .addGroup(duvetCoversCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(dovetCoversSubmitButton)
-                    .addComponent(dovetCoversNewCostingButton))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(duvetCoversCostingPanelLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(duvetCoversCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -351,11 +352,21 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
                                         .addComponent(dovetCoversProductRangeCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(dovetCoversSizeCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                         .addGap(28, 28, 28))
-                    .addGroup(duvetCoversCostingPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel301)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(duvetCoversOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, duvetCoversCostingPanelLayout.createSequentialGroup()
+                        .addGroup(duvetCoversCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(duvetCoversCostingPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel302)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(duvetCoversCostingPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel301)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(duvetCoversOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(151, 151, 151))))
+            .addGroup(duvetCoversCostingPanelLayout.createSequentialGroup()
+                .addGap(158, 158, 158)
+                .addComponent(dovetCoversSubmitButton)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         duvetCoversCostingPanelLayout.setVerticalGroup(
             duvetCoversCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -403,13 +414,13 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
                     .addComponent(jLabel301)
                     .addComponent(duvetCoversOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
+                .addGroup(duvetCoversCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel302)
+                    .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(dovetCoversSubmitButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(dovetCoversNewCostingButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        dovetCoversNewCostingButton.setVisible(false);
 
         jPanel21.setPreferredSize(new java.awt.Dimension(400, 157));
 
@@ -953,46 +964,7 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
         dovetCoversTaxes.setText(format.format(dReturn.getTaxes()));
         dovetCoversGrossSellingPrice.setText(format.format(dReturn.getGrossSellingPrice()));
 
-        //export model
-        model = new ExportModel();
-        model.setProductName("Duvet Cover");
-        model.setProductRange(dReturn.getProductRange());
-        if (dReturn.isIsCustom()) {
-            model.setProductSize(dReturn.getCustomWidth() + "X" + dReturn.getCustomHeight());
-        } else {
-            model.setProductSize(dReturn.getSize());
-        }
-        model.setTotalMaterialCost(dReturn.getTotalMaterialCost());
-        model.setLabourCost(dReturn.getLabourCost());
-        model.setProductionOverHead(dReturn.getPohCost());
-        model.setTotalCostPerUnit(dReturn.getTotalCost());
-        model.setNetSellingPrice(dReturn.getNetSellingPrice());
-        model.setTaxes(dReturn.getTaxes());
-        model.setGrossSellingPrice(dReturn.getGrossSellingPrice());
-
-//        dovetCoversSubmitButton.setVisible(false);
-//        dovetCoversNewCostingButton.setVisible(true);
         duvetCversCPUPanel2.setVisible(true);
-
-        //disabling the input fields
-//        dovetCoversProductRangeCombo.setEnabled(false);
-//        dovetCoversMaterialTypeCombo.setEnabled(false);
-//        dovetCoversTypeCombo.setEnabled(false);
-//        dovetCoversSizeCombo.setEnabled(false);
-//
-//        dovetCoversWastage.setEnabled(false);
-//
-//        dovetCoversUseCustom.setEnabled(false);
-//        dovetCoversCustomHeight.setEnabled(false);
-//        dovetCoversCustomWidth.setEnabled(false);
-//        dovetCoverCustomFlap.setEnabled(false);
-//
-//        dovetCoversIncludeCardBoard.setEnabled(false);
-//        dovetCoversIncludeLable.setEnabled(false);
-//        dovetCoversIncludeSealBag.setEnabled(false);
-//        dovetCoversIncludeTag.setEnabled(false);
-//        duvetCoversMarginField.setEnabled(false);
-//        duvetCoversTaxField.setEnabled(false);
 }//GEN-LAST:event_dovetCoversSubmitButtonActionPerformed
 
     private void dovetCoversTypeComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dovetCoversTypeComboActionPerformed
@@ -1006,61 +978,87 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
         }
 }//GEN-LAST:event_dovetCoversTypeComboActionPerformed
 
-    private void dovetCoversNewCostingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dovetCoversNewCostingButtonActionPerformed
-        duvetCversCPUPanel2.setVisible(false);
-        dovetCoversSubmitButton.setVisible(true);
-        dovetCoversNewCostingButton.setVisible(false);
-
-        //enableing the input fields
-        dovetCoversProductRangeCombo.setModel(new DefaultComboBoxModel(
-                DuvetCoversLogic.getProductRanges()));
-        dovetCoversMaterialTypeCombo.setModel(new DefaultComboBoxModel(
-                DuvetCoversLogic.getMaterialTypes(
-                (String) dovetCoversProductRangeCombo.getSelectedItem())));
-        dovetCoversTypeCombo.setModel(new DefaultComboBoxModel(
-                DuvetCoversLogic.getDuvetCoverTypes()));
-        dovetCoversSizeCombo.setModel(new DefaultComboBoxModel(
-                DuvetCoversLogic.getDuvetCoverSizes()));
-
-        dovetCoversWastage.setText("3");
-        dovetCoversUseCustom.setSelected(false);
-        dovetCoversCustomPanel.setVisible(false);
-        dovetCoversCustomHeight.setText("");
-        dovetCoversCustomWidth.setText("");
-        dovetCoverCustomFlap.setText("10");
-        dovetCoversIncludeCardBoard.setSelected(false);
-        dovetCoversIncludeLable.setSelected(false);
-        dovetCoversIncludeSealBag.setSelected(false);
-        dovetCoversIncludeTag.setSelected(false);
-
-        dovetCoversProductRangeCombo.setEnabled(true);
-        dovetCoversMaterialTypeCombo.setEnabled(true);
-        dovetCoversTypeCombo.setEnabled(true);
-        dovetCoversSizeCombo.setEnabled(true);
-
-        dovetCoversWastage.setEnabled(true);
-
-        dovetCoversUseCustom.setEnabled(true);
-        dovetCoversCustomHeight.setEnabled(true);
-        dovetCoversCustomWidth.setEnabled(true);
-        dovetCoverCustomFlap.setEnabled(true);
-
-        dovetCoversIncludeCardBoard.setEnabled(true);
-        dovetCoversIncludeLable.setEnabled(true);
-        dovetCoversIncludeSealBag.setEnabled(true);
-        dovetCoversIncludeTag.setEnabled(true);
-        duvetCoversMarginField.setEnabled(true);
-        duvetCoversTaxField.setEnabled(true);
-
-        //nulling the model
-        model = null;
-    }//GEN-LAST:event_dovetCoversNewCostingButtonActionPerformed
-
     private void duvetExportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_duvetExportButtonActionPerformed
-        if (model != null) {
-            Export export = new Export(model);
-            export.openFile();
+        //ading the quotation object
+        QuationObject qObject = new QuationObject(
+                "Duvet Cover",
+                dovetCoversProductRangeCombo.getSelectedItem() + "",
+                dovetCoversMaterialTypeCombo.getSelectedItem() + "",
+                dovetCoversUseCustom.isSelected() == true ? dovetCoversCustomHeight.getText() + "X" + dovetCoversCustomWidth.getText() : dovetCoversSizeCombo.getSelectedItem() + "",
+                1,
+                Double.parseDouble(dovetCoversGrossSellingPrice.getText().replaceAll(",", "")));
+
+        //adding the costing summary object
+        SummaryObject summaryObj = new SummaryObject(
+                "Duvet Cover",
+                dovetCoversProductRangeCombo.getSelectedItem() + "",
+                dovetCoversMaterialTypeCombo.getSelectedItem() + "",
+                "",
+                dovetCoversUseCustom.isSelected() == true ? dovetCoversCutHeight.getText() + "X" + dovetCoversCustomHeight.getText() : dovetCoversSizeCombo.getSelectedItem() + "",
+                1,
+                Double.parseDouble(dovetCoversToatalCost.getText().replaceAll(",", "")),
+                Double.parseDouble(duvetCoversMarginField.getText().replaceAll(",", "")),
+                Double.parseDouble(duvetCoversTaxField.getText().replaceAll(",", "")));
+
+        //have to add data to this
+        ArrayList<Map.Entry<String, String>> prodSpecs = new ArrayList<Map.Entry<String, String>>();
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Product Range", dovetCoversProductRangeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Material Type", dovetCoversMaterialTypeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Duvet Cover Type", dovetCoversTypeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Size", dovetCoversUseCustom.isSelected() == true ? dovetCoversCustomHeight.getText() + "X" + dovetCoversCustomWidth.getText() : dovetCoversSizeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Wastage", dovetCoversWastage.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Flap", dovetCoverCustomFlap.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Lable", dovetCoversIncludeLable.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Tag", dovetCoversIncludeTag.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Seal Bag", dovetCoversIncludeSealBag.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Cardboard", dovetCoversIncludeCardBoard.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Margin", duvetCoversMarginField.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Taxes", duvetCoversTaxField.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Other Costs", duvetCoversOtherCostVal.getText() + ""));
+
+        ArrayList<Map.Entry<String, String>> costDescs = new ArrayList<Map.Entry<String, String>>();
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Cost", dovetCoversFabricCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Thread Cost", dovetCoversThreadCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Lable Cost", dovetCoversLableCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Tag Cost", dovetCoversTagCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Cardboard Cost", dovetCoversCardBoardCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Seal Bag Cost", dovetCoversSealBagCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Button Cost", dovetCoversButtonCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Zipper Cost", dovetCoversZipperCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Velco Cost", dovetCoversVelcoCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Total Material Cost", dovetCoversTotalMaterialCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("POH", dovetCoversPOH.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Labour Cost", dovetCoversLabourCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Total Cost Per Unit", dovetCoversToatalCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Net Selling Price", dovetCoversNetSellingPrice.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Taxes", dovetCoversTaxes.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Gross Selling Price", dovetCoversGrossSellingPrice.getText() + ""));
+
+        ArrayList<Map.Entry<String, String>> manuSpecs = new ArrayList<Map.Entry<String, String>>();
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Cutting Width", dovetCoversCutWidth.getText() + ""));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Cutting Height", dovetCoversCutHeight.getText() + ""));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("SMV Value", dovetCoversSMVValue.getText() + ""));
+
+
+        try {
+            int n = Integer.parseInt(quantity.getText());
+            qObject.setQuantity(n);
+            summaryObj.setQuantity(n);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid quantity value");
+            return;
         }
+
+
+        ItemSummaryObject itemSumObj = new ItemSummaryObject("Duvet Cover", summaryObj, prodSpecs, costDescs, manuSpecs);
+        MainWindow.quotation.addQuatationObject(qObject, itemSumObj);
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                final AddOrderSuccess dialog = new AddOrderSuccess(new javax.swing.JFrame(), true);
+                dialog.setVisible(true);
+            }
+        });
     }//GEN-LAST:event_duvetExportButtonActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField dovetCoverCustomFlap;
@@ -1082,7 +1080,6 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel dovetCoversLabourCost;
     private javax.swing.JComboBox dovetCoversMaterialTypeCombo;
     private javax.swing.JLabel dovetCoversNetSellingPrice;
-    private javax.swing.JButton dovetCoversNewCostingButton;
     private javax.swing.JLabel dovetCoversPOH;
     private javax.swing.JComboBox dovetCoversProductRangeCombo;
     private javax.swing.JLabel dovetCoversSMVValue;
@@ -1111,6 +1108,7 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel299;
     private javax.swing.JLabel jLabel300;
     private javax.swing.JLabel jLabel301;
+    private javax.swing.JLabel jLabel302;
     private javax.swing.JLabel jLabel331;
     private javax.swing.JLabel jLabel332;
     private javax.swing.JLabel jLabel333;
@@ -1142,6 +1140,7 @@ public class DuvetCoversCostingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel79;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
+    private javax.swing.JTextField quantity;
     // End of variables declaration//GEN-END:variables
 
     public static void main(String[] args) {

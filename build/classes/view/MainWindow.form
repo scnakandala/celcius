@@ -55,12 +55,12 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clearOrderButtonActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="exportOrderButton">
+            <MenuItem class="javax.swing.JMenuItem" name="exportQuotationButton">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Export Order"/>
+                <Property name="text" type="java.lang.String" value="Export Quotation"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exportOrderButtonActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exportQuotationButtonActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -1918,7 +1918,7 @@
         </Container>
         <Container class="javax.swing.JScrollPane" name="pillowProtectorScrollPane">
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="comfortersScrollPane.setViewportView(new view.ComfortersCostingPanel());"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="pillowProtectorScrollPane.setViewportView(new view.PillowProtectorCostingPanel());"/>
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
@@ -1932,7 +1932,7 @@
         </Container>
         <Container class="javax.swing.JScrollPane" name="pillowSlipScrollPane">
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="comfortersScrollPane.setViewportView(new view.ComfortersCostingPanel());"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="pillowSlipScrollPane.setViewportView(new view.PillowSlipCostingPanel());"/>
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">

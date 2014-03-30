@@ -19,21 +19,24 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="mattressProtectorCostingPanel" min="-2" pref="500" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="mattressProtectorCPUPanel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="14" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="11" pref="11" max="11" attributes="0"/>
                       <Component id="mattressProtectorCostingPanel" pref="835" max="32767" attributes="2"/>
                   </Group>
-                  <Component id="mattressProtectorCPUPanel" alignment="0" min="-2" max="-2" attributes="1"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="mattressProtectorCPUPanel" min="-2" max="-2" attributes="1"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -70,13 +73,11 @@
                   </Group>
                   <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                          <Component id="mettresProtectorSizeCombo" alignment="0" pref="205" max="32767" attributes="1"/>
-                          <Component id="mettresProtectorMaterialTypeCombo" alignment="0" max="32767" attributes="1"/>
-                          <Component id="mettresProtectorProductRangeCombo" alignment="0" max="32767" attributes="1"/>
-                          <Component id="mettresProtectorPaddingTypeCombo" alignment="0" max="32767" attributes="1"/>
-                          <Component id="mettresProtectorTaffataTypeCombo" alignment="0" max="32767" attributes="1"/>
-                      </Group>
+                      <Component id="mettresProtectorSizeCombo" alignment="0" max="32767" attributes="1"/>
+                      <Component id="mettresProtectorMaterialTypeCombo" alignment="0" max="32767" attributes="1"/>
+                      <Component id="mettresProtectorProductRangeCombo" alignment="0" max="32767" attributes="1"/>
+                      <Component id="mettresProtectorPaddingTypeCombo" alignment="0" max="32767" attributes="1"/>
+                      <Component id="mettresProtectorTaffataTypeCombo" alignment="0" max="32767" attributes="1"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -108,9 +109,9 @@
                           <EmptySpace pref="145" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="15" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="48" pref="48" max="48" attributes="0"/>
@@ -123,41 +124,34 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="48" pref="48" max="48" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="mettresProtectorCustomPanel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel302" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel301" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel305" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="mattressProtectorOtherCostVal" min="-2" pref="86" max="-2" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="mattressProtectorTaxField" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
-                                              <Component id="mattressProtectorMarginField" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel303" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel304" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                              </Group>
+                              <Component id="jLabel302" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel301" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel305" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel306" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="mattressProtectorMarginField" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
+                              <Component id="mattressProtectorTaxField" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
+                              <Component id="mattressProtectorOtherCostVal" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
+                              <Component id="quantity" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel303" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel304" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="196" max="-2" attributes="0"/>
-                          <Component id="mattressProtectorNewCostingButton" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="177" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
                           <Component id="mettresProtectorSubmitButton" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="48" pref="48" max="-2" attributes="0"/>
+                          <Component id="mettresProtectorCustomPanel" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="35" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -243,10 +237,12 @@
                       <Component id="mattressProtectorOtherCostVal" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel306" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="quantity" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Component id="mettresProtectorSubmitButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                  <Component id="mattressProtectorNewCostingButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -280,6 +276,9 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mettresProtectorProductRangeComboActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="mettresProtectorProductRangeCombo.setRenderer(new ComboBoxRenderer(logic.MattresProtectorLogic.getProductRanges()));"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel82">
           <Properties>
@@ -298,6 +297,9 @@
               <Connection code="new javax.swing.DefaultComboBoxModel(logic.MattresProtectorLogic.getMaterialTypes((String)mettresProtectorProductRangeCombo.getSelectedItem()))" type="code"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="mettresProtectorMaterialTypeCombo.setRenderer(new ComboBoxRenderer(logic.MattresProtectorLogic.getMaterialTypes((String)mettresProtectorProductRangeCombo.getSelectedItem())));"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JComboBox" name="mettresProtectorSizeCombo">
           <Properties>
@@ -311,6 +313,9 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mettresProtectorSizeComboActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="mettresProtectorSizeCombo.setRenderer(new ComboBoxRenderer(logic.MattresProtectorLogic.getMettresProtectorSizes()));"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JTextField" name="mettresProtectorFabricWastage">
           <Properties>
@@ -566,6 +571,9 @@
               <Connection code="new javax.swing.DefaultComboBoxModel(logic.MattresProtectorLogic.getPaddingTypes())" type="code"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="mettresProtectorPaddingTypeCombo.setRenderer(new ComboBoxRenderer(logic.MattresProtectorLogic.getPaddingTypes()));"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel114">
           <Properties>
@@ -638,30 +646,8 @@
               <Connection code="new javax.swing.DefaultComboBoxModel(logic.MattresProtectorLogic.getTaffataTypes())" type="code"/>
             </Property>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="mettresProtectorSubmitButton">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Times New Roman" size="16" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Find Cost Per Unit"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mettresProtectorSubmitButtonActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="mattressProtectorNewCostingButton">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Times New Roman" size="16" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="New Costing"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mattressProtectorNewCostingButtonActionPerformed"/>
-          </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="mattressProtectorNewCostingButton.setVisible(false);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="mettresProtectorTaffataTypeCombo.setRenderer(new ComboBoxRenderer(logic.MattresProtectorLogic.getTaffataTypes()));"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel301">
@@ -734,6 +720,36 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="mattressProtectorTaxField.setText(Config.taxesRate);"/>
           </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel306">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="16" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Quantity"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="quantity">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="16" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="1"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="mattressProtectorTaxField.setText(Config.taxesRate);"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="mettresProtectorSubmitButton">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="16" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Find Cost Per Unit"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mettresProtectorSubmitButtonActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

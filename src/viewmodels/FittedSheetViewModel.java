@@ -23,6 +23,7 @@ public class FittedSheetViewModel extends AbstractViewModel {
     private Double tagCost = 0.0;
     private Double peBagCost = 0.0;
     private Double cardBoardCost = 0.0;
+    private Double elasticCost = 0.0;
     private Double pohCost = 0.0;
     private Double labourCost = 0.0;
     private Double totalCost = 0.0;
@@ -253,5 +254,13 @@ public class FittedSheetViewModel extends AbstractViewModel {
 
     public void setCardBoardCost(Double cardBoardCost) {
         this.cardBoardCost = cardBoardCost;
+    }
+
+    public void setElasticCost(Double elasticCost) {
+        this.elasticCost = elasticCost;
+    }
+
+    public Double getElasticCost() {
+        return this.elasticCost;
     }
 }

@@ -31,7 +31,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="cotSheetCostingPanel4" pref="677" max="32767" attributes="1"/>
+                      <Component id="cotSheetCostingPanel4" pref="707" max="32767" attributes="1"/>
                   </Group>
                   <Component id="bolsterCPUPanel" alignment="0" min="-2" max="-2" attributes="1"/>
               </Group>
@@ -96,10 +96,6 @@
                                   <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
                                   <Component id="jLabel282" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="179" max="-2" attributes="0"/>
-                                  <Component id="bolsterNewCostingButton" min="-2" max="-2" attributes="0"/>
-                              </Group>
                           </Group>
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
@@ -112,6 +108,7 @@
                       <Component id="jLabel322" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel321" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel325" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel326" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -126,13 +123,14 @@
                           <Component id="jLabel324" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="bolsterOtherCostVal" min="-2" pref="86" max="-2" attributes="0"/>
+                      <Component id="quantity" min="-2" pref="86" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
                   <Component id="bolsterSubmitButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -203,9 +201,12 @@
                       <Component id="bolsterOtherCostVal" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel326" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="quantity" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                   <Component id="bolsterSubmitButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                  <Component id="bolsterNewCostingButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -240,6 +241,9 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bolsterRangeComboActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="bolsterRangeCombo.setRenderer(new ComboBoxRenderer(BolsterLogic.getProductRanges()));"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JTextField" name="bolsterFabricWastage">
           <Properties>
@@ -425,6 +429,9 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bolsterFabricTypeComboActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="bolsterFabricTypeCombo.setRenderer(new ComboBoxRenderer(BolsterLogic.getMaterialTypes((String)bolsterRangeCombo.getSelectedItem())));"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="bolsterSizeLable">
           <Properties>
@@ -443,6 +450,9 @@
               <Connection code="new javax.swing.DefaultComboBoxModel(BolsterLogic.getBolsterSizes((String)bolsterRangeCombo.getSelectedItem()))" type="code"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="bolsterSizeCombo.setRenderer(new ComboBoxRenderer(BolsterLogic.getBolsterSizes((String)bolsterRangeCombo.getSelectedItem())));"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="bolsterSubmitButton">
           <Properties>
@@ -468,20 +478,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bolsterUseCustomActionPerformed"/>
           </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="bolsterNewCostingButton">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Times New Roman" size="16" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="New Costing"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bolsterNewCostingButtonActionPerformed"/>
-          </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="bolsterNewCostingButton.setVisible(false);"/>
-          </AuxValues>
         </Component>
         <Component class="javax.swing.JRadioButton" name="bolsterCustomFiberButton">
           <Properties>
@@ -510,6 +506,9 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bolsterFiberTypeComboActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="bolsterFiberTypeCombo.setRenderer(new ComboBoxRenderer(BolsterLogic.getFiberTypes((String)bolsterRangeCombo.getSelectedItem())));"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel289">
           <Properties>
@@ -612,6 +611,25 @@
               <Font name="Times New Roman" size="16" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="0.00"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="bolsterTaxField.setText(Config.taxesRate);"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel326">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="16" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Quantity"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="quantity">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="16" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="1"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="bolsterTaxField.setText(Config.taxesRate);"/>

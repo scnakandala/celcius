@@ -1,14 +1,19 @@
 package view;
 
 import celcius.Config;
-import export.Export;
-import export.ExportModel;
+import excel.ItemSummaryObject;
+import excel.QuationObject;
+import excel.SummaryObject;
 import java.awt.EventQueue;
 import java.text.DecimalFormat;
+import java.util.AbstractMap;
+import java.util.ArrayList;
+import java.util.Map;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import logic.MattresProtectorLogic;
+import ui.helpers.ComboBoxRenderer;
 import viewmodels.MettresProtectorViewModel;
 
 /**
@@ -16,8 +21,6 @@ import viewmodels.MettresProtectorViewModel;
  * @author naka
  */
 public class MattressProtectorCostingPanel extends javax.swing.JPanel {
-
-    private ExportModel model;
 
     /**
      * Creates new form MattressProtectorCostingPanel
@@ -73,8 +76,6 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
         jLabel117 = new javax.swing.JLabel();
         jLabel118 = new javax.swing.JLabel();
         mettresProtectorTaffataTypeCombo = new javax.swing.JComboBox();
-        mettresProtectorSubmitButton = new javax.swing.JButton();
-        mattressProtectorNewCostingButton = new javax.swing.JButton();
         jLabel301 = new javax.swing.JLabel();
         jLabel302 = new javax.swing.JLabel();
         mattressProtectorTaxField = new javax.swing.JTextField();
@@ -83,6 +84,9 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
         mattressProtectorMarginField = new javax.swing.JTextField();
         jLabel305 = new javax.swing.JLabel();
         mattressProtectorOtherCostVal = new javax.swing.JTextField();
+        jLabel306 = new javax.swing.JLabel();
+        quantity = new javax.swing.JTextField();
+        mettresProtectorSubmitButton = new javax.swing.JButton();
         mattressProtectorCPUPanel = new javax.swing.JPanel();
         jPanel23 = new javax.swing.JPanel();
         mettresProtectorFabricPaddingCutWidth = new javax.swing.JLabel();
@@ -145,6 +149,7 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
 
         mettresProtectorProductRangeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         mettresProtectorProductRangeCombo.setModel(new javax.swing.DefaultComboBoxModel(logic.MattresProtectorLogic.getProductRanges()));
+        mettresProtectorProductRangeCombo.setRenderer(new ComboBoxRenderer(logic.MattresProtectorLogic.getProductRanges()));
         mettresProtectorProductRangeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mettresProtectorProductRangeComboActionPerformed(evt);
@@ -156,9 +161,11 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
 
         mettresProtectorMaterialTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         mettresProtectorMaterialTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(logic.MattresProtectorLogic.getMaterialTypes((String)mettresProtectorProductRangeCombo.getSelectedItem())));
+        mettresProtectorMaterialTypeCombo.setRenderer(new ComboBoxRenderer(logic.MattresProtectorLogic.getMaterialTypes((String)mettresProtectorProductRangeCombo.getSelectedItem())));
 
         mettresProtectorSizeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         mettresProtectorSizeCombo.setModel(new javax.swing.DefaultComboBoxModel(logic.MattresProtectorLogic.getMettresProtectorSizes()));
+        mettresProtectorSizeCombo.setRenderer(new ComboBoxRenderer(logic.MattresProtectorLogic.getMettresProtectorSizes()));
         mettresProtectorSizeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mettresProtectorSizeComboActionPerformed(evt);
@@ -297,6 +304,7 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
 
         mettresProtectorPaddingTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         mettresProtectorPaddingTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(logic.MattresProtectorLogic.getPaddingTypes()));
+        mettresProtectorPaddingTypeCombo.setRenderer(new ComboBoxRenderer(logic.MattresProtectorLogic.getPaddingTypes()));
 
         jLabel114.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel114.setText("Width Quilting Shrinkage:");
@@ -331,22 +339,7 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
 
         mettresProtectorTaffataTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         mettresProtectorTaffataTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(logic.MattresProtectorLogic.getTaffataTypes()));
-
-        mettresProtectorSubmitButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        mettresProtectorSubmitButton.setText("Find Cost Per Unit");
-        mettresProtectorSubmitButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mettresProtectorSubmitButtonActionPerformed(evt);
-            }
-        });
-
-        mattressProtectorNewCostingButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        mattressProtectorNewCostingButton.setText("New Costing");
-        mattressProtectorNewCostingButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mattressProtectorNewCostingButtonActionPerformed(evt);
-            }
-        });
+        mettresProtectorTaffataTypeCombo.setRenderer(new ComboBoxRenderer(logic.MattresProtectorLogic.getTaffataTypes()));
 
         jLabel301.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel301.setText("Margin:");
@@ -373,6 +366,21 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
         mattressProtectorOtherCostVal.setText("0.0");
         mattressProtectorTaxField.setText(Config.taxesRate);
 
+        jLabel306.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel306.setText("Quantity");
+
+        quantity.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        quantity.setText("1");
+        mattressProtectorTaxField.setText(Config.taxesRate);
+
+        mettresProtectorSubmitButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        mettresProtectorSubmitButton.setText("Find Cost Per Unit");
+        mettresProtectorSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mettresProtectorSubmitButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout mattressProtectorCostingPanelLayout = new javax.swing.GroupLayout(mattressProtectorCostingPanel);
         mattressProtectorCostingPanel.setLayout(mattressProtectorCostingPanelLayout);
         mattressProtectorCostingPanelLayout.setHorizontalGroup(
@@ -392,12 +400,11 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
                     .addComponent(jLabel115))
                 .addGap(76, 76, 76)
                 .addGroup(mattressProtectorCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(mattressProtectorCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(mettresProtectorSizeCombo, 0, 205, Short.MAX_VALUE)
-                        .addComponent(mettresProtectorMaterialTypeCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(mettresProtectorProductRangeCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(mettresProtectorPaddingTypeCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(mettresProtectorTaffataTypeCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(mettresProtectorSizeCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(mettresProtectorMaterialTypeCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(mettresProtectorProductRangeCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(mettresProtectorPaddingTypeCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(mettresProtectorTaffataTypeCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(mattressProtectorCostingPanelLayout.createSequentialGroup()
                         .addGroup(mattressProtectorCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(mattressProtectorCostingPanelLayout.createSequentialGroup()
@@ -421,7 +428,7 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel117)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(mattressProtectorCostingPanelLayout.createSequentialGroup()
                 .addGroup(mattressProtectorCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mattressProtectorCostingPanelLayout.createSequentialGroup()
@@ -433,30 +440,27 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
                     .addGroup(mattressProtectorCostingPanelLayout.createSequentialGroup()
                         .addGap(48, 48, 48)
                         .addGroup(mattressProtectorCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(mettresProtectorCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(mattressProtectorCostingPanelLayout.createSequentialGroup()
-                                .addGroup(mattressProtectorCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel302)
-                                    .addComponent(jLabel301)
-                                    .addComponent(jLabel305))
-                                .addGap(154, 154, 154)
-                                .addGroup(mattressProtectorCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(mattressProtectorOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(mattressProtectorCostingPanelLayout.createSequentialGroup()
-                                        .addGroup(mattressProtectorCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(mattressProtectorTaxField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(mattressProtectorMarginField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(mattressProtectorCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel303)
-                                            .addComponent(jLabel304)))))))
+                            .addComponent(jLabel302)
+                            .addComponent(jLabel301)
+                            .addComponent(jLabel305)
+                            .addComponent(jLabel306))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(mattressProtectorCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(mattressProtectorMarginField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mattressProtectorTaxField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mattressProtectorOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(mattressProtectorCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel303)
+                            .addComponent(jLabel304)))
                     .addGroup(mattressProtectorCostingPanelLayout.createSequentialGroup()
-                        .addGap(196, 196, 196)
-                        .addComponent(mattressProtectorNewCostingButton))
+                        .addGap(170, 170, 170)
+                        .addComponent(mettresProtectorSubmitButton))
                     .addGroup(mattressProtectorCostingPanelLayout.createSequentialGroup()
-                        .addGap(177, 177, 177)
-                        .addComponent(mettresProtectorSubmitButton)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(48, 48, 48)
+                        .addComponent(mettresProtectorCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         mattressProtectorCostingPanelLayout.setVerticalGroup(
             mattressProtectorCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -527,13 +531,12 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
                     .addComponent(jLabel305)
                     .addComponent(mattressProtectorOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(mettresProtectorSubmitButton)
-                .addGap(7, 7, 7)
-                .addComponent(mattressProtectorNewCostingButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(mattressProtectorCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel306)
+                    .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(mettresProtectorSubmitButton))
         );
-
-        mattressProtectorNewCostingButton.setVisible(false);
 
         mettresProtectorFabricPaddingCutWidth.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         mettresProtectorFabricPaddingCutWidth.setText("0.00");
@@ -907,18 +910,20 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(mattressProtectorCostingPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(mattressProtectorCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(11, 11, 11)
                         .addComponent(mattressProtectorCostingPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 835, Short.MAX_VALUE))
-                    .addComponent(mattressProtectorCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(mattressProtectorCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -1141,122 +1146,101 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
         mettresProtectorTaxes.setText(format.format(mReturn.getTaxes()));
         mettresProtectorGrossSellingPrice.setText(format.format(mReturn.getGrossSellingPrice()));
 
-        //export model
-        model = new ExportModel();
-        model.setProductName("Mattress Protector");
-        model.setProductRange(mReturn.getProductRange());
-        if (mReturn.isIsCustom()) {
-            model.setProductSize(mReturn.getCustomWidth() + "X" + mReturn.getCustomHeight());
-        } else {
-            model.setProductSize(mReturn.getSize());
-        }
-        model.setTotalMaterialCost(mReturn.getTotalMaterialCost());
-        model.setLabourCost(mReturn.getLabourCost());
-        model.setProductionOverHead(mReturn.getPohCost());
-        model.setTotalCostPerUnit(mReturn.getTotalCost());
-        model.setNetSellingPrice(mReturn.getNetSellingPrice());
-        model.setTaxes(mReturn.getTaxes());
-        model.setGrossSellingPrice(mReturn.getGrossSellingPrice());
-
-
-//        mettresProtectorSubmitButton.setVisible(false);
-//        mattressProtectorNewCostingButton.setVisible(true);
         mattressProtectorCPUPanel.setVisible(true);
 
-        //disabling input fields
-//        mettresProtectorProductRangeCombo.setEnabled(false);
-//        mettresProtectorMaterialTypeCombo.setEnabled(false);
-//        mettresProtectorSizeCombo.setEnabled(false);
-//        mettresProtectorPaddingTypeCombo.setEnabled(false);
-//        mettresProtectorTaffataTypeCombo.setEnabled(false);
-//
-//        mettresProtectorWidthQuiltingShrinkage.setEnabled(false);
-//        mettresProtectorHeightQuiltiingShrinkage.setEnabled(false);
-//        mettresProtectorFabricWastage.setEnabled(false);
-//        mettresProtectorTaffateWastage.setEnabled(false);
-//        mettresProtectorPaddingWastage.setEnabled(false);
-//
-//        mettresProtectorUseCustom.setEnabled(false);
-//        mettresProtectorCustomWidth.setEnabled(false);
-//        mettresProtectorCustomHeight.setEnabled(false);
-//
-//        mettresProtectorIncludeLable.setEnabled(false);
-//        mettresProtectorIncludeTag.setEnabled(false);
-//        mettresProtectorIncludePEBag.setEnabled(false);
-//        mettresProtectorIncludeNonWoven.setEnabled(false);
-//        mettresProtectorIncludePiping.setEnabled(false);
-//        mattressProtectorMarginField.setEnabled(false);
-//        mattressProtectorTaxField.setEnabled(false);
     }//GEN-LAST:event_mettresProtectorSubmitButtonActionPerformed
 
-    private void mattressProtectorNewCostingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mattressProtectorNewCostingButtonActionPerformed
-        mettresProtectorSubmitButton.setVisible(true);
-        mattressProtectorNewCostingButton.setVisible(false);
-        mattressProtectorCPUPanel.setVisible(false);
-
-        mettresProtectorProductRangeCombo.setModel(new DefaultComboBoxModel(
-                MattresProtectorLogic.getProductRanges()));
-        mettresProtectorMaterialTypeCombo.setModel(new DefaultComboBoxModel(
-                MattresProtectorLogic.getMaterialTypes(
-                (String) mettresProtectorProductRangeCombo.getSelectedItem())));
-        mettresProtectorSizeCombo.setModel(
-                new DefaultComboBoxModel(MattresProtectorLogic.getMettresProtectorSizes()));
-        mettresProtectorPaddingTypeCombo.setModel(
-                new DefaultComboBoxModel(MattresProtectorLogic.getPaddingTypes()));
-        mettresProtectorTaffataTypeCombo.setModel(
-                new DefaultComboBoxModel(MattresProtectorLogic.getTaffataTypes()));
-
-        mettresProtectorWidthQuiltingShrinkage.setText("8");
-        mettresProtectorHeightQuiltiingShrinkage.setText("3");
-        mettresProtectorFabricWastage.setText("3");
-        mettresProtectorTaffateWastage.setText("3");
-        mettresProtectorPaddingWastage.setText("3");
-
-        mettresProtectorUseCustom.setSelected(false);
-        mettresProtectorCustomPanel.setVisible(false);
-
-        mettresProtectorCustomWidth.setText("");
-        mettresProtectorCustomHeight.setText("");
-
-        mettresProtectorIncludeLable.setSelected(false);
-        mettresProtectorIncludeTag.setSelected(false);
-        mettresProtectorIncludePEBag.setSelected(false);
-        mettresProtectorIncludeNonWoven.setSelected(false);
-        mettresProtectorIncludePiping.setSelected(false);
-
-        mettresProtectorProductRangeCombo.setEnabled(true);
-        mettresProtectorMaterialTypeCombo.setEnabled(true);
-        mettresProtectorSizeCombo.setEnabled(true);
-        mettresProtectorPaddingTypeCombo.setEnabled(true);
-        mettresProtectorTaffataTypeCombo.setEnabled(true);
-
-        mettresProtectorWidthQuiltingShrinkage.setEnabled(true);
-        mettresProtectorHeightQuiltiingShrinkage.setEnabled(true);
-        mettresProtectorFabricWastage.setEnabled(true);
-        mettresProtectorTaffateWastage.setEnabled(true);
-        mettresProtectorPaddingWastage.setEnabled(true);
-
-        mettresProtectorUseCustom.setEnabled(true);
-        mettresProtectorCustomWidth.setEnabled(true);
-        mettresProtectorCustomHeight.setEnabled(true);
-
-        mettresProtectorIncludeLable.setEnabled(true);
-        mettresProtectorIncludeTag.setEnabled(true);
-        mettresProtectorIncludePEBag.setEnabled(true);
-        mettresProtectorIncludeNonWoven.setEnabled(true);
-        mettresProtectorIncludePiping.setEnabled(true);
-        mattressProtectorMarginField.setEnabled(true);
-        mattressProtectorTaxField.setEnabled(true);
-
-        //nulling the model
-        model = null;
-    }//GEN-LAST:event_mattressProtectorNewCostingButtonActionPerformed
-
     private void mattressProtectorExportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mattressProtectorExportButtonActionPerformed
-        if (model != null) {
-            Export export = new Export(model);
-            export.openFile();
+
+        //ading the quotation object
+        QuationObject qObject = new QuationObject(
+                "Mattress Protector",
+                mettresProtectorProductRangeCombo.getSelectedItem() + "",
+                mettresProtectorMaterialTypeCombo.getSelectedItem() + "",
+                mettresProtectorUseCustom.isSelected() == true ? mettresProtectorCustomHeight.getText() + "X" + mettresProtectorCustomWidth.getText() : mettresProtectorSizeCombo.getSelectedItem() + "",
+                1,
+                Double.parseDouble(mettresProtectorGrossSellingPrice.getText().replaceAll(",", "")));
+
+        //adding the costing summary object
+        SummaryObject summaryObj = new SummaryObject(
+                "Mattress Protector",
+                mettresProtectorProductRangeCombo.getSelectedItem() + "",
+                mettresProtectorMaterialTypeCombo.getSelectedItem() + "",
+                mettresProtectorPaddingTypeCombo.getSelectedItem() + "",
+                mettresProtectorUseCustom.isSelected() == true ? mettresProtectorCustomHeight.getText() + "X" + mettresProtectorCustomWidth.getText() : mettresProtectorSizeCombo.getSelectedItem() + "",
+                1,
+                Double.parseDouble(mettresProtectorToatalCost.getText().replaceAll(",", "")),
+                Double.parseDouble(mattressProtectorMarginField.getText().replaceAll(",", "")),
+                Double.parseDouble(mattressProtectorTaxField.getText().replaceAll(",", "")));
+
+        //have to add data to this
+        ArrayList<Map.Entry<String, String>> prodSpecs = new ArrayList<Map.Entry<String, String>>();
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Product Range", mettresProtectorProductRangeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Type", mettresProtectorMaterialTypeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Size", mettresProtectorUseCustom.isSelected() == true ? mettresProtectorCustomHeight.getText() + "X" + mettresProtectorCustomWidth.getText() : mettresProtectorSizeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Padding Type", mettresProtectorPaddingTypeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Taffata Type", mettresProtectorTaffataTypeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Width Quilting Shrinkage", mettresProtectorWidthQuiltingShrinkage.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Height Quilting Shrinkage", mettresProtectorHeightQuiltiingShrinkage.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Wastage", mettresProtectorFabricWastage.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Taffata Wastage", mettresProtectorTaffateWastage.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Padding Wastage", mettresProtectorPaddingWastage.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Lable", mettresProtectorIncludeLable.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Tag", mettresProtectorIncludeTag.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Product Range", mettresProtectorProductRangeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include PE Bag", mettresProtectorIncludePEBag.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Non Woven Bag", mettresProtectorIncludeNonWoven.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Piping", mettresProtectorIncludePiping.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Margin", mattressProtectorMarginField.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Taxes", mattressProtectorTaxField.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Other Costs", mattressProtectorOtherCostVal.getText()));
+
+        ArrayList<Map.Entry<String, String>> costDescs = new ArrayList<Map.Entry<String, String>>();
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Cost", mettresProtectorFabricCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Padding Cost", mettresProtectorPaddingCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Taffata Cost", mettresProtectorTaffataCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Thread Cost", mettresProtectorThreadCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Lable Cost", mettresProtectorLableCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Tag Cost", mettresProtectorTagCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Elastic Cost", mettresProtectorElasticCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Piping Cost", mettresProtectorPipingCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("PE Bag Cost", mettresProtectorPEBagCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Non Woven Bag Cost", mettresProtectorNonWovenBagCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Total Material Cost", mettresProtectorTotalMaterialCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("POH", mettresProtectorPOH.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Labour Cost", mettresProtectorLabourCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Total Cost Per Unit", mettresProtectorToatalCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Net Selling Price", mettresProtectorNetSellingPrice.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Taxes", mettresProtectorTaxes.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Gross Selling Price", mettresProtectorGrossSellingPrice.getText()));
+
+        ArrayList<Map.Entry<String, String>> manuSpecs = new ArrayList<Map.Entry<String, String>>();
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric/Padding Cut Width", mettresProtectorFabricPaddingCutWidth.getText()));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric/Padding Cut Height", mettresProtectorFabricPaddingCutHeight.getText()));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Taffata Cut Width", mettresProtectorTafffataCutWidth.getText()));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Taffata Cut Height", mettresProtectorTaffataCutHeight.getText()));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("SMV Value", mettresProtectorSMVValue.getText()));
+
+
+        try {
+            int n = Integer.parseInt(quantity.getText());
+            qObject.setQuantity(n);
+            summaryObj.setQuantity(n);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid quantity value");
+            return;
         }
+
+
+        ItemSummaryObject itemSumObj = new ItemSummaryObject("Mattress Protector", summaryObj, prodSpecs, costDescs, manuSpecs);
+        MainWindow.quotation.addQuatationObject(qObject, itemSumObj);
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                final AddOrderSuccess dialog = new AddOrderSuccess(new javax.swing.JFrame(), true);
+                dialog.setVisible(true);
+            }
+        });
 }//GEN-LAST:event_mattressProtectorExportButtonActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel100;
@@ -1283,6 +1267,7 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel303;
     private javax.swing.JLabel jLabel304;
     private javax.swing.JLabel jLabel305;
+    private javax.swing.JLabel jLabel306;
     private javax.swing.JLabel jLabel334;
     private javax.swing.JLabel jLabel335;
     private javax.swing.JLabel jLabel336;
@@ -1311,7 +1296,6 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
     private javax.swing.JPanel mattressProtectorCostingPanel;
     private javax.swing.JButton mattressProtectorExportButton;
     private javax.swing.JTextField mattressProtectorMarginField;
-    private javax.swing.JButton mattressProtectorNewCostingButton;
     private javax.swing.JTextField mattressProtectorOtherCostVal;
     private javax.swing.JLabel mattressProtectorSizeLable;
     private javax.swing.JTextField mattressProtectorTaxField;
@@ -1357,6 +1341,7 @@ public class MattressProtectorCostingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel mettresProtectorTotalMaterialCost;
     private javax.swing.JRadioButton mettresProtectorUseCustom;
     private javax.swing.JTextField mettresProtectorWidthQuiltingShrinkage;
+    private javax.swing.JTextField quantity;
     // End of variables declaration//GEN-END:variables
 
     public static void main(String[] args) {

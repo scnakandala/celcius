@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <exe4j version="4.5.2" transformSequenceNumber="1">
-  <directoryPresets config="G:/WorkDir/celcius/dist" />
+  <directoryPresets config="C:/Users/naka/Desktop/celcius" />
   <application name="Costing" distributionSourceDir="C:/Users/naka/Desktop">
     <languages>
       <principalLanguage id="en" customLocalizationFile="" />
     </languages>
   </application>
-  <executable name="Costing" type="2" iconSet="true" iconFile="G:/WorkDir/celcius/src/resources/icon_2.ico" executableDir="." redirectStderr="true" stderrFile="error.log" stderrMode="overwrite" redirectStdout="false" stdoutFile="output.log" stdoutMode="overwrite" failOnStderrOutput="true" executableMode="1" changeWorkingDirectory="true" workingDirectory="." singleInstance="true" serviceStartType="2" serviceDependencies="" serviceDescription="" jreLocation="" executionLevel="asInvoker" checkConsoleParameter="false" globalSingleInstance="false" amd64="false">
+  <executable name="Costing" type="2" iconSet="true" iconFile="C:/Users/naka/Desktop/celcius/src/resources/icon_2.ico" executableDir="." redirectStderr="true" stderrFile="error.log" stderrMode="overwrite" redirectStdout="false" stdoutFile="output.log" stdoutMode="overwrite" failOnStderrOutput="true" executableMode="1" changeWorkingDirectory="true" workingDirectory="." singleInstance="true" serviceStartType="2" serviceDependencies="" serviceDescription="" jreLocation="" executionLevel="asInvoker" checkConsoleParameter="false" globalSingleInstance="false" amd64="false">
     <messageSet />
     <versionInfo include="false" fileVersion="" fileDescription="" legalCopyright="" internalName="" productName="" companyName="" productVersion="" />
   </executable>
@@ -23,16 +23,18 @@
       <envVar name="JDK_HOME" />
     </searchSequence>
     <classPath>
-      <archive location="G:/WorkDir/celcius/AbsoluteLayout.jar" failOnError="false" />
-      <archive location="G:/WorkDir/celcius/beansbinding-1.2.1.jar" failOnError="false" />
-      <archive location="G:/WorkDir/celcius/commons-math3-3.2.jar" failOnError="false" />
-      <archive location="G:/WorkDir/celcius/eclipselink-2.2.0.jar" failOnError="false" />
-      <archive location="G:/WorkDir/celcius/eclipselink-javax.persistence-2.0.jar" failOnError="false" />
-      <archive location="G:/WorkDir/celcius/jxl.jar" failOnError="false" />
-      <archive location="G:/WorkDir/celcius/mysql-connector-java-5.1.23-bin.jar" failOnError="false" />
-      <archive location="G:/WorkDir/celcius/toplink-essentials-agent.jar" failOnError="false" />
-      <archive location="G:/WorkDir/celcius/toplink-essentials.jar" failOnError="false" />
-      <archive location="G:/WorkDir/celcius/dist/Celcius.jar" failOnError="false" />
+      <archive location="./celcius/lib/AbsoluteLayout.jar" failOnError="false" />
+      <archive location="./celcius/lib/beansbinding-1.2.1.jar" failOnError="false" />
+      <archive location="./celcius/lib/commons-math3-3.2.jar" failOnError="false" />
+      <archive location="./celcius/lib/eclipselink-2.2.0.jar" failOnError="false" />
+      <archive location="./celcius/lib/eclipselink-javax.persistence-2.0.jar" failOnError="false" />
+      <archive location="./celcius/lib/jxl.jar" failOnError="false" />
+      <archive location="./celcius/lib/mysql-connector-java-5.1.23-bin.jar" failOnError="false" />
+      <archive location="./celcius/lib/poi-3.9-20121203.jar" failOnError="false" />
+      <archive location="./celcius/lib/toplink-essentials.jar" failOnError="false" />
+      <archive location="./celcius/lib/toplink-essentials-agent.jar" failOnError="false" />
+      <archive location="./celcius/dist/Celcius.jar" failOnError="false" />
+      <archive location="./celcius/Quotation-Template.xls" failOnError="false" />
     </classPath>
     <nativeLibraryDirectories />
   </java>

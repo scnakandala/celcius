@@ -1,14 +1,19 @@
 package view;
 
 import celcius.Config;
-import export.Export;
-import export.ExportModel;
+import excel.ItemSummaryObject;
+import excel.QuationObject;
+import excel.SummaryObject;
 import java.awt.EventQueue;
 import java.text.DecimalFormat;
+import java.util.AbstractMap;
+import java.util.ArrayList;
+import java.util.Map;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import logic.DuvetsLogic;
+import ui.helpers.ComboBoxRenderer;
 import viewmodels.DovetsViewModel;
 
 /**
@@ -16,8 +21,6 @@ import viewmodels.DovetsViewModel;
  * @author naka
  */
 public class DuvetsCostingPanel extends javax.swing.JPanel {
-
-    private ExportModel model;
 
     /**
      * Creates new form DuvetsCostingPanel
@@ -79,7 +82,6 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
         duvetsPaddingWastage = new javax.swing.JTextField();
         jLabel165 = new javax.swing.JLabel();
         duvetsUseCustom = new javax.swing.JRadioButton();
-        duvetsNewCostingButton = new javax.swing.JButton();
         jLabel309 = new javax.swing.JLabel();
         jLabel310 = new javax.swing.JLabel();
         duvetsTaxField = new javax.swing.JTextField();
@@ -88,6 +90,8 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
         duvetsMarginField = new javax.swing.JTextField();
         jLabel313 = new javax.swing.JLabel();
         duvetsOtherCostVal = new javax.swing.JTextField();
+        jLabel314 = new javax.swing.JLabel();
+        quantity = new javax.swing.JTextField();
         duvetsCPUPanel = new javax.swing.JPanel();
         jPanel34 = new javax.swing.JPanel();
         jLabel182 = new javax.swing.JLabel();
@@ -143,6 +147,7 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
 
         duvetTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         duvetTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(DuvetsLogic.getDuvetTypes()));
+        duvetTypeCombo.setRenderer(new ComboBoxRenderer(DuvetsLogic.getDuvetTypes()));
         duvetTypeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 duvetTypeComboActionPerformed(evt);
@@ -151,6 +156,7 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
 
         duvetProductRangeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         duvetProductRangeCombo.setModel(new javax.swing.DefaultComboBoxModel(DuvetsLogic.getProductRanges((String)duvetTypeCombo.getSelectedItem())));
+        duvetProductRangeCombo.setRenderer(new ComboBoxRenderer(DuvetsLogic.getProductRanges((String)duvetTypeCombo.getSelectedItem())));
         duvetProductRangeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 duvetProductRangeComboActionPerformed(evt);
@@ -252,12 +258,14 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
 
         duvetFabricTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         duvetFabricTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(DuvetsLogic.getMaterialTypes((String)duvetProductRangeCombo.getSelectedItem())));
+        duvetFabricTypeCombo.setRenderer(new ComboBoxRenderer(DuvetsLogic.getMaterialTypes((String)duvetProductRangeCombo.getSelectedItem())));
 
         duvetsSizeLable.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         duvetsSizeLable.setText("Select Size:");
 
         duvetSizeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         duvetSizeCombo.setModel(new javax.swing.DefaultComboBoxModel(DuvetsLogic.getDuvetsizes((String)duvetTypeCombo.getSelectedItem())));
+        duvetSizeCombo.setRenderer(new ComboBoxRenderer(DuvetsLogic.getDuvetsizes((String)duvetTypeCombo.getSelectedItem())));
 
         duvetsSubmitButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         duvetsSubmitButton.setText("Find Cost Per Unit");
@@ -275,6 +283,7 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
 
         duvetFiberTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         duvetFiberTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(DuvetsLogic.getFiberTypes()));
+        duvetFiberTypeCombo.setRenderer(new ComboBoxRenderer(DuvetsLogic.getFiberTypes()));
 
         duvetFiberWastage.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         duvetFiberWastage.setText("3");
@@ -342,6 +351,7 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
 
         duvetPaddingTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         duvetPaddingTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(DuvetsLogic.getPaddingTypes()));
+        duvetPaddingTypeCombo.setRenderer(new ComboBoxRenderer(DuvetsLogic.getPaddingTypes()));
 
         jLabel167.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel167.setText("Width Quilting Shrinkage:");
@@ -450,14 +460,6 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
             }
         });
 
-        duvetsNewCostingButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        duvetsNewCostingButton.setText("New Costing");
-        duvetsNewCostingButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                duvetsNewCostingButtonActionPerformed(evt);
-            }
-        });
-
         jLabel309.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel309.setText("Margin:");
 
@@ -482,6 +484,18 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
         duvetsOtherCostVal.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         duvetsOtherCostVal.setText("0.0");
         duvetsTaxField.setText(Config.taxesRate);
+
+        jLabel314.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel314.setText("Quantity");
+
+        quantity.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        quantity.setText("1");
+        duvetsTaxField.setText(Config.taxesRate);
+        quantity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quantityActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout duvetsCostingPanelLayout = new javax.swing.GroupLayout(duvetsCostingPanel);
         duvetsCostingPanel.setLayout(duvetsCostingPanelLayout);
@@ -521,18 +535,20 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
                         .addComponent(duvetsGelFeatherPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(duvetsCostingPanelLayout.createSequentialGroup()
                         .addGap(159, 159, 159)
-                        .addComponent(jLabel120)))
-                .addContainerGap())
-            .addGroup(duvetsCostingPanelLayout.createSequentialGroup()
-                .addGroup(duvetsCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel120))
+                    .addGroup(duvetsCostingPanelLayout.createSequentialGroup()
+                        .addGap(152, 152, 152)
+                        .addComponent(duvetsSubmitButton))
                     .addGroup(duvetsCostingPanelLayout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addGroup(duvetsCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel310)
                             .addComponent(jLabel309)
-                            .addComponent(jLabel313))
+                            .addComponent(jLabel313)
+                            .addComponent(jLabel314))
                         .addGap(160, 160, 160)
                         .addGroup(duvetsCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(duvetsOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(duvetsCostingPanelLayout.createSequentialGroup()
                                 .addComponent(duvetsTaxField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -541,15 +557,8 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
                             .addGroup(duvetsCostingPanelLayout.createSequentialGroup()
                                 .addComponent(duvetsMarginField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel312))))
-                    .addGroup(duvetsCostingPanelLayout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addGroup(duvetsCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(duvetsSubmitButton)
-                            .addGroup(duvetsCostingPanelLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(duvetsNewCostingButton)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jLabel312)))))
+                .addContainerGap())
         );
         duvetsCostingPanelLayout.setVerticalGroup(
             duvetsCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -599,15 +608,16 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
                 .addGroup(duvetsCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel313)
                     .addComponent(duvetsOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
-                .addComponent(duvetsSubmitButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(duvetsNewCostingButton))
+                .addGroup(duvetsCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel314)
+                    .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(11, 11, 11)
+                .addComponent(duvetsSubmitButton))
         );
 
         duvetsCustomPanel.setVisible(false);
         duvetsGelFeatherPanel.setVisible(false);
-        duvetsNewCostingButton.setVisible(false);
 
         jLabel182.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel182.setText("Fabric Cutting Height:");
@@ -1216,48 +1226,6 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
         duvetsTaxes.setText(format.format(dReturn.getTaxes()));
         duvetsGrossSellingPrice.setText(format.format(dReturn.getGrossSellingPrice()));
 
-        //export model
-        model = new ExportModel();
-        model.setProductName("Duvet");
-        model.setProductRange(dReturn.getProductRange());
-        if (dReturn.isIsCustom()) {
-            model.setProductSize(dReturn.getCustomWidth() + "X" + dReturn.getCustomHeight());
-        } else {
-            model.setProductSize(dReturn.getSize());
-        }
-        model.setTotalMaterialCost(dReturn.getTotalMaterialCost());
-        model.setLabourCost(dReturn.getLabourCost());
-        model.setProductionOverHead(dReturn.getPohCost());
-        model.setTotalCostPerUnit(dReturn.getTotalCost());
-        model.setNetSellingPrice(dReturn.getNetSellingPrice());
-        model.setTaxes(dReturn.getTaxes());
-        model.setGrossSellingPrice(dReturn.getGrossSellingPrice());
-
-
-//        duvetTypeCombo.setEnabled(false);
-//        duvetProductRangeCombo.setEnabled(false);
-//        duvetFabricTypeCombo.setEnabled(false);
-//        duvetSizeCombo.setEnabled(false);
-//        duvetsFabricWastage.setEnabled(false);
-//        duvetFiberTypeCombo.setEnabled(false);
-//        duvetFiberWastage.setEnabled(false);
-//        duvetFillingGsm.setEnabled(false);
-//        duvetPaddingTypeCombo.setEnabled(false);
-//        duvetsWidthQuiltingShrinkage.setEnabled(false);
-//        duvetsHeightQuiltiingShrinkage.setEnabled(false);
-//        duvetsPaddingWastage.setEnabled(false);
-//        duvetsUseCustom.setEnabled(false);
-//        duvetsCustomWidth.setEnabled(false);
-//        duvetsCustomHeight.setEnabled(false);
-//        duvetsIncludeLable.setEnabled(false);
-//        duvetsIncludeNonWovenBag.setEnabled(false);
-//        duvetsIncludePEBag.setEnabled(false);
-//        duvetsIncludeTag.setEnabled(false);
-//        duvetsMarginField.setEnabled(false);
-//        duvetsTaxField.setEnabled(false);
-//
-//        duvetsSubmitButton.setVisible(false);
-//        duvetsNewCostingButton.setVisible(true);
         duvetsCPUPanel.setVisible(true);
 }//GEN-LAST:event_duvetsSubmitButtonActionPerformed
 
@@ -1293,72 +1261,100 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
         }
 }//GEN-LAST:event_duvetsUseCustomActionPerformed
 
-    private void duvetsNewCostingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_duvetsNewCostingButtonActionPerformed
-        duvetTypeCombo.setModel(new DefaultComboBoxModel(DuvetsLogic.getDuvetTypes()));
-        duvetProductRangeCombo.setModel(new DefaultComboBoxModel(
-                DuvetsLogic.getProductRanges(
-                (String) duvetTypeCombo.getSelectedItem())));
-        duvetFabricTypeCombo.setModel(new DefaultComboBoxModel(
-                DuvetsLogic.getMaterialTypes(
-                (String) duvetProductRangeCombo.getSelectedItem())));
-        duvetSizeCombo.setModel(new DefaultComboBoxModel(
-                DuvetsLogic.getDuvetsizes((String) duvetTypeCombo.getSelectedItem())));
-        duvetsFabricWastage.setText("3");
-        duvetFiberTypeCombo.setModel(
-                new DefaultComboBoxModel(DuvetsLogic.getFiberTypes()));
-        duvetFiberWastage.setText("3");
-        duvetFillingGsm.setText("");
-        duvetsGelFeatherPanel.setVisible(false);
-
-        duvetPaddingTypeCombo.setSelectedIndex(0);
-        duvetsWidthQuiltingShrinkage.setText("8");
-        duvetsHeightQuiltiingShrinkage.setText("3");
-        duvetsPaddingWastage.setText("3");
-        duvetsUseCustom.setSelected(false);
-        duvetsCustomPanel.setVisible(false);
-        duvetsCustomWidth.setText("");
-        duvetsCustomHeight.setText("");
-        duvetsIncludeLable.setSelected(false);
-        duvetsIncludeNonWovenBag.setSelected(false);
-        duvetsIncludePEBag.setSelected(false);
-        duvetsIncludeTag.setSelected(false);
-
-        duvetTypeCombo.setEnabled(true);
-        duvetProductRangeCombo.setEnabled(true);
-        duvetFabricTypeCombo.setEnabled(true);
-        duvetSizeCombo.setEnabled(true);
-        duvetsFabricWastage.setEnabled(true);
-        duvetFiberTypeCombo.setEnabled(true);
-        duvetFiberWastage.setEnabled(true);
-        duvetFillingGsm.setEnabled(true);
-        duvetPaddingTypeCombo.setEnabled(true);
-        duvetsWidthQuiltingShrinkage.setEnabled(true);
-        duvetsHeightQuiltiingShrinkage.setEnabled(true);
-        duvetsPaddingWastage.setEnabled(true);
-        duvetsUseCustom.setEnabled(true);
-        duvetsCustomWidth.setEnabled(true);
-        duvetsCustomHeight.setEnabled(true);
-        duvetsIncludeLable.setEnabled(true);
-        duvetsIncludeNonWovenBag.setEnabled(true);
-        duvetsIncludePEBag.setEnabled(true);
-        duvetsIncludeTag.setEnabled(true);
-        duvetsMarginField.setEnabled(true);
-        duvetsTaxField.setEnabled(true);
-
-        duvetsSubmitButton.setVisible(true);
-        duvetsNewCostingButton.setVisible(false);
-        duvetsCPUPanel.setVisible(false);
-
-        //nulling the model
-        model = null;
-}//GEN-LAST:event_duvetsNewCostingButtonActionPerformed
-
     private void duvetExportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_duvetExportButtonActionPerformed
-        if (model != null) {
-            Export export = new Export(model);
-            export.openFile();
+        //ading the quotation object
+        QuationObject qObject = new QuationObject(
+                "Duvets",
+                duvetProductRangeCombo.getSelectedItem() + "",
+                duvetFabricTypeCombo.getSelectedItem() + "",
+                duvetsUseCustom.isSelected() == true ? duvetsCustomHeight.getText() + "X" + duvetsCustomWidth.getText() : duvetSizeCombo.getSelectedItem() + "",
+                1,
+                Double.parseDouble(duvetsGrossSellingPrice.getText().replaceAll(",", "")));
+
+        //adding the costing summary object
+        SummaryObject summaryObj = new SummaryObject(
+                "Duvets",
+                duvetProductRangeCombo.getSelectedItem() + "",
+                duvetFabricTypeCombo.getSelectedItem() + "",
+                duvetPaddingTypeCombo.getSelectedItem() + "",
+                duvetsUseCustom.isSelected() == true ? duvetsCustomHeight.getText() + "X" + duvetsCustomWidth.getText() : duvetSizeCombo.getSelectedItem() + "",
+                1,
+                Double.parseDouble(duvetsToatalCost.getText().replaceAll(",", "")),
+                Double.parseDouble(duvetsMarginField.getText().replaceAll(",", "")),
+                Double.parseDouble(duvetsTaxField.getText().replaceAll(",", "")));
+
+        //have to add data to this
+        ArrayList<Map.Entry<String, String>> prodSpecs = new ArrayList<Map.Entry<String, String>>();
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Comforter Type", duvetTypeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Product Range", duvetProductRangeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Type", duvetFabricTypeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Size", duvetsUseCustom.isSelected() == true ? duvetsCustomWidth.getText() + "X" + duvetsCustomHeight.getText() : duvetSizeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Wastage", duvetsFabricWastage.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fiber Type", duvetFiberTypeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fiber Wastage", duvetFiberWastage.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Filling GSM", duvetFillingGsm.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Padding Type", duvetPaddingTypeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Width Quilting Shrinkage", duvetsWidthQuiltingShrinkage.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Height Quilting Shrinkage", duvetsHeightQuiltiingShrinkage.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Padding Wastage", duvetsPaddingWastage.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Lable", duvetsIncludeLable.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Tag", duvetsIncludeTag.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include PE Bag", duvetsIncludePEBag.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Non Woven Bag", duvetsIncludeNonWovenBag.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Margin", duvetsMarginField.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Taxes", duvetsTaxField.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Other Costs", duvetsOtherCostVal.getText() + ""));
+
+        ArrayList<Map.Entry<String, String>> costDescs = new ArrayList<Map.Entry<String, String>>();
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Cost", duvetsFabricCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Padding Cost", duvetsPaddingCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Fiber Cost", duvetsFiberCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Thread Cost", duvetsThreadCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Lable Cost", duvetsLableCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Tag Cost", duvetsTagCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Non Woven Bag Cost", duvetsNonWovenBagCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Piping Cost", duvetsPipingCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("PE Bag Cost", duvetsPEBagCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Total Material Cost", duvetsTotalMaterialCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("POH", duvetsPOH.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Labour Cost", duvetsLabourCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Total Cost Per Unit", duvetsToatalCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Net Selling Price", duvetsNetSellingPrice.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Taxes", duvetsTaxes.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Gross Selling Price", duvetsGrossSellingPrice.getText()));
+
+        ArrayList<Map.Entry<String, String>> manuSpecs = new ArrayList<Map.Entry<String, String>>();
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Cutting Width", duvetsFabricCutWidth.getText() + ""));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Cutting Height", duvetsFabricCutHeight.getText() + ""));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fiber Weight", duvetsFiberWeight.getText() + ""));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("SMV Value", duvetsSMVValue.getText() + ""));
+
+
+        try {
+            int n = Integer.parseInt(quantity.getText());
+            qObject.setQuantity(n);
+            summaryObj.setQuantity(n);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid quantity value");
+            return;
         }
+
+
+        ItemSummaryObject itemSumObj = new ItemSummaryObject("Duvet", summaryObj, prodSpecs, costDescs, manuSpecs);
+        MainWindow.quotation.addQuatationObject(qObject, itemSumObj);
+
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                final AddOrderSuccess dialog = new AddOrderSuccess(new javax.swing.JFrame(), true);
+                dialog.setVisible(true);
+            }
+        });
 }//GEN-LAST:event_duvetExportButtonActionPerformed
+
+    private void quantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quantityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_quantityActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton duvetExportButton;
     private javax.swing.JComboBox duvetFabricTypeCombo;
@@ -1392,7 +1388,6 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel duvetsLabourCost;
     private javax.swing.JTextField duvetsMarginField;
     private javax.swing.JLabel duvetsNetSellingPrice;
-    private javax.swing.JButton duvetsNewCostingButton;
     private javax.swing.JLabel duvetsNonWovenBagCost;
     private javax.swing.JTextField duvetsOtherCostVal;
     private javax.swing.JLabel duvetsPEBagCost;
@@ -1454,11 +1449,13 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel311;
     private javax.swing.JLabel jLabel312;
     private javax.swing.JLabel jLabel313;
+    private javax.swing.JLabel jLabel314;
     private javax.swing.JLabel jLabel340;
     private javax.swing.JLabel jLabel341;
     private javax.swing.JLabel jLabel342;
     private javax.swing.JPanel jPanel34;
     private javax.swing.JPanel jPanel35;
+    private javax.swing.JTextField quantity;
     // End of variables declaration//GEN-END:variables
 
     public static void main(String[] args) {

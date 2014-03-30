@@ -11,14 +11,18 @@
 package view;
 
 import celcius.Config;
-import export.Export;
-import export.ExportModel;
+import excel.ItemSummaryObject;
+import excel.QuationObject;
+import excel.SummaryObject;
 import java.awt.EventQueue;
 import java.text.DecimalFormat;
-import javax.swing.DefaultComboBoxModel;
+import java.util.AbstractMap;
+import java.util.ArrayList;
+import java.util.Map;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import logic.CotSheetLogic;
+import ui.helpers.ComboBoxRenderer;
 import viewmodels.CotSheetViewModel;
 
 /**
@@ -26,8 +30,6 @@ import viewmodels.CotSheetViewModel;
  * @author naka
  */
 public class CotSheetCostingPanel extends javax.swing.JPanel {
-
-    private ExportModel model;
 
     /**
      * Creates new form CotSheetCostingPanel
@@ -80,7 +82,6 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
         cotSheetTaffataTypeCombo = new javax.swing.JComboBox();
         cotSheetSubmitButton = new javax.swing.JButton();
         cotSheetUseCustom = new javax.swing.JRadioButton();
-        cotSheetNewCosting = new javax.swing.JButton();
         jLabel305 = new javax.swing.JLabel();
         jLabel306 = new javax.swing.JLabel();
         cotSheetTaxField = new javax.swing.JTextField();
@@ -89,6 +90,8 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
         cotSheetsMarginField = new javax.swing.JTextField();
         jLabel309 = new javax.swing.JLabel();
         cotSheetOtherCostVal = new javax.swing.JTextField();
+        jLabel310 = new javax.swing.JLabel();
+        quantity = new javax.swing.JTextField();
         cotSheetCPUPanel = new javax.swing.JPanel();
         jPanel31 = new javax.swing.JPanel();
         jLabel143 = new javax.swing.JLabel();
@@ -147,9 +150,11 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
 
         cotSheetMaterialTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cotSheetMaterialTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(CotSheetLogic.getMaterialTypes()));
+        cotSheetMaterialTypeCombo.setRenderer(new ComboBoxRenderer(CotSheetLogic.getMaterialTypes()));
 
         cotSheetSizeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cotSheetSizeCombo.setModel(new javax.swing.DefaultComboBoxModel(CotSheetLogic.getCotSheetizes()));
+        cotSheetSizeCombo.setRenderer(new ComboBoxRenderer(CotSheetLogic.getCotSheetizes()));
         cotSheetSizeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cotSheetSizeComboActionPerformed(evt);
@@ -267,6 +272,7 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
 
         cotSheetPaddingTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cotSheetPaddingTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(CotSheetLogic.getPaddingTypes()));
+        cotSheetPaddingTypeCombo.setRenderer(new ComboBoxRenderer(CotSheetLogic.getPaddingTypes()));
 
         jLabel132.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel132.setText("Width Quilting Shrinkage:");
@@ -301,6 +307,7 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
 
         cotSheetTaffataTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cotSheetTaffataTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(CotSheetLogic.getTaffataTypes()));
+        cotSheetTaffataTypeCombo.setRenderer(new ComboBoxRenderer(CotSheetLogic.getTaffataTypes()));
 
         cotSheetSubmitButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cotSheetSubmitButton.setText("Find Cost Per Unit");
@@ -316,14 +323,6 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
         cotSheetUseCustom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cotSheetUseCustomActionPerformed(evt);
-            }
-        });
-
-        cotSheetNewCosting.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        cotSheetNewCosting.setText("New Costing");
-        cotSheetNewCosting.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cotSheetNewCostingActionPerformed(evt);
             }
         });
 
@@ -352,34 +351,49 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
         cotSheetOtherCostVal.setText("0.0");
         cotSheetTaxField.setText(Config.taxesRate);
 
+        jLabel310.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel310.setText("Quantity");
+
+        quantity.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        quantity.setText("1");
+        cotSheetTaxField.setText(Config.taxesRate);
+
         javax.swing.GroupLayout cotSheetCostingPanelLayout = new javax.swing.GroupLayout(cotSheetCostingPanel);
         cotSheetCostingPanel.setLayout(cotSheetCostingPanelLayout);
         cotSheetCostingPanelLayout.setHorizontalGroup(
             cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(24, 24, 24)
                 .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
-                        .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel306)
-                            .addComponent(jLabel305)
-                            .addComponent(jLabel309))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
-                                    .addComponent(cotSheetTaxField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel307))
-                                .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
-                                    .addComponent(cotSheetsMarginField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel308)))
                             .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
-                                .addComponent(cotSheetOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel306)
+                                    .addComponent(jLabel305)
+                                    .addComponent(jLabel309))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
+                                            .addComponent(cotSheetTaxField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jLabel307))
+                                        .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
+                                            .addComponent(cotSheetsMarginField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jLabel308)))
+                                    .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
+                                        .addComponent(cotSheetOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(17, 17, 17))))
+                            .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel310)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(17, 17, 17)))
                         .addGap(153, 153, 153))
                     .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
+                        .addGap(2, 2, 2)
                         .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(cotSheetCustomPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
@@ -430,10 +444,8 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
                         .addGap(164, 164, 164)
                         .addComponent(jLabel119))
                     .addGroup(cotSheetCostingPanelLayout.createSequentialGroup()
-                        .addGap(172, 172, 172)
-                        .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(cotSheetSubmitButton)
-                            .addComponent(cotSheetNewCosting))))
+                        .addGap(171, 171, 171)
+                        .addComponent(cotSheetSubmitButton)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         cotSheetCostingPanelLayout.setVerticalGroup(
@@ -501,14 +513,14 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
                     .addComponent(cotSheetOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel309))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cotSheetSubmitButton)
+                .addGroup(cotSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel310))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cotSheetNewCosting)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(cotSheetSubmitButton))
         );
 
         cotSheetCustomPanel.setVisible(false);
-        cotSheetNewCosting.setVisible(false);
 
         jLabel143.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel143.setText("Labour Cost:");
@@ -1061,47 +1073,7 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
         cotSheetTaxes.setText(format.format(cReturn.getTaxes()));
         cotSheetGrossSellingPrice.setText(format.format(cReturn.getGrossSellingPrice()));
 
-        //export model
-        model = new ExportModel();
-        model.setProductName("Cot Sheet");
-        model.setProductRange(" - - - ");//cot sheets deoesn't have a product range
-        if (cReturn.isIsCustom()) {
-            model.setProductSize(cReturn.getCustomWidth() + "X" + cReturn.getCustomHeight());
-        } else {
-            model.setProductSize(cReturn.getSize());
-        }
-        model.setTotalMaterialCost(cReturn.getTotalMaterialCost());
-        model.setLabourCost(cReturn.getLabourCost());
-        model.setProductionOverHead(cReturn.getPohCost());
-        model.setTotalCostPerUnit(cReturn.getTotalCost());
-        model.setNetSellingPrice(cReturn.getNetSellingPrice());
-        model.setTaxes(cReturn.getTaxes());
-        model.setGrossSellingPrice(cReturn.getGrossSellingPrice());
-
         cotSheetCPUPanel.setVisible(true);
-//        cotSheetSubmitButton.setVisible(false);
-//        cotSheetNewCosting.setVisible(true);
-//
-//        //disabling input fields
-//        cotSheetMaterialTypeCombo.setEnabled(false);
-//        cotSheetSizeCombo.setEnabled(false);
-//        cotSheetPaddingTypeCombo.setEnabled(false);
-//        cotSheetTaffataTypeCombo.setEnabled(false);
-//        cotSheetWidthQuiltingShrinkage.setEnabled(false);
-//        cotSheetHeightQuiltiingShrinkage.setEnabled(false);
-//        cotSheetFabricWastage.setEnabled(false);
-//        cotSheetTaffateWastage.setEnabled(false);
-//        cotSheetPaddingWastage.setEnabled(false);
-//
-//        cotSheetUseCustom.setEnabled(false);
-//        cotSheetCustomHeight.setEnabled(false);
-//        cotSheetCustomWidth.setEnabled(false);
-//
-//        cotSheetIncludeLable.setEnabled(false);
-//        cotSheetIncludePEBag.setEnabled(false);
-//        cotSheetIncludeTag.setEnabled(false);
-//        cotSheetsMarginField.setEnabled(false);
-//        cotSheetTaxField.setEnabled(false);
     }//GEN-LAST:event_cotSheetSubmitButtonActionPerformed
 
     private void cotSheetUseCustomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cotSheetUseCustomActionPerformed
@@ -1116,181 +1088,83 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
         }
 }//GEN-LAST:event_cotSheetUseCustomActionPerformed
 
-    private void cotSheetNewCostingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cotSheetNewCostingActionPerformed
-        cotSheetCPUPanel.setVisible(false);
-        cotSheetSubmitButton.setVisible(true);
-        cotSheetNewCosting.setVisible(false);
-
-        cotSheetMaterialTypeCombo.setModel(new DefaultComboBoxModel(
-                CotSheetLogic.getMaterialTypes()));
-        cotSheetSizeCombo.setModel(new DefaultComboBoxModel(
-                CotSheetLogic.getCotSheetizes()));
-        cotSheetPaddingTypeCombo.setModel(
-                new DefaultComboBoxModel(CotSheetLogic.getPaddingTypes()));
-        cotSheetTaffataTypeCombo.setModel(
-                new DefaultComboBoxModel(CotSheetLogic.getTaffataTypes()));
-        cotSheetWidthQuiltingShrinkage.setText("8");
-        cotSheetHeightQuiltiingShrinkage.setText("3");
-        cotSheetFabricWastage.setText("3");
-        cotSheetTaffateWastage.setText("3");
-        cotSheetPaddingWastage.setText("3");
-
-        cotSheetUseCustom.setSelected(false);
-        cotSheetCustomPanel.setVisible(false);
-        cotSheetCustomHeight.setText("");
-        cotSheetCustomWidth.setText("");
-
-        cotSheetIncludeLable.setSelected(false);
-        cotSheetIncludePEBag.setSelected(false);
-        cotSheetIncludeTag.setSelected(false);
-
-        cotSheetMaterialTypeCombo.setEnabled(true);
-        cotSheetSizeCombo.setEnabled(true);
-        cotSheetPaddingTypeCombo.setEnabled(true);
-        cotSheetTaffataTypeCombo.setEnabled(true);
-        cotSheetWidthQuiltingShrinkage.setEnabled(true);
-        cotSheetHeightQuiltiingShrinkage.setEnabled(true);
-        cotSheetFabricWastage.setEnabled(true);
-        cotSheetTaffateWastage.setEnabled(true);
-        cotSheetPaddingWastage.setEnabled(true);
-
-        cotSheetUseCustom.setEnabled(true);
-        cotSheetCustomHeight.setEnabled(true);
-        cotSheetCustomWidth.setEnabled(true);
-
-        cotSheetIncludeLable.setEnabled(true);
-        cotSheetIncludePEBag.setEnabled(true);
-        cotSheetIncludeTag.setEnabled(true);
-        cotSheetsMarginField.setEnabled(true);
-        cotSheetTaxField.setEnabled(true);
-
-        //nulling the model
-        model = null;
-}//GEN-LAST:event_cotSheetNewCostingActionPerformed
-
     private void cotSheetExportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cotSheetExportButtonActionPerformed
-//        if (model != null) {
-//            Export export = new Export(model);
-//            export.openFile();
-//        }
-        String title = "Cot Sheet Costing";
+        //ading the quotation object
+        QuationObject qObject = new QuationObject(
+                "Cot Sheet",
+                "",
+                cotSheetMaterialTypeCombo.getSelectedItem() + "",
+                cotSheetUseCustom.isSelected() == true ? cotSheetCustomHeight.getText() + "X" + cotSheetCustomWidth.getText() : cotSheetSizeCombo.getSelectedItem() + "",
+                1,
+                Double.parseDouble(cotSheetGrossSellingPrice.getText().replaceAll(",", "")));
 
-        String[][] specifications = new String[2][15];
-        specifications[0][0] = "Fabric Type";
-        specifications[0][1] = "Size";
-        specifications[0][2] = "Padding Type";
-        specifications[0][3] = "Taffata Type";
-        specifications[0][4] = "Width Quilting Shrinkage";
-        specifications[0][5] = "Height Quilting Shrinkage";
-        specifications[0][6] = "Fabric Wastage";
-        specifications[0][7] = "Taffata Wastage";
-        specifications[0][8] = "Padding Wastage";
-        specifications[0][9] = "Lable";
-        specifications[0][10] = "Tag";
-        specifications[0][11] = "PE Bag";
-        specifications[0][12] = "Margin";
-        specifications[0][13] = "Taxes";
-        specifications[0][14] = "Other Costs";
+        //adding the costing summary object
+        SummaryObject summaryObj = new SummaryObject(
+                "Cot Sheet",
+                "",
+                cotSheetMaterialTypeCombo.getSelectedItem() + "",
+                cotSheetPaddingTypeCombo.getSelectedItem() + "",
+                cotSheetUseCustom.isSelected() == true ? cotSheetCustomHeight.getText() + "X" + cotSheetCustomWidth.getText() : cotSheetSizeCombo.getSelectedItem() + "",
+                1,
+                Double.parseDouble(cotSheetToatalCost.getText().replaceAll(",", "")),
+                Double.parseDouble(cotSheetsMarginField.getText().replaceAll(",", "")),
+                Double.parseDouble(cotSheetTaxField.getText().replaceAll(",", "")));
 
-        specifications[1][0] = cotSheetMaterialTypeCombo.getSelectedItem() + "";
-        if (cotSheetUseCustom.isSelected()) {
-            specifications[1][1] = cotSheetCustomHeight.getText() + "X" + cotSheetCustomWidth.getText();
-        } else {
-            specifications[1][1] = cotSheetSizeCombo.getSelectedItem() + "";
+        //have to add data to this
+        ArrayList<Map.Entry<String, String>> prodSpecs = new ArrayList<Map.Entry<String, String>>();
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Type", cotSheetMaterialTypeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Size", cotSheetUseCustom.isSelected() == true ? cotSheetCustomHeight.getText() + "X" + cotSheetCustomWidth.getText() : cotSheetSizeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Padding Type", cotSheetPaddingTypeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Taffata Type", cotSheetTaffataTypeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Width Quilting Shrinkage", cotSheetWidthQuiltingShrinkage.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Height Quilting Shrinkage", cotSheetHeightQuiltiingShrinkage.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Wastage", cotSheetFabricWastage.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Taffata Wastage", cotSheetTaffateWastage.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Padding Wastage", cotSheetPaddingWastage.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Lable", cotSheetIncludeLable.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Tag", cotSheetIncludeTag.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include PE Bag", cotSheetIncludePEBag.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Margin", cotSheetsMarginField.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Taxes", cotSheetTaxField.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Other Costs", cotSheetOtherCostVal.getText() + ""));
+
+        ArrayList<Map.Entry<String, String>> costDescs = new ArrayList<Map.Entry<String, String>>();
+        costDescs.add(new AbstractMap.SimpleImmutableEntry<String, String>("Fabric Cost", cotSheetFabricCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleImmutableEntry<String, String>("Padding Cost", cotSheetPaddingCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleImmutableEntry<String, String>("Taffata Cost", cotSheetTaffataCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleImmutableEntry<String, String>("Thread Cost", cotSheetThreadCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleImmutableEntry<String, String>("Lable Cost", cotSheetLableCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleImmutableEntry<String, String>("Tag Cost", cotSheetTagCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleImmutableEntry<String, String>("Elastic Cost", cotSheetElasticCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleImmutableEntry<String, String>("PE Bag Cost", cotSheetPEBagCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleImmutableEntry<String, String>("Total Material Cost", cotSheetTotalMaterialCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleImmutableEntry<String, String>("POH", cotSheetPOH.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleImmutableEntry<String, String>("Labour Cost", cotSheetLabourCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleImmutableEntry<String, String>("Total Cost Per Unit", cotSheetToatalCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleImmutableEntry<String, String>("Net Selling Price", cotSheetNetSellingPrice.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleImmutableEntry<String, String>("Taxes", cotSheetTaxes.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleImmutableEntry<String, String>("Gross Selling Price", cotSheetGrossSellingPrice.getText() + ""));
+
+        ArrayList<Map.Entry<String, String>> manuSpecs = new ArrayList<Map.Entry<String, String>>();
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Padding Cut Width", cotSheetFabricPaddingCutWidth.getText()));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Padding Cut Height", cotSheetFabricPaddingCutHeight.getText()));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Taffata Cut Width", cotSheetTafffataCutWidth.getText()));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Taffata Cut Height", cotSheetTaffataCutHeight.getText()));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("SMV Value", cotSheetSMVValue.getText()));
+
+        
+        try {
+            int n = Integer.parseInt(quantity.getText());
+            qObject.setQuantity(n);
+            summaryObj.setQuantity(n);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid quantity value");
+            return;
         }
-        specifications[1][2] = cotSheetPaddingTypeCombo.getSelectedItem()+"";
 
-        specifications[1][3] = cotSheetTaffataTypeCombo.getSelectedItem()+"";
         
-        specifications[1][4] = cotSheetWidthQuiltingShrinkage.getText();
-        
-        specifications[1][5] = cotSheetHeightQuiltiingShrinkage.getText();
-        
-        specifications[1][6] = cotSheetFabricWastage.getText();
-        
-        specifications[1][7] = cotSheetTaffateWastage.getText();
-        
-        specifications[1][8] = cotSheetPaddingWastage.getText();
-        
-
-        if (cotSheetIncludeLable.isSelected()) {
-            specifications[1][9] = "Added";
-        } else {
-            specifications[1][9] = "Not Added";
-        }
-
-        if (cotSheetIncludeTag.isSelected()) {
-            specifications[1][10] = "Added";
-        } else {
-            specifications[1][10] = "Not Added";
-        }
-
-        if (cotSheetIncludePEBag.isSelected()) {
-            specifications[1][11] = "Added";
-        } else {
-            specifications[1][11] = "Not Added";
-        }
-
-        specifications[1][12] = cotSheetsMarginField.getText();
-        specifications[1][13] = cotSheetTaxes.getText();
-        specifications[1][14] = cotSheetOtherCostVal.getText();
-
-        String[][] cpus = new String[2][14];
-        cpus[0][0] = "Fabric Cost";
-        cpus[0][1] = "Padding Cost";
-        cpus[0][2] = "Taffata Cost";
-        cpus[0][3] = "Thread Cost";
-        cpus[0][4] = "Lable Cost";
-        cpus[0][5] = "Tag Cost";
-        cpus[0][6] = "Elastic Cost";        
-        cpus[0][7] = "PE Bag Cost";
-        cpus[0][8] = "Total Material Cost";
-        cpus[0][9] = "Labor Cost";
-        cpus[0][10] = "Total Cost Per Unit";
-        cpus[0][11] = "Net Selling Price";
-        cpus[0][12] = "Taxes";
-        cpus[0][13] = "Gross Selling Price";
-
-        cpus[1][0] = cotSheetFabricCost.getText();
-        cpus[1][1] = cotSheetPaddingCost.getText();
-        cpus[1][2] = cotSheetTaffataCost.getText();
-        cpus[1][3] = cotSheetThreadCost.getText();
-        cpus[1][4] = cotSheetLableCost.getText();
-        cpus[1][5] = cotSheetTagCost.getText();
-        cpus[1][6] = cotSheetElasticCost.getText();
-        cpus[1][7] = cotSheetPEBagCost.getText();
-        cpus[1][8] = cotSheetTotalMaterialCost.getText();
-        cpus[1][9] = cotSheetLabourCost.getText();
-        cpus[1][10] = cotSheetToatalCost.getText();
-        cpus[1][11] = cotSheetNetSellingPrice.getText();
-        cpus[1][12] = cotSheetTaxes.getText();
-        cpus[1][13] = cotSheetGrossSellingPrice.getText();
-
-
-        String[][] prodPaprameters = new String[2][5];
-        prodPaprameters[0][0] = "Fabir/Padding Cutting Width";
-        prodPaprameters[0][1] = "Fabir/Padding Cutting Height";
-        prodPaprameters[0][2] = "Taffata Cutting Width";
-        prodPaprameters[0][3] = "Taffata Cutting Height";
-        prodPaprameters[0][4] = "SMV Value";
-
-        prodPaprameters[1][0] = cotSheetFabricPaddingCutWidth.getText();
-        prodPaprameters[1][1] = cotSheetFabricPaddingCutHeight.getText();
-        prodPaprameters[1][2] = cotSheetTaffataCutHeight.getText();
-        prodPaprameters[1][3] = cotSheetTafffataCutWidth.getText();
-        prodPaprameters[1][4] = cotSheetSMVValue.getText();
-
-        String[] summary = new String[8];
-        summary[0] = "Cot Sheet";
-        summary[1] = "";
-        summary[2] = cotSheetMaterialTypeCombo.getSelectedItem() + "";
-        summary[3] = specifications[1][2];
-        summary[4] = specifications[1][1];
-        summary[5] = "1";
-        summary[6] = cotSheetGrossSellingPrice.getText();
-        summary[7] = "";
-
-        MainWindow.workbook.addOrderItem(summary, specifications, cpus, prodPaprameters, title);
+        ItemSummaryObject itemSumObj = new ItemSummaryObject("Cot Sheet", summaryObj, prodSpecs, costDescs, manuSpecs);
+        MainWindow.quotation.addQuatationObject(qObject, itemSumObj);
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -1320,7 +1194,6 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel cotSheetLabourCost;
     private javax.swing.JComboBox cotSheetMaterialTypeCombo;
     private javax.swing.JLabel cotSheetNetSellingPrice;
-    private javax.swing.JButton cotSheetNewCosting;
     private javax.swing.JTextField cotSheetOtherCostVal;
     private javax.swing.JLabel cotSheetPEBagCost;
     private javax.swing.JLabel cotSheetPOH;
@@ -1385,11 +1258,13 @@ public class CotSheetCostingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel307;
     private javax.swing.JLabel jLabel308;
     private javax.swing.JLabel jLabel309;
+    private javax.swing.JLabel jLabel310;
     private javax.swing.JLabel jLabel337;
     private javax.swing.JLabel jLabel338;
     private javax.swing.JLabel jLabel339;
     private javax.swing.JPanel jPanel31;
     private javax.swing.JPanel jPanel32;
+    private javax.swing.JTextField quantity;
     // End of variables declaration//GEN-END:variables
 
     public static void main(String[] args) {

@@ -7,8 +7,8 @@ import java.util.logging.Logger;
 
 public class Config {
 
-    //public static String connectionString = "jdbc:mysql://192.168.2.5/celcius?"
-    //        + "user=celcius&password=celcius";
+//    public static String connectionString = "jdbc:mysql://localhost/celcius?"
+//            + "user=root&password=";
 
     public static String connectionString = "jdbc:mysql://localhost/celcius?"
             + "user=root&password=";

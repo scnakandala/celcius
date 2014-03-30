@@ -27,13 +27,17 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="pillowsCostingPanel" pref="705" max="32767" attributes="1"/>
-              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="pillowsCPUPanel" min="-2" max="-2" attributes="1"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="pillowsCPUPanel" min="-2" max="-2" attributes="1"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="pillowsCostingPanel" pref="736" max="32767" attributes="1"/>
+                  </Group>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -94,24 +98,34 @@
                               </Group>
                               <Component id="pillowsCustomPanel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel314" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel313" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel317" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="pillowsTaxField" min="-2" pref="86" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jLabel315" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel314" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel313" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel317" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="pillowsTaxField" min="-2" pref="86" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jLabel315" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="pillowsMarginField" min="-2" pref="86" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jLabel316" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="pillowsOtherCostVal" min="-2" pref="86" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="pillowsMarginField" min="-2" pref="86" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jLabel316" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jLabel318" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="quantity" min="-2" pref="86" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="pillowsOtherCostVal" min="-2" pref="86" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
                               </Group>
@@ -121,11 +135,8 @@
                   <EmptySpace pref="20" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="2" attributes="0">
-                      <Component id="pillowsSubmitButton" alignment="2" min="-2" max="-2" attributes="0"/>
-                      <Component id="pillowsNewCostingButton" alignment="2" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="-2" pref="167" max="-2" attributes="0"/>
+                  <Component id="pillowsSubmitButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -202,9 +213,12 @@
                       <Component id="pillowsOtherCostVal" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="pillowsSubmitButton" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel318" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="quantity" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="pillowsNewCostingButton" min="-2" max="-2" attributes="0"/>
+                  <Component id="pillowsSubmitButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -239,6 +253,9 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pillowRangeComboActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="pillowRangeCombo.setRenderer(new ComboBoxRenderer(PillowLogic.getProductRanges()));"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JComboBox" name="pillowTypeCombo">
           <Properties>
@@ -252,6 +269,9 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pillowTypeComboActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="pillowTypeCombo.setRenderer(new ComboBoxRenderer(PillowLogic.getPillowTypes((String)pillowRangeCombo.getSelectedItem())));"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JTextField" name="pillowFabricWastage">
           <Properties>
@@ -446,6 +466,9 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pillowFabricTypeComboActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="pillowFabricTypeCombo.setRenderer(new ComboBoxRenderer(PillowLogic.getMaterialTypes((String)pillowRangeCombo.getSelectedItem())));"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="pillowsSizeLable">
           <Properties>
@@ -464,6 +487,9 @@
               <Connection code="new javax.swing.DefaultComboBoxModel(PillowLogic.getPillowSizes((String)pillowRangeCombo.getSelectedItem(),(String)pillowTypeCombo.getSelectedItem()))" type="code"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="pillowSizeCombo.setRenderer(new ComboBoxRenderer(PillowLogic.getPillowSizes((String)pillowRangeCombo.getSelectedItem(),(String)pillowTypeCombo.getSelectedItem())));"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="pillowsSubmitButton">
           <Properties>
@@ -489,20 +515,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pillowsUseCustomActionPerformed"/>
           </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="pillowsNewCostingButton">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Times New Roman" size="16" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="New Costing"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pillowsNewCostingButtonActionPerformed"/>
-          </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="pillowsNewCostingButton.setVisible(false);"/>
-          </AuxValues>
         </Component>
         <Component class="javax.swing.JRadioButton" name="pillowCustomFiberButton">
           <Properties>
@@ -531,6 +543,9 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pillowFiberTypeComboActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="pillowFiberTypeCombo.setRenderer(new ComboBoxRenderer(PillowLogic.getFiberTypes((String)pillowRangeCombo.getSelectedItem())));"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel237">
           <Properties>
@@ -633,6 +648,25 @@
               <Font name="Times New Roman" size="16" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="0.0"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="pillowsTaxField.setText(Config.taxesRate);"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel318">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="16" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Quantity"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="quantity">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="16" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="1"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="pillowsTaxField.setText(Config.taxesRate);"/>

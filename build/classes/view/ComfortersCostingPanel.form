@@ -17,9 +17,9 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Component id="duvetsCostingPanel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="duvetsCostingPanel" min="-2" pref="484" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="duvetsCPUPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="136" max="32767" attributes="0"/>
           </Group>
@@ -29,11 +29,11 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                  <Component id="duvetsCPUPanel" min="-2" max="-2" attributes="1"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="11" pref="11" max="11" attributes="0"/>
                       <Component id="duvetsCostingPanel" max="32767" attributes="1"/>
                   </Group>
-                  <Component id="duvetsCPUPanel" alignment="0" min="-2" max="-2" attributes="1"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -97,34 +97,38 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel310" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel309" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel313" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="duvetsOtherCostVal" min="-2" pref="86" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="duvetsTaxField" min="-2" pref="86" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel311" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="duvetsMarginField" min="-2" pref="86" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel312" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
+                          <Component id="duvetsSubmitButton" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="duvetsSubmitButton" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                  <Component id="duvetsNewCostingButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel314" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="quantity" min="-2" pref="86" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel310" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel309" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel313" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="duvetsOtherCostVal" min="-2" pref="86" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="duvetsTaxField" min="-2" pref="86" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jLabel311" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="duvetsMarginField" min="-2" pref="86" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jLabel312" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>
@@ -189,10 +193,14 @@
                       <Component id="jLabel313" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="duvetsOtherCostVal" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel314" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="quantity" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Component id="duvetsSubmitButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="duvetsNewCostingButton" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -226,6 +234,9 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="duvetTypeComboActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="duvetTypeCombo.setRenderer(new ComboBoxRenderer(DuvetsLogic.getDuvetTypes()));"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JComboBox" name="duvetProductRangeCombo">
           <Properties>
@@ -239,6 +250,9 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="duvetProductRangeComboActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="duvetProductRangeCombo.setRenderer(new ComboBoxRenderer(DuvetsLogic.getProductRanges((String)duvetTypeCombo.getSelectedItem())));"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JTextField" name="duvetsFabricWastage">
           <Properties>
@@ -421,6 +435,9 @@
               <Connection code="new javax.swing.DefaultComboBoxModel(DuvetsLogic.getMaterialTypes((String)duvetProductRangeCombo.getSelectedItem()))" type="code"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="duvetFabricTypeCombo.setRenderer(new ComboBoxRenderer(DuvetsLogic.getMaterialTypes((String)duvetProductRangeCombo.getSelectedItem())));"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="duvetsSizeLable">
           <Properties>
@@ -439,6 +456,9 @@
               <Connection code="new javax.swing.DefaultComboBoxModel(DuvetsLogic.getDuvetsizes((String)duvetTypeCombo.getSelectedItem()))" type="code"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="duvetSizeCombo.setRenderer(new ComboBoxRenderer(DuvetsLogic.getDuvetsizes((String)duvetTypeCombo.getSelectedItem())));"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="duvetsSubmitButton">
           <Properties>
@@ -466,7 +486,7 @@
                           <Component id="jLabel164" alignment="0" max="32767" attributes="1"/>
                           <Component id="jLabel193" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="duvetFiberWastage" min="-2" pref="28" max="-2" attributes="1"/>
@@ -476,7 +496,7 @@
                           <Component id="duvetFiberTypeCombo" alignment="0" min="-2" pref="208" max="-2" attributes="1"/>
                           <Component id="duvetFillingGsm" alignment="0" min="-2" pref="62" max="-2" attributes="1"/>
                       </Group>
-                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -530,6 +550,9 @@
                   <Connection code="new javax.swing.DefaultComboBoxModel(DuvetsLogic.getFiberTypes())" type="code"/>
                 </Property>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="duvetFiberTypeCombo.setRenderer(new ComboBoxRenderer(DuvetsLogic.getFiberTypes()));"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JTextField" name="duvetFiberWastage">
               <Properties>
@@ -661,6 +684,9 @@
                   <Connection code="new javax.swing.DefaultComboBoxModel(DuvetsLogic.getPaddingTypes())" type="code"/>
                 </Property>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="duvetPaddingTypeCombo.setRenderer(new ComboBoxRenderer(DuvetsLogic.getPaddingTypes()));"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel167">
               <Properties>
@@ -759,20 +785,6 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="duvetsUseCustomActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="duvetsNewCostingButton">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Times New Roman" size="16" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="New Costing"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="duvetsNewCostingButtonActionPerformed"/>
-          </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="duvetsNewCostingButton.setVisible(false);"/>
-          </AuxValues>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel309">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -839,6 +851,25 @@
               <Font name="Times New Roman" size="16" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="0.0"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="duvetsTaxField.setText(Config.taxesRate);"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel314">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="16" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Quantity"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="quantity">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="16" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="1"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="duvetsTaxField.setText(Config.taxesRate);"/>

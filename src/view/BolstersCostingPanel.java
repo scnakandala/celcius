@@ -1,9 +1,4 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
  * BolstersCostingPanel.java
  *
  * Created on Apr 25, 2013, 3:31:52 AM
@@ -11,14 +6,19 @@
 package view;
 
 import celcius.Config;
-import export.Export;
-import export.ExportModel;
+import excel.ItemSummaryObject;
+import excel.QuationObject;
+import excel.SummaryObject;
 import java.awt.EventQueue;
 import java.text.DecimalFormat;
+import java.util.AbstractMap;
+import java.util.ArrayList;
+import java.util.Map;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import logic.BolsterLogic;
+import ui.helpers.ComboBoxRenderer;
 import viewmodels.BolstersViewModel;
 
 /**
@@ -26,8 +26,6 @@ import viewmodels.BolstersViewModel;
  * @author naka
  */
 public class BolstersCostingPanel extends javax.swing.JPanel {
-
-    private ExportModel model;
 
     /**
      * Creates new form BolstersCostingPanel
@@ -68,7 +66,6 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
         bolsterSizeCombo = new javax.swing.JComboBox();
         bolsterSubmitButton = new javax.swing.JButton();
         bolsterUseCustom = new javax.swing.JRadioButton();
-        bolsterNewCostingButton = new javax.swing.JButton();
         bolsterCustomFiberButton = new javax.swing.JRadioButton();
         bolsterFiberTypeCombo = new javax.swing.JComboBox();
         jLabel289 = new javax.swing.JLabel();
@@ -83,6 +80,8 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
         bolsterMarginField = new javax.swing.JTextField();
         jLabel325 = new javax.swing.JLabel();
         bolsterOtherCostVal = new javax.swing.JTextField();
+        jLabel326 = new javax.swing.JLabel();
+        quantity = new javax.swing.JTextField();
         bolsterCPUPanel = new javax.swing.JPanel();
         jPanel44 = new javax.swing.JPanel();
         jLabel250 = new javax.swing.JLabel();
@@ -130,6 +129,7 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
 
         bolsterRangeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bolsterRangeCombo.setModel(new javax.swing.DefaultComboBoxModel(BolsterLogic.getProductRanges()));
+        bolsterRangeCombo.setRenderer(new ComboBoxRenderer(BolsterLogic.getProductRanges()));
         bolsterRangeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bolsterRangeComboActionPerformed(evt);
@@ -228,6 +228,7 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
 
         bolsterFabricTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bolsterFabricTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(BolsterLogic.getMaterialTypes((String)bolsterRangeCombo.getSelectedItem())));
+        bolsterFabricTypeCombo.setRenderer(new ComboBoxRenderer(BolsterLogic.getMaterialTypes((String)bolsterRangeCombo.getSelectedItem())));
         bolsterFabricTypeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bolsterFabricTypeComboActionPerformed(evt);
@@ -239,6 +240,7 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
 
         bolsterSizeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bolsterSizeCombo.setModel(new javax.swing.DefaultComboBoxModel(BolsterLogic.getBolsterSizes((String)bolsterRangeCombo.getSelectedItem())));
+        bolsterSizeCombo.setRenderer(new ComboBoxRenderer(BolsterLogic.getBolsterSizes((String)bolsterRangeCombo.getSelectedItem())));
 
         bolsterSubmitButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bolsterSubmitButton.setText("Find Cost Per Unit");
@@ -257,14 +259,6 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
             }
         });
 
-        bolsterNewCostingButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        bolsterNewCostingButton.setText("New Costing");
-        bolsterNewCostingButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bolsterNewCostingButtonActionPerformed(evt);
-            }
-        });
-
         bolsterCustomFiberButton.setBackground(new java.awt.Color(204, 204, 204));
         bolsterCustomFiberButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bolsterCustomFiberButton.setText("Custom Fiber Selection");
@@ -277,6 +271,7 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
 
         bolsterFiberTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bolsterFiberTypeCombo.setModel(new DefaultComboBoxModel(BolsterLogic.getFiberTypes((String)bolsterRangeCombo.getSelectedItem())));
+        bolsterFiberTypeCombo.setRenderer(new ComboBoxRenderer(BolsterLogic.getFiberTypes((String)bolsterRangeCombo.getSelectedItem())));
         bolsterFiberTypeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bolsterFiberTypeComboActionPerformed(evt);
@@ -325,6 +320,13 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
         bolsterOtherCostVal.setText("0.00");
         bolsterTaxField.setText(Config.taxesRate);
 
+        jLabel326.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel326.setText("Quantity");
+
+        quantity.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        quantity.setText("1");
+        bolsterTaxField.setText(Config.taxesRate);
+
         javax.swing.GroupLayout cotSheetCostingPanel4Layout = new javax.swing.GroupLayout(cotSheetCostingPanel4);
         cotSheetCostingPanel4.setLayout(cotSheetCostingPanel4Layout);
         cotSheetCostingPanel4Layout.setHorizontalGroup(
@@ -365,10 +367,7 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
                                     .addComponent(bolsterUseCustom)))
                             .addGroup(cotSheetCostingPanel4Layout.createSequentialGroup()
                                 .addGap(118, 118, 118)
-                                .addComponent(jLabel282))
-                            .addGroup(cotSheetCostingPanel4Layout.createSequentialGroup()
-                                .addGap(179, 179, 179)
-                                .addComponent(bolsterNewCostingButton)))
+                                .addComponent(jLabel282)))
                         .addGap(30, 30, 30)))
                 .addContainerGap())
             .addGroup(cotSheetCostingPanel4Layout.createSequentialGroup()
@@ -376,7 +375,8 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
                 .addGroup(cotSheetCostingPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel322)
                     .addComponent(jLabel321)
-                    .addComponent(jLabel325))
+                    .addComponent(jLabel325)
+                    .addComponent(jLabel326))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(cotSheetCostingPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cotSheetCostingPanel4Layout.createSequentialGroup()
@@ -387,12 +387,13 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
                         .addComponent(bolsterMarginField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel324))
-                    .addComponent(bolsterOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bolsterOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(130, 130, 130))
             .addGroup(cotSheetCostingPanel4Layout.createSequentialGroup()
-                .addGap(157, 157, 157)
+                .addGap(161, 161, 161)
                 .addComponent(bolsterSubmitButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         cotSheetCostingPanel4Layout.setVerticalGroup(
             cotSheetCostingPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -449,14 +450,15 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
                     .addComponent(jLabel325)
                     .addComponent(bolsterOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cotSheetCostingPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel326)
+                    .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
                 .addComponent(bolsterSubmitButton)
-                .addGap(5, 5, 5)
-                .addComponent(bolsterNewCostingButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         bolsterCustomPanel.setVisible(false);
-        bolsterNewCostingButton.setVisible(false);
 
         jLabel250.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel250.setText("SMV Value:");
@@ -754,7 +756,7 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(cotSheetCostingPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 677, Short.MAX_VALUE))
+                        .addComponent(cotSheetCostingPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 707, Short.MAX_VALUE))
                     .addComponent(bolsterCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -916,42 +918,6 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
         bolsterTaxes.setText(format.format(bReturn.getTaxes()));
         bolsterGrossSellingPrice.setText(format.format(bReturn.getGrossSellingPrice()));
 
-
-        //export model
-        model = new ExportModel();
-        model.setProductName("Bolster Pillow");
-        model.setProductRange(bReturn.getProductRange());
-        if (bReturn.isIsCustom()) {
-            model.setProductSize(bReturn.getDiameter() + "X" + bReturn.getLength());
-        } else {
-            model.setProductSize(bReturn.getSize());
-        }
-        model.setTotalMaterialCost(bReturn.getTotalMaterialCost());
-        model.setLabourCost(bReturn.getLabourCost());
-        model.setProductionOverHead(bReturn.getPohCost());
-        model.setTotalCostPerUnit(bReturn.getTotalCost());
-        model.setNetSellingPrice(bReturn.getNetSellingPrice());
-        model.setTaxes(bReturn.getTaxes());
-        model.setGrossSellingPrice(bReturn.getGrossSellingPrice());
-
-//        bolsterRangeCombo.setEnabled(false);
-//        bolsterFabricTypeCombo.setEnabled(false);
-//        bolsterSizeCombo.setEnabled(false);
-//        bolsterFabricWastage.setEnabled(false);
-//        bolsterCustomFiberButton.setEnabled(false);
-//        bolsterFiberTypeCombo.setEnabled(false);
-//        bolsterFiberWastage.setEnabled(false);
-//        bolsterUseCustom.setEnabled(false);
-//        bolsterCustomDiameter.setEnabled(false);
-//        bolsterCustomLength.setEnabled(false);
-//        bolsterIncludeLable.setEnabled(false);
-//        bolsterIncludePEBag.setEnabled(false);
-//        bolsterIncludeTag.setEnabled(false);
-//        bolsterMarginField.setEnabled(false);
-//        bolsterTaxField.setEnabled(false);
-//
-//        bolsterSubmitButton.setVisible(false);
-//        bolsterNewCostingButton.setVisible(true);
         bolsterCPUPanel.setVisible(true);
 }//GEN-LAST:event_bolsterSubmitButtonActionPerformed
 
@@ -966,46 +932,6 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
             bolsterSizeCombo.setVisible(true);
         }
 }//GEN-LAST:event_bolsterUseCustomActionPerformed
-
-    private void bolsterNewCostingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolsterNewCostingButtonActionPerformed
-        bolsterRangeCombo.setModel(new DefaultComboBoxModel(BolsterLogic.getProductRanges()));
-        bolsterFabricTypeCombo.setModel(new DefaultComboBoxModel(BolsterLogic.getMaterialTypes((String) bolsterRangeCombo.getSelectedItem())));
-        bolsterSizeCombo.setModel(new DefaultComboBoxModel(BolsterLogic.getBolsterSizes((String) bolsterRangeCombo.getSelectedItem())));
-        bolsterFabricWastage.setText("3");
-        bolsterCustomFiberButton.setSelected(false);
-        bolsterFiberTypeCombo.setModel(new DefaultComboBoxModel(BolsterLogic.getFiberTypes((String) bolsterRangeCombo.getSelectedItem())));
-        bolsterFiberWastage.setText("3");
-        bolsterUseCustom.setSelected(false);
-        bolsterCustomPanel.setVisible(false);
-        bolsterCustomDiameter.setText("");
-        bolsterCustomLength.setText("");
-        bolsterIncludeLable.setSelected(false);
-        bolsterIncludePEBag.setSelected(false);
-        bolsterIncludeTag.setSelected(false);
-
-        bolsterRangeCombo.setEnabled(true);
-        bolsterFabricTypeCombo.setEnabled(true);
-        bolsterSizeCombo.setEnabled(true);
-        bolsterFabricWastage.setEnabled(true);
-        bolsterCustomFiberButton.setEnabled(true);
-        bolsterFiberTypeCombo.setEnabled(true);
-        bolsterFiberWastage.setEnabled(true);
-        bolsterUseCustom.setEnabled(true);
-        bolsterCustomDiameter.setEnabled(true);
-        bolsterCustomLength.setEnabled(true);
-        bolsterIncludeLable.setEnabled(true);
-        bolsterIncludePEBag.setEnabled(true);
-        bolsterIncludeTag.setEnabled(true);
-        bolsterMarginField.setEnabled(true);
-        bolsterTaxField.setEnabled(true);
-
-        bolsterSubmitButton.setVisible(true);
-        bolsterNewCostingButton.setVisible(false);
-        bolsterCPUPanel.setVisible(false);
-
-        //nulling the model
-        model = null;
-}//GEN-LAST:event_bolsterNewCostingButtonActionPerformed
 
     private void bolsterCustomFiberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolsterCustomFiberButtonActionPerformed
         if (bolsterCustomFiberButton.isSelected()) {
@@ -1024,117 +950,76 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
 }//GEN-LAST:event_bolsterFiberWastageActionPerformed
 
     private void bolsterExportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolsterExportButtonActionPerformed
-        //if (model != null) {
-        //    Export export = new Export(model);
-        //    export.openFile();
-        //}
-        String title = "Bolster Costing";
+        //ading the quotation object
+        QuationObject qObject = new QuationObject(
+                "Bolster",
+                bolsterRangeCombo.getSelectedItem() + "",
+                bolsterFabricTypeCombo.getSelectedItem() + "",
+                bolsterUseCustom.isSelected() == true ? bolsterCustomDiameter.getText() + "X" + bolsterCustomLength.getText() : bolsterSizeCombo.getSelectedItem() + "",
+                1,
+                Double.parseDouble(bolsterGrossSellingPrice.getText().replaceAll(",", "")));
 
-        String[][] specifications = new String[2][14];
-        specifications[0][0] = "Range";
-        specifications[0][1] = "Material";
-        specifications[0][2] = "Size";
-        specifications[0][3] = "Wastage";
-        specifications[0][4] = "Fiber Type";
-        specifications[0][5] = "Fiber Wastage";
-        specifications[0][6] = "Fiber Weight";
-        specifications[0][7] = "Lable";
-        specifications[0][8] = "Tag";
-        specifications[0][9] = "PE Bag";
-        specifications[0][11] = "Margin";
-        specifications[0][12] = "Taxes";
-        specifications[0][13] = "Other Costs";
+        //adding the costing summary object
+        SummaryObject summaryObj = new SummaryObject(
+                "Bolster Pillow",
+                bolsterRangeCombo.getSelectedItem() + "",
+                bolsterFabricTypeCombo.getSelectedItem() + "",
+                bolsterFiberTypeCombo.getSelectedItem() + "",
+                bolsterUseCustom.isSelected() == true ? bolsterCustomDiameter.getText() + "X" + bolsterCustomLength.getText() : bolsterSizeCombo.getSelectedItem() + "",
+                1,
+                Double.parseDouble(bolsterToatalCost.getText().replaceAll(",", "")),
+                Double.parseDouble(bolsterMarginField.getText().replaceAll(",", "")),
+                Double.parseDouble(bolsterTaxField.getText().replaceAll(",", "")));
 
-        specifications[1][0] = bolsterRangeCombo.getSelectedItem() + "";
-        specifications[1][1] = bolsterFabricTypeCombo.getSelectedItem() + "";
-        if (bolsterUseCustom.isSelected()) {
-            specifications[1][2] = bolsterCustomDiameter.getText() + "X" + bolsterCustomLength.getText();
-        } else {
-            specifications[1][2] = bolsterSizeCombo.getSelectedItem() + "";
+        //have to add data to this
+        ArrayList<Map.Entry<String, String>> prodSpecs = new ArrayList<Map.Entry<String, String>>();
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Product Range", bolsterRangeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Type", bolsterFabricTypeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Size", bolsterUseCustom.isSelected() == true ? bolsterCustomDiameter.getText() + "X" + bolsterCustomLength.getText() : bolsterSizeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Wastage", bolsterFabricWastage.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fiber Type", bolsterFiberTypeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fiber Wastage", bolsterFiberWastage.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Custom Fiber Weight", bolsterCustomFiberWeight.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Lable", bolsterIncludeLable.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Tag", bolsterIncludeTag.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include PE Bag", bolsterIncludePEBag.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Margin", bolsterMarginField.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Taxes", bolsterTaxField.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Other Costs", bolsterOtherCostVal.getText()));
+
+        ArrayList<Map.Entry<String, String>> costDescs = new ArrayList<Map.Entry<String, String>>();
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Cost", bolsterFabricCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Fiber Cost", bolsterFiberCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Thread Cost", bolsterThreadCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Lable Cost", bolsterLableCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Tag Cost", bolsterTagCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("PE Bag Cost", bolsterPEBagCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Total Material Cost", bolsterTotalMaterialCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("POH", bolsterPOH.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Labour Cost", bolsterLabourCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Total Cost Per Unit", bolsterToatalCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Net Selling Price", bolsterNetSellingPrice.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Taxes", bolsterTaxes.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Gross Selling Price", bolsterGrossSellingPrice.getText()));
+
+        ArrayList<Map.Entry<String, String>> manuSpecs = new ArrayList<Map.Entry<String, String>>();
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fiber Weight", bolsterFiberWeight.getText()));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("SMV Value", bolsterSMVValue.getText()));
+
+        
+        
+        try {
+            int n = Integer.parseInt(quantity.getText());
+            qObject.setQuantity(n);
+            summaryObj.setQuantity(n);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid quantity value");
+            return;
         }
-        specifications[1][3] = bolsterFabricWastage.getText();
 
-        if (bolsterCustomFiberButton.isSelected()) {
-            specifications[1][4] = bolsterFiberTypeCombo.getSelectedItem() + "";
-            specifications[1][5] = bolsterFiberWastage.getText();
-        }
-
-        if (bolsterUseCustom.isSelected()) {
-            specifications[1][6] = bolsterFiberWeight.getText();
-        }
-
-        if (bolsterIncludeLable.isSelected()) {
-            specifications[1][7] = "Added";
-        } else {
-            specifications[1][8] = "Not Added";
-        }
-
-        if (bolsterIncludeTag.isSelected()) {
-            specifications[1][9] = "Added";
-        } else {
-            specifications[1][9] = "Not Added";
-        }
-
-        if (bolsterIncludePEBag.isSelected()) {
-            specifications[1][10] = "Added";
-        } else {
-            specifications[1][10] = "Not Added";
-        }
-
-        specifications[1][11] = bolsterMarginField.getText();
-        specifications[1][12] = bolsterTaxField.getText();
-        specifications[1][13] = bolsterOtherCostVal.getText();
-
-        String[][] cpus = new String[2][13];
-        cpus[0][0] = "Fabric Cost";
-        cpus[0][1] = "Fiber Cost";
-        cpus[0][2] = "Thread Cost";
-        cpus[0][3] = "Lable Cost";
-        cpus[0][4] = "Tag Cost";
-        cpus[0][5] = "Seal Bag Cost";
-        cpus[0][6] = "Total Material Cost";
-        cpus[0][7] = "POH";
-        cpus[0][8] = "Labor Cost";
-        cpus[0][9] = "Total Cost Per Unit";
-        cpus[0][10] = "Net Selling Price";
-        cpus[0][11] = "Taxes";
-        cpus[0][12] = "Gross Selling Price";
-
-        cpus[1][0] = bolsterFabricCost.getText();
-        cpus[1][1] = bolsterFiberCost.getText();
-        cpus[1][2] = bolsterThreadCost.getText();
-        cpus[1][3] = bolsterLableCost.getText();
-        cpus[1][4] = bolsterTagCost.getText();
-        cpus[1][5] = bolsterPEBagCost.getText();
-        cpus[1][6] = bolsterTotalMaterialCost.getText();
-        cpus[1][7] = bolsterPOH.getText();
-        cpus[1][8] = bolsterLabourCost.getText();
-        cpus[1][9] = bolsterToatalCost.getText();
-        cpus[1][10] = bolsterNetSellingPrice.getText();
-        cpus[1][11] = bolsterTaxes.getText();
-        cpus[1][12] = bolsterGrossSellingPrice.getText();
-
-
-        String[][] prodPaprameters = new String[2][2];
-        prodPaprameters[0][0] = "Fiber Weight";
-        prodPaprameters[0][1] = "SMV Value";
-
-        prodPaprameters[1][0] = bolsterFiberWeight.getText();
-        prodPaprameters[1][1] = bolsterSMVValue.getText();
-
-        String[] summary = new String[8];
-        summary[0] = "Bolster Pillow";
-        summary[1] = bolsterRangeCombo.getSelectedItem() + "";
-        summary[2] = bolsterFabricTypeCombo.getSelectedItem() + "";
-        if (bolsterCustomFiberButton.isSelected()) {
-            summary[3] = bolsterFiberTypeCombo.getSelectedItem()+"";
-        }
-        summary[4] = specifications[1][0] + " (Fiber Weight)";
-        summary[5] = "1";
-        summary[6] = bolsterGrossSellingPrice.getText();
-        summary[7] = "";
-
-        MainWindow.workbook.addOrderItem(summary, specifications, cpus, prodPaprameters, title);
+        
+        ItemSummaryObject itemSumObj = new ItemSummaryObject("Bolster Pillow", summaryObj, prodSpecs, costDescs, manuSpecs);
+        MainWindow.quotation.addQuatationObject(qObject, itemSumObj);
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -1142,7 +1027,6 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
                 dialog.setVisible(true);
             }
         });
-
 }//GEN-LAST:event_bolsterExportButtonActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bolsterCPUPanel;
@@ -1167,7 +1051,6 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel bolsterLabourCost;
     private javax.swing.JTextField bolsterMarginField;
     private javax.swing.JLabel bolsterNetSellingPrice;
-    private javax.swing.JButton bolsterNewCostingButton;
     private javax.swing.JTextField bolsterOtherCostVal;
     private javax.swing.JLabel bolsterPEBagCost;
     private javax.swing.JLabel bolsterPOH;
@@ -1214,11 +1097,13 @@ public class BolstersCostingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel323;
     private javax.swing.JLabel jLabel324;
     private javax.swing.JLabel jLabel325;
+    private javax.swing.JLabel jLabel326;
     private javax.swing.JLabel jLabel349;
     private javax.swing.JLabel jLabel350;
     private javax.swing.JLabel jLabel351;
     private javax.swing.JPanel jPanel44;
     private javax.swing.JPanel jPanel45;
+    private javax.swing.JTextField quantity;
     // End of variables declaration//GEN-END:variables
 
     public static void main(String[] args) {

@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.1
+-- version 3.3.9
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 27, 2013 at 06:18 PM
--- Server version: 5.5.8-log
+-- Generation Time: Feb 25, 2014 at 02:08 PM
+-- Server version: 5.5.8
 -- PHP Version: 5.3.5
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -70,6 +69,53 @@ INSERT INTO `bedsheet_accessories` (`id`, `name`, `description`, `price`) VALUES
 (3, 'Thread', 'per unit', 5),
 (4, 'Tag', 'per unit', 1.5),
 (5, 'Cardboard', 'per unit', 17);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bolsterpillowcases`
+--
+
+CREATE TABLE IF NOT EXISTS `bolsterpillowcases` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `size` varchar(255) NOT NULL,
+  `smv` double NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `bolsterpillowcases`
+--
+
+INSERT INTO `bolsterpillowcases` (`id`, `size`, `smv`) VALUES
+(1, '4X18', 34),
+(2, '8X20', 45);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bolsterpillowcase_accessories`
+--
+
+CREATE TABLE IF NOT EXISTS `bolsterpillowcase_accessories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL DEFAULT 'per unit',
+  `price` double NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `bolsterpillowcase_accessories`
+--
+
+INSERT INTO `bolsterpillowcase_accessories` (`id`, `name`, `description`, `price`) VALUES
+(1, 'Tag', 'per unit', 32.42),
+(2, 'Lable', 'per unit', 34.43),
+(3, 'Thread', 'per unit', 23.32),
+(4, 'PE Bag', 'per unit', 23.23),
+(5, 'Zipper', 'per yard', 23.23),
+(6, 'Velco', 'per yard', 23.32);
 
 -- --------------------------------------------------------
 
@@ -452,16 +498,6 @@ INSERT INTO `fibers` (`id`, `name`, `price`, `classic`, `super`, `gelfeather`, `
 --
 -- Triggers `fibers`
 --
-DROP TRIGGER IF EXISTS `after_delete_fiber`;
-DELIMITER //
-CREATE TRIGGER `after_delete_fiber` AFTER DELETE ON `fibers`
- FOR EACH ROW begin
-	delete from pillows_fiber_weights where pillows_fiber_weights.name = old.name; 
-	delete from cushion_fiber_weights where cushion_fiber_weights.name = old.name;
-        delete from bolster_fiber_weights where bolster_fiber_weights.name = old.name;
-end
-//
-DELIMITER ;
 DROP TRIGGER IF EXISTS `after_new_fiber`;
 DELIMITER //
 CREATE TRIGGER `after_new_fiber` AFTER INSERT ON `fibers`
@@ -484,6 +520,60 @@ end if;
 end
 //
 DELIMITER ;
+DROP TRIGGER IF EXISTS `after_delete_fiber`;
+DELIMITER //
+CREATE TRIGGER `after_delete_fiber` AFTER DELETE ON `fibers`
+ FOR EACH ROW begin
+	delete from pillows_fiber_weights where pillows_fiber_weights.name = old.name; 
+	delete from cushion_fiber_weights where cushion_fiber_weights.name = old.name;
+        delete from bolster_fiber_weights where bolster_fiber_weights.name = old.name;
+end
+//
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fittedsheet`
+--
+
+CREATE TABLE IF NOT EXISTS `fittedsheet` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `size` varchar(255) NOT NULL,
+  `smv` double NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `fittedsheet`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fittedsheet_accessories`
+--
+
+CREATE TABLE IF NOT EXISTS `fittedsheet_accessories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `price` double NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `fittedsheet_accessories`
+--
+
+INSERT INTO `fittedsheet_accessories` (`id`, `name`, `description`, `price`) VALUES
+(1, 'Seal Bag', 'per unit', 23.23),
+(2, 'Lable', 'per unit', 23.23),
+(4, 'Thread', 'per unit', 23.23),
+(5, 'Tag', 'per unit', 32.32),
+(6, 'Cardboard', 'per unit', 23.23),
+(7, 'Elastic', 'per yard', 12.12);
 
 -- --------------------------------------------------------
 
@@ -633,6 +723,53 @@ INSERT INTO `pillowcase_accessories` (`id`, `name`, `description`, `price`) VALU
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pillowprotectors`
+--
+
+CREATE TABLE IF NOT EXISTS `pillowprotectors` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `size` varchar(255) NOT NULL,
+  `smv` double NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pillowprotectors`
+--
+
+INSERT INTO `pillowprotectors` (`id`, `size`, `smv`) VALUES
+(1, '10X20', 10),
+(2, '10X30', 20);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pillowprotector_accessories`
+--
+
+CREATE TABLE IF NOT EXISTS `pillowprotector_accessories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL DEFAULT 'per unit',
+  `price` double NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `pillowprotector_accessories`
+--
+
+INSERT INTO `pillowprotector_accessories` (`id`, `name`, `description`, `price`) VALUES
+(1, 'Lable', 'per unit', 23.32),
+(2, 'Tag', 'per unit', 23.23),
+(4, 'Tread', 'per unit', 23.23),
+(5, 'Non Woven', 'per yard', 12.12),
+(6, 'Zipper', 'per unit', 12.12),
+(7, 'PE Bag', 'per unit', 23.23);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pillows`
 --
 
@@ -654,6 +791,49 @@ INSERT INTO `pillows` (`id`, `range`, `type`, `size`, `smv`) VALUES
 (2, 'Classic', 'Vacume', '12X18', 48),
 (3, 'Classic', 'Normal', '18X20', 50),
 (4, 'Classic', 'Vacume', '18X20', 55);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pillowslips`
+--
+
+CREATE TABLE IF NOT EXISTS `pillowslips` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `size` varchar(255) NOT NULL,
+  `smv` double NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `pillowslips`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pillowslip_accessories`
+--
+
+CREATE TABLE IF NOT EXISTS `pillowslip_accessories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL DEFAULT 'per unit',
+  `price` double NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `pillowslip_accessories`
+--
+
+INSERT INTO `pillowslip_accessories` (`id`, `name`, `description`, `price`) VALUES
+(1, 'Lable', 'per unit', 12.12),
+(2, 'Thread', 'per unit', 23.23),
+(4, 'Tag', 'per unit', 32.23),
+(5, 'PE Bag', 'per unit', 23.23),
+(6, 'Zipper', 'per unit', 31.13);
 
 -- --------------------------------------------------------
 
@@ -749,7 +929,6 @@ CREATE TABLE IF NOT EXISTS `taffatas` (
 --
 
 INSERT INTO `taffatas` (`id`, `name`, `price`, `width`) VALUES
-(1, 'taffata 1', 400, 58),
 (2, 'taffata 2', 420, 60);
 
 -- --------------------------------------------------------
@@ -771,7 +950,3 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`) VALUES
 (1, 'admin', '');
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

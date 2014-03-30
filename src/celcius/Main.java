@@ -31,17 +31,17 @@ public class Main {
                 java.awt.EventQueue.invokeLater(new Runnable() {
 
                     public void run() {
-                        try {
-                            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-                        } catch (ClassNotFoundException ex) {
-                            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                        } catch (InstantiationException ex) {
-                            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                        } catch (IllegalAccessException ex) {
-                            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                        } catch (UnsupportedLookAndFeelException ex) {
-                            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                        }
+//                        try {
+//                            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+//                        } catch (ClassNotFoundException ex) {
+//                            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//                        } catch (InstantiationException ex) {
+//                            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//                        } catch (IllegalAccessException ex) {
+//                            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//                        } catch (UnsupportedLookAndFeelException ex) {
+//                            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//                        }
                         MainWindow mainWindow = new MainWindow();
                         MainWindow.setDefaultLookAndFeelDecorated(true);
                         mainWindow.setVisible(true);

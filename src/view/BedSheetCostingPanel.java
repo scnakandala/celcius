@@ -11,14 +11,18 @@
 package view;
 
 import celcius.Config;
-import export.Export;
-import export.ExportModel;
+import excel.ItemSummaryObject;
+import excel.QuationObject;
+import excel.SummaryObject;
 import java.awt.EventQueue;
 import java.text.DecimalFormat;
-import javax.swing.DefaultComboBoxModel;
+import java.util.AbstractMap;
+import java.util.ArrayList;
+import java.util.Map.Entry;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import logic.BedSheetLogic;
+import ui.helpers.ComboBoxRenderer;
 import viewmodels.BedSheetViewModel;
 
 /**
@@ -26,8 +30,6 @@ import viewmodels.BedSheetViewModel;
  * @author naka
  */
 public class BedSheetCostingPanel extends javax.swing.JPanel {
-
-    private export.ExportModel model;
 
     /**
      * Creates new form BedSheetPanel
@@ -67,7 +69,6 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
         bedSheetIncludeSealBag = new javax.swing.JRadioButton();
         bedSheetIncludeCardBoard = new javax.swing.JRadioButton();
         bedSheetSubmitButton = new javax.swing.JButton();
-        bedSheetCostingPanelNewCostingButton = new javax.swing.JButton();
         jLabel30 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
         bedSheetMarginField = new javax.swing.JTextField();
@@ -76,6 +77,8 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
         jLabel123 = new javax.swing.JLabel();
         bedsheetOtherCost = new javax.swing.JLabel();
         bedSheetOtherCostVal = new javax.swing.JTextField();
+        bedsheetOtherCost1 = new javax.swing.JLabel();
+        quantity = new javax.swing.JTextField();
         bedSheetCPUPanel = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
@@ -125,6 +128,7 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
 
         bedSheetProductRangeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetProductRangeCombo.setModel(new javax.swing.DefaultComboBoxModel(BedSheetLogic.getProductRanges()));
+        bedSheetProductRangeCombo.setRenderer(new ComboBoxRenderer(BedSheetLogic.getProductRanges()));
         bedSheetProductRangeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bedSheetProductRangeComboActionPerformed(evt);
@@ -136,9 +140,11 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
 
         bedSheetMaterialTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetMaterialTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(BedSheetLogic.getMaterialTypes((String)bedSheetProductRangeCombo.getSelectedItem())));
+        bedSheetMaterialTypeCombo.setRenderer(new ComboBoxRenderer(BedSheetLogic.getMaterialTypes((String)bedSheetProductRangeCombo.getSelectedItem())));
 
         bedSheetSizeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetSizeCombo.setModel(new javax.swing.DefaultComboBoxModel(BedSheetLogic.getBedSheetSizes()));
+        bedSheetSizeCombo.setRenderer(new ComboBoxRenderer(BedSheetLogic.getBedSheetSizes()));
 
         bedSheetWastage.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetWastage.setText("3");
@@ -209,15 +215,6 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
             }
         });
 
-        bedSheetCostingPanelNewCostingButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        bedSheetCostingPanelNewCostingButton.setText("New Costing");
-        bedSheetCostingPanelNewCostingButton.setVisible(false);
-        bedSheetCostingPanelNewCostingButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bedSheetCostingPanelNewCostingButtonActionPerformed(evt);
-            }
-        });
-
         jLabel30.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel30.setText("Margin:");
 
@@ -241,6 +238,13 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
 
         bedSheetOtherCostVal.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bedSheetOtherCostVal.setText("0.00");
+        bedSheetTaxField.setText(Config.taxesRate);
+
+        bedsheetOtherCost1.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        bedsheetOtherCost1.setText("Quantity");
+
+        quantity.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        quantity.setText("1");
         bedSheetTaxField.setText(Config.taxesRate);
 
         javax.swing.GroupLayout bedSheetCostingPanelLayout = new javax.swing.GroupLayout(bedSheetCostingPanel);
@@ -270,35 +274,36 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
                     .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
                         .addGap(47, 47, 47)
                         .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bedSheetUseCustom, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel11)
-                                .addGap(145, 145, 145)
-                                .addComponent(bedSheetWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel12))
-                            .addComponent(bedSheetCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
-                                .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel30)
-                                    .addComponent(jLabel55)
-                                    .addComponent(bedsheetOtherCost))
-                                .addGap(125, 125, 125)
-                                .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(bedSheetOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
-                                        .addComponent(bedSheetTaxField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel123))
-                                    .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
-                                        .addComponent(bedSheetMarginField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel84))))))
+                            .addComponent(jLabel30)
+                            .addComponent(jLabel55)
+                            .addComponent(bedsheetOtherCost)
+                            .addComponent(bedsheetOtherCost1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bedSheetOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bedSheetTaxField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bedSheetMarginField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel123)
+                            .addComponent(jLabel84)))
                     .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
                         .addGap(171, 171, 171)
-                        .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(bedSheetSubmitButton)
-                            .addComponent(bedSheetCostingPanelNewCostingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(bedSheetSubmitButton))
+                    .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(bedSheetCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(jLabel11)
+                        .addGap(145, 145, 145)
+                        .addComponent(bedSheetWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel12))
+                    .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(bedSheetUseCustom, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(54, Short.MAX_VALUE))
         );
         bedSheetCostingPanelLayout.setVerticalGroup(
@@ -351,10 +356,12 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
                 .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bedsheetOtherCost)
                     .addComponent(bedSheetOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bedsheetOtherCost1)
+                    .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
                 .addComponent(bedSheetSubmitButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bedSheetCostingPanelNewCostingButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -708,7 +715,7 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
         try {
             double wastage = Double.parseDouble(bedSheetWastage.getText());
             if (wastage < 0 || wastage > 10) {
-                JOptionPane.showMessageDialog(this, "Wastage shujd be between 0 and 10 %");
+                JOptionPane.showMessageDialog(this, "Wastage should be between 0 and 10 %");
                 return;
             }
             bCost.setWastage(wastage);
@@ -770,7 +777,7 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
 
             try {
                 Double height = Double.parseDouble(bedSheetCustomHeight.getText());
-                if (height <= 0 || height > 120) {
+                if (height <= 0) {
                     JOptionPane.showMessageDialog(this, "Height should be between 0 and 120");
                     return;
                 }
@@ -807,190 +814,78 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
         bedSheetTaxes.setText(format.format(bReturn.getTaxes()));
         bedSheetGrossSellingPrice.setText(format.format(bReturn.getGrossSellingPrice()));
 
-        //export model
-        model = new ExportModel();
-        model.setProductName("Bed Sheet");
-        model.setProductRange(bReturn.getProductRange());
-        if (bReturn.isIsCustom()) {
-            model.setProductSize(bReturn.getCustomWidth() + "X" + bReturn.getCustomHeight());
-        } else {
-            model.setProductSize(bReturn.getSize());
-        }
-        model.setTotalMaterialCost(bReturn.getTotalMaterialCost());
-        model.setLabourCost(bReturn.getLabourCost());
-        model.setProductionOverHead(bReturn.getPohCost());
-        model.setTotalCostPerUnit(bReturn.getTotalCost());
-        model.setNetSellingPrice(bReturn.getNetSellingPrice());
-        model.setTaxes(bReturn.getTaxes());
-        model.setGrossSellingPrice(bReturn.getGrossSellingPrice());
-
         bedSheetCPUPanel.setVisible(true);
-//        bedSheetCostingPanelNewCostingButton.setVisible(true);
-//        bedSheetSubmitButton.setVisible(false);
-//
-//        bedSheetProductRangeCombo.setEnabled(false);
-//        bedSheetMaterialTypeCombo.setEnabled(false);
-//        bedSheetSizeCombo.setEnabled(false);
-//        bedSheetWastage.setEnabled(false);
-//
-//        bedSheetUseCustom.setEnabled(false);
-//        bedSHeetCustomWidth.setEnabled(false);
-//        bedSheetCustomHeight.setEnabled(false);
-//
-//        bedSheetIncludeCardBoard.setEnabled(false);
-//        bedSheetIncludeLable.setEnabled(false);
-//        bedSheetIncludeSealBag.setEnabled(false);
-//        bedSheetIncludeTag.setEnabled(false);
-//        bedSheetMarginField.setEnabled(false);
-//        bedSheetTaxField.setEnabled(false);
 }//GEN-LAST:event_bedSheetSubmitButtonActionPerformed
 
-    private void bedSheetCostingPanelNewCostingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bedSheetCostingPanelNewCostingButtonActionPerformed
-        bedSheetCPUPanel.setVisible(false);
-        bedSheetCostingPanelNewCostingButton.setVisible(false);
-        bedSheetSubmitButton.setVisible(true);
-        bedSheetCustomPanel.setVisible(false);
-
-        bedSheetProductRangeCombo.setModel(new DefaultComboBoxModel(BedSheetLogic.getProductRanges()));
-        bedSheetMaterialTypeCombo.setModel(new DefaultComboBoxModel(
-                BedSheetLogic.getMaterialTypes((String) bedSheetProductRangeCombo.getSelectedItem())));
-        bedSheetSizeCombo.setModel(new DefaultComboBoxModel(BedSheetLogic.getBedSheetSizes()));
-        bedSheetWastage.setText("3");
-        bedSheetUseCustom.setSelected(false);
-        bedSHeetCustomWidth.setText("");
-        bedSheetCustomHeight.setText("");
-        bedSheetIncludeCardBoard.setSelected(false);
-        bedSheetIncludeLable.setSelected(false);
-        bedSheetIncludeSealBag.setSelected(false);
-        bedSheetIncludeTag.setSelected(false);
-
-        bedSheetProductRangeCombo.setEnabled(true);
-        bedSheetMaterialTypeCombo.setEnabled(true);
-        bedSheetSizeCombo.setEnabled(true);
-        bedSheetWastage.setEnabled(true);
-
-        bedSheetUseCustom.setEnabled(true);
-        bedSHeetCustomWidth.setEnabled(true);
-        bedSheetCustomHeight.setEnabled(true);
-
-        bedSheetIncludeCardBoard.setEnabled(true);
-        bedSheetIncludeLable.setEnabled(true);
-        bedSheetIncludeSealBag.setEnabled(true);
-        bedSheetIncludeTag.setEnabled(true);
-        bedSheetMarginField.setEnabled(true);
-        bedSheetTaxField.setEnabled(true);
-
-        //nulling the export model
-        model = null;
-}//GEN-LAST:event_bedSheetCostingPanelNewCostingButtonActionPerformed
-
     private void bedSheetExportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bedSheetExportButtonActionPerformed
-        //if(model!=null){
-        //    Export exp = new Export(model);
-        //    exp.openFile();
-        //}
 
-        String title = "Bed Sheet Costing";
+        //ading the quotation object
+        QuationObject qObject = new QuationObject(
+                "Bed Sheet",
+                bedSheetProductRangeCombo.getSelectedItem() + "",
+                bedSheetMaterialTypeCombo.getSelectedItem() + "",
+                bedSheetUseCustom.isSelected() == true ? bedSheetCustomHeight.getText() + "X" + bedSHeetCustomWidth.getText() : bedSheetSizeCombo.getSelectedItem() + "",
+                1,
+                Double.parseDouble(bedSheetGrossSellingPrice.getText().replaceAll(",", "")));
 
-        String[][] specifications = new String[2][11];
-        specifications[0][0] = "Range";
-        specifications[0][1] = "Material";
-        specifications[0][2] = "Size";
-        specifications[0][3] = "Wastage";
-        specifications[0][4] = "Lable";
-        specifications[0][5] = "Tag";
-        specifications[0][6] = "Seal Bag";
-        specifications[0][7] = "Cardboard";
-        specifications[0][8] = "Margin";
-        specifications[0][9] = "Taxes";
-        specifications[0][10] = "Other Costs";
+        //adding the costing summary object
+        SummaryObject summaryObj = new SummaryObject(
+                "Bed Sheet",
+                bedSheetProductRangeCombo.getSelectedItem() + "",
+                bedSheetMaterialTypeCombo.getSelectedItem() + "",
+                "",
+                bedSheetUseCustom.isSelected() == true ? bedSheetCustomHeight.getText() + "X" + bedSHeetCustomWidth.getText() : bedSheetSizeCombo.getSelectedItem() + "",
+                1,
+                Double.parseDouble(bedSheetToatalCost.getText().replaceAll(",", "")),
+                Double.parseDouble(bedSheetMarginField.getText().replaceAll(",", "")),
+                Double.parseDouble(bedSheetTaxField.getText().replaceAll(",", "")));
 
-        specifications[1][0] = bedSheetProductRangeCombo.getSelectedItem() + "";
-        specifications[1][1] = bedSheetMaterialTypeCombo.getSelectedItem() + "";
-        if (bedSheetUseCustom.isSelected()) {
-            specifications[1][2] = bedSheetCustomHeight.getText() + "X" + bedSHeetCustomWidth.getText();
-        } else {
-            specifications[1][2] = bedSheetSizeCombo.getSelectedItem() + "";
+        //have to add data to this
+        ArrayList<Entry<String, String>> prodSpecs = new ArrayList<Entry<String, String>>();
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Product Range", bedSheetProductRangeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Material Type", bedSheetMaterialTypeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Size", bedSheetUseCustom.isSelected() == true ? bedSheetCustomHeight.getText() + "X" + bedSHeetCustomWidth.getText() : bedSheetSizeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Wastage", bedSheetWastage.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Lable", bedSheetIncludeLable.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Tag", bedSheetIncludeTag.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Seal Bag", bedSheetIncludeSealBag.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Cardboard", bedSheetIncludeCardBoard.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Margin", bedSheetMarginField.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Taxes", bedSheetTaxes.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Other Costs", bedSheetOtherCostVal.getText()));
+
+        ArrayList<Entry<String, String>> costDescs = new ArrayList<Entry<String, String>>();
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Cost", bedSheetFabricCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Thread Cost", bedSheetThreadCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Lable Cost", bedSheetLableCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Tag Cost", bedSheetTagCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Cardboard Cost", bedSheetCardBoardCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Seal Bag Cost", bedSheetSealBagCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Total Material Cost", bedSheetTotalMaterialCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("POH", bedSheetPOH.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Labour Cost", bedSheetLabourCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Total Cost Per Unit", bedSheetToatalCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Net Selling Price", bedSheetNetSellingPrice.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Taxes", bedSheetTaxes.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Gross Selling Price", bedSheetGrossSellingPrice.getText()));
+
+        ArrayList<Entry<String, String>> manuSpecs = new ArrayList<Entry<String, String>>();
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Cutting Width", bedSheetCutWidth.getText()));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Cutting Height", bedSheetCutHeight.getText()));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("SMV", bedSheetSMVValue.getText()));
+
+        try {
+            int n = Integer.parseInt(quantity.getText());
+            qObject.setQuantity(n);
+            summaryObj.setQuantity(n);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid quantity value");
+            return;
         }
-        specifications[1][3] = bedSheetWastage.getText();
-
-        if (bedSheetIncludeLable.isSelected()) {
-            specifications[1][4] = "Added";
-        } else {
-            specifications[1][4] = "Not Added";
-        }
-
-        if (bedSheetIncludeTag.isSelected()) {
-            specifications[1][5] = "Added";
-        } else {
-            specifications[1][5] = "Not Added";
-        }
-
-        if (bedSheetIncludeSealBag.isSelected()) {
-            specifications[1][6] = "Added";
-        } else {
-            specifications[1][6] = "Not Added";
-        }
-
-        if (bedSheetIncludeCardBoard.isSelected()) {
-            specifications[1][7] = "Added";
-        } else {
-            specifications[1][7] = "Not Added";
-        }
-        specifications[1][8] = bedSheetMarginField.getText();
-        specifications[1][9] = bedSheetTaxField.getText();
-        specifications[1][10] = bedSheetOtherCostVal.getText();
-
-        String[][] cpus = new String[2][14];
-        cpus[0][0] = "Fabric Cost";
-        cpus[0][1] = "Thread Cost";
-        cpus[0][2] = "Lable Cost";
-        cpus[0][3] = "Tag Cost";
-        cpus[0][4] = "Cardboard Cost";
-        cpus[0][5] = "Seal Bag Cost";
-        cpus[0][6] = "Total Material Cost";
-        cpus[0][7] = "POH";
-        cpus[0][8] = "Labor Cost";
-        cpus[0][9] = "Total Cost Per Unit";
-        cpus[0][10] = "Net Selling Price";
-        cpus[0][11] = "Taxes";
-        cpus[0][12] = "Gross Selling Price";
-
-        cpus[1][0] = bedSheetFabricCost.getText();
-        cpus[1][1] = bedSheetThreadCost.getText();
-        cpus[1][2] = bedSheetLableCost.getText();
-        cpus[1][3] = bedSheetTagCost.getText();
-        cpus[1][4] = bedSheetCardBoardCost.getText();
-        cpus[1][5] = bedSheetSealBagCost.getText();
-        cpus[1][6] = bedSheetTotalMaterialCost.getText();
-        cpus[1][7] = bedSheetPOH.getText();
-        cpus[1][8] = bedSheetLabourCost.getText();
-        cpus[1][9] = bedSheetToatalCost.getText();
-        cpus[1][10] = bedSheetNetSellingPrice.getText();
-        cpus[1][11] = bedSheetTaxes.getText();
-        cpus[1][12] = bedSheetGrossSellingPrice.getText();
 
 
-        String[][] prodPaprameters = new String[2][3];
-        prodPaprameters[0][0] = "Cutting Width";
-        prodPaprameters[0][1] = "Cutting Height";
-        prodPaprameters[0][2] = "SMV Value";
-
-        prodPaprameters[1][0] = bedSheetCutWidth.getText();
-        prodPaprameters[1][1] = bedSheetCutHeight.getText();
-        prodPaprameters[1][2] = bedSheetSMVValue.getText();
-
-        String[] summary = new String[8];
-        summary[0] = "Bed Sheet";
-        summary[1] = bedSheetProductRangeCombo.getSelectedItem() + "";
-        summary[2] = bedSheetMaterialTypeCombo.getSelectedItem() + "";
-        summary[3] = "";
-        summary[4] = specifications[1][2];
-        summary[5] = "1";
-        summary[6] = bedSheetGrossSellingPrice.getText();
-        summary[7] = "";
-
-        MainWindow.workbook.addOrderItem(summary, specifications, cpus, prodPaprameters, title);
+        ItemSummaryObject itemSumObj = new ItemSummaryObject("Bed Sheet", summaryObj, prodSpecs, costDescs, manuSpecs);
+        MainWindow.quotation.addQuatationObject(qObject, itemSumObj);
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -1016,7 +911,6 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
     private javax.swing.JPanel bedSheetCPUPanel;
     private javax.swing.JLabel bedSheetCardBoardCost;
     private javax.swing.JPanel bedSheetCostingPanel;
-    private javax.swing.JButton bedSheetCostingPanelNewCostingButton;
     private javax.swing.JTextField bedSheetCustomHeight;
     private javax.swing.JPanel bedSheetCustomPanel;
     private javax.swing.JLabel bedSheetCutHeight;
@@ -1050,6 +944,7 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
     private javax.swing.JRadioButton bedSheetUseCustom;
     private javax.swing.JTextField bedSheetWastage;
     private javax.swing.JLabel bedsheetOtherCost;
+    private javax.swing.JLabel bedsheetOtherCost1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -1081,5 +976,6 @@ public class BedSheetCostingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JTextField quantity;
     // End of variables declaration//GEN-END:variables
 }

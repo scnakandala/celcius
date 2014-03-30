@@ -1,14 +1,19 @@
 package view;
 
 import celcius.Config;
-import export.Export;
-import export.ExportModel;
+import excel.ItemSummaryObject;
+import excel.QuationObject;
+import excel.SummaryObject;
 import java.awt.EventQueue;
 import java.text.DecimalFormat;
+import java.util.AbstractMap;
+import java.util.ArrayList;
+import java.util.Map;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import logic.PillowLogic;
+import ui.helpers.ComboBoxRenderer;
 import viewmodels.PillowsViewModel;
 
 /**
@@ -16,8 +21,6 @@ import viewmodels.PillowsViewModel;
  * @author naka
  */
 public class PillowsCostingPanel extends javax.swing.JPanel {
-
-    private ExportModel model;
 
     /**
      * Creates new form PillowsCostingPanel
@@ -60,7 +63,6 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
         pillowSizeCombo = new javax.swing.JComboBox();
         pillowsSubmitButton = new javax.swing.JButton();
         pillowsUseCustom = new javax.swing.JRadioButton();
-        pillowsNewCostingButton = new javax.swing.JButton();
         pillowCustomFiberButton = new javax.swing.JRadioButton();
         pillowFiberTypeCombo = new javax.swing.JComboBox();
         jLabel237 = new javax.swing.JLabel();
@@ -75,6 +77,8 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
         pillowsMarginField = new javax.swing.JTextField();
         jLabel317 = new javax.swing.JLabel();
         pillowsOtherCostVal = new javax.swing.JTextField();
+        jLabel318 = new javax.swing.JLabel();
+        quantity = new javax.swing.JTextField();
         pillowsCPUPanel = new javax.swing.JPanel();
         jPanel36 = new javax.swing.JPanel();
         jLabel208 = new javax.swing.JLabel();
@@ -128,6 +132,7 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
 
         pillowRangeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         pillowRangeCombo.setModel(new javax.swing.DefaultComboBoxModel(PillowLogic.getProductRanges()));
+        pillowRangeCombo.setRenderer(new ComboBoxRenderer(PillowLogic.getProductRanges()));
         pillowRangeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pillowRangeComboActionPerformed(evt);
@@ -136,6 +141,7 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
 
         pillowTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         pillowTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(PillowLogic.getPillowTypes((String)pillowRangeCombo.getSelectedItem())));
+        pillowTypeCombo.setRenderer(new ComboBoxRenderer(PillowLogic.getPillowTypes((String)pillowRangeCombo.getSelectedItem())));
         pillowTypeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pillowTypeComboActionPerformed(evt);
@@ -237,6 +243,7 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
 
         pillowFabricTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         pillowFabricTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(PillowLogic.getMaterialTypes((String)pillowRangeCombo.getSelectedItem())));
+        pillowFabricTypeCombo.setRenderer(new ComboBoxRenderer(PillowLogic.getMaterialTypes((String)pillowRangeCombo.getSelectedItem())));
         pillowFabricTypeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pillowFabricTypeComboActionPerformed(evt);
@@ -248,6 +255,7 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
 
         pillowSizeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         pillowSizeCombo.setModel(new javax.swing.DefaultComboBoxModel(PillowLogic.getPillowSizes((String)pillowRangeCombo.getSelectedItem(),(String)pillowTypeCombo.getSelectedItem())));
+        pillowSizeCombo.setRenderer(new ComboBoxRenderer(PillowLogic.getPillowSizes((String)pillowRangeCombo.getSelectedItem(),(String)pillowTypeCombo.getSelectedItem())));
 
         pillowsSubmitButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         pillowsSubmitButton.setText("Find Cost Per Unit");
@@ -266,14 +274,6 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
             }
         });
 
-        pillowsNewCostingButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        pillowsNewCostingButton.setText("New Costing");
-        pillowsNewCostingButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pillowsNewCostingButtonActionPerformed(evt);
-            }
-        });
-
         pillowCustomFiberButton.setBackground(new java.awt.Color(204, 204, 204));
         pillowCustomFiberButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         pillowCustomFiberButton.setText("Custom Fiber Selection");
@@ -286,6 +286,7 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
 
         pillowFiberTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         pillowFiberTypeCombo.setModel(new DefaultComboBoxModel(PillowLogic.getFiberTypes((String)pillowRangeCombo.getSelectedItem())));
+        pillowFiberTypeCombo.setRenderer(new ComboBoxRenderer(PillowLogic.getFiberTypes((String)pillowRangeCombo.getSelectedItem())));
         pillowFiberTypeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pillowFiberTypeComboActionPerformed(evt);
@@ -334,6 +335,13 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
         pillowsOtherCostVal.setText("0.0");
         pillowsTaxField.setText(Config.taxesRate);
 
+        jLabel318.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel318.setText("Quantity");
+
+        quantity.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        quantity.setText("1");
+        pillowsTaxField.setText(Config.taxesRate);
+
         javax.swing.GroupLayout pillowsCostingPanelLayout = new javax.swing.GroupLayout(pillowsCostingPanel);
         pillowsCostingPanel.setLayout(pillowsCostingPanelLayout);
         pillowsCostingPanelLayout.setHorizontalGroup(
@@ -375,28 +383,33 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
                                         .addComponent(pillowCustomFiberButton))))
                             .addComponent(pillowsCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(pillowsCostingPanelLayout.createSequentialGroup()
-                                .addGroup(pillowsCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel314)
-                                    .addComponent(jLabel313)
-                                    .addComponent(jLabel317))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(pillowsCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(pillowsCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(pillowsCostingPanelLayout.createSequentialGroup()
-                                        .addComponent(pillowsTaxField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel315))
+                                        .addGroup(pillowsCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel314)
+                                            .addComponent(jLabel313)
+                                            .addComponent(jLabel317))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(pillowsCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(pillowsCostingPanelLayout.createSequentialGroup()
+                                                .addComponent(pillowsTaxField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel315))
+                                            .addGroup(pillowsCostingPanelLayout.createSequentialGroup()
+                                                .addComponent(pillowsMarginField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel316))
+                                            .addComponent(pillowsOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(pillowsCostingPanelLayout.createSequentialGroup()
-                                        .addComponent(pillowsMarginField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel316))
-                                    .addComponent(pillowsOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jLabel318)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(17, 17, 17)))
                                 .addGap(121, 121, 121)))))
                 .addContainerGap(20, Short.MAX_VALUE))
             .addGroup(pillowsCostingPanelLayout.createSequentialGroup()
-                .addGap(168, 168, 168)
-                .addGroup(pillowsCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(pillowsSubmitButton)
-                    .addComponent(pillowsNewCostingButton))
+                .addGap(167, 167, 167)
+                .addComponent(pillowsSubmitButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pillowsCostingPanelLayout.setVerticalGroup(
@@ -458,14 +471,15 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
                     .addComponent(jLabel317)
                     .addComponent(pillowsOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pillowsSubmitButton)
+                .addGroup(pillowsCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel318)
+                    .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(pillowsNewCostingButton)
+                .addComponent(pillowsSubmitButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pillowsCustomPanel.setVisible(false);
-        pillowsNewCostingButton.setVisible(false);
 
         jLabel208.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel208.setText("Fabric Cutting Height:");
@@ -800,11 +814,13 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pillowsCostingPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 705, Short.MAX_VALUE)
-                .addGap(41, 41, 41))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(pillowsCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(pillowsCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(pillowsCostingPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 736, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -862,8 +878,8 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Please enter a valid fabric wastage value");
             return;
         }
-        
-        
+
+
         try {
             double fiberWeight = Double.parseDouble(pillowsCustomFiberWeight.getText());
             if (fiberWeight < 0.0) {
@@ -982,43 +998,6 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
         pillowsTaxes.setText(format.format(pReturn.getTaxes()));
         pillowsGrossSellingPrice.setText(format.format(pReturn.getGrossSellingPrice()));
 
-        //export model
-        model = new ExportModel();
-        model.setProductName("Pillow");
-        model.setProductRange(pReturn.getProductRange());
-        if (pReturn.isIsCustom()) {
-            model.setProductSize(pReturn.getCustomWidth() + "X" + pReturn.getCustomHeight());
-        } else {
-            model.setProductSize(pReturn.getSize());
-        }
-        model.setTotalMaterialCost(pReturn.getTotalMaterialCost());
-        model.setLabourCost(pReturn.getLabourCost());
-        model.setProductionOverHead(pReturn.getPohCost());
-        model.setTotalCostPerUnit(pReturn.getTotalCost());
-        model.setNetSellingPrice(pReturn.getNetSellingPrice());
-        model.setTaxes(pReturn.getTaxes());
-        model.setGrossSellingPrice(pReturn.getGrossSellingPrice());
-
-
-//        pillowRangeCombo.setEnabled(false);
-//        pillowTypeCombo.setEnabled(false);
-//        pillowFabricTypeCombo.setEnabled(false);
-//        pillowSizeCombo.setEnabled(false);
-//        pillowFabricWastage.setEnabled(false);
-//        pillowCustomFiberButton.setEnabled(false);
-//        pillowFiberTypeCombo.setEnabled(false);
-//        pillowFiberWastage.setEnabled(false);
-//        pillowsUseCustom.setEnabled(false);
-//        pillowsCustomWidth.setEnabled(false);
-//        pillowsCustomHeight.setEnabled(false);
-//        pillowsIncludeLable.setEnabled(false);
-//        pillowsIncludePEBag.setEnabled(false);
-//        pillowsIncludeTag.setEnabled(false);
-//        pillowsMarginField.setEnabled(false);
-//        pillowsTaxField.setEnabled(false);
-//
-//        pillowsSubmitButton.setVisible(false);
-//        pillowsNewCostingButton.setVisible(true);
         pillowsCPUPanel.setVisible(true);
     }//GEN-LAST:event_pillowsSubmitButtonActionPerformed
 
@@ -1033,52 +1012,6 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
             pillowSizeCombo.setVisible(true);
         }
 }//GEN-LAST:event_pillowsUseCustomActionPerformed
-
-    private void pillowsNewCostingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pillowsNewCostingButtonActionPerformed
-        pillowRangeCombo.setModel(new DefaultComboBoxModel(PillowLogic.getProductRanges()));
-        pillowTypeCombo.setModel(new DefaultComboBoxModel(
-                PillowLogic.getPillowTypes((String) pillowRangeCombo.getSelectedItem())));
-        pillowFabricTypeCombo.setModel(new DefaultComboBoxModel(
-                PillowLogic.getMaterialTypes((String) pillowRangeCombo.getSelectedItem())));
-        pillowSizeCombo.setModel(new DefaultComboBoxModel(PillowLogic.getPillowSizes(
-                (String) pillowRangeCombo.getSelectedItem(), (String) pillowTypeCombo.getSelectedItem())));
-        pillowFabricWastage.setText("3");
-        pillowCustomFiberButton.setSelected(false);
-        pillowFiberTypeCombo.setModel(new DefaultComboBoxModel(
-                PillowLogic.getFiberTypes((String) pillowRangeCombo.getSelectedItem())));
-        pillowFiberWastage.setText("3");
-        pillowsUseCustom.setSelected(false);
-        pillowsCustomPanel.setVisible(false);
-        pillowsCustomWidth.setText("");
-        pillowsCustomHeight.setText("");
-        pillowsIncludeLable.setSelected(false);
-        pillowsIncludePEBag.setSelected(false);
-        pillowsIncludeTag.setSelected(false);
-
-        pillowRangeCombo.setEnabled(true);
-        pillowTypeCombo.setEnabled(true);
-        pillowFabricTypeCombo.setEnabled(true);
-        pillowSizeCombo.setEnabled(true);
-        pillowFabricWastage.setEnabled(true);
-        pillowCustomFiberButton.setEnabled(true);
-        pillowFiberTypeCombo.setEnabled(true);
-        pillowFiberWastage.setEnabled(true);
-        pillowsUseCustom.setEnabled(true);
-        pillowsCustomWidth.setEnabled(true);
-        pillowsCustomHeight.setEnabled(true);
-        pillowsIncludeLable.setEnabled(true);
-        pillowsIncludePEBag.setEnabled(true);
-        pillowsIncludeTag.setEnabled(true);
-        pillowsMarginField.setEnabled(true);
-        pillowsTaxField.setEnabled(true);
-
-        pillowsSubmitButton.setVisible(true);
-        pillowsNewCostingButton.setVisible(false);
-        pillowsCPUPanel.setVisible(false);
-
-        //nulling the model
-        model = null;
-}//GEN-LAST:event_pillowsNewCostingButtonActionPerformed
 
     private void pillowCustomFiberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pillowCustomFiberButtonActionPerformed
         if (pillowCustomFiberButton.isSelected()) {
@@ -1096,10 +1029,86 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
 }//GEN-LAST:event_pillowFiberWastageActionPerformed
 
     private void pillowsExportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pillowsExportButtonActionPerformed
-        if (model != null) {
-            Export export = new Export(model);
-            export.openFile();
+        //ading the quotation object
+        QuationObject qObject = new QuationObject(
+                "Pillow",
+                pillowRangeCombo.getSelectedItem() + "",
+                pillowFabricTypeCombo.getSelectedItem() + "",
+                pillowsUseCustom.isSelected() == true ? pillowsCustomWidth.getText() + "X" + pillowsCustomHeight.getText() : pillowSizeCombo.getSelectedItem() + "",
+                1,
+                Double.parseDouble(pillowsGrossSellingPrice.getText().replaceAll(",", "")));
+
+        //adding the costing summary object
+        SummaryObject summaryObj = new SummaryObject(
+                "Pillow",
+                pillowRangeCombo.getSelectedItem() + "",
+                pillowFabricTypeCombo.getSelectedItem() + "",
+                pillowFiberTypeCombo.getSelectedItem() + "",
+                pillowsUseCustom.isSelected() == true ? pillowsCustomWidth.getText() + "X" + pillowsCustomHeight.getText() : pillowSizeCombo.getSelectedItem() + "",
+                1,
+                Double.parseDouble(pillowsToatalCost.getText().replaceAll(",", "")),
+                Double.parseDouble(pillowsMarginField.getText().replaceAll(",", "")),
+                Double.parseDouble(pillowsTaxField.getText().replaceAll(",", "")));
+
+        //have to add data to this
+        ArrayList<Map.Entry<String, String>> prodSpecs = new ArrayList<Map.Entry<String, String>>();
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Product Range", pillowRangeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Pillow Type", pillowTypeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Type", pillowFabricTypeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Size", pillowSizeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Wastage", pillowFabricWastage.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fiber Type", pillowFiberTypeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fiber Wastage", pillowFiberWastage.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Custom Fiber Weight", pillowFiberWastage.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Lable", pillowsIncludeLable.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Tag", pillowsIncludeTag.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include PE Bag", pillowsIncludePEBag.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Margin", pillowsMarginField.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Taxes", pillowsTaxField.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Other Costs", pillowsOtherCostVal.getText()));
+
+        ArrayList<Map.Entry<String, String>> costDescs = new ArrayList<Map.Entry<String, String>>();
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Cost", pillowsFabricCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Fiber Cost", pillowsFiberCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Thread Cost", pillowsThreadCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Lable Cost", pillowsLableCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Tag Cost", pillowsTagCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Piping Cost", pillowsPipingCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("PE Bag Cost", pillowsPEBagCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Total Material Cost", pillowsTotalMaterialCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("POH", pillowsPOH.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Labour Cost", pillowsLabourCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Total Cost Per Unit", pillowsToatalCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Net Selling Price", pillowsNetSellingPrice.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Taxes", pillowsTaxes.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Gross Selling Price", pillowsGrossSellingPrice.getText()));
+
+        ArrayList<Map.Entry<String, String>> manuSpecs = new ArrayList<Map.Entry<String, String>>();
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fiber Cutting Width", pillowsFabricCutWidth.getText()));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fiber Cutting Height", pillowsFabricCutHeight.getText()));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fiber Weight", pillowsFiberWeight.getText()));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("SMV Value", pillowsSMVValue.getText()));
+
+
+        try {
+            int n = Integer.parseInt(quantity.getText());
+            qObject.setQuantity(n);
+            summaryObj.setQuantity(n);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid quantity value");
+            return;
         }
+
+
+        ItemSummaryObject itemSumObj = new ItemSummaryObject("Pillow", summaryObj, prodSpecs, costDescs, manuSpecs);
+        MainWindow.quotation.addQuatationObject(qObject, itemSumObj);
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                final AddOrderSuccess dialog = new AddOrderSuccess(new javax.swing.JFrame(), true);
+                dialog.setVisible(true);
+            }
+        });
 }//GEN-LAST:event_pillowsExportButtonActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel208;
@@ -1136,6 +1145,7 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel315;
     private javax.swing.JLabel jLabel316;
     private javax.swing.JLabel jLabel317;
+    private javax.swing.JLabel jLabel318;
     private javax.swing.JLabel jLabel343;
     private javax.swing.JLabel jLabel344;
     private javax.swing.JLabel jLabel345;
@@ -1169,7 +1179,6 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel pillowsLabourCost;
     private javax.swing.JTextField pillowsMarginField;
     private javax.swing.JLabel pillowsNetSellingPrice;
-    private javax.swing.JButton pillowsNewCostingButton;
     private javax.swing.JTextField pillowsOtherCostVal;
     private javax.swing.JLabel pillowsPEBagCost;
     private javax.swing.JLabel pillowsPOH;
@@ -1184,6 +1193,7 @@ public class PillowsCostingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel pillowsToatalCost;
     private javax.swing.JLabel pillowsTotalMaterialCost;
     private javax.swing.JRadioButton pillowsUseCustom;
+    private javax.swing.JTextField quantity;
     // End of variables declaration//GEN-END:variables
 
     public static void main(String[] args) {

@@ -72,6 +72,7 @@
                               <Component id="jLabel318" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel317" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel321" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel322" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -88,6 +89,7 @@
                                           <Component id="jLabel320" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="cushionsOtherCostVal" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
+                                      <Component id="quantity" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
@@ -113,11 +115,8 @@
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="2" attributes="0">
-                                      <Component id="cushionsNewCostingButton" alignment="2" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cushionsSubmitButton" alignment="2" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
+                                  <Component id="cushionsSubmitButton" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="175" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -192,10 +191,13 @@
                       <Component id="jLabel321" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cushionsOtherCostVal" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                  <Component id="cushionsSubmitButton" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="quantity" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel322" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="cushionsNewCostingButton" min="-2" max="-2" attributes="0"/>
+                  <Component id="cushionsSubmitButton" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -229,6 +231,9 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cushionsRangeComboActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="cushionsRangeCombo.setRenderer(new ComboBoxRenderer(CushionLogic.getProductRanges()));"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JTextField" name="cushionsFabricWastage">
           <Properties>
@@ -390,6 +395,9 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cushionsFabricTypeComboActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="cushionsFabricTypeCombo.setRenderer(new ComboBoxRenderer(CushionLogic.getMaterialTypes((String)cushionsRangeCombo.getSelectedItem())));"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="cushionsSizeLable">
           <Properties>
@@ -408,6 +416,9 @@
               <Connection code="new javax.swing.DefaultComboBoxModel(CushionLogic.getCushionSizes((String)cushionsRangeCombo.getSelectedItem()))" type="code"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="cushionsSizeCombo.setRenderer(new ComboBoxRenderer(CushionLogic.getCushionSizes((String)cushionsRangeCombo.getSelectedItem())));"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="cushionsSubmitButton">
           <Properties>
@@ -433,20 +444,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cushionsUseCustomActionPerformed"/>
           </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="cushionsNewCostingButton">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Times New Roman" size="16" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="New Costing"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cushionsNewCostingButtonActionPerformed"/>
-          </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="cushionsNewCostingButton.setVisible(false);"/>
-          </AuxValues>
         </Component>
         <Component class="javax.swing.JRadioButton" name="cushionsCustomFiberButton">
           <Properties>
@@ -475,6 +472,9 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cushionsFiberTypeComboActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="cushionsFiberTypeCombo.setRenderer(new ComboBoxRenderer(CushionLogic.getFiberTypes((String)cushionsRangeCombo.getSelectedItem())));"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel267">
           <Properties>
@@ -577,6 +577,25 @@
               <Font name="Times New Roman" size="16" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="0.0"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="cushionsTaxField.setText(Config.taxesRate);"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel322">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="16" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Quantity"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="quantity">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="16" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="1"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="cushionsTaxField.setText(Config.taxesRate);"/>

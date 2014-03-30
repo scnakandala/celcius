@@ -1,15 +1,20 @@
 package view;
 
 import celcius.Config;
-import export.Export;
-import export.ExportModel;
+import excel.ItemSummaryObject;
+import excel.QuationObject;
+import excel.SummaryObject;
 import java.awt.EventQueue;
 import java.text.DecimalFormat;
+import java.util.AbstractMap;
+import java.util.ArrayList;
+import java.util.Map;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import logic.CushionLogic;
 import logic.PillowLogic;
+import ui.helpers.ComboBoxRenderer;
 import viewmodels.CushionsViewModel;
 
 /**
@@ -17,8 +22,6 @@ import viewmodels.CushionsViewModel;
  * @author naka
  */
 public class CushionsCostingPanel extends javax.swing.JPanel {
-
-    private ExportModel model;
 
     /**
      * Creates new form CushionsCostingPanel
@@ -57,7 +60,6 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
         cushionsSizeCombo = new javax.swing.JComboBox();
         cushionsSubmitButton = new javax.swing.JButton();
         cushionsUseCustom = new javax.swing.JRadioButton();
-        cushionsNewCostingButton = new javax.swing.JButton();
         cushionsCustomFiberButton = new javax.swing.JRadioButton();
         cushionsFiberTypeCombo = new javax.swing.JComboBox();
         jLabel267 = new javax.swing.JLabel();
@@ -72,6 +74,8 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
         cushionsMarginField = new javax.swing.JTextField();
         jLabel321 = new javax.swing.JLabel();
         cushionsOtherCostVal = new javax.swing.JTextField();
+        jLabel322 = new javax.swing.JLabel();
+        quantity = new javax.swing.JTextField();
         cushionsCPUPanel = new javax.swing.JPanel();
         jPanel41 = new javax.swing.JPanel();
         jLabel240 = new javax.swing.JLabel();
@@ -121,6 +125,7 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
 
         cushionsRangeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cushionsRangeCombo.setModel(new javax.swing.DefaultComboBoxModel(CushionLogic.getProductRanges()));
+        cushionsRangeCombo.setRenderer(new ComboBoxRenderer(CushionLogic.getProductRanges()));
         cushionsRangeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cushionsRangeComboActionPerformed(evt);
@@ -206,6 +211,7 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
 
         cushionsFabricTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cushionsFabricTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(CushionLogic.getMaterialTypes((String)cushionsRangeCombo.getSelectedItem())));
+        cushionsFabricTypeCombo.setRenderer(new ComboBoxRenderer(CushionLogic.getMaterialTypes((String)cushionsRangeCombo.getSelectedItem())));
         cushionsFabricTypeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cushionsFabricTypeComboActionPerformed(evt);
@@ -217,6 +223,7 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
 
         cushionsSizeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cushionsSizeCombo.setModel(new javax.swing.DefaultComboBoxModel(CushionLogic.getCushionSizes((String)cushionsRangeCombo.getSelectedItem())));
+        cushionsSizeCombo.setRenderer(new ComboBoxRenderer(CushionLogic.getCushionSizes((String)cushionsRangeCombo.getSelectedItem())));
 
         cushionsSubmitButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cushionsSubmitButton.setText("Find Cost Per Unit");
@@ -235,14 +242,6 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
             }
         });
 
-        cushionsNewCostingButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        cushionsNewCostingButton.setText("New Costing");
-        cushionsNewCostingButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cushionsNewCostingButtonActionPerformed(evt);
-            }
-        });
-
         cushionsCustomFiberButton.setBackground(new java.awt.Color(204, 204, 204));
         cushionsCustomFiberButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cushionsCustomFiberButton.setText("Custom Fiber Selection");
@@ -255,6 +254,7 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
 
         cushionsFiberTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cushionsFiberTypeCombo.setModel(new DefaultComboBoxModel(CushionLogic.getFiberTypes((String)cushionsRangeCombo.getSelectedItem())));
+        cushionsFiberTypeCombo.setRenderer(new ComboBoxRenderer(CushionLogic.getFiberTypes((String)cushionsRangeCombo.getSelectedItem())));
         cushionsFiberTypeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cushionsFiberTypeComboActionPerformed(evt);
@@ -303,6 +303,13 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
         cushionsOtherCostVal.setText("0.0");
         cushionsTaxField.setText(Config.taxesRate);
 
+        jLabel322.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel322.setText("Quantity");
+
+        quantity.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        quantity.setText("1");
+        cushionsTaxField.setText(Config.taxesRate);
+
         javax.swing.GroupLayout cushionsCostingPanelLayout = new javax.swing.GroupLayout(cushionsCostingPanel);
         cushionsCostingPanel.setLayout(cushionsCostingPanelLayout);
         cushionsCostingPanelLayout.setHorizontalGroup(
@@ -327,7 +334,8 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
                             .addComponent(jLabel259)
                             .addComponent(jLabel318)
                             .addComponent(jLabel317)
-                            .addComponent(jLabel321))
+                            .addComponent(jLabel321)
+                            .addComponent(jLabel322))
                         .addGroup(cushionsCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(cushionsCostingPanelLayout.createSequentialGroup()
                                 .addGap(62, 62, 62)
@@ -340,7 +348,8 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
                                         .addComponent(cushionsMarginField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel320))
-                                    .addComponent(cushionsOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(cushionsOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cushionsCostingPanelLayout.createSequentialGroup()
                                 .addGap(67, 67, 67)
                                 .addGroup(cushionsCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -360,10 +369,8 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
                                 .addGap(36, 36, 36))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cushionsCostingPanelLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(cushionsCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                                    .addComponent(cushionsNewCostingButton)
-                                    .addComponent(cushionsSubmitButton))
-                                .addGap(169, 169, 169)))))
+                                .addComponent(cushionsSubmitButton)
+                                .addGap(175, 175, 175)))))
                 .addGap(14, 14, 14))
         );
         cushionsCostingPanelLayout.setVerticalGroup(
@@ -420,14 +427,15 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
                 .addGroup(cushionsCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel321)
                     .addComponent(cushionsOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
-                .addComponent(cushionsSubmitButton)
+                .addGap(9, 9, 9)
+                .addGroup(cushionsCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel322))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cushionsNewCostingButton))
+                .addComponent(cushionsSubmitButton))
         );
 
         cushionsCustomPanel.setVisible(false);
-        cushionsNewCostingButton.setVisible(false);
 
         jLabel240.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel240.setText("SMV Value:");
@@ -733,7 +741,7 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(cushionsCostingPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 663, Short.MAX_VALUE)
+                .addComponent(cushionsCostingPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 663, Short.MAX_VALUE)
                 .addGap(21, 21, 21))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(cushionsCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -888,40 +896,6 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
         cushionsTaxes.setText(format.format(cReturn.getTaxes()));
         cushionsGrossSellingPrice.setText(format.format(cReturn.getGrossSellingPrice()));
 
-        //export model
-        model = new ExportModel();
-        model.setProductName("Cushion");
-        model.setProductRange(cReturn.getProductRange());
-        if (cReturn.isIsCustom()) {
-            model.setProductSize(cReturn.getCustomWidthHeight() + "X" + cReturn.getCustomWidthHeight());
-        } else {
-            model.setProductSize(cReturn.getSize());
-        }
-        model.setTotalMaterialCost(cReturn.getTotalMaterialCost());
-        model.setLabourCost(cReturn.getLabourCost());
-        model.setProductionOverHead(cReturn.getPohCost());
-        model.setTotalCostPerUnit(cReturn.getTotalCost());
-        model.setNetSellingPrice(cReturn.getNetSellingPrice());
-        model.setTaxes(cReturn.getTaxes());
-        model.setGrossSellingPrice(cReturn.getGrossSellingPrice());
-
-//        cushionsRangeCombo.setEnabled(false);
-//        cushionsFabricTypeCombo.setEnabled(false);
-//        cushionsSizeCombo.setEnabled(false);
-//        cushionsFabricWastage.setEnabled(false);
-//        cushionsCustomFiberButton.setEnabled(false);
-//        cushionsFiberTypeCombo.setEnabled(false);
-//        cushionsFiberWastage.setEnabled(false);
-//        cushionsUseCustom.setEnabled(false);
-//        cushionsCustomWidthHeight.setEnabled(false);
-//        cushionsIncludeLable.setEnabled(false);
-//        cushionsIncludePEBag.setEnabled(false);
-//        cushionsIncludeTag.setEnabled(false);
-//        cushionsMarginField.setEnabled(false);
-//        cushionsTaxField.setEnabled(false);
-//
-//        cushionsSubmitButton.setVisible(false);
-//        cushionsNewCostingButton.setVisible(true);
         cushionsCPUPanel.setVisible(true);
     }//GEN-LAST:event_cushionsSubmitButtonActionPerformed
 
@@ -936,47 +910,6 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
             cushionsSizeLable.setVisible(true);
         }
 }//GEN-LAST:event_cushionsUseCustomActionPerformed
-
-    private void cushionsNewCostingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cushionsNewCostingButtonActionPerformed
-        cushionsRangeCombo.setModel(new DefaultComboBoxModel(CushionLogic.getProductRanges()));
-        cushionsFabricTypeCombo.setModel(new DefaultComboBoxModel(CushionLogic.getMaterialTypes(
-                (String) cushionsRangeCombo.getSelectedItem())));
-        cushionsSizeCombo.setModel(new DefaultComboBoxModel(CushionLogic.getCushionSizes(
-                (String) cushionsRangeCombo.getSelectedItem())));
-        cushionsFabricWastage.setText("3");
-        cushionsCustomFiberButton.setSelected(false);
-        cushionsFiberTypeCombo.setModel(new DefaultComboBoxModel(CushionLogic.getFiberTypes(
-                (String) cushionsRangeCombo.getSelectedItem())));
-        cushionsFiberWastage.setText("3");
-        cushionsUseCustom.setSelected(false);
-        cushionsCustomPanel.setVisible(false);
-        cushionsCustomWidthHeight.setText("");
-        cushionsIncludeLable.setSelected(false);
-        cushionsIncludePEBag.setSelected(false);
-        cushionsIncludeTag.setSelected(false);
-
-        cushionsRangeCombo.setEnabled(true);
-        cushionsFabricTypeCombo.setEnabled(true);
-        cushionsSizeCombo.setEnabled(true);
-        cushionsFabricWastage.setEnabled(true);
-        cushionsCustomFiberButton.setEnabled(true);
-        cushionsFiberTypeCombo.setEnabled(true);
-        cushionsFiberWastage.setEnabled(true);
-        cushionsUseCustom.setEnabled(true);
-        cushionsCustomWidthHeight.setEnabled(true);
-        cushionsIncludeLable.setEnabled(true);
-        cushionsIncludePEBag.setEnabled(true);
-        cushionsIncludeTag.setEnabled(true);
-        cushionsMarginField.setEnabled(true);
-        cushionsTaxField.setEnabled(true);
-
-        cushionsSubmitButton.setVisible(true);
-        cushionsNewCostingButton.setVisible(false);
-        cushionsCPUPanel.setVisible(false);
-
-        //nulling the model
-        model = null;
-}//GEN-LAST:event_cushionsNewCostingButtonActionPerformed
 
     private void cushionsCustomFiberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cushionsCustomFiberButtonActionPerformed
         if (cushionsCustomFiberButton.isSelected()) {
@@ -995,114 +928,75 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
 }//GEN-LAST:event_cushionsFiberWastageActionPerformed
 
     private void cushionsExportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cushionsExportButtonActionPerformed
-//        if (model != null) {
-//            Export export = new Export(model);
-//            export.openFile();
-//        }
-        String title = "Cushion Costing";
+        //ading the quotation object
+        QuationObject qObject = new QuationObject(
+                "Cushion",
+                cushionsRangeCombo.getSelectedItem() + "",
+                cushionsFabricTypeCombo.getSelectedItem() + "",
+                cushionsUseCustom.isSelected() == true ? cushionsCustomWidthHeight.getText() + "X" + cushionsCustomWidthHeight.getText() : cushionsSizeCombo.getSelectedItem() + "",
+                1,
+                Double.parseDouble(cushionsGrossSellingPrice.getText().replaceAll(",", "")));
 
-        String[][] specifications = new String[2][13];
-        specifications[0][0] = "Range";
-        specifications[0][1] = "Material";
-        specifications[0][2] = "Size";
-        specifications[0][3] = "Material Wastage";
-        specifications[0][4] = "Fiber Type";
-        specifications[0][5] = "Fiber Wastage";
-        specifications[0][6] = "Fiber Weight";
-        specifications[0][7] = "Lable";
-        specifications[0][8] = "Tag";
-        specifications[0][9] = "PE Bag";
-        specifications[0][10] = "Margin";
-        specifications[0][11] = "Taxes";
-        specifications[0][12] = "Other Costs";
+        //adding the costing summary object
+        SummaryObject summaryObj = new SummaryObject(
+                "Cushion",
+                cushionsRangeCombo.getSelectedItem() + "",
+                cushionsFabricTypeCombo.getSelectedItem() + "",
+                cushionsFiberTypeCombo.getSelectedItem() + "",
+                cushionsUseCustom.isSelected() == true ? cushionsCustomWidthHeight.getText() + "X" + cushionsCustomWidthHeight.getText() : cushionsSizeCombo.getSelectedItem() + "",
+                1,
+                Double.parseDouble(cushionsToatalCost.getText().replaceAll(",", "")),
+                Double.parseDouble(cushionsMarginField.getText().replaceAll(",", "")),
+                Double.parseDouble(cushionsTaxField.getText().replaceAll(",", "")));
 
-        specifications[1][0] = cushionsRangeCombo.getSelectedItem() + "";
-        specifications[1][1] = cushionsFabricTypeCombo.getSelectedItem() + "";
-        if (cushionsUseCustom.isSelected()) {
-            specifications[1][2] = cushionsCustomWidthHeight.getText() + "X"
-                    + cushionsCustomWidthHeight.getText();
-        } else {
-            specifications[1][2] = cushionsSizeCombo.getSelectedItem() + "";
+        //have to add data to this
+        ArrayList<Map.Entry<String, String>> prodSpecs = new ArrayList<Map.Entry<String, String>>();
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Product Range", cushionsRangeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Type", cushionsFabricTypeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Size", cushionsUseCustom.isSelected() == true ? cushionsCustomWidthHeight.getText() + "X" + cushionsCustomWidthHeight.getText() : cushionsSizeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Wastage", cushionsFabricWastage.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fiber Type", cushionsFiberTypeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fiber Wastage", cushionsFiberWastage.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Lable", cushionsIncludeLable.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Tag", cushionsIncludeTag.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include PE Bag", cushionsIncludePEBag.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Margin", cushionsMarginField.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Taxes", cushionsTaxField.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Other Costs", cushionsOtherCostVal.getText() + ""));
+
+        ArrayList<Map.Entry<String, String>> costDescs = new ArrayList<Map.Entry<String, String>>();
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Cost", cushionsFabricCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Fiber", cushionsFiberCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Thread Cost", cushionsThreadCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Lable Cost", cushionsLableCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Tag Cost", cushionsTagCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("PE Bag Cost", cushionsPEBagCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Total Material Cost", cushionsTotalMaterialCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("POH", cushionsPOH.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Labour Cost", cushionsLabourCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Total Cost Per Unit", cushionsToatalCost.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Net Selling Price", cushionsNetSellingPrice.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Taxes", cushionsTaxes.getText() + ""));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Gross Selling Price", cushionsGrossSellingPrice.getText() + ""));
+
+        ArrayList<Map.Entry<String, String>> manuSpecs = new ArrayList<Map.Entry<String, String>>();
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Cutting Width & Height", cushionsFabricCutWidthHeight.getText() + ""));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fiber Weight", cushionsFiberWeight.getText() + ""));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("SMV Value", cushionsSMVValue.getText()));
+
+
+        try {
+            int n = Integer.parseInt(quantity.getText());
+            qObject.setQuantity(n);
+            summaryObj.setQuantity(n);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid quantity value");
+            return;
         }
-        specifications[1][3] = cushionsFabricWastage.getText();
-
-        specifications[1][4] = cushionsFiberTypeCombo.getSelectedItem() + "";
-        specifications[1][5] = cushionsFiberWastage.getText();
-
-        specifications[1][6] = cushionsFiberWeight.getText();
-
-        if (cushionsIncludeLable.isSelected()) {
-            specifications[1][7] = "Added";
-        } else {
-            specifications[1][7] = "Not Added";
-        }
-
-        if (cushionsIncludeTag.isSelected()) {
-            specifications[1][8] = "Added";
-        } else {
-            specifications[1][8] = "Not Added";
-        }
-
-        if (cushionsIncludePEBag.isSelected()) {
-            specifications[1][9] = "Added";
-        } else {
-            specifications[1][9] = "Not Added";
-        }
-
-        specifications[1][10] = cushionsMarginField.getText();
-        specifications[1][11] = cushionsTaxField.getText();
-        specifications[1][12] = cushionsOtherCostVal.getText();
-
-        String[][] cpus = new String[2][13];
-        cpus[0][0] = "Fabric Cost";
-        cpus[0][1] = "Fiber Cost";
-        cpus[0][2] = "Thread Cost";
-        cpus[0][3] = "Lable Cost";
-        cpus[0][4] = "Tag Cost";
-        cpus[0][5] = "PE Bag Cost";
-        cpus[0][6] = "Total Material Cost";
-        cpus[0][7] = "POH";
-        cpus[0][8] = "Labor Cost";
-        cpus[0][9] = "Total Cost Per Unit";
-        cpus[0][10] = "Net Selling Price";
-        cpus[0][11] = "Taxes";
-        cpus[0][12] = "Gross Selling Price";
-
-        cpus[1][0] = cushionsFabricCost.getText();
-        cpus[1][1] = cushionsFiberCost.getText();
-        cpus[1][2] = cushionsThreadCost.getText();
-        cpus[1][3] = cushionsLableCost.getText();
-        cpus[1][4] = cushionsTagCost.getText();
-        cpus[1][5] = cushionsPEBagCost.getText();
-        cpus[1][6] = cushionsTotalMaterialCost.getText();
-        cpus[1][7] = cushionsPOH.getText();
-        cpus[1][8] = cushionsLabourCost.getText();
-        cpus[1][9] = cushionsToatalCost.getText();
-        cpus[1][10] = cushionsNetSellingPrice.getText();
-        cpus[1][11] = cushionsTaxes.getText();
-        cpus[1][12] = cushionsGrossSellingPrice.getText();
 
 
-        String[][] prodPaprameters = new String[2][3];
-        prodPaprameters[0][0] = "Cutting Width/Height";
-        prodPaprameters[0][1] = "Fiber Weight";
-        prodPaprameters[0][2] = "SMV Value";
-
-        prodPaprameters[1][0] = cushionsFabricCutWidthHeight.getText();
-        prodPaprameters[1][1] = cushionsFiberWeight.getText();
-        prodPaprameters[1][2] = cushionsSMVValue.getText();
-
-        String[] summary = new String[8];
-        summary[0] = "Cushion";
-        summary[1] = cushionsRangeCombo.getSelectedItem() + "";
-        summary[2] = cushionsFabricTypeCombo.getSelectedItem() + "";
-        summary[3] = cushionsFiberTypeCombo.getSelectedItem() + "";
-        summary[4] = specifications[1][2];
-        summary[5] = "1";
-        summary[6] = cushionsGrossSellingPrice.getText();
-        summary[7] = "";
-
-        MainWindow.workbook.addOrderItem(summary, specifications, cpus, prodPaprameters, title);
+        ItemSummaryObject itemSumObj = new ItemSummaryObject("Cushion", summaryObj, prodSpecs, costDescs, manuSpecs);
+        MainWindow.quotation.addQuatationObject(qObject, itemSumObj);
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -1110,7 +1004,6 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
                 dialog.setVisible(true);
             }
         });
-
 }//GEN-LAST:event_cushionsExportButtonActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel cushionsCPUPanel;
@@ -1136,7 +1029,6 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel cushionsLabourCost;
     private javax.swing.JTextField cushionsMarginField;
     private javax.swing.JLabel cushionsNetSellingPrice;
-    private javax.swing.JButton cushionsNewCostingButton;
     private javax.swing.JTextField cushionsOtherCostVal;
     private javax.swing.JLabel cushionsPEBagCost;
     private javax.swing.JLabel cushionsPOH;
@@ -1182,11 +1074,13 @@ public class CushionsCostingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel319;
     private javax.swing.JLabel jLabel320;
     private javax.swing.JLabel jLabel321;
+    private javax.swing.JLabel jLabel322;
     private javax.swing.JLabel jLabel346;
     private javax.swing.JLabel jLabel347;
     private javax.swing.JLabel jLabel348;
     private javax.swing.JPanel jPanel41;
     private javax.swing.JPanel jPanel42;
+    private javax.swing.JTextField quantity;
     // End of variables declaration//GEN-END:variables
 
     public static void main(String[] args) {

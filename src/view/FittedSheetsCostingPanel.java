@@ -11,19 +11,20 @@
 package view;
 
 import celcius.Config;
-import entities.Fibers;
-import export.Export;
-import export.ExportModel;
+import excel.ItemSummaryObject;
+import excel.QuationObject;
+import excel.SummaryObject;
 import java.awt.EventQueue;
 import java.text.DecimalFormat;
-import javax.swing.DefaultComboBoxModel;
+import java.util.AbstractMap;
+import java.util.ArrayList;
+import java.util.Map;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import logic.BedSheetLogic;
 import logic.BolsterPillowcaseLogic;
 import logic.FittedSheetLogic;
-import viewmodels.BedSheetViewModel;
-import viewmodels.BolsterPillowcaseViewModel;
+import ui.helpers.ComboBoxRenderer;
 import viewmodels.FittedSheetViewModel;
 
 /**
@@ -31,8 +32,6 @@ import viewmodels.FittedSheetViewModel;
  * @author naka
  */
 public class FittedSheetsCostingPanel extends javax.swing.JPanel {
-
-    private export.ExportModel model;
 
     /**
      * Creates new form BedSheetPanel
@@ -75,7 +74,6 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
         fittedSheetIncludeCardboard = new javax.swing.JRadioButton();
         fittedSheetIncludePEBag = new javax.swing.JRadioButton();
         fittedSheetSubmitButton = new javax.swing.JButton();
-        fittedSheetCostingPanelNewCostingButton = new javax.swing.JButton();
         jLabel30 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
         fittedSheetMarginField = new javax.swing.JTextField();
@@ -87,7 +85,9 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
         jLabel23 = new javax.swing.JLabel();
         fittedSheetWastage = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
-        bedSheetCPUPanel = new javax.swing.JPanel();
+        bedsheetOtherCost1 = new javax.swing.JLabel();
+        quantity = new javax.swing.JTextField();
+        fittedSheetCPUPanel = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         fittedSheetCutWidth = new javax.swing.JLabel();
@@ -125,6 +125,8 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
         bedSheetExportButton = new javax.swing.JButton();
         jLabel29 = new javax.swing.JLabel();
         fittedSheetCardboardCost = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        fittedSheetElasticCost = new javax.swing.JLabel();
 
         bedSheetCostingPanel.setMinimumSize(new java.awt.Dimension(500, 500));
 
@@ -136,6 +138,7 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
 
         fittedSheetProductRangeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         fittedSheetProductRangeCombo.setModel(new javax.swing.DefaultComboBoxModel(BolsterPillowcaseLogic.getProductRanges()));
+        fittedSheetProductRangeCombo.setRenderer(new ComboBoxRenderer(BolsterPillowcaseLogic.getProductRanges()));
         fittedSheetProductRangeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fittedSheetProductRangeComboActionPerformed(evt);
@@ -147,9 +150,11 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
 
         fittedSheetMaterialTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         fittedSheetMaterialTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(BolsterPillowcaseLogic.getMaterialTypes((String)fittedSheetProductRangeCombo.getSelectedItem())));
+        fittedSheetMaterialTypeCombo.setRenderer(new ComboBoxRenderer(BolsterPillowcaseLogic.getMaterialTypes((String)fittedSheetProductRangeCombo.getSelectedItem())));
 
         fittedSheetSizeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         fittedSheetSizeCombo.setModel(new javax.swing.DefaultComboBoxModel(BolsterPillowcaseLogic.getBedSheetSizes()));
+        fittedSheetSizeCombo.setRenderer(new ComboBoxRenderer(BolsterPillowcaseLogic.getBedSheetSizes()));
 
         fittedSheetHeight.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         fittedSheetHeight.setText("10");
@@ -220,15 +225,6 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
             }
         });
 
-        fittedSheetCostingPanelNewCostingButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        fittedSheetCostingPanelNewCostingButton.setText("New Costing");
-        fittedSheetCostingPanelNewCostingButton.setVisible(false);
-        fittedSheetCostingPanelNewCostingButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fittedSheetCostingPanelNewCostingButtonActionPerformed(evt);
-            }
-        });
-
         jLabel30.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel30.setText("Margin:");
 
@@ -268,6 +264,18 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
         jLabel26.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel26.setText("%");
 
+        bedsheetOtherCost1.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        bedsheetOtherCost1.setText("Quantity");
+
+        quantity.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        quantity.setText("1");
+        fittedSheetTaxField.setText(Config.taxesRate);
+        quantity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quantityActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout bedSheetCostingPanelLayout = new javax.swing.GroupLayout(bedSheetCostingPanel);
         bedSheetCostingPanel.setLayout(bedSheetCostingPanelLayout);
         bedSheetCostingPanelLayout.setHorizontalGroup(
@@ -286,9 +294,7 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
                         .addComponent(fittedSheetMaterialTypeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
                         .addGap(171, 171, 171)
-                        .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(fittedSheetSubmitButton)
-                            .addComponent(fittedSheetCostingPanelNewCostingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(fittedSheetSubmitButton))
                     .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
                         .addGap(108, 108, 108)
                         .addComponent(jLabel5))
@@ -298,39 +304,42 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
                     .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
                         .addGap(47, 47, 47)
                         .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(fittedSheetUseCustom, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel30)
+                            .addComponent(jLabel55)
+                            .addComponent(bedsheetOtherCost)
+                            .addComponent(bedsheetOtherCost1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fittedSheetOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fittedSheetTaxField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fittedSheetMarginField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel123)
+                            .addComponent(jLabel84)))
+                    .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bedSheetSizeLable)
+                            .addComponent(jLabel23)
+                            .addComponent(jLabel11))
+                        .addGap(132, 132, 132)
+                        .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
-                                .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel30)
-                                    .addComponent(jLabel55)
-                                    .addComponent(bedsheetOtherCost))
-                                .addGap(125, 125, 125)
-                                .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(fittedSheetOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
-                                        .addComponent(fittedSheetTaxField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel123))
-                                    .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
-                                        .addComponent(fittedSheetMarginField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel84))))
-                            .addComponent(bedSheetCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(fittedSheetWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel26))
                             .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
-                                .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(bedSheetSizeLable)
-                                    .addComponent(jLabel23)
-                                    .addComponent(jLabel11))
-                                .addGap(132, 132, 132)
-                                .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
-                                        .addComponent(fittedSheetWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel26))
-                                    .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
-                                        .addComponent(fittedSheetHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel12)))))))
+                                .addComponent(fittedSheetHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel12))))
+                    .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(bedSheetCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(fittedSheetUseCustom, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
         bedSheetCostingPanelLayout.setVerticalGroup(
@@ -384,15 +393,17 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
                 .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bedsheetOtherCost)
                     .addComponent(fittedSheetOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
-                .addComponent(fittedSheetSubmitButton)
+                .addGap(5, 5, 5)
+                .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bedsheetOtherCost1)
+                    .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(fittedSheetCostingPanelNewCostingButton)
-                .addGap(131, 131, 131))
+                .addComponent(fittedSheetSubmitButton)
+                .addGap(169, 169, 169))
         );
 
-        bedSheetCPUPanel.setVisible(false);
-        bedSheetCPUPanel.setPreferredSize(new java.awt.Dimension(500, 800));
+        fittedSheetCPUPanel.setVisible(false);
+        fittedSheetCPUPanel.setPreferredSize(new java.awt.Dimension(500, 800));
 
         jLabel24.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel24.setText("Cut Width:");
@@ -430,7 +441,7 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
                     .addComponent(jLabel27)
                     .addComponent(jLabel28))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(fittedSheetCutWidth)
                     .addComponent(fittedSheetCutLength)
                     .addComponent(fittedSheetSMVValue))
@@ -469,7 +480,7 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
         jLabel16.setText("Tag Cost:");
 
         jLabel18.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        jLabel18.setText("Cardboard Cost:");
+        jLabel18.setText("Elastic Cost");
 
         jLabel20.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel20.setText("POH:");
@@ -544,6 +555,12 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
         fittedSheetCardboardCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         fittedSheetCardboardCost.setText("0.00");
 
+        jLabel31.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel31.setText("Cardboard Cost:");
+
+        fittedSheetElasticCost.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        fittedSheetElasticCost.setText("0.00");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -570,7 +587,8 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
                     .addComponent(jLabel16)
                     .addComponent(jLabel77)
                     .addComponent(jLabel18)
-                    .addComponent(jLabel29))
+                    .addComponent(jLabel29)
+                    .addComponent(jLabel31))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(fittedSheetTotalCost, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -585,7 +603,8 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
                     .addComponent(fittedSheetFabricCost, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(fittedSheetTaxes, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(fittedSheetTotalMaterialCost, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(fittedSheetCardboardCost, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(fittedSheetCardboardCost, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(fittedSheetElasticCost, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(46, 46, 46))
         );
         jPanel4Layout.setVerticalGroup(
@@ -622,10 +641,14 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
                         .addComponent(fittedSheetCardboardCost))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel29)
-                        .addGap(8, 8, 8)
-                        .addComponent(jLabel18)
-                        .addGap(1, 1, 1)))
-                .addGap(56, 56, 56)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel31)
+                        .addGap(3, 3, 3)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(fittedSheetElasticCost))
+                .addGap(34, 34, 34)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addComponent(fittedSheetTotalMaterialCost)
@@ -658,20 +681,20 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout bedSheetCPUPanelLayout = new javax.swing.GroupLayout(bedSheetCPUPanel);
-        bedSheetCPUPanel.setLayout(bedSheetCPUPanelLayout);
-        bedSheetCPUPanelLayout.setHorizontalGroup(
-            bedSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bedSheetCPUPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout fittedSheetCPUPanelLayout = new javax.swing.GroupLayout(fittedSheetCPUPanel);
+        fittedSheetCPUPanel.setLayout(fittedSheetCPUPanelLayout);
+        fittedSheetCPUPanelLayout.setHorizontalGroup(
+            fittedSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(fittedSheetCPUPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(bedSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(fittedSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
-        bedSheetCPUPanelLayout.setVerticalGroup(
-            bedSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bedSheetCPUPanelLayout.createSequentialGroup()
+        fittedSheetCPUPanelLayout.setVerticalGroup(
+            fittedSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(fittedSheetCPUPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
@@ -687,7 +710,7 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(bedSheetCostingPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(bedSheetCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(fittedSheetCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -697,7 +720,7 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(bedSheetCostingPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(bedSheetCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fittedSheetCPUPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -745,7 +768,7 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Please enter a valid height value");
             return;
         }
-        
+
         try {
             double wastage = Double.parseDouble(fittedSheetWastage.getText());
             if (wastage < 0 || wastage > 10) {
@@ -837,6 +860,7 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
         fittedSheetTagCost.setText(format.format(bReturn.getTagCost()) + "");
         fittedSheetPEBagCost.setText(format.format(bReturn.getPEBagCost()) + "");
         fittedSheetCardboardCost.setText(format.format(bReturn.getCardBoardCost()) + "");
+        fittedSheetElasticCost.setText(format.format(bReturn.getElasticCost()) + "");
         fittedSheetPOH.setText(format.format(bReturn.getPohCost()) + "");
         fittedSheetLabourCost.setText(format.format(bReturn.getLabourCost()) + "");
         fittedSheetTotalCost.setText(format.format(bReturn.getTotalCost()) + "");
@@ -845,185 +869,86 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
         fittedSheetNetSellingPrice.setText(format.format(bReturn.getNetSellingPrice()));
         fittedSheetTaxes.setText(format.format(bReturn.getTaxes()));
         fittedSheetGrossSellingPrice.setText(format.format(bReturn.getGrossSellingPrice()));
-        
+
         fittedSheetSMVValue.setText(format.format(bReturn.getSmvValue()));
         fittedSheetCutWidth.setText(format.format(bReturn.getCuttingWidth()));
         fittedSheetCutLength.setText(format.format(bReturn.getCuttingHeight()));
 
-        //export model
-        model = new ExportModel();
-        model.setProductName("Fitted Sheet");
-        model.setProductRange(bReturn.getProductRange());
-        if (bReturn.isIsCustom()) {
-            model.setProductSize(bReturn.getCustomDiameter() + "X" + bReturn.getCustomLength());
-        } else {
-            model.setProductSize(bReturn.getSize());
-        }
-        model.setTotalMaterialCost(bReturn.getTotalMaterialCost());
-        model.setLabourCost(bReturn.getLabourCost());
-        model.setProductionOverHead(bReturn.getPohCost());
-        model.setTotalCostPerUnit(bReturn.getTotalCost());
-        model.setNetSellingPrice(bReturn.getNetSellingPrice());
-        model.setTaxes(bReturn.getTaxes());
-        model.setGrossSellingPrice(bReturn.getGrossSellingPrice());
-
-        bedSheetCPUPanel.setVisible(true);
-//        bedSheetCostingPanelNewCostingButton.setVisible(true);
-//        bedSheetSubmitButton.setVisible(false);
-//
-//        bedSheetProductRangeCombo.setEnabled(false);
-//        bedSheetMaterialTypeCombo.setEnabled(false);
-//        bedSheetSizeCombo.setEnabled(false);
-//        bedSheetWastage.setEnabled(false);
-//
-//        bedSheetUseCustom.setEnabled(false);
-//        bedSHeetCustomWidth.setEnabled(false);
-//        bedSheetCustomHeight.setEnabled(false);
-//
-//        bedSheetIncludeCardBoard.setEnabled(false);
-//        bedSheetIncludeLable.setEnabled(false);
-//        bedSheetIncludeSealBag.setEnabled(false);
-//        bedSheetIncludeTag.setEnabled(false);
-//        bedSheetMarginField.setEnabled(false);
-//        bedSheetTaxField.setEnabled(false);
+        fittedSheetCPUPanel.setVisible(true);
 }//GEN-LAST:event_fittedSheetSubmitButtonActionPerformed
 
-    private void fittedSheetCostingPanelNewCostingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fittedSheetCostingPanelNewCostingButtonActionPerformed
-        bedSheetCPUPanel.setVisible(false);
-        fittedSheetCostingPanelNewCostingButton.setVisible(false);
-        fittedSheetSubmitButton.setVisible(true);
-        bedSheetCustomPanel.setVisible(false);
-
-        fittedSheetProductRangeCombo.setModel(new DefaultComboBoxModel(BedSheetLogic.getProductRanges()));
-        fittedSheetMaterialTypeCombo.setModel(new DefaultComboBoxModel(
-                BedSheetLogic.getMaterialTypes((String) fittedSheetProductRangeCombo.getSelectedItem())));
-        fittedSheetSizeCombo.setModel(new DefaultComboBoxModel(BedSheetLogic.getBedSheetSizes()));
-        fittedSheetHeight.setText("3");
-        fittedSheetUseCustom.setSelected(false);
-        fittedSheetCustomWidth.setText("");
-        fittedSheetCustomLength.setText("");
-        fittedSheetIncludeLable.setSelected(false);
-        fittedSheetIncludeCardboard.setSelected(false);
-        fittedSheetIncludeTag.setSelected(false);
-
-        fittedSheetProductRangeCombo.setEnabled(true);
-        fittedSheetMaterialTypeCombo.setEnabled(true);
-        fittedSheetSizeCombo.setEnabled(true);
-        fittedSheetHeight.setEnabled(true);
-
-        fittedSheetUseCustom.setEnabled(true);
-        fittedSheetCustomWidth.setEnabled(true);
-        fittedSheetCustomLength.setEnabled(true);
-
-        fittedSheetIncludeLable.setEnabled(true);
-        fittedSheetIncludeCardboard.setEnabled(true);
-        fittedSheetIncludeTag.setEnabled(true);
-        fittedSheetMarginField.setEnabled(true);
-        fittedSheetTaxField.setEnabled(true);
-
-        //nulling the export model
-        model = null;
-}//GEN-LAST:event_fittedSheetCostingPanelNewCostingButtonActionPerformed
-
     private void bedSheetExportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bedSheetExportButtonActionPerformed
-        //if(model!=null){
-        //    Export exp = new Export(model);
-        //    exp.openFile();
-        //}
+        //ading the quotation object
+        QuationObject qObject = new QuationObject(
+                "Fitted Sheet",
+                fittedSheetProductRangeCombo.getSelectedItem() + "",
+                fittedSheetMaterialTypeCombo.getSelectedItem() + "",
+                fittedSheetUseCustom.isSelected() == true ? fittedSheetCustomWidth.getText() + "X" + fittedSheetCustomWidth.getText() : fittedSheetSizeCombo.getSelectedItem() + "",
+                1,
+                Double.parseDouble(fittedSheetGrossSellingPrice.getText().replaceAll(",", "")));
 
-        String title = "Bed Sheet Costing";
+        //adding the costing summary object
+        SummaryObject summaryObj = new SummaryObject(
+                "Fitted Sheet",
+                fittedSheetProductRangeCombo.getSelectedItem() + "",
+                fittedSheetMaterialTypeCombo.getSelectedItem() + "",
+                "",
+                fittedSheetUseCustom.isSelected() == true ? fittedSheetCustomWidth.getText() + "X" + fittedSheetCustomWidth.getText() : fittedSheetSizeCombo.getSelectedItem() + "",
+                1,
+                Double.parseDouble(fittedSheetTotalCost.getText().replaceAll(",", "")),
+                Double.parseDouble(fittedSheetMarginField.getText().replaceAll(",", "")),
+                Double.parseDouble(fittedSheetTaxField.getText().replaceAll(",", "")));
 
-        String[][] specifications = new String[2][11];
-        specifications[0][0] = "Range";
-        specifications[0][1] = "Material";
-        specifications[0][2] = "Size";
-        specifications[0][3] = "Wastage";
-        specifications[0][4] = "Lable";
-        specifications[0][5] = "Tag";
-        specifications[0][6] = "Seal Bag";
-        specifications[0][7] = "Cardboard";
-        specifications[0][8] = "Margin";
-        specifications[0][9] = "Taxes";
-        specifications[0][10] = "Other Costs";
+        //have to add data to this
+        ArrayList<Map.Entry<String, String>> prodSpecs = new ArrayList<Map.Entry<String, String>>();
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Product Range", fittedSheetProductRangeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Material Type", fittedSheetMaterialTypeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Size", fittedSheetUseCustom.isSelected() == true ? fittedSheetCustomWidth.getText() + "X" + fittedSheetCustomWidth.getText() : fittedSheetSizeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Height", fittedSheetHeight.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Wastage", fittedSheetWastage.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Lable", fittedSheetIncludeLable.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Tag", fittedSheetIncludeTag.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include PE Bag", fittedSheetIncludePEBag.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Cardboard", fittedSheetIncludeCardboard.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Margin", fittedSheetMarginField.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Taxes", fittedSheetTaxField.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Other Costs", fittedSheetOtherCostVal.getText()));
 
-        specifications[1][0] = fittedSheetProductRangeCombo.getSelectedItem() + "";
-        specifications[1][1] = fittedSheetMaterialTypeCombo.getSelectedItem() + "";
-        if (fittedSheetUseCustom.isSelected()) {
-            specifications[1][2] = fittedSheetCustomLength.getText() + "X" + fittedSheetCustomWidth.getText();
-        } else {
-            specifications[1][2] = fittedSheetSizeCombo.getSelectedItem() + "";
+        ArrayList<Map.Entry<String, String>> costDescs = new ArrayList<Map.Entry<String, String>>();
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Cost", fittedSheetFabricCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Thread Cost", fittedSheetThreadCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Lable Cost", fittedSheetLableCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Tag Cost", fittedSheetTagCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("PE Bag Cost", fittedSheetPEBagCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Cardboard Cost", fittedSheetCardboardCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Elastic Cost", fittedSheetElasticCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Total Material Cost", fittedSheetTotalMaterialCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("POH", fittedSheetPOH.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Labour Cost", fittedSheetLabourCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Total Cost Per Unit", fittedSheetTotalCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Net Selling Price", fittedSheetNetSellingPrice.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Taxes", fittedSheetTaxes.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Gross Selling Price", fittedSheetGrossSellingPrice.getText()));
+
+        ArrayList<Map.Entry<String, String>> manuSpecs = new ArrayList<Map.Entry<String, String>>();
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Cut Width", fittedSheetCutWidth.getText()));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Cut Length", fittedSheetCutLength.getText()));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("SMV Value", fittedSheetSMVValue.getText()));
+
+
+        try {
+            int n = Integer.parseInt(quantity.getText());
+            qObject.setQuantity(n);
+            summaryObj.setQuantity(n);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid quantity value");
+            return;
         }
-        specifications[1][3] = fittedSheetHeight.getText();
-
-        if (fittedSheetIncludeLable.isSelected()) {
-            specifications[1][4] = "Added";
-        } else {
-            specifications[1][4] = "Not Added";
-        }
-
-        if (fittedSheetIncludeTag.isSelected()) {
-            specifications[1][5] = "Added";
-        } else {
-            specifications[1][5] = "Not Added";
-        }
-
-        if (fittedSheetIncludeCardboard.isSelected()) {
-            specifications[1][6] = "Added";
-        } else {
-            specifications[1][6] = "Not Added";
-        }
- 
-        specifications[1][8] = fittedSheetMarginField.getText();
-        specifications[1][9] = fittedSheetTaxField.getText();
-        specifications[1][10] = fittedSheetOtherCostVal.getText();
-
-        String[][] cpus = new String[2][14];
-        cpus[0][0] = "Fabric Cost";
-        cpus[0][1] = "Thread Cost";
-        cpus[0][2] = "Lable Cost";
-        cpus[0][3] = "Tag Cost";
-        cpus[0][4] = "Cardboard Cost";
-        cpus[0][5] = "Seal Bag Cost";
-        cpus[0][6] = "Total Material Cost";
-        cpus[0][7] = "POH";
-        cpus[0][8] = "Labor Cost";
-        cpus[0][9] = "Total Cost Per Unit";
-        cpus[0][10] = "Net Selling Price";
-        cpus[0][11] = "Taxes";
-        cpus[0][12] = "Gross Selling Price";
-
-        cpus[1][0] = fittedSheetFabricCost.getText();
-        cpus[1][1] = fittedSheetThreadCost.getText();
-        cpus[1][2] = fittedSheetLableCost.getText();
-        cpus[1][3] = fittedSheetTagCost.getText();
-        cpus[1][5] = fittedSheetPEBagCost.getText();
-        cpus[1][6] = fittedSheetTotalMaterialCost.getText();
-        cpus[1][7] = fittedSheetPOH.getText();
-        cpus[1][8] = fittedSheetLabourCost.getText();
-        cpus[1][9] = fittedSheetTotalCost.getText();
-        cpus[1][10] = fittedSheetNetSellingPrice.getText();
-        cpus[1][11] = fittedSheetTaxes.getText();
-        cpus[1][12] = fittedSheetGrossSellingPrice.getText();
 
 
-        String[][] prodPaprameters = new String[2][3];
-        prodPaprameters[0][0] = "Cutting Width";
-        prodPaprameters[0][1] = "Cutting Height";
-        prodPaprameters[0][2] = "SMV Value";
+        ItemSummaryObject itemSumObj = new ItemSummaryObject("Fitted Sheet", summaryObj, prodSpecs, costDescs, manuSpecs);
+        MainWindow.quotation.addQuatationObject(qObject, itemSumObj);
 
-        prodPaprameters[1][2] = fittedSheetCutWidth.getText();
-
-        String[] summary = new String[8];
-        summary[0] = "Bed Sheet";
-        summary[1] = fittedSheetProductRangeCombo.getSelectedItem() + "";
-        summary[2] = fittedSheetMaterialTypeCombo.getSelectedItem() + "";
-        summary[3] = "";
-        summary[4] = specifications[1][2];
-        summary[5] = "1";
-        summary[6] = fittedSheetGrossSellingPrice.getText();
-        summary[7] = "";
-
-        MainWindow.workbook.addOrderItem(summary, specifications, cpus, prodPaprameters, title);
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -1037,6 +962,10 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_fittedSheetWastageActionPerformed
 
+    private void quantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quantityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_quantityActionPerformed
+
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -1049,21 +978,22 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel bedSheetCPUPanel;
     private javax.swing.JPanel bedSheetCostingPanel;
     private javax.swing.JPanel bedSheetCustomPanel;
     private javax.swing.JButton bedSheetExportButton;
     private javax.swing.JLabel bedSheetSizeLable;
     private javax.swing.JLabel bedsheetOtherCost;
+    private javax.swing.JLabel bedsheetOtherCost1;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.JPanel fittedSheetCPUPanel;
     private javax.swing.JLabel fittedSheetCardboardCost;
-    private javax.swing.JButton fittedSheetCostingPanelNewCostingButton;
     private javax.swing.JTextField fittedSheetCustomLength;
     private javax.swing.JTextField fittedSheetCustomWidth;
     private javax.swing.JLabel fittedSheetCutLength;
     private javax.swing.JLabel fittedSheetCutWidth;
+    private javax.swing.JLabel fittedSheetElasticCost;
     private javax.swing.JLabel fittedSheetFabricCost;
     private javax.swing.JLabel fittedSheetGrossSellingPrice;
     private javax.swing.JTextField fittedSheetHeight;
@@ -1112,6 +1042,7 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel325;
     private javax.swing.JLabel jLabel326;
     private javax.swing.JLabel jLabel327;
@@ -1124,5 +1055,6 @@ public class FittedSheetsCostingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JTextField quantity;
     // End of variables declaration//GEN-END:variables
 }

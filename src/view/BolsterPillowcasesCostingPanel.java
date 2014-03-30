@@ -11,16 +11,19 @@
 package view;
 
 import celcius.Config;
-import export.Export;
-import export.ExportModel;
+import excel.ItemSummaryObject;
+import excel.QuationObject;
+import excel.SummaryObject;
 import java.awt.EventQueue;
 import java.text.DecimalFormat;
-import javax.swing.DefaultComboBoxModel;
+import java.util.AbstractMap;
+import java.util.ArrayList;
+import java.util.Map;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import logic.BedSheetLogic;
 import logic.BolsterPillowcaseLogic;
-import viewmodels.BedSheetViewModel;
+import ui.helpers.ComboBoxRenderer;
 import viewmodels.BolsterPillowcaseViewModel;
 
 /**
@@ -28,8 +31,6 @@ import viewmodels.BolsterPillowcaseViewModel;
  * @author naka
  */
 public class BolsterPillowcasesCostingPanel extends javax.swing.JPanel {
-
-    private export.ExportModel model;
 
     /**
      * Creates new form BedSheetPanel
@@ -71,7 +72,6 @@ public class BolsterPillowcasesCostingPanel extends javax.swing.JPanel {
         bolsterPillowcaseIncludeTag = new javax.swing.JRadioButton();
         bolsterPillowcaseIncludePEBag = new javax.swing.JRadioButton();
         bolsterPillowcaseSubmitButton = new javax.swing.JButton();
-        bolsterPillowcaseCostingPanelNewCostingButton = new javax.swing.JButton();
         jLabel30 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
         bolsterPillowcaseMarginField = new javax.swing.JTextField();
@@ -82,6 +82,8 @@ public class BolsterPillowcasesCostingPanel extends javax.swing.JPanel {
         bolsterPillowcaseOtherCostVal = new javax.swing.JTextField();
         bolsterPillowcaseUseZipper = new javax.swing.JRadioButton();
         bolsterPillowcaseUseVelco = new javax.swing.JRadioButton();
+        bedsheetOtherCost1 = new javax.swing.JLabel();
+        quantity = new javax.swing.JTextField();
         bedSheetCPUPanel = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
@@ -127,6 +129,7 @@ public class BolsterPillowcasesCostingPanel extends javax.swing.JPanel {
 
         bolsterPillowcaseProductRangeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bolsterPillowcaseProductRangeCombo.setModel(new javax.swing.DefaultComboBoxModel(BolsterPillowcaseLogic.getProductRanges()));
+        bolsterPillowcaseProductRangeCombo.setRenderer(new ComboBoxRenderer(BolsterPillowcaseLogic.getProductRanges()));
         bolsterPillowcaseProductRangeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bolsterPillowcaseProductRangeComboActionPerformed(evt);
@@ -138,9 +141,11 @@ public class BolsterPillowcasesCostingPanel extends javax.swing.JPanel {
 
         bolsterPillowcaseMaterialTypeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bolsterPillowcaseMaterialTypeCombo.setModel(new javax.swing.DefaultComboBoxModel(BolsterPillowcaseLogic.getMaterialTypes((String)bolsterPillowcaseProductRangeCombo.getSelectedItem())));
+        bolsterPillowcaseMaterialTypeCombo.setRenderer(new ComboBoxRenderer(BolsterPillowcaseLogic.getMaterialTypes((String)bolsterPillowcaseProductRangeCombo.getSelectedItem())));
 
         bolsterPillowcaseSizeCombo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bolsterPillowcaseSizeCombo.setModel(new javax.swing.DefaultComboBoxModel(BolsterPillowcaseLogic.getBedSheetSizes()));
+        bolsterPillowcaseSizeCombo.setRenderer(new ComboBoxRenderer(BolsterPillowcaseLogic.getBedSheetSizes()));
 
         bolsterPillowcaseWastage.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         bolsterPillowcaseWastage.setText("3");
@@ -207,15 +212,6 @@ public class BolsterPillowcasesCostingPanel extends javax.swing.JPanel {
             }
         });
 
-        bolsterPillowcaseCostingPanelNewCostingButton.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        bolsterPillowcaseCostingPanelNewCostingButton.setText("New Costing");
-        bolsterPillowcaseCostingPanelNewCostingButton.setVisible(false);
-        bolsterPillowcaseCostingPanelNewCostingButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bolsterPillowcaseCostingPanelNewCostingButtonActionPerformed(evt);
-            }
-        });
-
         jLabel30.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel30.setText("Margin:");
 
@@ -258,67 +254,75 @@ public class BolsterPillowcasesCostingPanel extends javax.swing.JPanel {
             }
         });
 
+        bedsheetOtherCost1.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        bedsheetOtherCost1.setText("Quantity");
+
+        quantity.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        quantity.setText("1");
+        bolsterPillowcaseTaxField.setText(Config.taxesRate);
+
         javax.swing.GroupLayout bedSheetCostingPanelLayout = new javax.swing.GroupLayout(bedSheetCostingPanel);
         bedSheetCostingPanel.setLayout(bedSheetCostingPanelLayout);
         bedSheetCostingPanelLayout.setHorizontalGroup(
             bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel30)
+                    .addComponent(jLabel55)
+                    .addComponent(bedsheetOtherCost)
+                    .addComponent(bedsheetOtherCost1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bolsterPillowcaseOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bolsterPillowcaseTaxField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bolsterPillowcaseMarginField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel123)
+                    .addComponent(jLabel84))
+                .addContainerGap(266, Short.MAX_VALUE))
+            .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
                 .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
                         .addGap(47, 47, 47)
-                        .addComponent(jLabel6)
-                        .addGap(67, 67, 67)
-                        .addComponent(bolsterPillowcaseProductRangeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7))
+                        .addGap(29, 29, 29)
+                        .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bolsterPillowcaseProductRangeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bolsterPillowcaseMaterialTypeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bolsterPillowcaseSizeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
                         .addGap(47, 47, 47)
-                        .addComponent(jLabel7)
-                        .addGap(72, 72, 72)
-                        .addComponent(bolsterPillowcaseMaterialTypeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bedSheetSizeLable)
+                            .addComponent(jLabel11))
+                        .addGap(132, 132, 132)
+                        .addComponent(bolsterPillowcaseWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel12))
                     .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
-                        .addGap(171, 171, 171)
-                        .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(bolsterPillowcaseSubmitButton)
-                            .addComponent(bolsterPillowcaseCostingPanelNewCostingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(47, 47, 47)
+                        .addComponent(bolsterPillowcaseUseCustom, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
-                        .addGap(108, 108, 108)
-                        .addComponent(jLabel5))
+                        .addGap(47, 47, 47)
+                        .addComponent(bedSheetCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
-                        .addGap(248, 248, 248)
-                        .addComponent(bolsterPillowcaseSizeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(47, 47, 47)
+                        .addComponent(bolsterPillowcaseUseZipper))
                     .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
                         .addGap(248, 248, 248)
                         .addComponent(bolsterPillowcaseUseVelco))
                     .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
-                                .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(bedSheetSizeLable)
-                                    .addComponent(jLabel11))
-                                .addGap(132, 132, 132)
-                                .addComponent(bolsterPillowcaseWastage, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel12))
-                            .addComponent(bolsterPillowcaseUseCustom, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
-                                .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel30)
-                                    .addComponent(jLabel55)
-                                    .addComponent(bedsheetOtherCost))
-                                .addGap(125, 125, 125)
-                                .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(bolsterPillowcaseOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
-                                        .addComponent(bolsterPillowcaseTaxField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel123))
-                                    .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
-                                        .addComponent(bolsterPillowcaseMarginField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel84))))
-                            .addComponent(bedSheetCustomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bolsterPillowcaseUseZipper))))
-                .addContainerGap(54, Short.MAX_VALUE))
+                        .addGap(108, 108, 108)
+                        .addComponent(jLabel5))
+                    .addGroup(bedSheetCostingPanelLayout.createSequentialGroup()
+                        .addGap(171, 171, 171)
+                        .addComponent(bolsterPillowcaseSubmitButton)))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
         bedSheetCostingPanelLayout.setVerticalGroup(
             bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -370,11 +374,13 @@ public class BolsterPillowcasesCostingPanel extends javax.swing.JPanel {
                 .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bedsheetOtherCost)
                     .addComponent(bolsterPillowcaseOtherCostVal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
-                .addComponent(bolsterPillowcaseSubmitButton)
+                .addGap(5, 5, 5)
+                .addGroup(bedSheetCostingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bedsheetOtherCost1)
+                    .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bolsterPillowcaseCostingPanelNewCostingButton)
-                .addGap(131, 131, 131))
+                .addComponent(bolsterPillowcaseSubmitButton)
+                .addGap(173, 173, 173))
         );
 
         bedSheetCPUPanel.setVisible(false);
@@ -626,7 +632,7 @@ public class BolsterPillowcasesCostingPanel extends javax.swing.JPanel {
                 .addGroup(bedSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         bedSheetCPUPanelLayout.setVerticalGroup(
             bedSheetCPUPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -792,180 +798,79 @@ public class BolsterPillowcasesCostingPanel extends javax.swing.JPanel {
         bolsterPillowcaseTaxes.setText(format.format(bReturn.getTaxes()));
         bolsterPillowcaseGrossSellingPrice.setText(format.format(bReturn.getGrossSellingPrice()));
 
-        //export model
-        model = new ExportModel();
-        model.setProductName("Bolster Pillowcase");
-        model.setProductRange(bReturn.getProductRange());
-        if (bReturn.isIsCustom()) {
-            model.setProductSize(bReturn.getCustomDiameter() + "X" + bReturn.getCustomLength());
-        } else {
-            model.setProductSize(bReturn.getSize());
-        }
-        model.setTotalMaterialCost(bReturn.getTotalMaterialCost());
-        model.setLabourCost(bReturn.getLabourCost());
-        model.setProductionOverHead(bReturn.getPohCost());
-        model.setTotalCostPerUnit(bReturn.getTotalCost());
-        model.setNetSellingPrice(bReturn.getNetSellingPrice());
-        model.setTaxes(bReturn.getTaxes());
-        model.setGrossSellingPrice(bReturn.getGrossSellingPrice());
-
         bedSheetCPUPanel.setVisible(true);
-//        bedSheetCostingPanelNewCostingButton.setVisible(true);
-//        bedSheetSubmitButton.setVisible(false);
-//
-//        bedSheetProductRangeCombo.setEnabled(false);
-//        bedSheetMaterialTypeCombo.setEnabled(false);
-//        bedSheetSizeCombo.setEnabled(false);
-//        bedSheetWastage.setEnabled(false);
-//
-//        bedSheetUseCustom.setEnabled(false);
-//        bedSHeetCustomWidth.setEnabled(false);
-//        bedSheetCustomHeight.setEnabled(false);
-//
-//        bedSheetIncludeCardBoard.setEnabled(false);
-//        bedSheetIncludeLable.setEnabled(false);
-//        bedSheetIncludeSealBag.setEnabled(false);
-//        bedSheetIncludeTag.setEnabled(false);
-//        bedSheetMarginField.setEnabled(false);
-//        bedSheetTaxField.setEnabled(false);
 }//GEN-LAST:event_bolsterPillowcaseSubmitButtonActionPerformed
 
-    private void bolsterPillowcaseCostingPanelNewCostingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolsterPillowcaseCostingPanelNewCostingButtonActionPerformed
-        bedSheetCPUPanel.setVisible(false);
-        bolsterPillowcaseCostingPanelNewCostingButton.setVisible(false);
-        bolsterPillowcaseSubmitButton.setVisible(true);
-        bedSheetCustomPanel.setVisible(false);
-
-        bolsterPillowcaseProductRangeCombo.setModel(new DefaultComboBoxModel(BedSheetLogic.getProductRanges()));
-        bolsterPillowcaseMaterialTypeCombo.setModel(new DefaultComboBoxModel(
-                BedSheetLogic.getMaterialTypes((String) bolsterPillowcaseProductRangeCombo.getSelectedItem())));
-        bolsterPillowcaseSizeCombo.setModel(new DefaultComboBoxModel(BedSheetLogic.getBedSheetSizes()));
-        bolsterPillowcaseWastage.setText("3");
-        bolsterPillowcaseUseCustom.setSelected(false);
-        bolsterPillowcaseCustomDiameter.setText("");
-        bolsterPillowcaseCustomLength.setText("");
-        bolsterPillowcaseIncludeLable.setSelected(false);
-        bolsterPillowcaseIncludePEBag.setSelected(false);
-        bolsterPillowcaseIncludeTag.setSelected(false);
-
-        bolsterPillowcaseProductRangeCombo.setEnabled(true);
-        bolsterPillowcaseMaterialTypeCombo.setEnabled(true);
-        bolsterPillowcaseSizeCombo.setEnabled(true);
-        bolsterPillowcaseWastage.setEnabled(true);
-
-        bolsterPillowcaseUseCustom.setEnabled(true);
-        bolsterPillowcaseCustomDiameter.setEnabled(true);
-        bolsterPillowcaseCustomLength.setEnabled(true);
-
-        bolsterPillowcaseIncludeLable.setEnabled(true);
-        bolsterPillowcaseIncludePEBag.setEnabled(true);
-        bolsterPillowcaseIncludeTag.setEnabled(true);
-        bolsterPillowcaseMarginField.setEnabled(true);
-        bolsterPillowcaseTaxField.setEnabled(true);
-
-        //nulling the export model
-        model = null;
-}//GEN-LAST:event_bolsterPillowcaseCostingPanelNewCostingButtonActionPerformed
-
     private void bedSheetExportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bedSheetExportButtonActionPerformed
-        //if(model!=null){
-        //    Export exp = new Export(model);
-        //    exp.openFile();
-        //}
+        //ading the quotation object
+        QuationObject qObject = new QuationObject(
+                "Bolster Pillowcase",
+                bolsterPillowcaseProductRangeCombo.getSelectedItem() + "",
+                bolsterPillowcaseMaterialTypeCombo.getSelectedItem() + "",
+                bolsterPillowcaseUseCustom.isSelected() == true ? bolsterPillowcaseCustomDiameter.getText() + "X" + bolsterPillowcaseCustomLength.getText() : bolsterPillowcaseSizeCombo.getSelectedItem() + "",
+                1,
+                Double.parseDouble(bolsterPillowcaseGrossSellingPrice.getText().replaceAll(",", "")));
 
-        String title = "Bed Sheet Costing";
+        //adding the costing summary object
+        SummaryObject summaryObj = new SummaryObject(
+                "Bolster Pillowcase",
+                bolsterPillowcaseProductRangeCombo.getSelectedItem() + "",
+                bolsterPillowcaseMaterialTypeCombo.getSelectedItem() + "",
+                "",
+                bolsterPillowcaseUseCustom.isSelected() == true ? bolsterPillowcaseCustomDiameter.getText() + "X" + bolsterPillowcaseCustomLength.getText() : bolsterPillowcaseSizeCombo.getSelectedItem() + "",
+                1,
+                Double.parseDouble(bolsterPillowcaseToatalCost.getText().replaceAll(",", "")),
+                Double.parseDouble(bolsterPillowcaseMarginField.getText().replaceAll(",", "")),
+                Double.parseDouble(bolsterPillowcaseTaxField.getText().replaceAll(",", "")));
 
-        String[][] specifications = new String[2][11];
-        specifications[0][0] = "Range";
-        specifications[0][1] = "Material";
-        specifications[0][2] = "Size";
-        specifications[0][3] = "Wastage";
-        specifications[0][4] = "Lable";
-        specifications[0][5] = "Tag";
-        specifications[0][6] = "Seal Bag";
-        specifications[0][7] = "Cardboard";
-        specifications[0][8] = "Margin";
-        specifications[0][9] = "Taxes";
-        specifications[0][10] = "Other Costs";
+        //have to add data to this
+        ArrayList<Map.Entry<String, String>> prodSpecs = new ArrayList<Map.Entry<String, String>>();
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Product Range", bolsterPillowcaseProductRangeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Material Type", bolsterPillowcaseMaterialTypeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Size", bolsterPillowcaseUseCustom.isSelected() == true ? bolsterPillowcaseCustomDiameter.getText() + "X" + bolsterPillowcaseCustomLength.getText() : bolsterPillowcaseSizeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Wastage", bolsterPillowcaseWastage.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Use Zipper", bolsterPillowcaseUseZipper.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Use Velco", bolsterPillowcaseUseVelco.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Lable", bolsterPillowcaseIncludeLable.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Tag", bolsterPillowcaseIncludeTag.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include PE Bag", bolsterPillowcaseIncludePEBag.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Margin", bolsterPillowcaseMarginField.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Taxes", bolsterPillowcaseTaxField.getText()));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Other Costs", bolsterPillowcaseOtherCostVal.getText()));
 
-        specifications[1][0] = bolsterPillowcaseProductRangeCombo.getSelectedItem() + "";
-        specifications[1][1] = bolsterPillowcaseMaterialTypeCombo.getSelectedItem() + "";
-        if (bolsterPillowcaseUseCustom.isSelected()) {
-            specifications[1][2] = bolsterPillowcaseCustomLength.getText() + "X" + bolsterPillowcaseCustomDiameter.getText();
-        } else {
-            specifications[1][2] = bolsterPillowcaseSizeCombo.getSelectedItem() + "";
+        ArrayList<Map.Entry<String, String>> costDescs = new ArrayList<Map.Entry<String, String>>();
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Cost", bolsterPillowcaseFabricCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Thread Cost", bolsterPillowcaseThreadCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Lable Cost", bolsterPillowcaseLableCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Tag Cost", bolsterPillowcaseTagCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Zipper/Velco Cost", bolsterPillowcaseZipperVelcoCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("PE Bag Cost", bolsterPillowcasePEBagCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Total Material Cost", bolsterPillowcaseTotalMaterialCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("POH", bolsterPillowcasePOH.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Labour Cost", bolsterPillowcaseLabourCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Total Cost Per Unit", bolsterPillowcaseToatalCost.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Net Selling Price", bolsterPillowcaseNetSellingPrice.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Taxes", bolsterPillowcaseTaxes.getText()));
+        costDescs.add(new AbstractMap.SimpleEntry<String, String>("Gross Selling Price", bolsterPillowcaseGrossSellingPrice.getText()));
+
+        ArrayList<Map.Entry<String, String>> manuSpecs = new ArrayList<Map.Entry<String, String>>();
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("SMV", bolsterPillowcaseSMVValue.getText()));
+
+        
+        try {
+            int n = Integer.parseInt(quantity.getText());
+            qObject.setQuantity(n);
+            summaryObj.setQuantity(n);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid quantity value");
+            return;
         }
-        specifications[1][3] = bolsterPillowcaseWastage.getText();
 
-        if (bolsterPillowcaseIncludeLable.isSelected()) {
-            specifications[1][4] = "Added";
-        } else {
-            specifications[1][4] = "Not Added";
-        }
+        
+        
+        ItemSummaryObject itemSumObj = new ItemSummaryObject("Bolster Pillowcase", summaryObj, prodSpecs, costDescs, manuSpecs);
+        MainWindow.quotation.addQuatationObject(qObject, itemSumObj);
 
-        if (bolsterPillowcaseIncludeTag.isSelected()) {
-            specifications[1][5] = "Added";
-        } else {
-            specifications[1][5] = "Not Added";
-        }
-
-        if (bolsterPillowcaseIncludePEBag.isSelected()) {
-            specifications[1][6] = "Added";
-        } else {
-            specifications[1][6] = "Not Added";
-        }
- 
-        specifications[1][8] = bolsterPillowcaseMarginField.getText();
-        specifications[1][9] = bolsterPillowcaseTaxField.getText();
-        specifications[1][10] = bolsterPillowcaseOtherCostVal.getText();
-
-        String[][] cpus = new String[2][14];
-        cpus[0][0] = "Fabric Cost";
-        cpus[0][1] = "Thread Cost";
-        cpus[0][2] = "Lable Cost";
-        cpus[0][3] = "Tag Cost";
-        cpus[0][4] = "Cardboard Cost";
-        cpus[0][5] = "Seal Bag Cost";
-        cpus[0][6] = "Total Material Cost";
-        cpus[0][7] = "POH";
-        cpus[0][8] = "Labor Cost";
-        cpus[0][9] = "Total Cost Per Unit";
-        cpus[0][10] = "Net Selling Price";
-        cpus[0][11] = "Taxes";
-        cpus[0][12] = "Gross Selling Price";
-
-        cpus[1][0] = bolsterPillowcaseFabricCost.getText();
-        cpus[1][1] = bolsterPillowcaseThreadCost.getText();
-        cpus[1][2] = bolsterPillowcaseLableCost.getText();
-        cpus[1][3] = bolsterPillowcaseTagCost.getText();
-        cpus[1][5] = bolsterPillowcasePEBagCost.getText();
-        cpus[1][6] = bolsterPillowcaseTotalMaterialCost.getText();
-        cpus[1][7] = bolsterPillowcasePOH.getText();
-        cpus[1][8] = bolsterPillowcaseLabourCost.getText();
-        cpus[1][9] = bolsterPillowcaseToatalCost.getText();
-        cpus[1][10] = bolsterPillowcaseNetSellingPrice.getText();
-        cpus[1][11] = bolsterPillowcaseTaxes.getText();
-        cpus[1][12] = bolsterPillowcaseGrossSellingPrice.getText();
-
-
-        String[][] prodPaprameters = new String[2][3];
-        prodPaprameters[0][0] = "Cutting Width";
-        prodPaprameters[0][1] = "Cutting Height";
-        prodPaprameters[0][2] = "SMV Value";
-
-        prodPaprameters[1][2] = bolsterPillowcaseSMVValue.getText();
-
-        String[] summary = new String[8];
-        summary[0] = "Bed Sheet";
-        summary[1] = bolsterPillowcaseProductRangeCombo.getSelectedItem() + "";
-        summary[2] = bolsterPillowcaseMaterialTypeCombo.getSelectedItem() + "";
-        summary[3] = "";
-        summary[4] = specifications[1][2];
-        summary[5] = "1";
-        summary[6] = bolsterPillowcaseGrossSellingPrice.getText();
-        summary[7] = "";
-
-        MainWindow.workbook.addOrderItem(summary, specifications, cpus, prodPaprameters, title);
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -976,17 +881,17 @@ public class BolsterPillowcasesCostingPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_bedSheetExportButtonActionPerformed
 
     private void bolsterPillowcaseUseZipperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolsterPillowcaseUseZipperActionPerformed
-        if(bolsterPillowcaseUseZipper.isSelected()){
+        if (bolsterPillowcaseUseZipper.isSelected()) {
             bolsterPillowcaseUseVelco.setSelected(false);
-        }else{
+        } else {
             bolsterPillowcaseUseVelco.setSelected(true);
         }
     }//GEN-LAST:event_bolsterPillowcaseUseZipperActionPerformed
 
     private void bolsterPillowcaseUseVelcoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolsterPillowcaseUseVelcoActionPerformed
-        if(bolsterPillowcaseUseVelco.isSelected()){
+        if (bolsterPillowcaseUseVelco.isSelected()) {
             bolsterPillowcaseUseZipper.setSelected(false);
-        }else{
+        } else {
             bolsterPillowcaseUseZipper.setSelected(true);
         }
     }//GEN-LAST:event_bolsterPillowcaseUseVelcoActionPerformed
@@ -1009,7 +914,7 @@ public class BolsterPillowcasesCostingPanel extends javax.swing.JPanel {
     private javax.swing.JButton bedSheetExportButton;
     private javax.swing.JLabel bedSheetSizeLable;
     private javax.swing.JLabel bedsheetOtherCost;
-    private javax.swing.JButton bolsterPillowcaseCostingPanelNewCostingButton;
+    private javax.swing.JLabel bedsheetOtherCost1;
     private javax.swing.JTextField bolsterPillowcaseCustomDiameter;
     private javax.swing.JTextField bolsterPillowcaseCustomLength;
     private javax.swing.JLabel bolsterPillowcaseFabricCost;
@@ -1072,5 +977,6 @@ public class BolsterPillowcasesCostingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JTextField quantity;
     // End of variables declaration//GEN-END:variables
 }

@@ -53,8 +53,10 @@ public class FittedSheetLogic {
             Integer materialWidth = FittedSheetDataAccess.getInstance().getMaterialWidth(fCost.getMaterialType());
             Double wastage = fCost.getWastage();
 
-            Double width, length, height;
-            Double labelCost, tagCost, threadCost, peBagCost, smv, cardboardCost;
+            Double width, length, height, cutWidth, cutLength;
+            Double labelCost, tagCost, threadCost, peBagCost, smv, cardboardCost, elasticCost;
+
+            height = fCost.getHeight();
 
             if (fCost.isIsCustom()) {
                 width = fCost.getCustomDiameter();
@@ -77,7 +79,7 @@ public class FittedSheetLogic {
                 } else {
                     peBagCost = 0.0;
                 }
-                
+
                 if (fCost.isIncludeCardboard()) {
                     cardboardCost = FittedSheetDataAccess.getInstance().getCardBoardCost();
                 } else {
@@ -99,26 +101,32 @@ public class FittedSheetLogic {
                 peBagCost = FittedSheetDataAccess.getInstance().getPEBagCost();
                 threadCost = FittedSheetDataAccess.getInstance().getThreadCost();
                 cardboardCost = FittedSheetDataAccess.getInstance().getCardBoardCost();
-                
+
                 smv = BolsterPillowCaseDataAccess.getInstance().getSMVValue(fCost.getSize());
             }
 
             fCost.setSmvValue(smv);
 
-            Double cutArea = (length + 1) * (3.141 * width + 1) + (width + 1) * (width + 1) * 2;
+            cutWidth = (width + height * 2 + 8);
+            cutLength = (length + height * 2 + 8);
+
+            elasticCost = FittedSheetDataAccess.getInstance().getElasticCost() / 36 * (length + width) * 2;
+
+            Double cutArea = cutLength * cutWidth;
 
             Double pricePerUnitInch = materialPrice / (materialWidth * 36);
             Double fabricCost = (pricePerUnitInch * cutArea) * (1 + wastage / 100);
 
-
-            Double cplm = BolsterPillowCaseDataAccess.getInstance().getCostPerLabourMinute();
-            Double poh = BolsterPillowCaseDataAccess.getInstance().getPOHValue();
+            Double cplm = FittedSheetDataAccess.getInstance().getCostPerLabourMinute();
+            Double poh = FittedSheetDataAccess.getInstance().getPOHValue();
 
             Double pohCost = smv * poh;
             Double labourCost = smv * cplm;
 
-            Double totalCost = fabricCost + pohCost + labourCost + tagCost + labelCost + peBagCost + threadCost + cardboardCost + +fCost.getOtherCost();
-            Double totalMaterialCost = fabricCost + tagCost + labelCost + peBagCost + threadCost + cardboardCost + fCost.getOtherCost();
+            Double totalCost = fabricCost + pohCost + labourCost + tagCost + labelCost
+                    + peBagCost + threadCost + cardboardCost + elasticCost + fCost.getOtherCost();
+            Double totalMaterialCost = fabricCost + tagCost + labelCost + peBagCost
+                    + threadCost + cardboardCost + elasticCost + fCost.getOtherCost();
             Double netSellingPrice = totalCost * (1.00 + fCost.getMargin() / 100.0);
             Double taxes = netSellingPrice * fCost.getTaxRate() / 100.0;
             Double grossSellingPrice = netSellingPrice + taxes;
@@ -128,12 +136,18 @@ public class FittedSheetLogic {
             fCost.setThreadCost(threadCost);
             fCost.setLableCost(labelCost);
             fCost.setTagCost(tagCost);
+            fCost.setCardBoardCost(cardboardCost);
+            fCost.setElasticCost(elasticCost);
             fCost.setPohCost(pohCost);
             fCost.setLabourCost(labourCost);
             fCost.setTotalCost(totalCost);
             fCost.setNetSellingPrice(netSellingPrice);
             fCost.setTaxes(taxes);
             fCost.setGrossSellingPrice(grossSellingPrice);
+
+            fCost.setCuttingHeight(cutLength);
+            fCost.setCuttingWidth(cutWidth);
+            fCost.setSmvValue(smv);
 
         } catch (Exception e) {
             System.out.println("Error");
