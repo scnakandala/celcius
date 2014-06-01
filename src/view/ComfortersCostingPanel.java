@@ -9,6 +9,7 @@ import java.text.DecimalFormat;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Set;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -1022,7 +1023,6 @@ public class ComfortersCostingPanel extends javax.swing.JPanel {
         String productRange = (String) duvetProductRangeCombo.getSelectedItem();
         dCost.setProductRange(productRange);
 
-
         String fabricType = (String) duvetFabricTypeCombo.getSelectedItem();
         dCost.setMaterialType(fabricType);
 
@@ -1131,7 +1131,6 @@ public class ComfortersCostingPanel extends javax.swing.JPanel {
             }
         } else {
 
-
             String paddingType = (String) duvetPaddingTypeCombo.getSelectedItem();
             dCost.setPaddingType(paddingType);
 
@@ -1207,7 +1206,6 @@ public class ComfortersCostingPanel extends javax.swing.JPanel {
         format.setMaximumFractionDigits(2);
         format.setMinimumFractionDigits(2);
 
-
         DovetsViewModel dReturn = DuvetsLogic.getCostPerUnit(dCost);
         duvetsFabricCost.setText(format.format(dReturn.getFabricCost()) + "");
         duvetsPaddingCost.setText(format.format(dReturn.getPaddingCost()) + "");
@@ -1229,6 +1227,10 @@ public class ComfortersCostingPanel extends javax.swing.JPanel {
         duvetsNetSellingPrice.setText(format.format(dReturn.getNetSellingPrice()));
         duvetsTaxes.setText(format.format(dReturn.getTaxes()));
         duvetsGrossSellingPrice.setText(format.format(dReturn.getGrossSellingPrice()));
+
+        MainWindow.tempFaric = dReturn.getFabric();
+        MainWindow.tempTaffata = dReturn.getTaffata();
+        MainWindow.tempPadding = dReturn.getPadding();
 
         duvetsCPUPanel.setVisible(true);
 }//GEN-LAST:event_duvetsSubmitButtonActionPerformed
@@ -1289,26 +1291,26 @@ public class ComfortersCostingPanel extends javax.swing.JPanel {
 
         //have to add data to this
         ArrayList<Map.Entry<String, String>> prodSpecs = new ArrayList<Map.Entry<String, String>>();
-        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Comforter Type", duvetTypeCombo.getSelectedItem()+""));
-        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Product Range", duvetProductRangeCombo.getSelectedItem()+""));
-        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Type", duvetFabricTypeCombo.getSelectedItem()+""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Comforter Type", duvetTypeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Product Range", duvetProductRangeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Type", duvetFabricTypeCombo.getSelectedItem() + ""));
         prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Size", duvetsUseCustom.isSelected() == true ? duvetsCustomWidth.getText() + "X" + duvetsCustomHeight.getText() : duvetSizeCombo.getSelectedItem() + ""));
-        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Wastage", duvetsFabricWastage.getText()+""));
-        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fiber Type", duvetFiberTypeCombo.getSelectedItem()+""));
-        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fiber Wastage", duvetFiberWastage.getText()+""));
-        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Filling GSM", duvetFillingGsm.getText()+""));
-        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Padding Type", duvetPaddingTypeCombo.getSelectedItem()+""));
-        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Width Quilting Shrinkage", duvetsWidthQuiltingShrinkage.getText()+""));
-        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Height Quilting Shrinkage", duvetsHeightQuiltiingShrinkage.getText()+""));
-        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Padding Wastage", duvetsPaddingWastage.getText()+""));
-        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Lable", duvetsIncludeLable.isSelected()+""));
-        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Tag", duvetsIncludeTag.isSelected()+""));
-        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include PE Bag", duvetsIncludePEBag.isSelected()+""));
-        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Non Woven Bag", duvetsIncludeNonWovenBag.isSelected()+""));
-        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Margin", duvetsMarginField.getText()+""));
-        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Taxes", duvetsTaxField.getText()+""));
-        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Other Costs", duvetsOtherCostVal.getText()+""));
-        
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Wastage", duvetsFabricWastage.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fiber Type", duvetFiberTypeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fiber Wastage", duvetFiberWastage.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Filling GSM", duvetFillingGsm.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Padding Type", duvetPaddingTypeCombo.getSelectedItem() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Width Quilting Shrinkage", duvetsWidthQuiltingShrinkage.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Height Quilting Shrinkage", duvetsHeightQuiltiingShrinkage.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Padding Wastage", duvetsPaddingWastage.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Lable", duvetsIncludeLable.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Tag", duvetsIncludeTag.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include PE Bag", duvetsIncludePEBag.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Include Non Woven Bag", duvetsIncludeNonWovenBag.isSelected() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Margin", duvetsMarginField.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Taxes", duvetsTaxField.getText() + ""));
+        prodSpecs.add(new AbstractMap.SimpleEntry<String, String>("Other Costs", duvetsOtherCostVal.getText() + ""));
+
         ArrayList<Map.Entry<String, String>> costDescs = new ArrayList<Map.Entry<String, String>>();
         costDescs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Cost", duvetsFabricCost.getText()));
         costDescs.add(new AbstractMap.SimpleEntry<String, String>("Padding Cost", duvetsPaddingCost.getText()));
@@ -1326,25 +1328,85 @@ public class ComfortersCostingPanel extends javax.swing.JPanel {
         costDescs.add(new AbstractMap.SimpleEntry<String, String>("Net Selling Price", duvetsNetSellingPrice.getText()));
         costDescs.add(new AbstractMap.SimpleEntry<String, String>("Taxes", duvetsTaxes.getText()));
         costDescs.add(new AbstractMap.SimpleEntry<String, String>("Gross Selling Price", duvetsGrossSellingPrice.getText()));
-        
+
         ArrayList<Map.Entry<String, String>> manuSpecs = new ArrayList<Map.Entry<String, String>>();
-        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Cutting Width", duvetsFabricCutWidth.getText()+""));
-        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Cutting Height", duvetsFabricCutHeight.getText()+""));
-        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fiber Weight", duvetsFiberWeight.getText()+""));
-        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("SMV Value", duvetsSMVValue.getText()+""));
-        
-        
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Cutting Width", duvetsFabricCutWidth.getText() + ""));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fabric Cutting Height", duvetsFabricCutHeight.getText() + ""));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Fiber Weight", duvetsFiberWeight.getText() + ""));
+        manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("SMV Value", duvetsSMVValue.getText() + ""));
+
         try {
             int n = Integer.parseInt(quantity.getText());
             qObject.setQuantity(n);
             summaryObj.setQuantity(n);
+            
+            if(MainWindow.tempFaric!=null){
+                Set keys = MainWindow.tempFaric.keySet();
+                for(int i=0;i<keys.size();i++){
+                    String key = (String) keys.toArray()[i];
+                    if(MainWindow.globalFaric.containsKey(key)){
+                        String sValue = (String)MainWindow.globalFaric.get(key);
+                        Double value = Double.parseDouble(sValue);
+                        String tempSValue = (String)MainWindow.tempFaric.get(key);
+                        Double tempValue = Double.parseDouble(tempSValue) * n;
+                        
+                        value += tempValue;
+                        
+                        MainWindow.globalFaric.put(key, value);
+                    }else{
+                        String sValue = (String)MainWindow.tempFaric.get(key);
+                        Double value = Double.parseDouble(sValue) * n;
+                        MainWindow.globalFaric.put(key, value);
+                    }
+                }
+            }
+            
+            if(MainWindow.tempPadding!=null){
+                Set keys = MainWindow.tempPadding.keySet();
+                for(int i=0;i<keys.size();i++){
+                    String key = (String) keys.toArray()[i];
+                    if(MainWindow.globalPadding.containsKey(key)){
+                        String sValue = (String)MainWindow.globalPadding.get(key);
+                        Double value = Double.parseDouble(sValue);
+                        String tempSValue = (String)MainWindow.tempPadding.get(key);
+                        Double tempValue = Double.parseDouble(tempSValue) * n;
+                        
+                        value += tempValue;
+                        
+                        MainWindow.globalPadding.put(key, value);
+                    }else{
+                        String sValue = (String)MainWindow.tempPadding.get(key);
+                        Double value = Double.parseDouble(sValue) * n;
+                        MainWindow.globalPadding.put(key, value);
+                    }
+                }
+            }
+            
+            if(MainWindow.tempTaffata!=null){
+                Set keys = MainWindow.tempTaffata.keySet();
+                for(int i=0;i<keys.size();i++){
+                    String key = (String) keys.toArray()[i];
+                    if(MainWindow.globalTaffata.containsKey(key)){
+                        String sValue = (String)MainWindow.globalTaffata.get(key);
+                        Double value = Double.parseDouble(sValue);
+                        String tempSValue = (String)MainWindow.tempTaffata.get(key);
+                        Double tempValue = Double.parseDouble(tempSValue) * n;
+                        
+                        value += tempValue;
+                        
+                        MainWindow.globalTaffata.put(key, value);
+                    }else{
+                        String sValue = (String)MainWindow.tempTaffata.get(key);
+                        Double value = Double.parseDouble(sValue) * n;
+                        MainWindow.globalTaffata.put(key, value);
+                    }
+                }
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Please enter a valid quantity value");
             return;
         }
 
-        
-        
         ItemSummaryObject itemSumObj = new ItemSummaryObject("Comforter", summaryObj, prodSpecs, costDescs, manuSpecs);
         MainWindow.quotation.addQuatationObject(qObject, itemSumObj);
 

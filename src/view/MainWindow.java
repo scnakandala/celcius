@@ -1,9 +1,8 @@
 package view;
 
-import excel.CostingSummary;
 import excel.Quotation;
 import java.awt.Toolkit;
-import java.io.IOException;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -15,6 +14,14 @@ public class MainWindow extends javax.swing.JFrame {
     private boolean adminView = false;
     public static Quotation quotation;
 
+    public static HashMap tempFaric = new HashMap();
+    public static HashMap tempPadding = new HashMap();
+    public static HashMap tempTaffata = new HashMap();
+    
+    public static HashMap globalFaric = new HashMap();
+    public static HashMap globalPadding = new HashMap();
+    public static HashMap globalTaffata = new HashMap();
+    
     /**
      * Creates new form MainWindow
      */
@@ -1204,6 +1211,14 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void clearOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearOrderButtonActionPerformed
         this.quotation = new Quotation();
+        
+        MainWindow.tempFaric = new HashMap();
+        MainWindow.tempPadding = new HashMap();
+        MainWindow.tempTaffata = new HashMap();
+        
+        MainWindow.globalFaric = new HashMap();
+        MainWindow.globalPadding = new HashMap();
+        MainWindow.globalTaffata = new HashMap();
     }//GEN-LAST:event_clearOrderButtonActionPerformed
 
     private void exportQuotationButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportQuotationButtonActionPerformed

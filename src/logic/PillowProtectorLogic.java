@@ -4,6 +4,7 @@ import algorithms.Approximate;
 import dataaccess.FittedSheetDataAccess;
 import dataaccess.PillowProtectorDataAccess;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import viewmodels.PillowProtectorViewModel;
@@ -123,6 +124,14 @@ public class PillowProtectorLogic {
             Double pricePerUnitInch = materialPrice / (materialWidth * 36);
             Double fabricCost = (pricePerUnitInch * cutArea) * (1 + wastage / 100);
 
+            /**
+             * Material Consumption**
+             */
+            double materialConsumption = cutArea / (materialWidth * 39.4) * (1 + wastage / 100);
+            HashMap fabric = new HashMap();
+            fabric.put(fCost.getMaterialType(), materialConsumption + "");
+            fCost.setFabric(fabric);
+
             Double cplm = PillowProtectorDataAccess.getInstance().getCostPerLabourMinute();
             Double poh = PillowProtectorDataAccess.getInstance().getPOHValue();
 
@@ -139,12 +148,28 @@ public class PillowProtectorLogic {
                 double paddingPrice = PillowProtectorDataAccess.getInstance().getPaddingPrice(fCost.getPaddingType());
                 paddingCost = (width + 2) * (length + 3) * paddingPrice / (paddingWidth * 36);
 
+                /**
+                 * Padding Consumption**
+                 */
+                double paddingConsumption = (width + 2) * (length + 3) / (paddingWidth * 39.4) * (1 + wastage / 100);
+                HashMap padding = new HashMap();
+                padding.put(fCost.getPaddingType(), paddingConsumption + "");
+                fCost.setPadding(padding);
+
                 if (fCost.isUseNonWoven()) {
                     nonWOvenTaffataCost = (width + 2) * (length + 2) * PillowProtectorDataAccess.getInstance().getNonWovenCost();
                 } else {
                     double taffataWidth = PillowProtectorDataAccess.getInstance().getTaffataWidth(fCost.getTaffataType());
                     double taffataPrice = PillowProtectorDataAccess.getInstance().getTaffataCost(fCost.getTaffataType());
                     nonWOvenTaffataCost = (width + 2) * (length + 3) * taffataPrice / (taffataWidth * 36);
+
+                    /**
+                     * Taffata Consumption**
+                     */
+                    double taffataConsumption = (width + 2) * (length + 3) / (taffataWidth * 39.4) * (1 + wastage / 100);
+                    HashMap taffata = new HashMap();
+                    taffata.put(fCost.getTaffataType(), taffataConsumption + "");
+                    fCost.setTaffata(taffata);
                 }
             }
             Double totalCost = fabricCost + pohCost + labourCost + tagCost + labelCost

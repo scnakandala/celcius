@@ -3,6 +3,7 @@ package logic;
 import algorithms.Approximate;
 import dataaccess.DuvetCoversDataAccess;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import viewmodels.DovetCoversViewModel;
@@ -145,6 +146,12 @@ public class DuvetCoversLogic {
             Double pricePerUnitInch = (double)materialPrice / (materialWidth * 36);
             Double fabricCost = (pricePerUnitInch * cutArea) * (1 + wastage / 100);
 
+            /**Material Consumption***/
+            double materialConsumption = cutArea/(materialWidth*39.4) * (1 + wastage/100);
+            HashMap fabric = new HashMap();
+            fabric.put(dCost.getMaterialType(), materialConsumption+"");
+            dCost.setFabric(fabric);
+            
             //there are non usable material wastages
             if (dCost.getProductRange().equalsIgnoreCase("Classic")) {
                 if ((materialWidth - cutWidth) < 9) {

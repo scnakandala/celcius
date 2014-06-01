@@ -3,6 +3,8 @@ package logic;
 import algorithms.Approximate;
 import dataaccess.BedSheetDataAccess;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import viewmodels.BedSheetViewModel;
@@ -110,6 +112,12 @@ public class BedSheetLogic {
             bCost.setSmvValue(smv);
 
             Double cutArea = cutWidth * cutHeight;
+            
+            /**Material Consumption***/
+            double materialConsumption = cutArea/(materialWidth*39.4) * (1 + wastage/100);
+            HashMap fabric = new HashMap();
+            fabric.put(bCost.getMaterialType(), materialConsumption+"");
+            bCost.setFabric(fabric);
 
             Double pricePerUnitInch = materialPrice / (materialWidth * 36);
             Double fabricCost = (pricePerUnitInch * cutArea) * (1 + wastage / 100);

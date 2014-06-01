@@ -3,6 +3,7 @@ package logic;
 import algorithms.Approximate;
 import dataaccess.PillowcaseDataAccess;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import viewmodels.PillowcaseViewModel;
@@ -144,6 +145,14 @@ public class PillowcaseLogic {
             Double pricePerUnitInch = materialPrice / (materialWidth * 36);
             Double fabricCost = (pricePerUnitInch * cutArea) * (1 + wastage / 100);
 
+            /**
+             * Material Consumption**
+             */
+            double materialConsumption = cutArea / (materialWidth * 39.4) * (1 + wastage / 100);
+            HashMap fabric = new HashMap();
+            fabric.put(pCost.getMaterialType(), materialConsumption + "");
+            pCost.setFabric(fabric);
+
             Double cplm = PillowcaseDataAccess.getInstance().getCostPerLabourMinute();
             Double poh = PillowcaseDataAccess.getInstance().getPOHValue();
 
@@ -152,8 +161,8 @@ public class PillowcaseLogic {
 
             Double totalCost = fabricCost + pohCost + labourCost + tagCost + labelCost + sealBagCost + threadCost + cardBoardCost + pCost.getOtherCost();
             Double totalMaterialCost = fabricCost + tagCost + labelCost + sealBagCost + threadCost + cardBoardCost + pCost.getOtherCost();
-            Double netSellingPrice = totalCost * (1.00 + pCost.getMargin()/100.0);
-            Double taxes = netSellingPrice * (pCost.getTaxRate()/100.0);
+            Double netSellingPrice = totalCost * (1.00 + pCost.getMargin() / 100.0);
+            Double taxes = netSellingPrice * (pCost.getTaxRate() / 100.0);
             Double grossSellingPrice = netSellingPrice + taxes;
 
             pCost.setTotalMaterialCost(totalMaterialCost);

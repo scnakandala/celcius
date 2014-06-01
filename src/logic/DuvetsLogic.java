@@ -3,6 +3,7 @@ package logic;
 import algorithms.Approximate;
 import dataaccess.DuvetsDataAccess;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import viewmodels.DovetsViewModel;
@@ -111,6 +112,14 @@ public class DuvetsLogic {
                 if ((paddingWidth - paddingCutWidth) < 19) {
                     paddingCost = paddingCost + (paddingWidth - paddingCutWidth) * paddingCutHeight * paddingPricePerUnitInch;
                 }
+
+                /**
+                 * Padding Consumption**
+                 */
+                double paddingConsumption = (paddingCutHeight * paddingCutWidth) / (paddingWidth * 39.4) * (1 + paddingWastage / 100);
+                HashMap padding = new HashMap();
+                padding.put(dCost.getPaddingType(), paddingConsumption + "");
+                dCost.setPadding(padding);
             } else {
                 fabricCutWidth = width + 5.0;
                 fabricCutHeight = height + 5.0;
@@ -126,7 +135,6 @@ public class DuvetsLogic {
             dCost.setFabricCuttingHeight(fabricCutHeight);
             dCost.setFiberWeight(fiberWeight);
             dCost.setFiberCost(fiberCost);
-
 
             //pe bag cost
             Double peBagCost;
@@ -163,6 +171,14 @@ public class DuvetsLogic {
             Double fabricCutArea = fabricCutWidth * fabricCutHeight * 2;
             Double fabricPricePerUnitInch = fabricPrice / (materialWidth * 36);
             Double fabricCost = (fabricPricePerUnitInch * fabricCutArea) * (1 + fabricWastage / 100);
+
+            /**
+             * Material Consumption**
+             */
+            double materialConsumption = fabricCutArea / (materialWidth * 39.4) * (1 + fabricWastage / 100);
+            HashMap fabric = new HashMap();
+            fabric.put(dCost.getMaterialType(), materialConsumption + "");
+            dCost.setFabric(fabric);
 
             //there are non usable fabric wastages
             if ((materialWidth - fabricCutWidth) < 9) {
@@ -215,8 +231,8 @@ public class DuvetsLogic {
             dCost.setTotalCost(totalCost);
             dCost.setTotalMaterialCost(totalMaterialCost);
 
-            Double netSellingPrice = totalCost * ( 1.0 + dCost.getMargin()/100.0);
-            Double taxes = netSellingPrice * ( dCost.getTaxRate()/100.0);
+            Double netSellingPrice = totalCost * (1.0 + dCost.getMargin() / 100.0);
+            Double taxes = netSellingPrice * (dCost.getTaxRate() / 100.0);
             Double grossSellingPrice = netSellingPrice + taxes;
 
             dCost.setNetSellingPrice(netSellingPrice);

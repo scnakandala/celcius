@@ -3,6 +3,7 @@ package logic;
 import algorithms.Approximate;
 import dataaccess.CushionsDataAccess;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import viewmodels.CushionsViewModel;
@@ -106,6 +107,12 @@ public class CushionLogic {
             Double cutArea = cutWidth * cutHeight * (1.0 + cCost.getFabricWastage() / 100.0);
             Double fabricCost = materialPrice / (36 * fabricWidth) * cutArea;
 
+            /**Material Consumption***/
+            double materialConsumption = cutArea/(fabricWidth*39.4) * (1 + cCost.getFabricWastage()/100);
+            HashMap fabric = new HashMap();
+            fabric.put(cCost.getMaterialType(), materialConsumption+"");
+            cCost.setFabric(fabric);
+            
             Double fiberCost = fiberPrice * fiberWeight * (1 + cCost.getFiberWastage() / 100);
 
             Double materialCost = fabricCost + fiberCost + tagPrice + lablePrice + threadPrice + peBagPrice + cCost.getOtherCost();

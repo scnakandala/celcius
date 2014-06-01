@@ -3,6 +3,7 @@ package logic;
 import algorithms.Approximate;
 import dataaccess.CotSheetDataAccess;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import viewmodels.CotSheetViewModel;
@@ -132,6 +133,12 @@ public class CotSheetLogic {
             Double fabricPricePerUnitInch = fabricPrice / (materialWidth * 36);
             Double fabricCost = (fabricPricePerUnitInch * fabricPaddingCutArea) * (1 + fabricWastage / 100);
 
+            /**Material Consumption***/
+            double materialConsumption = fabricPaddingCutArea/(materialWidth*39.4) * (1 + fabricWastage/100);
+            HashMap fabric = new HashMap();
+            fabric.put(cCost.getMaterialType(), materialConsumption+"");
+            cCost.setFabric(fabric);
+            
             //there are non usable fabric wastages
             if ((materialWidth - fabricPaddingCutWidth) < 9) {
                 fabricCost = fabricCost + (materialWidth - fabricPaddingCutWidth) * fabricPaddingCutHeight * fabricPricePerUnitInch;
@@ -141,6 +148,12 @@ public class CotSheetLogic {
             Double paddingPricePerUnitInch = paddingPrice / (paddingWidth * 36);
             Double paddingCost = (paddingPricePerUnitInch * fabricPaddingCutArea) * (1 + paddingWastage / 100);
 
+            /**Padding Consumption***/
+            double paddingConsumption = fabricPaddingCutArea/(paddingWidth*39.4) * (1 + paddingWastage/100);
+            HashMap padding = new HashMap();
+            padding.put(cCost.getPaddingType(), paddingConsumption+"");
+            cCost.setPadding(padding);
+            
             //there are non usable padding wastages
             if ((paddingWidth - fabricPaddingCutWidth) < 19) {
                 paddingCost = paddingCost + (paddingWidth - fabricPaddingCutWidth) * fabricPaddingCutHeight * paddingPricePerUnitInch;
@@ -152,6 +165,11 @@ public class CotSheetLogic {
             Double taffataPricePerUnitInch = taffataPrice / (taffataWidth * 36);
             Double taffataCost = (taffataPricePerUnitInch * taffataCutArea) * (1 + taffataWastage / 100);
 
+            /**Taffata Consumption***/
+            double taffataConsumption = taffataCutArea/(taffataWidth*39.4) * (1 + taffataWastage/100);
+            HashMap taffata = new HashMap();
+            taffata.put(cCost.getTaffataType(), taffataConsumption+"");
+            cCost.setTaffata(taffata);
 
 
             Double cplm = CotSheetDataAccess.getInstance().getCostPerLabourMinute();

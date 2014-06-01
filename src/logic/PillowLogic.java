@@ -3,6 +3,7 @@ package logic;
 import algorithms.Approximate;
 import dataaccess.PillowsDataAccess;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import viewmodels.PillowsViewModel;
@@ -114,6 +115,13 @@ public class PillowLogic {
             Double cutArea = cutWidth * cutHeight * (1.0 + pCost.getFabricWastage() / 100.0);
             Double fabricCost = materialPrice / (36 * fabricWidth) * cutArea;
 
+            /**Material Consumption***/
+            double materialConsumption = cutArea/(fabricWidth*39.4) * (1 + pCost.getFabricWastage()/100);
+            HashMap fabric = new HashMap();
+            fabric.put(pCost.getMaterialType(), materialConsumption+"");
+            pCost.setFabric(fabric);
+            
+            
             Double fiberCost = fiberPrice * fiberWeight;
 
             Double pipingCost = 0.0;

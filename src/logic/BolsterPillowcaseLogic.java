@@ -3,6 +3,7 @@ package logic;
 import algorithms.Approximate;
 import dataaccess.BolsterPillowCaseDataAccess;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import viewmodels.BolsterPillowcaseViewModel;
@@ -106,6 +107,11 @@ public class BolsterPillowcaseLogic {
             Double pricePerUnitInch = materialPrice / (materialWidth * 36);
             Double fabricCost = (pricePerUnitInch * cutArea) * (1 + wastage / 100);
 
+            /**Material Consumption***/
+            double materialConsumption = cutArea/(materialWidth*39.4) * (1 + wastage/100);
+            HashMap fabric = new HashMap();
+            fabric.put(bCost.getMaterialType(), materialConsumption+"");
+            bCost.setFabric(fabric);
 
             Double cplm = BolsterPillowCaseDataAccess.getInstance().getCostPerLabourMinute();
             Double poh = BolsterPillowCaseDataAccess.getInstance().getPOHValue();

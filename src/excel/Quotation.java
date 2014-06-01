@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
 import org.apache.poi.hssf.usermodel.HSSFFormulaEvaluator;
@@ -15,6 +16,7 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.util.CellRangeAddress;
+import view.MainWindow;
 
 /**
  *
@@ -33,9 +35,7 @@ public class Quotation {
     private int discountCol = 6;
     private int subTotalCol = 7;
     private int valueCol = 7;
-    
-    
-    
+
     private ArrayList<ItemSummaryObject> items = new ArrayList<ItemSummaryObject>();
     private int summaryStartRow = 3;
     private int itemNoCol = 0;
@@ -197,6 +197,66 @@ public class Quotation {
 
         }
 
+        HSSFSheet consumption_worksheet = workbook.getSheetAt(2);
+        int row = 4;
+        Cell cell;
+        
+        int max = Math.max(MainWindow.globalFaric.size(), MainWindow.globalPadding.size());
+        max = Math.max(max, MainWindow.globalTaffata.size());
+        
+        for(int i=0;i<max;i++){
+            copyRow(workbook, consumption_worksheet, 4 + i, 4 + i + 1);
+        }
+
+        if (MainWindow.globalFaric != null) {
+            Set keys = MainWindow.globalFaric.keySet();
+            for (int i = 0; i < keys.size(); i++) {
+                String key = (String) keys.toArray()[i];
+                String val = String.format("%.2f",MainWindow.globalFaric.get(key)) + "";
+
+                cell = consumption_worksheet.getRow(row).getCell(0);
+                cell.setCellValue(key);
+
+                cell = consumption_worksheet.getRow(row).getCell(1);
+                cell.setCellValue(val);
+                row++;
+            }
+        }
+
+        row = 4;
+
+        if (MainWindow.globalPadding != null) {
+            Set keys = MainWindow.globalPadding.keySet();
+            for (int i = 0; i < keys.size(); i++) {
+                String key = (String) keys.toArray()[i];
+                String val = String.format("%.2f",MainWindow.globalPadding.get(key)) + "";
+
+                cell = consumption_worksheet.getRow(row).getCell(3);
+                cell.setCellValue(key);
+
+                cell = consumption_worksheet.getRow(row).getCell(4);
+                cell.setCellValue(val);
+                row++;
+            }
+        }
+
+        row = 0;
+
+        if (MainWindow.globalTaffata != null) {
+            Set keys = MainWindow.globalTaffata.keySet();
+            for (int i = 0; i < keys.size(); i++) {
+                String key = (String) keys.toArray()[i];
+                String val = String.format("%.2f",MainWindow.globalTaffata.get(key)) + "";
+
+                cell = consumption_worksheet.getRow(row).getCell(6);
+                cell.setCellValue(key);
+
+                cell = consumption_worksheet.getRow(row).getCell(7);
+                cell.setCellValue(val);
+                row++;
+            }
+        }
+
         //Access the worksheet, so that we can update / modify it.
         HSSFSheet summary_worksheet = workbook.getSheetAt(1);
 
@@ -204,8 +264,8 @@ public class Quotation {
         int noOfItems = items.size();
 
         for (int i = 1; i < noOfItems; i++) {
-            workbook.cloneSheet(2);
-            workbook.setSheetName(i + 2, "Item " + (i+1));
+            workbook.cloneSheet(3);
+            workbook.setSheetName(i + 3, "Item " + (i + 1));
             copyRow(workbook, summary_worksheet, summaryStartRow + i - 1, summaryStartRow + i);
         }
 
@@ -216,7 +276,7 @@ public class Quotation {
             ArrayList<Map.Entry<String, String>> manufacSpecs = items.get(i).getManufacSpecs();
 
             //adding to summary
-            Cell cell = summary_worksheet.getRow(summaryStartRow + i).getCell(itemNoCol);
+            cell = summary_worksheet.getRow(summaryStartRow + i).getCell(itemNoCol);
             cell.setCellValue("Item " + (i + 1));
 
             cell = summary_worksheet.getRow(summaryStartRow + i).getCell(itemCol);
@@ -263,7 +323,7 @@ public class Quotation {
             cell.setCellFormula("G" + (summaryStartRow + i + 1) + "*M" + (summaryStartRow + i + 1));
 
             //adding detailed description
-            HSSFSheet detail_worksheet = workbook.getSheetAt(i + 2);
+            HSSFSheet detail_worksheet = workbook.getSheetAt(i + 3);
 
             cell = detail_worksheet.getRow(0).getCell(0);
             cell.setCellValue(items.get(i).getItemName());

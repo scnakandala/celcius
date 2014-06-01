@@ -1,13 +1,11 @@
 package logic;
 
 import algorithms.Approximate;
-import dataaccess.BedSheetDataAccess;
-import dataaccess.BolsterPillowCaseDataAccess;
 import dataaccess.FittedSheetDataAccess;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import viewmodels.BolsterPillowcaseViewModel;
 import viewmodels.FittedSheetViewModel;
 
 public class FittedSheetLogic {
@@ -118,6 +116,13 @@ public class FittedSheetLogic {
             Double pricePerUnitInch = materialPrice / (materialWidth * 36);
             Double fabricCost = (pricePerUnitInch * cutArea) * (1 + wastage / 100);
 
+            /**Material Consumption***/
+            double materialConsumption = cutArea/(materialWidth*39.4) * (1 + wastage/100);
+            HashMap fabric = new HashMap();
+            fabric.put(fCost.getMaterialType(), materialConsumption+"");
+            fCost.setFabric(fabric);
+            
+            
             Double cplm = FittedSheetDataAccess.getInstance().getCostPerLabourMinute();
             Double poh = FittedSheetDataAccess.getInstance().getPOHValue();
 

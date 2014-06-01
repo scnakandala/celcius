@@ -4,6 +4,7 @@ import algorithms.Approximate;
 import dataaccess.BolsterDataAccess;
 import dataaccess.CushionsDataAccess;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import viewmodels.BolstersViewModel;
@@ -101,6 +102,12 @@ public class BolsterLogic {
 
             Double cutArea = ((diameter + 0.5) * (diameter + 0.5) * 2 + (length + 1) * 3.141 * (diameter + 0.5)) * (1.0 + bCost.getFabricWastage() / 100.0);
             Double fabricCost = materialPrice / (36 * fabricWidth) * cutArea;
+            
+            /**Material Consumption***/
+            double materialConsumption = cutArea/(fabricWidth*39.4) * (1 + bCost.getFabricWastage()/100);
+            HashMap fabric = new HashMap();
+            fabric.put(bCost.getMaterialType(), materialConsumption+"");
+            bCost.setFabric(fabric);
 
             Double materialCost = fabricCost + fiberCost + tagPrice + lablePrice + threadPrice + peBagPrice + bCost.getOtherCost();
             Double cplm = CushionsDataAccess.getInstance().getCostPerLabourMinute();

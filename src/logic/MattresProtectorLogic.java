@@ -3,6 +3,7 @@ package logic;
 import algorithms.Approximate;
 import dataaccess.MattresProtectorsDataAccess;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import viewmodels.MettresProtectorViewModel;
@@ -153,6 +154,12 @@ public class MattresProtectorLogic {
             Double fabricPricePerUnitInch = fabricPrice / (materialWidth * 36);
             Double fabricCost = (fabricPricePerUnitInch * fabricPaddingCutArea) * (1 + fabricWastage / 100);
 
+            /**Material Consumption***/
+            double materialConsumption = fabricPaddingCutArea/(materialWidth*39.4) * (1 + fabricWastage/100);
+            HashMap fabric = new HashMap();
+            fabric.put(mCost.getMaterialType(), materialConsumption+"");
+            mCost.setFabric(fabric);
+            
             //there are non usable fabric wastages
             if (mCost.getProductRange().equalsIgnoreCase("Classic")) {
                 if ((materialWidth - fabricPaddingCutWidth) < 9) {
@@ -172,13 +179,24 @@ public class MattresProtectorLogic {
             if ((paddingWidth - fabricPaddingCutWidth) < 19) {
                 paddingCost = paddingCost + (paddingWidth - fabricPaddingCutWidth) * fabricPaddingCutHeight * paddingPricePerUnitInch;
             }
+            
+            /**Padding Consumption***/
+            double paddingConsumption = fabricPaddingCutArea/(paddingWidth*39.4) * (1 + paddingWastage/100);
+            HashMap padding = new HashMap();
+            padding.put(mCost.getPaddingType(), paddingConsumption+"");
+            mCost.setPadding(padding);
 
             //taffata cost
             Double taffataCutArea = taffataCutHeight * taffataCutWidth;
 
             Double taffataPricePerUnitInch = taffataPrice / (taffataWidth * 36);
             Double taffataCost = (taffataPricePerUnitInch * taffataCutArea) * (1 + taffataWastage / 100);
-
+            
+            /**Taffata Consumption***/
+            double taffataConsumption = taffataCutArea/(taffataWidth*39.4) * (1 + taffataWastage/100);
+            HashMap taffata = new HashMap();
+            taffata.put(mCost.getTaffataType(), taffataConsumption+"");
+            mCost.setTaffata(taffata);
 
 
             Double cplm = MattresProtectorsDataAccess.getInstance().getCostPerLabourMinute();

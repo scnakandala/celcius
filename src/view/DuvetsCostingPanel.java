@@ -9,6 +9,7 @@ import java.text.DecimalFormat;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Set;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -1226,6 +1227,10 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
         duvetsTaxes.setText(format.format(dReturn.getTaxes()));
         duvetsGrossSellingPrice.setText(format.format(dReturn.getGrossSellingPrice()));
 
+        MainWindow.tempFaric = dReturn.getFabric();
+        MainWindow.tempTaffata = dReturn.getTaffata();
+        MainWindow.tempPadding = dReturn.getPadding();
+        
         duvetsCPUPanel.setVisible(true);
 }//GEN-LAST:event_duvetsSubmitButtonActionPerformed
 
@@ -1334,6 +1339,69 @@ public class DuvetsCostingPanel extends javax.swing.JPanel {
             int n = Integer.parseInt(quantity.getText());
             qObject.setQuantity(n);
             summaryObj.setQuantity(n);
+            
+            if(MainWindow.tempFaric!=null){
+                Set keys = MainWindow.tempFaric.keySet();
+                for(int i=0;i<keys.size();i++){
+                    String key = (String) keys.toArray()[i];
+                    if(MainWindow.globalFaric.containsKey(key)){
+                        String sValue = (String)MainWindow.globalFaric.get(key);
+                        Double value = Double.parseDouble(sValue);
+                        String tempSValue = (String)MainWindow.tempFaric.get(key);
+                        Double tempValue = Double.parseDouble(tempSValue) * n;
+                        
+                        value += tempValue;
+                        
+                        MainWindow.globalFaric.put(key, value);
+                    }else{
+                        String sValue = (String)MainWindow.tempFaric.get(key);
+                        Double value = Double.parseDouble(sValue) * n;
+                        MainWindow.globalFaric.put(key, value);
+                    }
+                }
+            }
+            
+            if(MainWindow.tempPadding!=null){
+                Set keys = MainWindow.tempPadding.keySet();
+                for(int i=0;i<keys.size();i++){
+                    String key = (String) keys.toArray()[i];
+                    if(MainWindow.globalPadding.containsKey(key)){
+                        String sValue = (String)MainWindow.globalPadding.get(key);
+                        Double value = Double.parseDouble(sValue);
+                        String tempSValue = (String)MainWindow.tempPadding.get(key);
+                        Double tempValue = Double.parseDouble(tempSValue) * n;
+                        
+                        value += tempValue;
+                        
+                        MainWindow.globalPadding.put(key, value);
+                    }else{
+                        String sValue = (String)MainWindow.tempPadding.get(key);
+                        Double value = Double.parseDouble(sValue) * n;
+                        MainWindow.globalPadding.put(key, value);
+                    }
+                }
+            }
+            
+            if(MainWindow.tempTaffata!=null){
+                Set keys = MainWindow.tempTaffata.keySet();
+                for(int i=0;i<keys.size();i++){
+                    String key = (String) keys.toArray()[i];
+                    if(MainWindow.globalTaffata.containsKey(key)){
+                        String sValue = (String)MainWindow.globalTaffata.get(key);
+                        Double value = Double.parseDouble(sValue);
+                        String tempSValue = (String)MainWindow.tempTaffata.get(key);
+                        Double tempValue = Double.parseDouble(tempSValue) * n;
+                        
+                        value += tempValue;
+                        
+                        MainWindow.globalTaffata.put(key, value);
+                    }else{
+                        String sValue = (String)MainWindow.tempTaffata.get(key);
+                        Double value = Double.parseDouble(sValue) * n;
+                        MainWindow.globalTaffata.put(key, value);
+                    }
+                }
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Please enter a valid quantity value");
             return;

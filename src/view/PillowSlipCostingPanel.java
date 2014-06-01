@@ -19,6 +19,7 @@ import java.text.DecimalFormat;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Set;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import logic.BedSheetLogic;
@@ -795,7 +796,7 @@ public class PillowSlipCostingPanel extends javax.swing.JPanel {
         format.setMinimumFractionDigits(2);
 
         fCost.setIsPillowSlip(true);
-        
+
         PillowProtectorViewModel bReturn = PillowProtectorLogic.getCostPerUnit(fCost);
         pillowProtectorFabricCost.setText(format.format(bReturn.getFabricCost()) + "");
         pillowProtectorThreadCost.setText(format.format(bReturn.getThreadCost()) + "");
@@ -815,6 +816,10 @@ public class PillowSlipCostingPanel extends javax.swing.JPanel {
         pilllowProtectorSMVValue.setText(format.format(bReturn.getSmvValue()));
         pillowProtectorCutWidth.setText(format.format(bReturn.getCuttingWidth()));
         pillowProtectorCutLength.setText(format.format(bReturn.getCuttingHeight()));
+
+        MainWindow.tempFaric = bReturn.getFabric();
+        MainWindow.tempTaffata = bReturn.getTaffata();
+        MainWindow.tempPadding = bReturn.getPadding();
 
         bedSheetCPUPanel.setVisible(true);
 }//GEN-LAST:event_pillowProtectorSubmitButtonActionPerformed
@@ -874,21 +879,80 @@ public class PillowSlipCostingPanel extends javax.swing.JPanel {
         manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("Cut Length", pillowProtectorCutLength.getText()));
         manuSpecs.add(new AbstractMap.SimpleEntry<String, String>("SMV Value", pilllowProtectorSMVValue.getText()));
 
-
         try {
             int n = Integer.parseInt(quantity.getText());
             qObject.setQuantity(n);
             summaryObj.setQuantity(n);
+            
+            if(MainWindow.tempFaric!=null){
+                Set keys = MainWindow.tempFaric.keySet();
+                for(int i=0;i<keys.size();i++){
+                    String key = (String) keys.toArray()[i];
+                    if(MainWindow.globalFaric.containsKey(key)){
+                        String sValue = (String)MainWindow.globalFaric.get(key);
+                        Double value = Double.parseDouble(sValue);
+                        String tempSValue = (String)MainWindow.tempFaric.get(key);
+                        Double tempValue = Double.parseDouble(tempSValue) * n;
+                        
+                        value += tempValue;
+                        
+                        MainWindow.globalFaric.put(key, value);
+                    }else{
+                        String sValue = (String)MainWindow.tempFaric.get(key);
+                        Double value = Double.parseDouble(sValue) * n;
+                        MainWindow.globalFaric.put(key, value);
+                    }
+                }
+            }
+            
+            if(MainWindow.tempPadding!=null){
+                Set keys = MainWindow.tempPadding.keySet();
+                for(int i=0;i<keys.size();i++){
+                    String key = (String) keys.toArray()[i];
+                    if(MainWindow.globalPadding.containsKey(key)){
+                        String sValue = (String)MainWindow.globalPadding.get(key);
+                        Double value = Double.parseDouble(sValue);
+                        String tempSValue = (String)MainWindow.tempPadding.get(key);
+                        Double tempValue = Double.parseDouble(tempSValue) * n;
+                        
+                        value += tempValue;
+                        
+                        MainWindow.globalPadding.put(key, value);
+                    }else{
+                        String sValue = (String)MainWindow.tempPadding.get(key);
+                        Double value = Double.parseDouble(sValue) * n;
+                        MainWindow.globalPadding.put(key, value);
+                    }
+                }
+            }
+            
+            if(MainWindow.tempTaffata!=null){
+                Set keys = MainWindow.tempTaffata.keySet();
+                for(int i=0;i<keys.size();i++){
+                    String key = (String) keys.toArray()[i];
+                    if(MainWindow.globalTaffata.containsKey(key)){
+                        String sValue = (String)MainWindow.globalTaffata.get(key);
+                        Double value = Double.parseDouble(sValue);
+                        String tempSValue = (String)MainWindow.tempTaffata.get(key);
+                        Double tempValue = Double.parseDouble(tempSValue) * n;
+                        
+                        value += tempValue;
+                        
+                        MainWindow.globalTaffata.put(key, value);
+                    }else{
+                        String sValue = (String)MainWindow.tempTaffata.get(key);
+                        Double value = Double.parseDouble(sValue) * n;
+                        MainWindow.globalTaffata.put(key, value);
+                    }
+                }
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Please enter a valid quantity value");
             return;
         }
 
-
         ItemSummaryObject itemSumObj = new ItemSummaryObject("Pillow Slip", summaryObj, prodSpecs, costDescs, manuSpecs);
         MainWindow.quotation.addQuatationObject(qObject, itemSumObj);
-
-
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
